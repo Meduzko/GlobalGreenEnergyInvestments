@@ -20,7 +20,10 @@ gulp.task('js', function () {
 
 // Собираем CSS
 gulp.task('css', function () {
-    gulp.src([assetsRoot + 'stylesheets/*.scss'])
+    gulp.src([
+        assetsRoot + 'stylesheets/reset.scss',
+        assetsRoot + 'stylesheets/*.scss'
+    ])
         .pipe(sass())
         .pipe(csso())
         .pipe(concat('index.css'))

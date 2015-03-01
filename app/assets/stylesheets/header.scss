@@ -1,0 +1,46 @@
+@import "variables";
+
+
+header {
+
+    height: 93px;
+    margin: 0 auto;
+    max-width: 1600px;
+    position: relative;
+
+    nav {
+        display: inline-block;
+        li {
+            display: inline-block;
+            list-style-type: none;
+            a {
+                border-top: 4px solid transparent;
+                display: inline-block;
+                color: $grey;
+                font-weight: bold;
+                height: 89px;
+                text-decoration: none;
+                text-transform: uppercase;
+                &:hover {
+                    border-top: 4px solid $blue;
+                    color: $blue;
+                }
+            }
+        }
+    }
+
+    .logo {
+        display: inline-block;
+        border: 1px solid red;
+        width:
+    }
+
+    .auth-links {
+        display: inline-block;
+        float: right;
+        li {
+            display: inline-block;
+        }
+    }
+
+}
