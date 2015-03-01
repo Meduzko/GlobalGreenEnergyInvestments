@@ -214,13 +214,11 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   byebug
-  coffee-rails (~> 4.1.0)
   devise
   execjs
   jbuilder (~> 2.0)
   mysql2
   rails (= 4.2.0)
-  sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
   therubyracer
