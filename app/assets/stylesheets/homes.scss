@@ -1,3 +1,7 @@
+@import "variables";
+@import "mixins";
+
+
 main {
 
     margin: 0 auto;
@@ -6,6 +10,15 @@ main {
     .slider {
         border: 1px solid red;
         height: 600px;
+    }
+
+    .projects-statistic {
+        .statistic-circles li {
+            background: url('../images/circles_border.png') no-repeat;
+            @include border-radius(85px);
+            height: 171px;
+            width: 171px;
+        }
     }
 
 }
