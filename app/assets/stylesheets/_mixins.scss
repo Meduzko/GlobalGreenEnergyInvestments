@@ -6,13 +6,14 @@
 }
 
 
-/*
-@mixin border-gradient-top-to-bottom($width, $style, $from, $to) {
-    border-width: $width;
-    border-style: $style;
-    -webkit-border-image: -webkit-gradient(linear, 0 0, 0 100%, from($from), to($to)) 1 100%;
-    -webkit-border-image: -webkit-linear-gradient($from, $to) 1 100%;
-    -moz-border-image: -moz-linear-gradient($from, $to) 1 100%;
-    -o-border-image: -o-linear-gradient($from, $to) 1 100%;
-    border-image: linear-gradient(to bottom, $from, $to) 1 100%;
-}*/
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+        -webkit-box-shadow:inset $top $left $blur $color;
+        -moz-box-shadow:inset $top $left $blur $color;
+        box-shadow:inset $top $left $blur $color;
+    } @else {
+        -webkit-box-shadow: $top $left $blur $color;
+        -moz-box-shadow: $top $left $blur $color;
+        box-shadow: $top $left $blur $color;
+    }
+}

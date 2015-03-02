@@ -33,7 +33,10 @@ gulp.task('css', function () {
 
 // Копируем и минимизируем изображения
 gulp.task('images', function () {
-    gulp.src(assetsRoot + 'images/*')
+    gulp.src([
+        assetsRoot + 'images/*/*',
+        assetsRoot + 'images/*'
+    ])
         .pipe(imagemin())
         .pipe(gulp.dest(publicRoot + 'images'));
 });

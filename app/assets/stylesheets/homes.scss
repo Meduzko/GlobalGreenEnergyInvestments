@@ -1,23 +1,91 @@
 @import "variables";
 @import "mixins";
 
-
 main {
 
     margin: 0 auto;
     max-width: 1600px;
+
+    section h2 {
+        text-align: center;
+    }
 
     .slider {
         border: 1px solid red;
         height: 600px;
     }
 
+    .default-text {
+        color: $light-grey1;
+        margin: 0 auto;
+        width: 40%;
+    }
+
+    /* Project statistic section */
     .projects-statistic {
-        .statistic-circles li {
-            background: url('../images/circles_border.png') no-repeat;
-            @include border-radius(85px);
-            height: 171px;
-            width: 171px;
+        background: url('../images/map_bg.gif') no-repeat 50% 0;
+        text-align: center;
+        .statistic-circles {
+            padding: 100px 0 120px 0;
+            li {
+                background: rgb(255, 255, 255);
+                background: rgba(255, 255, 255, 0.8);
+                display: inline-block;
+                @include border-radius(93px);
+                @include box-shadow(0, 0, 24px, rgba(0, 0, 0, 0.15));
+                height: 179px;
+                margin: 0 26px;
+                padding: 7px 0 0 7px;
+                text-align: center;
+                width: 179px;
+                div {
+                    background: url('../images/circles_border.png') no-repeat;
+                    display: table-cell;
+                    height: 171px;
+                    vertical-align: middle;
+                    width: 171px;
+                    span {
+                        display: block;
+                        color: $blue;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Key values section */
+    .key-values {
+        li {
+            border: 1px solid $light-grey2;
+            border-right: 0;
+            cursor: pointer;
+            float: left;
+            height: 400px;
+            margin-top: -1px;
+            overflow: hidden;
+            text-align: center;
+            width: 33%;
+            &:hover {
+                background: rgba(38, 213, 186, 0.2);
+            }
+            &:hover p {
+                bottom: 200px;
+            }
+            &:first-child, &:nth-child(4) {
+                border-left: 0;
+            }
+            p {
+                -webkit-transition: bottom 0.3s ease-out 0.1s;
+                -moz-transition: bottom 0.3s ease-out 0.1s;
+                -o-transition: bottom 0.3s ease-out 0.1s;
+                transition: bottom 0.3s ease-out 0.1s;
+                position: relative;
+                bottom: -400px;
+            }
+        }
+        li:hover p {
+            border: 1px solid red;
+            bottom: 0;
         }
     }
 
