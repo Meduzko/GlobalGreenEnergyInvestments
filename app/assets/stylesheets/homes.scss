@@ -1,32 +1,61 @@
 @import "variables";
 @import "mixins";
 
+
 main {
 
     margin: 0 auto;
     max-width: 1600px;
 
     section h2 {
+        padding-bottom: 35px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .default-text {
         text-align: center;
     }
 
     .slider {
-        border: 1px solid red;
-        height: 600px;
+        background: url('../images/slider/slide_1.jpg') no-repeat;
+        color: $white;
+        height: 460px;
+        padding-top: 135px;
+        text-align: center;
+        h1 {
+            font-size: 84px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            line-height: 78px;
+            text-transform: uppercase;
+            span {
+                display: block;
+                font-size: 48px;
+                letter-spacing: 0;
+            }
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid $grey;
+            margin: 14px auto;
+            width: 75px;
+        }
+        p {
+            color: $grey;
+            font-size: 18px;
+            padding-top: 20px;
+        }
     }
 
-    .default-text {
-        color: $light-grey1;
-        margin: 0 auto;
-        width: 40%;
-    }
 
     /* Project statistic section */
     .projects-statistic {
-        background: url('../images/map_bg.gif') no-repeat 50% 0;
+        background: url('../images/map_bg.gif') no-repeat 50% 97px;
+        margin-top: 57px;
         text-align: center;
         .statistic-circles {
-            padding: 100px 0 120px 0;
+            padding: 109px 0 285px 0;
             li {
                 background: rgb(255, 255, 255);
                 background: rgba(255, 255, 255, 0.8);
@@ -34,36 +63,51 @@ main {
                 @include border-radius(93px);
                 @include box-shadow(0, 0, 24px, rgba(0, 0, 0, 0.15));
                 height: 179px;
-                margin: 0 26px;
+                margin: 0 24px;
                 padding: 7px 0 0 7px;
                 text-align: center;
                 width: 179px;
                 div {
                     background: url('../images/circles_border.png') no-repeat;
                     display: table-cell;
+                    font-size: 30px;
+                    font-weight: 700;
                     height: 171px;
                     vertical-align: middle;
                     width: 171px;
+                    em {
+                        font-size: 18px;
+                        font-style: normal;
+                    }
                     span {
                         display: block;
                         color: $blue;
+                        font-size: 14px;
+                        font-weight: 500;
+                        padding-top: 10px;
                     }
                 }
             }
         }
     }
 
+    
+    .latest-projects {
+        margin-top: -163px;
+    }
+    
+    
     /* Key values section */
     .key-values {
         li {
             border: 1px solid $light-grey2;
             border-right: 0;
-            color: $grey;
             cursor: pointer;
             float: left;
-            height: 400px;
+            height: 260px;
             margin-top: -1px;
             overflow: hidden;
+            padding-top: 146px;
             text-align: center;
             width: 33%;
             &:hover {
@@ -77,10 +121,12 @@ main {
                 border-left: 0;
             }
             span {
-                background: url('../images/key_values.png') no-repeat;
+                background: url('../images/svg/sprite.svg') no-repeat;
                 display: inline-block;
-                padding: 50px 20px 0 20px;
-
+                margin-bottom: 46px;
+            }
+            h5 {
+                font: 36px normal museo_sans_cyrl100;
             }
             p {
                 -webkit-transition: bottom 0.3s ease-out 0.1s;
@@ -90,23 +136,39 @@ main {
                 position: relative;
                 bottom: -400px;
             }
-            span.easy {
+            &.easy span {
                 background-position: 0 0;
+                height: 41px;
+                width: 41px;
             }
-            span.transparent {
-                background-position: 0 0;
+            &.transparent span {
+                background-position: 0 -195px;
+                height: 41px;
+                width: 42px;
             }
-            span.secure {
-                background-position: 0 0;
+            &.secure span {
+                background-position: 0 -77px;
+                margin-bottom: 41px;
+                height: 46px;
+                width: 35px;
             }
-            span.stable-return {
-                background-position: 0 0;
+            &.stable-return span {
+                background-position: 0 -123px;
+                margin-bottom: 47px;
+                height: 40px;
+                width: 48px;
             }
-            span.trade {
-                background-position: 0 0;
+            &.trade span {
+                background-position: 0 -163px;
+                margin-bottom: 55px;
+                height: 32px;
+                width: 55px;
             }
-            span.growing {
-                background-position: 0 0;
+            &.growing span {
+                background-position: 0 -41px;
+                margin-bottom: 51px;
+                height: 36px;
+                width: 42px;
             }
         }
     }

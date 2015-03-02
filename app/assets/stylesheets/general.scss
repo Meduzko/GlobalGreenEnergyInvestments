@@ -1,0 +1,43 @@
+@import "variables";
+
+@font-face {
+    font-family: 'museo_sans_cyrl500';
+    src: url('../fonts/museo_sans_cyrl_500.eot');
+    src: url('../fonts/museo_sans_cyrl_500.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/museo_sans_cyrl_500.woff2') format('woff2'),
+    url('../fonts/museo_sans_cyrl_500.woff') format('woff'),
+    url('../fonts/museo_sans_cyrl_500.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'museo_sans_cyrl100';
+    src: url('../fonts/museo_sans_cyrl_100.eot');
+    src: url('../fonts/museo_sans_cyrl_100.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/museo_sans_cyrl_100.woff2') format('woff2'),
+    url('../fonts/museo_sans_cyrl_100.woff') format('woff'),
+    url('../fonts/museo_sans_cyrl_100.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    font-family: 'museo_sans_cyrl500';
+    color: $grey;
+}
+
+h2 {
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.default-text {
+    color: $light-grey1;
+    font-size: 18px;
+    line-height: 21px;
+    margin: 0 auto;
+    width: 40%;
+}

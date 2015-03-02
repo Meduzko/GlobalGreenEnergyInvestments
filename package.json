@@ -11,11 +11,13 @@
   "devDependencies": {
     "gulp": "*",
     "gulp-csso": "*",
+    "gulp-svgo": "*",
     "gulp-sass": "*",
     "gulp-imagemin": "*",
     "gulp-uglify": "*",
     "main-bower-files": "*",
-    "gulp-concat": "*"
+    "gulp-concat": "*",
+    "gulp-svg-sprites": "*"
   },
 
   "private": true
