@@ -58,6 +58,7 @@ main {
         li {
             border: 1px solid $light-grey2;
             border-right: 0;
+            color: $grey;
             cursor: pointer;
             float: left;
             height: 400px;
@@ -69,10 +70,17 @@ main {
                 background: rgba(38, 213, 186, 0.2);
             }
             &:hover p {
-                bottom: 200px;
+                border: 1px solid red;
+                bottom: 0;
             }
             &:first-child, &:nth-child(4) {
                 border-left: 0;
+            }
+            span {
+                background: url('../images/key_values.png') no-repeat;
+                display: inline-block;
+                padding: 50px 20px 0 20px;
+
             }
             p {
                 -webkit-transition: bottom 0.3s ease-out 0.1s;
@@ -82,10 +90,24 @@ main {
                 position: relative;
                 bottom: -400px;
             }
-        }
-        li:hover p {
-            border: 1px solid red;
-            bottom: 0;
+            span.easy {
+                background-position: 0 0;
+            }
+            span.transparent {
+                background-position: 0 0;
+            }
+            span.secure {
+                background-position: 0 0;
+            }
+            span.stable-return {
+                background-position: 0 0;
+            }
+            span.trade {
+                background-position: 0 0;
+            }
+            span.growing {
+                background-position: 0 0;
+            }
         }
     }
 
