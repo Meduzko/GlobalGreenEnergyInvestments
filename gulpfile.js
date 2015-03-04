@@ -61,6 +61,12 @@ gulp.task('svg-sprites', function () {
 });
 
 
+gulp.task('fonts', function () {
+    gulp.src(assetsRoot + 'fonts/*')
+        .pipe(gulp.dest(publicRoot + 'fonts'));
+});
+
+
 gulp.task('add-vendors', function () {
     gulp.src(vendorRoot + 'javascript/*.js')
         .pipe(uglify())
@@ -72,8 +78,9 @@ gulp.task('add-vendors', function () {
 });
 
 
-gulp.task('watch', ['images', 'svg-optimization', 'svg-sprites', 'js', 'css', 'add-vendors'], function () {
+gulp.task('watch', ['images', 'svg-optimization', 'svg-sprites', 'js', 'css', 'fonts', 'add-vendors'], function () {
     gulp.watch(assetsRoot + 'javascripts/*.js', ['js']);
     gulp.watch(assetsRoot + 'images/*', ['images']);
     gulp.watch(assetsRoot + 'stylesheets/*.scss', ['css']);
+    gulp.watch(assetsRoot + 'fonts/*', ['fonts']);
 });

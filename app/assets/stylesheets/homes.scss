@@ -96,7 +96,8 @@ main {
     /* Key values section */
     .key-values {
         ul {
-            padding-top: 50px;
+            overflow: hidden;
+            padding: 65px 0 85px;
         }
         li {
             border: 1px solid $light-grey2;
@@ -111,10 +112,7 @@ main {
             width: 33%;
             &:hover {
                 background-color: rgba(38, 213, 186, 0.2);
-                -webkit-transition: background-color 0.6s ease-in-out;
-                -moz-transition: background-color 0.6s ease-in-out;
-                -o-transition: background-color 0.6s ease-in-out;
-                transition: background-color 0.6s ease-in-out;
+                @include transition(background-color 0.6s ease-in-out);
             }
             &:hover p {
                 bottom: 40px;
@@ -132,26 +130,17 @@ main {
                 position: relative;
                 top: 0;
                 margin-bottom: 46px;
-                -webkit-transition: top 0.3s ease-out 0.1s;
-                -moz-transition: top 0.3s ease-out 0.1s;
-                -o-transition: top 0.3s ease-out 0.1s;
-                transition: top 0.3s ease-out 0.1s;
-
+                @include transition(top 0.3s ease-out 0.1s);
             }
             h5 {
                 font: 36px normal museo_sans_cyrl100;
                 position: relative;
                 top: 0;
-                -webkit-transition: top 0.3s ease-out 0.1s;
-                -moz-transition: top 0.3s ease-out 0.1s;
-                -o-transition: top 0.3s ease-out 0.1s;
-                transition: top 0.3s ease-out 0.1s;
+                @include transition(top 0.3s ease-out 0.1s);
             }
             p {
-                -webkit-transition: bottom 0.3s ease-out 0.1s, opacity 1s ease-in-out;
-                -moz-transition: bottom 0.3s ease-out 0.1s, opacity 1s ease-in-out;
-                -o-transition: bottom 0.3s ease-out 0.1s, opacity 1s ease-in-out;
-                transition: bottom 0.3s ease-out 0.1s, opacity 1s ease-in-out;
+
+                @include transition(bottom 0.3s ease-out 0.1s, opacity 1s ease-in-out);
                 font: 20px normal museo_sans_cyrl100;
 
                 opacity: 0;
@@ -195,10 +184,48 @@ main {
             }
         }
     }
-    
-    
+
     .subscription {
-        background: url('../images/subscribe_bg.jpg');
+        margin-bottom: 90px;
+        form {
+            background: url('../images/subscribe_bg.jpg') no-repeat 50% 0;
+            padding: 46px 0 36px;
+            text-align: center;
+            input[type='text'], input[type='email'] {
+                border: 0;
+                background-color: $white;
+                color: $grey;
+                font-size: 16px;
+                font-weight: bold;
+                margin: 0 11px;
+                padding: 19px;
+                text-transform: uppercase;
+                width: 260px;
+                @include box-shadow(0, 0, 24px, rgba(0, 0, 0, 0.15));
+                @include border-radius(5px);
+            }
+            input[type='submit'] {
+                border: 3px solid $blue-green;
+                background-color: $blue-green;
+                display: block;
+                color: $white;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: bold;
+                margin: 30px auto 0;
+                padding: 16px 90px;
+                text-transform: uppercase;
+                @include border-radius(5px);
+                @include transition(background-color 0.3s ease-in-out, color 0.3s ease-in-out);
+                &:hover {
+                    background-color: $white;
+                    color: $blue-green;
+                }
+            }
+        }
+        p {
+            padding-bottom: 65px;
+        }
     }
 
 }

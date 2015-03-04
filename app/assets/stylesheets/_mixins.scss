@@ -5,15 +5,21 @@
     border-radius: $radius;
 }
 
-
-@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
-    @if $inset {
-        -webkit-box-shadow:inset $top $left $blur $color;
-        -moz-box-shadow:inset $top $left $blur $color;
-        box-shadow:inset $top $left $blur $color;
-    } @else {
+@mixin box-shadow($top, $left, $blur, $color) {
         -webkit-box-shadow: $top $left $blur $color;
         -moz-box-shadow: $top $left $blur $color;
         box-shadow: $top $left $blur $color;
-    }
+}
+
+@mixin box-shadow-inset($top, $left, $blur, $shift, $color) {
+    -webkit-box-shadow: inset $top $left $blur $shift $color;
+    -moz-box-shadow: inset $top $left $blur $shift $color;
+    box-shadow: inset $top $left $blur $shift $color;
+}
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -o-transition: $args;
+    transition: $args;
 }

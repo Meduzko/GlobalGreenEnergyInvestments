@@ -1,6 +1,87 @@
+@import "variables";
+@import "mixins";
+
 footer {
 
-    margin: 0 auto;
-    max-width: 1600px;
+    background: $grey url('../images/small_map_bg.gif') no-repeat 50%;
+    @include box-shadow-inset(1px, 3px, 9px, -6px, $black);
+
+
+    .footer-block {
+        height: 305px;
+        font-size: 16px;
+        margin: 0 auto;
+        max-width: 1600px;
+        text-align: center;
+
+        li {
+            display: inline-block;
+        }
+
+        small {
+            color: $light-grey3;
+            display: inline-block;
+            font-size: 14px;
+            padding-top: 30px;
+        }
+
+        .site-links {
+            padding-top: 62px;
+            li {
+                color: $white;
+                margin: 0 14px;
+                a {
+                    color: $white;
+                    margin-left: 28px;
+                    &:hover {
+                        color: $blue-green;
+                    }
+                }
+                &:before {
+                    content: '|';
+                }
+                &:first-child:before {
+                    content: none;
+                }
+            }
+        }
+
+        .contact-links {
+            color: $blue;
+            padding-top: 34px;
+            li {
+                margin: 0 20px;
+                span {
+                    font: 14px normal icon_font;
+                    padding-right: 7px;
+                }
+            }
+        }
+
+        .social-links {
+            padding-top: 43px;
+            li {
+                margin: 0 10px;
+            }
+            a {
+                border: 3px solid $blue;
+                background: $blue;
+                color: $white;
+                display: block;
+                font: 16px normal icon_font;
+                height: 28px;
+                padding-top: 10px;
+                text-align: center;
+                width: 38px;
+                @include border-radius(22px);
+                @include transition(background-color 0.3s ease-in-out, color 0.3s ease-in-out);
+                &:hover {
+                    background: none;
+                    color: $blue;
+                }
+            }
+        }
+
+    }
 
 }

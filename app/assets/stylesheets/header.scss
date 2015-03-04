@@ -4,14 +4,16 @@
 
 header {
 
+    .header-block {
+        height: 93px;
+        margin: 0 auto;
+        max-width: 1600px;
+        position: relative;
+    }
+
     object{
         pointer-events: none;
     }
-
-    height: 93px;
-    margin: 0 auto;
-    max-width: 1600px;
-    position: relative;
 
     nav {
         display: inline-block;
@@ -29,8 +31,9 @@ header {
                 padding: 33px 12px 0;
                 text-decoration: none;
                 text-transform: uppercase;
+                @include transition(border-color 0.3s ease-in-out, color 0.3s ease-in-out);
                 &:hover {
-                    border-top: 4px solid $blue;
+                    border-color: $blue;
                     color: $blue;
                 }
             }
@@ -42,10 +45,12 @@ header {
     }
 
     .logo {
-        position: absolute;
+        height: 112px;
         margin-left: -104px;
+        position: absolute;
         left: 50%;
         top: 7px;
+        width: 207px;
         object {
             position: relative;
             z-index: 1;
