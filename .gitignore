@@ -13,3 +13,4 @@
 /tmp
 .idea/*
 node_modules
+.rvmrc
