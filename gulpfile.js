@@ -57,6 +57,7 @@ gulp.task('svg-sprites', function () {
         .pipe(svgSprite({
             padding: 0
         }))
+        .pipe(svgo())
         .pipe(gulp.dest(publicRoot + 'images'));
 });
 
@@ -68,13 +69,17 @@ gulp.task('fonts', function () {
 
 
 gulp.task('add-vendors', function () {
-    gulp.src(vendorRoot + 'javascript/*.js')
+    gulp.src(vendorRoot + 'javascripts/*.js')
         .pipe(uglify())
         .pipe(gulp.dest(publicRoot + 'javascripts'));
 
-    gulp.src(vendorRoot + 'stylesheets/*.css')
+    gulp.src(vendorRoot + 'stylesheets.css')
         .pipe(csso())
         .pipe(gulp.dest(publicRoot + 'stylesheets'));
+
+    gulp.src(vendorRoot + 'images')
+        .pipe(imagemin())
+        .pipe(gulp.dest(publicRoot + 'images'));
 });
 
 
