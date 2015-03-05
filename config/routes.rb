@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'home#index'
-  resources 'subcribes', only: [:create] do 
+  resources 'subscribes', only: [:create] do
     member do
       get :confirmation
     end

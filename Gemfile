@@ -7,6 +7,7 @@ gem 'therubyracer'
 
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
+gem 'validates_email_format_of'
 
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
