@@ -1,0 +1,44 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+# Tab indentation for .rb files
+[*.rb]
+indent_style = space
+indent_size = 2
+
+# Tab indentation for .erb files
+[*.erb]
+indent_style = space
+indent_size = 2
+
+# Tab indentation for .html files
+[*.html]
+indent_style = space
+indent_size = 2
+
+# Tab indentation for .js files
+[*.js]
+indent_style = space
+indent_size = 4
+
+# Tab indentation for .less files
+[*.less]
+indent_style = space
+indent_size = 4
+
+# Tab indentation for .sass files
+[*.scss]
+indent_style = space
+indent_size = 4
+
+# Tab indentation for .css files
+[*.css]
+indent_style = space
+indent_size = 4
