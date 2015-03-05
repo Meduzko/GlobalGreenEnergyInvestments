@@ -11,11 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150214174818) do
+ActiveRecord::Schema.define(version: 20150305084334) do
 
-  create_table "homes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "subscribes", force: :cascade do |t|
+    t.string   "name",          limit: 255
+    t.string   "email",         limit: 255
+    t.string   "confirm_token", limit: 255
+    t.boolean  "confirmed",     limit: 1,   default: false
+    t.boolean  "active",        limit: 1,   default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
