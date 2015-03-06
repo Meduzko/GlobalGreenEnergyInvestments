@@ -1,17 +1,21 @@
 @import "variables";
 @import "mixins";
 
-
 header {
+
+    @include box-shadow(0, 0, 10px, rgba(0, 0, 0, 0.5));
+    position: relative;
+    z-index: 10;
 
     .header-block {
         height: 93px;
         margin: 0 auto;
         max-width: 1600px;
         position: relative;
+        z-index: 10;
     }
 
-    object{
+    object {
         pointer-events: none;
     }
 
@@ -56,16 +60,27 @@ header {
             z-index: 1;
         }
         span {
-            background: $white;
             display: block;
-            @include border-radius(93px);
-            height: 186px;
             margin-left: -93px;
             position: absolute;
-            top: -59px;
+            top: 86px;
             left: 50%;
+            height: 55px;
             width: 186px;
+            overflow: hidden;
+
+            i {
+                background: $white;
+                display: block;
+                top: -141px;
+                position: absolute;
+                height: 186px;
+                width: 186px;
+                @include border-radius(93px);
+                @include box-shadow(0, 0, 10px, rgba(0, 0, 0, 0.5));
+            }
         }
+
     }
 
     .auth-links {

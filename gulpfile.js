@@ -73,17 +73,20 @@ gulp.task('add-vendors', function () {
         .pipe(uglify())
         .pipe(gulp.dest(publicRoot + 'javascripts'));
 
-    gulp.src(vendorRoot + 'stylesheets.css')
+    gulp.src(vendorRoot + 'stylesheets/*.css')
         .pipe(csso())
         .pipe(gulp.dest(publicRoot + 'stylesheets'));
 
-    gulp.src(vendorRoot + 'images')
+    gulp.src(vendorRoot + 'images/*')
         .pipe(imagemin())
         .pipe(gulp.dest(publicRoot + 'images'));
 });
 
 
-gulp.task('watch', ['images', 'svg-optimization', 'svg-sprites', 'js', 'css', 'fonts', 'add-vendors'], function () {
+gulp.task('build', ['images', 'svg-optimization', 'svg-sprites', 'js', 'css', 'fonts']);
+
+
+gulp.task('watch', ['images', 'js', 'css'], function () {
     gulp.watch(assetsRoot + 'javascripts/*.js', ['js']);
     gulp.watch(assetsRoot + 'images/*', ['images']);
     gulp.watch(assetsRoot + 'stylesheets/*.scss', ['css']);

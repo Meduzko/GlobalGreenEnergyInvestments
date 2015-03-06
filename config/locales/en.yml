@@ -3,3 +3,63 @@ en:
   # subscription locates
   sbsr_email_format: is not looking good
   sbsr_message_success: Thank you for your subscription! You need confirm you email for activation subscription.
+
+  #header
+  menu_idea: Idea
+  menu_invest: Invest
+  menu_about: About
+  menu_contact: Contact
+  menu_login: Login
+
+  #titles
+  title_main: the accelerator
+  subtitle_main: of green energy projects
+  title_latest_project: Latest project
+  title_key_values: Our key values
+
+  #main slider
+  main_slider_text_1: Zo kan er nooit meer duurzame energie<br> verkocht worden dan er echt is
+  main_slider_text_2: Zo kan er nooit meer duurzame energie<br> verkocht worden dan er echt is2
+  main_slider_text_3: Zo kan er nooit meer duurzame energie<br> verkocht worden dan er echt is3
+
+  #statistic
+  stat_investors: investors
+  stat_invested: invested
+  stat_projects: projects
+  stat_generated: KWH generated
+  stat_return: average return
+  stat_text: Omdat GGIG gelooft in een toekomst met 100% duurzame energie, waarbij zoveel mogelijk huishoudens zelf hun energie opwekken, hebben we een unieke regeling voor eigenaren van zonnepanelen ontwikkeld.
+
+  #latest project
+  latest_project_text: Je kiest zelf de producent en de manier van opwekken waar je achter staat, zo weet je zeker dat je geld goed terechtkomt.
+
+  #key values
+  key_values_text: De producenten verkopen hun stroom, wij regelen verder alles. Van de administratie tot de klantenservice en de levering van 100% CO2 gecompenseerd gas.
+  key_values_easy: Easy
+  key_values_easy_text: Join a growing community of people investing in green project
+  key_values_transparent: Transparant
+  key_values_transparent_text: Join a growing community of people investing in green project
+  key_values_secure: Secure
+  key_values_secure_text: Join a growing community of people investing in green project
+  key_values_return: Stable return
+  key_values_return_text: Join a growing community of people investing in green project
+  key_values_trade: Trade
+  key_values_trade_text: Join a growing community of people investing in green project
+  key_values_growing: Growing
+  key_values_growing_text: Join a growing community of people investing in green project
+
+  #subscription
+  subscr_title: Stay informed on new projects
+  subscr_text: De producenten verkopen hun stroom, wij regelen verder alles. Van de administratie tot de klantenservice en de levering van 100% CO2 gecompenseerd gas.
+  subscr_name_field: Name
+  subscr_email_field: Email
+
+  footer_about: About us
+  footer_risks: Risks
+  footer_terms: Terms and condition
+  footer_policy: Privacy policy
+  footer_disclaimer: Disclaimer
+
+  main_phone: 0 880 444 555
+  main_email: "info@ggig.com"
+  copyright: "© Global Green Investment Group, 2015"

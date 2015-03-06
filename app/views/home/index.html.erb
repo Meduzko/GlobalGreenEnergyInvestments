@@ -1,50 +1,71 @@
 <%= render 'partials/header' %>
 
+<div class="ninja-slider" id='ninjaSlider'>
+  <ul>
+    <li>
+      <div data-image="../images/slider/slide_1.jpg">
+        <div class="slider-content">
+          <h1><%= I18n.t(:title_main) %><span><%= I18n.t(:subtitle_main) %></span></h1>
+          <hr/>
+          <p><%= I18n.t(:main_slider_text_1) %></p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div data-image="../images/slider/slide_2.jpg">
+        <div class="slider-content">
+          <h1><%= I18n.t(:title_main) %><span><%= I18n.t(:subtitle_main) %></span></h1>
+          <hr/>
+          <p><%= I18n.t(:main_slider_text_2) %></p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div data-image="../images/slider/slide_3.jpg">
+        <div class="slider-content">
+          <h1><%= I18n.t(:title_main) %><span><%= I18n.t(:subtitle_main) %></span></h1>
+          <hr/>
+          <p><%= I18n.t(:main_slider_text_3) %></p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
 <main>
 
-  <div class="slider">
-    <h1>
-      the accelerator
-      <span>of green energy projects</span>
-    </h1>
-    <hr/>
-    <p>Zo kan er nooit meer duurzame energie<br> verkocht worden dan er echt is</p>
-  </div>
-
   <section class="projects-statistic">
-    <p class="default-text">Omdat GGIG gelooft in een toekomst met 100% duurzame energie, waarbij zoveel mogelijk
-      huishoudens zelf hun
-      energie opwekken, hebben we een unieke regeling voor eigenaren van zonnepanelen ontwikkeld.</p>
+    <p class="default-text"><%= I18n.t(:stat_text) %></p>
 
     <ul class="statistic-circles">
       <li>
         <div>
           50.000
-          <span>investors</span>
+          <span><%= I18n.t(:stat_investors) %></span>
         </div>
       </li>
       <li>
         <div>
           100 <em>MLN</em>
-          <span>invested</span>
+          <span><%= I18n.t(:stat_invested) %></span>
         </div>
       </li>
       <li>
         <div>
           32
-          <span>projects</span>
+          <span><%= I18n.t(:stat_projects) %></span>
         </div>
       </li>
       <li>
         <div>
           504.000
-          <span>KWH generated</span>
+          <span><%= I18n.t(:stat_generated) %></span>
         </div>
       </li>
       <li>
         <div>
           6.5%
-          <span>average return</span>
+          <span><%= I18n.t(:stat_return) %></span>
         </div>
       </li>
     </ul>
@@ -53,10 +74,9 @@
 
   <section class="latest-projects">
 
-    <h2>Latest project</h2>
+    <h2><%= I18n.t(:title_latest_project) %></h2>
 
-    <p class="default-text">Je kiest zelf de producent en de manier van opwekken waar je achter staat, zo weet je zeker
-      dat je geld goed terechtkomt.</p>
+    <p class="default-text"><%= I18n.t(:latest_project_text) %></p>
 
     <div class="projects-slider">
       slider
@@ -65,47 +85,46 @@
   </section>
 
   <section class="key-values">
-    <h2>Our key values</h2>
+    <h2><%= I18n.t(:title_key_values) %></h2>
 
-    <p class="default-text">De producenten verkopen hun stroom, wij regelen verder alles. Van de administratie tot de
-      klantenservice en de levering van 100% CO2 gecompenseerd gas.</p>
+    <p class="default-text"><%= I18n.t(:key_values_text) %></p>
 
     <ul>
       <li class="easy">
         <span></span>
-        <h5>Easy</h5>
+        <h5><%= I18n.t(:key_values_easy) %></h5>
 
-        <p>Join a growing community of people investing in green project</p>
+        <p><%= I18n.t(:key_values_easy_text) %></p>
       </li>
       <li class="transparent">
         <span></span>
-        <h5>Transparant</h5>
+        <h5><%= I18n.t(:key_values_transparent) %></h5>
 
-        <p>Join a growing community of people investing in green project</p>
+        <p><%= I18n.t(:key_values_transparent_text) %></p>
       </li>
       <li class="secure">
         <span></span>
-        <h5>Secure</h5>
+        <h5><%= I18n.t(:key_values_secure) %></h5>
 
-        <p>Join a growing community of people investing in green project</p>
+        <p><%= I18n.t(:key_values_secure_text) %></p>
       </li>
       <li class="stable-return">
         <span></span>
-        <h5>Stable return</h5>
+        <h5><%= I18n.t(:key_values_return) %></h5>
 
-        <p>Join a growing community of people investing in green project</p>
+        <p><%= I18n.t(:key_values_return_text) %></p>
       </li>
       <li class="trade">
         <span></span>
-        <h5>Trade</h5>
+        <h5><%= I18n.t(:key_values_trade) %></h5>
 
-        <p>Join a growing community of people investing in green project</p>
+        <p><%= I18n.t(:key_values_trade_text) %></p>
       </li>
       <li class="growing">
         <span></span>
-        <h5>Growing</h5>
+        <h5><%= I18n.t(:key_values_growing) %></h5>
 
-        <p>Join a growing community of people investing in green project</p>
+        <p><%= I18n.t(:key_values_growing_text) %></p>
       </li>
     </ul>
 

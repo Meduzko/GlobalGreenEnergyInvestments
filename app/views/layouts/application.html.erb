@@ -2,14 +2,15 @@
 <html>
 <head>
   <title>GGIG</title>
-  <%#= stylesheet_link_tag 'ninja-slider' %>
   <%= stylesheet_link_tag 'index' %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
 <%= yield %>
 
-<%#= javascript_include_tag 'ninja-slider' %>
+<script src="javascripts/index.js"></script>
+
 </body>
 </html>

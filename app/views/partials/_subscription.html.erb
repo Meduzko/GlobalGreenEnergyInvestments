@@ -1,12 +1,11 @@
 <section class="subscription">
-  <h2>Stay informed on new projects</h2>
+  <h2><%= I18n.t(:subscr_title) %></h2>
 
-  <p class="default-text">De producenten verkopen hun stroom, wij regelen verder alles. Van de administratie tot de
-    klantenservice en de levering van 100% CO2 gecompenseerd gas.</p>
+  <p class="default-text"><%= I18n.t(:subscr_text) %></p>
 
   <form action="#">
-    <input type="text" placeholder="Name" required="true"/>
-    <input type="email" placeholder="Email" required="true"/>
+    <input type="text" placeholder="<%= I18n.t(:subscr_name_field) %>" required="true"/>
+    <input type="email" placeholder="<%= I18n.t(:subscr_email_field) %>" required="true"/>
     <input type="submit" value="Stay informed"/>
   </form>
 </section>

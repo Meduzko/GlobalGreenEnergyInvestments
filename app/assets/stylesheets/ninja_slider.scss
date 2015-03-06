@@ -1,0 +1,183 @@
+@import "variables";
+@import "mixins";
+
+.ninja-slider {
+    width: 100%;
+    margin: 0 auto;
+    background: $white;
+    > ul {
+        padding: 0;
+        margin: 0;
+    }
+    li > div, li > a {
+        background-position: 50% 0 !important;
+        margin: 0 auto;
+        position: relative;
+        display: block;
+        transition: none !important;
+    }
+    div.preload {
+        background: black url('../images/loading.gif') no-repeat center 25%;
+    }
+
+    .slider-content {
+        display: inline-block;
+        position: absolute;
+        top: 20%;
+        text-align: center;
+        width: 100%;
+
+        h1 {
+            color: $white;
+            font-size: 84px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            line-height: 78px;
+            text-transform: uppercase;
+            span {
+                display: block;
+                font-size: 48px;
+                letter-spacing: 0;
+            }
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid $grey;
+            margin: 14px auto;
+            width: 75px;
+        }
+        p {
+            color: $grey;
+            font-size: 18px;
+            padding-top: 20px;
+        }
+    }
+}
+
+#ninjaSlider-pager {
+    margin-top: -66px;
+    position: relative;
+    text-align: center;
+    a {
+        background: $white;
+        border: 2px solid $white;
+        cursor: pointer;
+        display: inline-block;
+        height: 8px;
+        margin: 0 16px;
+        text-indent: -99999px;
+        width: 8px;
+        @include border-radius(6px);
+        @include box-shadow(0, 0, 9px, rgba(0, 0, 0, .3));
+        &:hover, &.active {
+            background: $blue-green;
+        }
+    }
+}
+
+#ninjaSlider-prev, #ninjaSlider-next {
+    display: none;
+}
+
+/*#ninjaSlider-prev, #ninjaSlider-next {
+    position: absolute;
+    width: 70px;
+    height: 140px;
+    line-height: 140px;
+    top: 50%;
+    margin-top: -70px;
+    display: inline-block;
+    background-image: url('../images/navs.png');
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.0);
+    transition: width 0.5s, background-color 1s;
+    color: white;
+    overflow: hidden;
+    opacity: 0.4;
+    font-size: 14px;
+}
+
+#ninjaSlider-prev {
+    left: 0;
+    border-radius: 0 5px 5px 0;
+    background-position: 0 0;
+    div {
+        margin-left: 74px;
+        white-space: nowrap;
+    }
+}
+
+#ninjaSlider-next {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+    background-position: 100% -140px;
+    div {
+        float: right;
+        margin-right: 74px;
+        white-space: nowrap;
+    }
+}
+
+#ninjaSlider-prev:hover, #ninjaSlider-next:hover {
+    width: 110px;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+#ninjaSlider-pause-play {
+    display: none;
+}*/
+
+/*styles for mobile*/
+@media only screen and (max-width: 900px) {
+    .ninja-slider h2 {
+        top: 22%;
+        font-size: 40px;
+    }
+
+    .ninja-slider h3 {
+        top: 22%;
+        font-size: 20px;
+        padding-top: 60px;
+    }
+}
+
+/* Usually you don't need to change the following settings
+---------------------------------------------------------- */
+.ninja-slider > ul {
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    backface-visibility: hidden;
+    perspective: 1000px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#ninjaSlider-pager, #ninjaSlider-prev, #ninjaSlider-next, #ninjaSlider-pause-play {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.ninja-slider {
+    position: relative;
+    overflow: hidden;
+    /*visibility: hidden;*/
+    padding: 0;
+}
+
+.ninja-slider > ul {
+    overflow: hidden;
+    position: relative;
+    list-style: none;
+    margin: 0;
+}
+
+.ninja-slider > ul > li {
+    float: left;
+    width: 100%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

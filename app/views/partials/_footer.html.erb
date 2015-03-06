@@ -3,19 +3,19 @@
   <div class="footer-block">
 
     <ul class="site-links">
-      <li><a href="#">About us</a></li>
-      <li><a href="#">Risks</a></li>
-      <li><a href="#">Terms and condition</a></li>
-      <li><a href="#">Privacy policy</a></li>
-      <li><a href="#">Disclaimer</a></li>
+      <li><a href="#"><%= I18n.t(:footer_about) %></a></li>
+      <li><a href="#"><%= I18n.t(:footer_risks) %></a></li>
+      <li><a href="#"><%= I18n.t(:footer_terms) %></a></li>
+      <li><a href="#"><%= I18n.t(:footer_policy) %></a></li>
+      <li><a href="#"><%= I18n.t(:footer_disclaimer) %></a></li>
     </ul>
 
     <ul class="contact-links">
-      <li><span class="icon-phone-1"></span>0 880 444 555</li>
-      <li><a href="mailto:info@ggig.com"><span class="icon-mail-2"></span>info@ggig.com</a></li>
+      <li><span class="icon-phone-1"></span><%= I18n.t(:main_phone) %></li>
+      <li><a href="mailto:<%= I18n.t(:main_email) %>"><span class="icon-mail-2"></span><%= I18n.t(:main_email) %></a></li>
     </ul>
 
-    <small>&copy; Global Green Investment Group, 2015</small>
+    <small><%= I18n.t(:copyright) %></small>
 
     <ul class="social-links">
       <li><a class="icon-twitter" href="http://twitter.com" target="_blank"></a></li>

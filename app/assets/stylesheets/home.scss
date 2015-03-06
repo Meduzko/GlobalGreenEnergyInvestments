@@ -1,6 +1,7 @@
 @import "variables";
 @import "mixins";
 
+
 main {
 
     margin: 0 auto;
@@ -22,35 +23,13 @@ main {
         height: 460px;
         padding-top: 135px;
         text-align: center;
-        h1 {
-            font-size: 84px;
-            font-weight: 900;
-            letter-spacing: 2px;
-            line-height: 78px;
-            text-transform: uppercase;
-            span {
-                display: block;
-                font-size: 48px;
-                letter-spacing: 0;
-            }
-        }
-        hr {
-            border: 0;
-            border-top: 1px solid $grey;
-            margin: 14px auto;
-            width: 75px;
-        }
-        p {
-            color: $grey;
-            font-size: 18px;
-            padding-top: 20px;
-        }
+
     }
 
     /* Project statistic section */
     .projects-statistic {
         background: url('../images/map_bg.gif') no-repeat 50% 97px;
-        margin-top: 57px;
+        margin-top: 87px;
         text-align: center;
         .statistic-circles {
             padding: 109px 0 285px 0;

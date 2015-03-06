@@ -3,9 +3,9 @@
   <div class="header-block">
     <nav>
       <ul>
-        <li><a href="#">Idea</a></li>
-        <li><a href="#">Invest</a></li>
-        <li class="active"><a href="#">About</a></li>
+        <li><a href="#"><%= I18n.t(:menu_idea) %></a></li>
+        <li><a href="#"><%= I18n.t(:menu_invest) %></a></li>
+        <li class="active"><a href="#"><%= I18n.t(:menu_about) %></a></li>
       </ul>
     </nav>
 
@@ -13,13 +13,13 @@
       <object data="../images/ggig_logo.svg" type="image/svg+xml">
         <img src="../images/ggig_logo.png"/>
       </object>
-      <span></span>
+      <span><i></i></span>
     </a>
 
     <div class="auth-links">
       <ul>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Login</a></li>
+        <li><a href="#"><%= I18n.t(:menu_contact) %></a></li>
+        <li><a href="#"><%= I18n.t(:menu_login) %></a></li>
       </ul>
     </div>
   </div>
