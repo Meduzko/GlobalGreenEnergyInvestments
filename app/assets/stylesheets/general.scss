@@ -105,7 +105,15 @@ a {
     font-size: 18px;
     line-height: 21px;
     margin: 0 auto;
-    width: 40%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+@media all and (max-width: 1024px) {
+    .default-text {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }
 
 .default-btn {

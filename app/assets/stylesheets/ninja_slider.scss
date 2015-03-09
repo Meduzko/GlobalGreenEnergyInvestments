@@ -26,20 +26,6 @@
     display: none;
 }
 
-/*styles for mobile*/
-@media only screen and (max-width: 900px) {
-    .ninja-slider h2 {
-        top: 22%;
-        font-size: 40px;
-    }
-
-    .ninja-slider h3 {
-        top: 22%;
-        font-size: 20px;
-        padding-top: 60px;
-    }
-}
-
 /* Usually you don't need to change the following settings
 ---------------------------------------------------------- */
 .ninja-slider > ul {
@@ -82,6 +68,19 @@
 
 //Styles for each slider
 .main-slider {
+    .ninja-slider {
+        height: 50vh;
+        min-height: 500px;
+        li {
+            height: 600px;
+            > div {
+                -webkit-background-size: auto !important;
+                background-size: auto !important;
+                height: 600px;
+            }
+        }
+    }
+
     #ninjaSlider-prev, #ninjaSlider-next {
         display: none;
     }
@@ -144,6 +143,14 @@
 .latest-projects {
     .ninja-slider {
         margin-top: 65px;
+        li {
+            height: 732px;
+            > div {
+                -webkit-background-size: auto !important;
+                background-size: auto !important;
+                height: 732px;
+            }
+        }
     }
     .slider-content {
         background-color: $white;

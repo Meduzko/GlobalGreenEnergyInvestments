@@ -1,0 +1,136 @@
+@import "variables";
+@import "mixins";
+
+@media all and (min-width: 1024px) {
+    main {
+        .key-values {
+            li {
+                span {
+                    @include transition(top 0.3s ease-out 0.1s);
+                }
+                h5 {
+                    @include transition(top 0.3s ease-out 0.1s);
+                }
+                p {
+                    @include transition(bottom 0.3s ease-out 0.1s, opacity 1s ease-in-out);
+                    opacity: 0;
+                    bottom: -140px;
+                }
+                &:hover p {
+                    bottom: 40px;
+                    opacity: 1;
+                }
+                &:hover span, &:hover h5 {
+                    top: -70px;
+                }
+            }
+        }
+    }
+
+}
+
+@media all and (max-width: 1024px) {
+    main {
+        .key-values {
+            ul {
+                margin-left: 2%;
+            }
+            li {
+                padding-top: 75px;
+                width: 49%;
+                &:nth-child(4) {
+                    border-left: 1px solid $light-grey2;
+                }
+                &:nth-child(2n + 1) {
+                    border-left: 0
+                }
+                h5 {
+                    font-size: 26px;
+                }
+                p {
+                    padding: 20px;
+                }
+            }
+        }
+        .projects-statistic {
+            .statistic-circles {
+                li {
+                    margin: 0 12px 12px;
+                }
+            }
+        }
+    }
+
+    footer {
+        .site-links {
+            li {
+                margin: 0 8px 8px;
+                a {
+                    margin-left: 0;
+
+                }
+                &:before {
+                    content: none;
+                }
+            }
+        }
+    }
+
+    header {
+        nav, .auth-links {
+            li {
+                a {
+                    font-size: 14px;
+                    padding: 33px 7px 0;
+                }
+            }
+
+        }
+    }
+
+    .main-slider {
+        .slider-content {
+            h1 {
+                font-size: 60px;
+                line-height: 68px;
+                span {
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+
+}
+
+@media all and (max-width: 740px) {
+    .subscription {
+        form {
+            input[type='text'], input[type='email'] {
+                margin: 0 5px;
+                width: 35%;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 640px) {
+    .main-slider {
+        .slider-content {
+            h1 {
+                font-size: 40px;
+                line-height: 48px;
+                span {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1600px) {
+    .latest-projects {
+        #ninjaProjectsSlider-prev, #ninjaProjectsSlider-next {
+            display: none;
+        }
+    }
+}

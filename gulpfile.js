@@ -26,7 +26,9 @@ gulp.task('css', function () {
     gulp.src([
         assetsRoot + 'stylesheets/reset.scss',
         assetsRoot + 'stylesheets/general.scss',
-        assetsRoot + 'stylesheets/*.scss'
+        assetsRoot + 'stylesheets/ninja_slider.scss',
+        assetsRoot + 'stylesheets/*.scss',
+        assetsRoot + 'stylesheets/media_queries.scss'
     ])
         .pipe(sass())
         .pipe(csso())
