@@ -32,7 +32,7 @@ header {
                 font-size: 16px;
                 font-weight: 900;
                 height: 56px;
-                padding: 33px 12px 0;
+                padding: 33px 20px 0;
                 text-decoration: none;
                 text-transform: uppercase;
                 @include transition(border-color 0.3s ease-in-out, color 0.3s ease-in-out);
@@ -84,10 +84,37 @@ header {
     }
 
     .auth-links {
-        display: none;
         float: right;
+        padding-left: 20px;
         li {
             display: inline-block;
+            a {
+                border-top: 4px solid transparent;
+                display: inline-block;
+                color: $blue;
+                font-size: 16px;
+                font-weight: 900;
+                height: 56px;
+                padding: 33px 20px 0;
+                text-decoration: none;
+                text-transform: uppercase;
+                @include transition(border-color 0.3s ease-in-out, color 0.3s ease-in-out);
+                &:hover {
+                    border-color: $blue;
+                    color: $blue;
+                }
+            }
+            &.active a {
+                border-top: 4px solid $blue;
+                color: $blue;
+            }
+        }
+        li.login-link a {
+            color: $blue-green;
+            &:hover {
+                border-color: $blue-green;
+                color: $blue-green;
+            }
         }
     }
 

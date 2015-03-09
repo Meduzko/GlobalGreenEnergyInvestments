@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 @font-face {
     font-family: 'museo_sans_cyrl500';
@@ -73,6 +74,14 @@
     content: '\e809';
 }
 
+.icon-left-dir:before {
+    content: '\e80a';
+}
+
+.icon-right-dir:before {
+    content: '\e80b';
+}
+
 body {
     font-family: 'museo_sans_cyrl500';
     color: $grey;
@@ -97,4 +106,23 @@ a {
     line-height: 21px;
     margin: 0 auto;
     width: 40%;
+}
+
+.default-btn {
+    border: 3px solid $blue-green;
+    background-color: $blue-green;
+    display: block;
+    color: $white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 16px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    @include border-radius(5px);
+    @include transition(background-color 0.3s ease-in-out, color 0.3s ease-in-out);
+    &:hover {
+        background-color: $white;
+        color: $blue-green;
+    }
 }

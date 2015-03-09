@@ -17,19 +17,10 @@ main {
         text-align: center;
     }
 
-    .slider {
-        background: url('../images/slider/slide_1.jpg') no-repeat;
-        color: $white;
-        height: 460px;
-        padding-top: 135px;
-        text-align: center;
-
-    }
-
     /* Project statistic section */
     .projects-statistic {
         background: url('../images/map_bg.gif') no-repeat 50% 97px;
-        margin-top: 87px;
+        margin-top: 40px;
         text-align: center;
         .statistic-circles {
             padding: 109px 0 285px 0;
@@ -74,6 +65,7 @@ main {
 
     /* Key values section */
     .key-values {
+        margin-top: 86px;
         ul {
             overflow: hidden;
             padding: 65px 0 85px;
@@ -183,23 +175,9 @@ main {
                 @include box-shadow(0, 0, 24px, rgba(0, 0, 0, 0.15));
                 @include border-radius(5px);
             }
-            input[type='submit'] {
-                border: 3px solid $blue-green;
-                background-color: $blue-green;
-                display: block;
-                color: $white;
-                cursor: pointer;
-                font-size: 16px;
-                font-weight: bold;
+            .default-btn {
                 margin: 30px auto 0;
                 padding: 16px 90px;
-                text-transform: uppercase;
-                @include border-radius(5px);
-                @include transition(background-color 0.3s ease-in-out, color 0.3s ease-in-out);
-                &:hover {
-                    background-color: $white;
-                    color: $blue-green;
-                }
             }
         }
         p {
