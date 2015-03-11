@@ -17,12 +17,12 @@ class SubscribesController < ApplicationController
 
   def confirmation
     subscribe = Subscribe.find_by_confirm_token(params[:id])
-    if subscribe
-      text = 'googd'
+    if subscribe && subscribe.confirmed == false && subscribe.active == false
+      subscribe.update_attributes(confirmed: true, active: true)
+      @status = I18n.t(:sbsr_confirm_good)
     else
-      text = 'bad'
+      @status = I18n.t(:sbsr_confirm_bad)
     end
-    render text: text
   end
 
   private
