@@ -82,6 +82,14 @@
     content: '\e80b';
 }
 
+.icon-menu:before {
+    content: '\e80c';
+}
+
+.icon-cancel:before {
+    content: '\e80d';
+}
+
 body {
     font-family: 'museo_sans_cyrl500';
     color: $grey;

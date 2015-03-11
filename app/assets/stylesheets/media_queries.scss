@@ -125,6 +125,53 @@
             }
         }
     }
+    header {
+        nav {
+            background: $white;
+            padding: 140px 0 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            @include box-shadow(0, 0, 10px, rgba(0, 0, 0, 0.5));
+            li {
+                display: block;
+                a {
+                    display: block;
+                    font-size: 30px !important;
+                    font-weight: bold !important;
+                    padding: 20px 0 15px 0 !important;
+                    text-align: center;
+                }
+                &.active a, a:hover {
+                    border-color: transparent !important;
+                    color: $grey;
+                }
+            }
+            li.contact-link a {
+                color: $blue;
+            }
+            .menu-control {
+                display: block;
+                position: absolute;
+                left: 30px;
+                top: 25px;
+            }
+            .auth-links {
+                position: relative;
+                padding: 0;
+                right: 0;
+                top: 0;
+            }
+        }
+        .logo {
+            span {
+                i {
+                    display: none;
+                }
+            }
+        }
+    }
 }
 
 @media all and (max-width: 1600px) {

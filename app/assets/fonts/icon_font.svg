@@ -18,6 +18,8 @@
 <glyph glyph-name="mail-2" unicode="&#xe809;" d="m467 366l-449 210 0 109 893 0 0-109z m0-123l444 210 0-437-893 0 0 438z" horiz-adv-x="928" />
 <glyph glyph-name="left-dir" unicode="&#xe80a;" d="m510 93l-510 256 510 259 0-515z" horiz-adv-x="510" />
 <glyph glyph-name="right-dir" unicode="&#xe80b;" d="m0 608l510-257-510-258 0 515z" horiz-adv-x="510" />
+<glyph glyph-name="menu" unicode="&#xe80c;" d="m857 100v-71q0-15-10-25t-26-11h-785q-15 0-25 11t-11 25v71q0 15 11 25t25 11h785q15 0 26-11t10-25z m0 286v-72q0-14-10-25t-26-10h-785q-15 0-25 10t-11 25v72q0 14 11 25t25 10h785q15 0 26-10t10-25z m0 285v-71q0-15-10-25t-26-11h-785q-15 0-25 11t-11 25v71q0 15 11 26t25 10h785q15 0 26-10t10-26z" horiz-adv-x="857.1" />
+<glyph glyph-name="cancel" unicode="&#xe80d;" d="m654 349l346-346-154-154-346 346-346-346-154 154 346 346-346 346 154 154 346-346 346 346 154-154z" horiz-adv-x="1000" />
 </font>
 </defs>
 </svg>
