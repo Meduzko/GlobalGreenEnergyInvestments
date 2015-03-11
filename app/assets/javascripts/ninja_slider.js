@@ -4,29 +4,6 @@
  */
 
 
-var nsOptions = {
-    sliderId: "ninjaSlider",
-    effect: "slide",
-    autoAdvance: true,
-    pauseOnHover: false,
-    pauseTime: 5000,
-    speed: 500,
-    startSlide: 0,
-    aspectRatio: "1550:683",
-    circular: true,
-    touchCircular: true,
-    mobileNav: false,
-    before: null,
-    after: null
-    /*multipleImages: {
-     screenWidth: [0, 600],
-     path: ["-s.jpg", "-b.jpg"]
-     },
-     license: "mylicense"*/
-};
-
-var nslider = new NinjaSlider(nsOptions);
-
 /* Ninja Slider v2015.1.5. Copyright www.menucool.com */
 function NinjaSlider(e) {
     var t = document, f = "length", Z = "parentNode", y = "children", X = "appendChild", r = window.setTimeout, V = window.clearInterval, U = function (a) {

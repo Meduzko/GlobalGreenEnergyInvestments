@@ -5,7 +5,7 @@
   "author": "Kramarenko Konstantin kramarenko.konstantin@gmail.com",
 
   "dependencies": {
-    "bower": "*"
+    "d3": "*"
   },
 
   "devDependencies": {
@@ -17,7 +17,8 @@
     "gulp-uglify": "*",
     "main-bower-files": "*",
     "gulp-concat": "*",
-    "gulp-svg-sprites": "*"
+    "gulp-svg-sprites": "*",
+    "browser-sync": "*"
   },
 
   "private": true
