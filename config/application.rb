@@ -24,5 +24,9 @@ module GGIG
     config.active_record.raise_in_transactional_callbacks = true
 
     config.assets.enabled = false
+
+    #ggigsite@gmail.com
+    #,eufuf123
+    #http://edgeguides.rubyonrails.org/action_mailer_basics.html
   end
 end

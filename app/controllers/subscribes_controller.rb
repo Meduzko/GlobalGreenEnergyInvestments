@@ -1,7 +1,11 @@
 class SubscribesController < ApplicationController
+  include SubscribesHelper
+  
   def create
     subscribe = Subscribe.new(subscribe_params)
+    subscribe.confirm_token = generate_token
     if subscribe.save
+      SubscribeMailer.new_subscription(subscribe).deliver_later
       json = { status: 'success', messages: I18n.t(:sbsr_message_success) }
     else
       json = { status: 'error', messages: subscribe.errors.full_messages }
@@ -12,7 +16,13 @@ class SubscribesController < ApplicationController
   end
 
   def confirmation
-    render text: 'ololo'
+    subscribe = Subscribe.find_by_confirm_token(params[:id])
+    if subscribe
+      text = 'googd'
+    else
+      text = 'bad'
+    end
+    render text: text
   end
 
   private

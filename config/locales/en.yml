@@ -1,5 +1,4 @@
 en:
-  hello: "Hello world"
   # subscription locates
   sbsr_email_format: is not looking good
   sbsr_message_success: Thank you for your subscription! You need confirm you email for activation subscription.
