@@ -3,9 +3,25 @@
 
   <p class="default-text"><%= I18n.t(:subscr_text) %></p>
 
-  <form action="#">
-    <input type="text" placeholder="<%= I18n.t(:subscr_name_field) %>" required="true"/>
-    <input type="email" placeholder="<%= I18n.t(:subscr_email_field) %>" required="true"/>
-    <input type="submit" class="default-btn" value="Stay informed"/>
+  <form action="#" id="subscribeForm">
+
+    <div class="updating-layer">
+      <object data="../images/spinner.svg" type="image/svg+xml">
+        Loading...
+      </object>
+    </div>
+    <div class="message-box"></div>
+
+    <input name="subscribe[name]"
+           type="text"
+           placeholder="<%= I18n.t(:subscr_name_field) %>"
+           required="true"/>
+
+    <input name="subscribe[email]"
+           type="email"
+           placeholder="<%= I18n.t(:subscr_email_field) %>"
+           required="true"/>
+
+    <input type="submit" class="default-btn" value="Stay informed" id="subscribe"/>
   </form>
 </section>

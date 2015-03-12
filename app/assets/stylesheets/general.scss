@@ -90,6 +90,10 @@
     content: '\e80d';
 }
 
+.icon-spin5:before {
+    content: '\e80e';
+}
+
 body {
     font-family: 'museo_sans_cyrl500';
     color: $grey;
@@ -137,8 +141,9 @@ a {
     text-transform: uppercase;
     @include border-radius(5px);
     @include transition(background-color 0.3s ease-in-out, color 0.3s ease-in-out);
-    &:hover {
+    &:hover, &:focus {
         background-color: $white;
         color: $blue-green;
+        outline: none;
     }
 }

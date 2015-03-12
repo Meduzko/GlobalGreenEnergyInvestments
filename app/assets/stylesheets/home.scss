@@ -90,7 +90,8 @@ main {
                 border-left: 0;
             }
             span {
-                background: url('../images/svg/sprite.svg') no-repeat;
+                //background: url('../images/svg/sprite.svg') no-repeat;
+                background: url('../images/key_values.png') no-repeat;
                 display: inline-block;
                 position: relative;
                 top: 0;
@@ -109,35 +110,41 @@ main {
             }
 
             &.easy span {
-                background-position: 0 0;
+                //background-position: 0 0;
+                background-position: -9px -2px;
                 height: 41px;
                 width: 41px;
             }
             &.transparent span {
-                background-position: 0 -195px;
+                //background-position: 0 -195px;
+                background-position: -131px -3px;
                 height: 41px;
                 width: 42px;
             }
             &.secure span {
-                background-position: 0 -77px;
+                //background-position: 0 -77px;
+                background-position: -261px 0;
                 margin-bottom: 41px;
                 height: 46px;
                 width: 35px;
             }
             &.stable-return span {
-                background-position: 0 -123px;
+                //background-position: 0 -123px;
+                background-position: 0 -132px;
                 margin-bottom: 47px;
                 height: 40px;
                 width: 48px;
             }
             &.trade span {
-                background-position: 0 -163px;
+                //background-position: 0 -163px;
+                background-position: -120px -139px;
                 margin-bottom: 55px;
                 height: 32px;
                 width: 55px;
             }
             &.growing span {
-                background-position: 0 -41px;
+                //background-position: 0 -41px;
+                background-position: -254px -136px;
                 margin-bottom: 51px;
                 height: 36px;
                 width: 42px;
@@ -148,8 +155,9 @@ main {
     .subscription {
         margin-bottom: 90px;
         form {
-            background: url('../images/subscribe_bg.jpg') no-repeat 50% 0;
-            padding: 46px 0 36px;
+            background-color: rgba(38, 213, 186, 0.2);
+            padding: 26px 50px 36px;
+            position: relative;
             text-align: center;
             input[type='text'], input[type='email'] {
                 border: 0;
@@ -171,6 +179,31 @@ main {
         }
         p {
             padding-bottom: 65px;
+        }
+        .updating-layer {
+            background: rgba(0, 0, 0, 0.3);
+            color: $white;
+            display: none;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            text-align: center;
+            width: 100%;
+            object {
+                position: absolute;
+                top: 92px;
+            }
+
+        }
+        .message-box {
+            padding-bottom: 20px;
+            .success-msg {
+                color: $green;
+            }
+            .error-msg {
+                color: $red;
+            }
         }
     }
 
