@@ -10,7 +10,14 @@
       </ul>
       <ul class="auth-links">
         <li class="contact-link"><a href="#"><%= I18n.t(:menu_contact) %></a></li>
-        <li class="login-link"><a href="#"><%= I18n.t(:menu_login) %></a></li>
+        <li class="login-link">
+          <% if current_user %>
+            <%= link_to "Hello, #{current_user.first_name}!", new_user_session_path %>
+            <%= link_to 'Logout', destroy_user_session_path %>    
+          <% else %>
+            <%= link_to I18n.t(:menu_login), new_user_session_path %>
+          <% end %>
+        </li>
       </ul>
     </nav>
 

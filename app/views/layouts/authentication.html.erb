@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GGIG</title>
+  <%= stylesheet_link_tag 'index' %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+<%= render 'partials/header' %>
+  <div style="padding:30px">
+    <%= yield %>
+  </div>
+<%= render 'partials/footer' %>
+
+<script src="javascripts/index.js"></script>
+
+</body>
+</html>
