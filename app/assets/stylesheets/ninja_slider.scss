@@ -17,7 +17,7 @@
         transition: none !important;
     }
     div.preload {
-        background: black url('../images/loading.gif') no-repeat center 25%;
+        background: black url('/images/loading.gif') no-repeat center 25%;
     }
 
 }
@@ -167,7 +167,7 @@
             font-size: 24px;
             line-height: 29px;
             span {
-                background: url('../images/marker.png') no-repeat;
+                background: url('/images/marker.png') no-repeat;
                 display: block;
                 height: 65px;
                 margin: 37px 0 24px 95px;
@@ -179,7 +179,7 @@
                     height: 23px;
                     width: 25px;
                     &.sun-icon {
-                        background-image: url('../images/sun_icon.png');
+                        background-image: url('/images/sun_icon.png');
                     }
                 }
             }

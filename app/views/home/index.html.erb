@@ -1,10 +1,8 @@
-<%= render 'partials/header' %>
-
 <section class="main-slider">
   <div class="ninja-slider" id='ninjaSlider'>
     <ul>
       <li>
-        <div data-image="../images/slider/slide_11.jpg">
+        <div data-image="/images/slider/slide_11.jpg">
           <div class="slider-content">
             <h1><%= I18n.t(:title_main) %><span><%= I18n.t(:subtitle_main) %></span></h1>
             <hr/>
@@ -13,7 +11,7 @@
         </div>
       </li>
       <li>
-        <div data-image="../images/slider/slide_22.jpg">
+        <div data-image="/images/slider/slide_22.jpg">
           <div class="slider-content">
             <h1><%= I18n.t(:title_main) %><span><%= I18n.t(:subtitle_main) %></span></h1>
             <hr/>
@@ -22,7 +20,7 @@
         </div>
       </li>
       <li>
-        <div data-image="../images/slider/slide_33.jpg">
+        <div data-image="/images/slider/slide_33.jpg">
           <div class="slider-content">
             <h1><%= I18n.t(:title_main) %><span><%= I18n.t(:subtitle_main) %></span></h1>
             <hr/>
@@ -124,6 +122,8 @@
 
   <%= render 'partials/subscription' %>
 
-</main>
+  <% content_for :popups do %>
+      <%= render 'partials/login_popup' %>
+  <% end %>
 
-<%= render 'partials/footer' %>
+</main>

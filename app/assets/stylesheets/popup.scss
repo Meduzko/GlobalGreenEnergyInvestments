@@ -1,0 +1,30 @@
+@import "variables";
+@import "mixins";
+
+.popup {
+    display: none;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+
+    .fog {
+        background: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .popup-body {
+        background-color: $light-grey6;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        margin-left: -250px;
+        width: 500px;
+    }
+}

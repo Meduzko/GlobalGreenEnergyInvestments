@@ -19,7 +19,7 @@ main {
 
     /* Project statistic section */
     .projects-statistic {
-        background: url('../images/map_bg.gif') no-repeat 50% 97px;
+        background: url('/images/map_bg.gif') no-repeat 50% 97px;
         margin-top: 40px;
         text-align: center;
         .statistic-circles {
@@ -91,7 +91,7 @@ main {
             }
             span {
                 //background: url('../images/svg/sprite.svg') no-repeat;
-                background: url('../images/key_values.png') no-repeat;
+                background: url('/images/key_values.png') no-repeat;
                 display: inline-block;
                 position: relative;
                 top: 0;
@@ -148,61 +148,6 @@ main {
                 margin-bottom: 51px;
                 height: 36px;
                 width: 42px;
-            }
-        }
-    }
-
-    .subscription {
-        margin-bottom: 90px;
-        form {
-            background-color: rgba(38, 213, 186, 0.2);
-            padding: 26px 50px 36px;
-            position: relative;
-            text-align: center;
-            input[type='text'], input[type='email'] {
-                border: 0;
-                background-color: $white;
-                color: $grey;
-                font-size: 16px;
-                font-weight: bold;
-                margin: 0 11px;
-                padding: 19px;
-                text-transform: uppercase;
-                width: 260px;
-                @include box-shadow(0, 0, 24px, rgba(0, 0, 0, 0.15));
-                @include border-radius(5px);
-            }
-            .default-btn {
-                margin: 30px auto 0;
-                padding: 16px 90px;
-            }
-        }
-        p {
-            padding-bottom: 65px;
-        }
-        .updating-layer {
-            background: rgba(0, 0, 0, 0.3);
-            color: $white;
-            display: none;
-            height: 100%;
-            position: absolute;
-            left: 0;
-            top: 0;
-            text-align: center;
-            width: 100%;
-            object {
-                position: absolute;
-                top: 92px;
-            }
-
-        }
-        .message-box {
-            padding-bottom: 20px;
-            .success-msg {
-                color: $green;
-            }
-            .error-msg {
-                color: $red;
             }
         }
     }

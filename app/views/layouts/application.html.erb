@@ -8,10 +8,16 @@
 </head>
 <body>
 
+<%= render 'partials/header' %>
+
 <%= yield %>
 
+<%= render 'partials/footer' %>
+
+<%= yield(:popups) %>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="javascripts/index.js"></script>
+<script src="/javascripts/index.js"></script>
 
 </body>
 </html>

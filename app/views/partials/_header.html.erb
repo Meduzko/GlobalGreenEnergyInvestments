@@ -2,14 +2,17 @@
 
   <div class="header-block">
     <nav>
-      <span class="icon-menu menu-control"></span>
-      <ul>
+
+      <span class="icon-menu menu-control" id="siteLinksControl"></span>
+      <ul class="site-links" id="siteLinks">
         <li><a href="#"><%= I18n.t(:menu_idea) %></a></li>
         <li><a href="#"><%= I18n.t(:menu_invest) %></a></li>
         <li class="active"><a href="#"><%= I18n.t(:menu_about) %></a></li>
+        <li><a href="#"><%= I18n.t(:menu_contact) %></a></li>
       </ul>
-      <ul class="auth-links">
-        <li class="contact-link"><a href="#"><%= I18n.t(:menu_contact) %></a></li>
+
+      <span class="icon-menu menu-control auth-menu-control" id="authLinksControl"></span>
+      <ul class="auth-links" id="authLinks">
         <li class="login-link">
           <% if current_user %>
             <%= link_to "Hello, #{current_user.first_name}!", new_user_session_path %>
@@ -19,11 +22,12 @@
           <% end %>
         </li>
       </ul>
+
     </nav>
 
     <a href="/" class="logo">
-      <object data="../images/ggig_logo.svg" type="image/svg+xml">
-        <img src="../images/ggig_logo.png"/>
+      <object data="/images/ggig_logo.svg" type="image/svg+xml">
+        <img src="/images/ggig_logo.png"/>
       </object>
       <span><i></i></span>
     </a>
