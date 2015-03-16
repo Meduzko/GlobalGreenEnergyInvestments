@@ -1,0 +1,17 @@
+{
+    "name": "ggig",
+    "version": "0.0.1",
+    "description": "GGIG project",
+    "author": "Kramarenko Konstantin kramarenko.konstantin@gmail.com",
+
+    "dependencies": {
+        "jquery": ">=2.1.3",
+        "requirejs": "jrburke/requirejs",
+        "jquery-validation": ">=1.13.1"
+    },
+
+    "devDependencies": {
+    },
+
+    "private": true
+}

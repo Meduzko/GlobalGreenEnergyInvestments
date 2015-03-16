@@ -5,9 +5,11 @@
   "author": "Kramarenko Konstantin kramarenko.konstantin@gmail.com",
 
   "dependencies": {
+    "bower": "*"
   },
 
   "devDependencies": {
+    "yo": "*",
     "gulp": "*",
     "gulp-csso": "*",
     "gulp-svgo": "*",
@@ -20,7 +22,8 @@
     "browser-sync": "*",
     "gulp-filter": "*",
     "gulp-svg2png": "*",
-    "gulp.spritesmith": "*"
+    "gulp.spritesmith": "*",
+    "del": "*"
   },
 
   "private": true

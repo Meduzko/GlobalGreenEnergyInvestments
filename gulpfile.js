@@ -10,13 +10,25 @@ var gulp = require('gulp'), // Сообственно Gulp JS
     spritesmith = require('gulp.spritesmith'),
     browserSync = require('browser-sync'),
     gulpFilter = require('gulp-filter'),
+    del = require('del'),
+    mainBowerFiles = require('main-bower-files'),
     assetsRoot = 'app/assets/',
-    publicRoot = 'public/',
-    vendorRoot = 'vendor/assets/';
+    publicRoot = 'public/';
+
 
 // Собираем JS
-gulp.task('js', function () {
-    gulp.src([assetsRoot + 'javascripts/*.js'])
+gulp.task('clean-js', function () {
+    return del(publicRoot + 'javascripts/**');
+});
+
+gulp.task('bower-to-public', ['clean-js'], function () {
+    return gulp.src(mainBowerFiles())
+        .pipe(uglify())
+        .pipe(gulp.dest(publicRoot + 'javascripts/vendors'));
+});
+
+gulp.task('js', ['bower-to-public'], function () {
+    return gulp.src([assetsRoot + 'javascripts/*.js'])
         .pipe(concat('index.js'))
         .pipe(uglify())
         .pipe(gulp.dest(publicRoot + 'javascripts'))
@@ -25,7 +37,12 @@ gulp.task('js', function () {
 
 
 // Собираем CSS
-gulp.task('css', function () {
+gulp.task('clean-css', function () {
+    return del(publicRoot + 'stylesheets/**');
+});
+
+gulp.task('css', ['clean-css'], function () {
+
     gulp.src([
         assetsRoot + 'stylesheets/reset.scss',
         assetsRoot + 'stylesheets/general.scss',
@@ -42,8 +59,24 @@ gulp.task('css', function () {
 });
 
 
+gulp.task('clean-fonts', function () {
+    return del(publicRoot + 'fonts/**');
+});
+
+gulp.task('fonts', ['clean-fonts'], function () {
+
+    gulp.src(assetsRoot + 'fonts/*')
+        .pipe(gulp.dest(publicRoot + 'fonts'));
+});
+
+
 // Копируем и минимизируем изображения
-gulp.task('images', function () {
+gulp.task('clean-images', function () {
+    return del(publicRoot + 'images/**');
+});
+
+gulp.task('images', ['clean-images'], function () {
+
     gulp.src([
         assetsRoot + 'images/**/*',
         assetsRoot + 'images/*',
@@ -77,48 +110,12 @@ gulp.task('svg-to-png', function () {
 });
 
 
-
-
-
-//Not working
-/*gulp.task('sprite', function () {
-
-    var spriteData = gulp.src(publicRoot + 'images/generated').pipe(spritesmith({
-            imgName: 'sprite.png',
-            cssName: 'sprite.css'
-        }));
-
-    spriteData.pipe(gulp.dest(publicRoot + 'images/sprites'));
-});*/
-
-
-gulp.task('fonts', function () {
-    gulp.src(assetsRoot + 'fonts/*')
-        .pipe(gulp.dest(publicRoot + 'fonts'));
-});
-
-
 gulp.task('browser-sync', function () {
     browserSync({
         proxy: "localhost:3000",
         notify: false,
         debugInfo: false
     });
-});
-
-
-gulp.task('add-vendors', function () {
-    gulp.src(vendorRoot + 'javascripts/*.js')
-        .pipe(uglify())
-        .pipe(gulp.dest(publicRoot + 'javascripts'));
-
-    gulp.src(vendorRoot + 'stylesheets/*.css')
-        .pipe(csso())
-        .pipe(gulp.dest(publicRoot + 'stylesheets'));
-
-    gulp.src(vendorRoot + 'images/*')
-        .pipe(imagemin())
-        .pipe(gulp.dest(publicRoot + 'images'));
 });
 
 

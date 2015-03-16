@@ -13,5 +13,6 @@
 /tmp
 .idea/*
 node_modules
+bower_components
 .rvmrc
 /public/*
