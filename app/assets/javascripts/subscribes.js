@@ -1,4 +1,4 @@
-$(function () {
+/*$(function () {
 
     $('#subscribe').click(function (e) {
 
@@ -28,4 +28,4 @@ $(function () {
             });
     });
 
-});
+});*/

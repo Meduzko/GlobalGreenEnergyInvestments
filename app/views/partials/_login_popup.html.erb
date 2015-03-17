@@ -1,4 +1,4 @@
-<div class="popup">
+<div class="popup" id="loginPopup">
 
   <div class="fog"></div>
   <div class="popup-body">
@@ -33,6 +33,17 @@
       <% end %>
 
       <%#= render 'devise/shared/links' %>
+
+      <form action="">
+        <div class="field">
+          <label for="email"></label>
+          <input type="email" name="email"/>
+        </div>
+        <div class="field">
+          <label for="password"></label>
+          <input type="password" name="password"/>
+        </div>
+      </form>
 
 
     </div>

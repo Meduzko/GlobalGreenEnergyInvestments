@@ -1,7 +1,7 @@
 <header>
 
   <div class="header-block">
-    <nav>
+    <nav data-jscomp="components/mobileMenu">
 
       <span class="icon-menu menu-control" id="siteLinksControl"></span>
       <ul class="site-links" id="siteLinks">
@@ -16,9 +16,10 @@
         <li class="login-link">
           <% if current_user %>
             <%= link_to "Hello, #{current_user.first_name}!", new_user_session_path %>
-            <%= link_to 'Logout', destroy_user_session_path %>    
+            <%= link_to 'Logout', destroy_user_session_path %>
           <% else %>
-            <%= link_to I18n.t(:menu_login), new_user_session_path %>
+            <%#= link_to I18n.t(:menu_login), new_user_session_path %>
+            <a href="#loginPopup" class="popup-link"><%= I18n.t(:menu_login) %></a>
           <% end %>
         </li>
       </ul>

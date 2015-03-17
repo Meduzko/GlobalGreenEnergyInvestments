@@ -18,23 +18,38 @@ var gulp = require('gulp'), // Сообственно Gulp JS
 
 // Собираем JS
 gulp.task('clean-js', function () {
-    return del(publicRoot + 'javascripts/**');
+    return del([publicRoot + 'javascripts/*.js']);
 });
 
-gulp.task('bower-to-public', ['clean-js'], function () {
+gulp.task('bower-to-public', function () {
     return gulp.src(mainBowerFiles())
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest(publicRoot + 'javascripts/vendors'));
 });
 
-gulp.task('js', ['bower-to-public'], function () {
-    return gulp.src([assetsRoot + 'javascripts/*.js'])
+gulp.task('js', ['clean-js'], function () {
+    return gulp.src([
+        publicRoot + 'javascripts/vendors/require.js',
+        assetsRoot + 'javascripts/requireConfig.js',
+        assetsRoot + 'javascripts/compSupport.js',
+        assetsRoot + 'javascripts/*.js',
+        assetsRoot + 'javascripts/index.js'
+    ])
+        .pipe(gulpFilter(['*', '!components']))
         .pipe(concat('index.js'))
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest(publicRoot + 'javascripts'))
         .pipe(browserSync.reload({stream: true}));
 });
 
+gulp.task('js-components', function () {
+    return gulp.src([
+        assetsRoot + 'javascripts/components/*.js'
+    ])
+        .pipe(uglify())
+        .pipe(gulp.dest(publicRoot + 'javascripts/components'))
+        .pipe(browserSync.reload({stream: true}));
+});
 
 // Собираем CSS
 gulp.task('clean-css', function () {
@@ -119,11 +134,12 @@ gulp.task('browser-sync', function () {
 });
 
 
-gulp.task('build', ['images', 'svg-optimization', 'svg-sprites', 'js', 'css', 'fonts']);
+gulp.task('build', ['images', 'svg-optimization', 'svg-sprites', 'js', 'js-components', 'bower-to-public', 'css', 'fonts']);
 
 
-gulp.task('watch', ['images', 'js', 'css', 'browser-sync'], function () {
+gulp.task('watch', ['images', 'js', 'js-components', 'css', 'browser-sync'], function () {
     gulp.watch(assetsRoot + 'javascripts/*.js', ['js']);
+    gulp.watch(assetsRoot + 'javascripts/components/*.js', ['js-components']);
     gulp.watch(assetsRoot + 'images/*', ['images']);
     gulp.watch(assetsRoot + 'stylesheets/*.scss', ['css']);
     gulp.watch(assetsRoot + 'fonts/*', ['fonts']);
