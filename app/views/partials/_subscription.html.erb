@@ -12,17 +12,19 @@
     </div>
     <div class="message-box"></div>
 
-    <input name="subscribe[name]"
-           type="text"
-           class="default-input"
-           placeholder="<%= I18n.t(:subscr_name_field) %>"
-           required="true"/>
+    <div>
+      <input name="subscribe[name]"
+             type="text"
+             class="default-input"
+             placeholder="<%= I18n.t(:subscr_name_field) %>"
+             required="true"/>
 
-    <input name="subscribe[email]"
-           type="email"
-           class="default-input"
-           placeholder="<%= I18n.t(:subscr_email_field) %>"
-           required="true"/>
+      <input name="subscribe[email]"
+             type="email"
+             class="default-input"
+             placeholder="<%= I18n.t(:subscr_email_field) %>"
+             required="true"/>
+    </div>
 
     <input type="submit" class="default-btn" value="Stay informed" id="subscribe"/>
   </form>
