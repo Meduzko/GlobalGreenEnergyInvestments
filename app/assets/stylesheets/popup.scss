@@ -21,10 +21,59 @@
 
     .popup-body {
         background-color: $light-grey6;
+        margin-left: -350px;
         position: absolute;
-        top: 30%;
+        top: 20%;
         left: 50%;
-        margin-left: -250px;
-        width: 500px;
+        width: 700px;
+        form {
+            padding: 0 50px;
+            text-align: center;
+            .default-input {
+                width: 37%
+            }
+            .default-btn {
+                padding-left: 75px;
+                padding-right: 75px;
+                margin: 30px 0 50px 0;
+            }
+        }
+    }
+
+    .popup-title {
+        font-size: 48px;
+        font-weight: bold;
+        padding: 50px 0 80px 0;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .popup-close {
+        cursor: pointer;
+        color: $light-grey7;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        &:hover {
+            color: $light-grey1;
+        }
+    }
+
+    .popup-additional {
+        background-color: $white;
+        padding: 40px 100px 50px;
+        text-align: center;
+        a {
+            color: $blue-green;
+            font-size: 18px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            &:hover {
+                color: $blue;
+            }
+        }
+        .default-text {
+            padding: 0 0 20px 0;
+        }
     }
 }

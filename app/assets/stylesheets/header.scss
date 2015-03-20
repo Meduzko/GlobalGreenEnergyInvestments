@@ -32,10 +32,11 @@ header {
         li {
             display: inline-block;
             list-style-type: none;
-            a {
+            a, span {
                 border-top: 4px solid transparent;
                 display: inline-block;
                 color: $grey;
+                cursor: pointer;
                 font-size: 16px;
                 font-weight: 900;
                 height: 56px;
@@ -48,7 +49,7 @@ header {
                     color: $blue;
                 }
             }
-            &.active a {
+            &.active a, &.active span {
                 border-top: 4px solid $blue;
                 color: $blue;
             }
@@ -70,7 +71,7 @@ header {
                     color: $blue;
                 }
             }
-            li.login-link a {
+            li.login-link span {
                 color: $blue-green;
                 &:hover {
                     border-color: $blue-green;

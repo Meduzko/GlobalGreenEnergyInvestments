@@ -4,10 +4,28 @@ define(['jquery'], function ($) {
 
     return {
         init: function (domId, config) {
-            $('#' + domId + ' .menu-control').click(function () {
-                $(this).next().slideDown(300);
-            });
+            this.domId = $('#' + domId);
+        },
+
+
+        resetState: function () {
+            $('.mobileMenu span').removeClass('icon-cancel');
+            $('.mobileMenu ul').slideUp(100);
+        },
+
+        handleMenu: function (control) {
+            console.log(control);
+            if ($(control).hasClass('icon-cancel')){
+                this.resetState();
+            } else {
+                this.resetState();
+                this.domId.find('.menu-control').addClass('icon-cancel');
+                this.domId.find('ul').slideDown(300);
+            }
+
+
         }
+
     }
 
 });

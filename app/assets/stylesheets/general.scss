@@ -34,6 +34,10 @@
     font-style: normal;
 }
 
+.icon-font {
+    font-family: 'icon_font';
+}
+
 .icon-facebook:before {
     content: '\e800';
 }
@@ -128,10 +132,29 @@ a {
     }
 }
 
+.default-input {
+    border: 1px solid $light-grey4;
+    background-color: $white;
+    color: $grey;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 11px;
+    padding: 19px;
+    text-transform: uppercase;
+    width: 260px;
+    @include box-shadow(0, 0, 24px, rgba(0, 0, 0, 0.15));
+    @include border-radius(5px);
+    &:focus {
+        outline: 0;
+        outline-offset: 0;
+        border-color: $light-grey3;
+    }
+}
+
 .default-btn {
     border: 3px solid $blue-green;
     background-color: $blue-green;
-    display: block;
+    display: inline-block;
     color: $white;
     cursor: pointer;
     font-size: 16px;
@@ -145,5 +168,13 @@ a {
         background-color: $white;
         color: $blue-green;
         outline: none;
+    }
+}
+
+.primary-btn {
+    border-color: $blue;
+    background-color: $blue;
+    &:hover, &:focus {
+        color: $blue;
     }
 }

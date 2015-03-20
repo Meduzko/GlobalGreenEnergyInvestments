@@ -3076,17 +3076,6 @@ function NinjaSlider(e) {
     }
 }
 
-/*$(function () {
-    $('.popup-link').click(function () {
-        var popupId = $(this).attr('href');
-        $(popupId).fadeIn(300);
-    });
-
-    $('.popup-close').click(function () {
-
-    });
-});*/
-
 window.load = function () {
     var canvas = document.getElementsByClassName("canvas-statistic");
 

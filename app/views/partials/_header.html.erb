@@ -1,28 +1,32 @@
 <header>
 
   <div class="header-block">
-    <nav data-jscomp="components/mobileMenu">
+    <nav>
 
-      <span class="icon-menu menu-control" id="siteLinksControl"></span>
-      <ul class="site-links" id="siteLinks">
-        <li><a href="#"><%= I18n.t(:menu_idea) %></a></li>
-        <li><a href="#"><%= I18n.t(:menu_invest) %></a></li>
-        <li class="active"><a href="#"><%= I18n.t(:menu_about) %></a></li>
-        <li><a href="#"><%= I18n.t(:menu_contact) %></a></li>
-      </ul>
+      <div data-jscomp="components/mobileMenu">
+        <span class="icon-menu menu-control" onclick="compSupport.callFunc(this, 'handleMenu', [this])"></span>
+        <ul class="site-links">
+          <li><a href="#"><%= I18n.t(:menu_idea) %></a></li>
+          <li><a href="#"><%= I18n.t(:menu_invest) %></a></li>
+          <li class="active"><a href="#"><%= I18n.t(:menu_about) %></a></li>
+          <li><a href="#"><%= I18n.t(:menu_contact) %></a></li>
+        </ul>
+      </div>
 
-      <span class="icon-menu menu-control auth-menu-control" id="authLinksControl"></span>
-      <ul class="auth-links" id="authLinks">
-        <li class="login-link">
-          <% if current_user %>
-            <%= link_to "Hello, #{current_user.first_name}!", new_user_session_path %>
-            <%= link_to 'Logout', destroy_user_session_path %>
-          <% else %>
-            <%#= link_to I18n.t(:menu_login), new_user_session_path %>
-            <a href="#loginPopup" class="popup-link"><%= I18n.t(:menu_login) %></a>
-          <% end %>
-        </li>
-      </ul>
+      <div data-jscomp="components/mobileMenu">
+        <span class="icon-menu menu-control auth-menu-control" onclick="compSupport.callFunc(this, 'handleMenu', [this])"></span>
+        <ul class="auth-links">
+          <li class="login-link">
+            <% if current_user %>
+              <%= link_to "Hello, #{current_user.first_name}!", new_user_session_path %>
+              <%= link_to 'Logout', destroy_user_session_path %>
+            <% else %>
+              <%#= link_to I18n.t(:menu_login), new_user_session_path %>
+              <span onclick="compSupport.callFunc('#loginPopup', 'show')" class="popup-link"><%= I18n.t(:menu_login) %></span>
+            <% end %>
+          </li>
+        </ul>
+      </div>
 
     </nav>
 
@@ -32,7 +36,6 @@
       </object>
       <span><i></i></span>
     </a>
-
 
   </div>
 

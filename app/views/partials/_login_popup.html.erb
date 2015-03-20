@@ -1,50 +1,58 @@
-<div class="popup" id="loginPopup">
+<div class="popup" id="loginPopup" data-jscomp="components/popup">
 
-  <div class="fog"></div>
+  <div class="fog" onclick="compSupport.callFunc(this, 'hide')"></div>
   <div class="popup-body">
-    <span class="popup-close">X</span>
+    <span class="popup-close icon-font icon-cancel" onclick="compSupport.callFunc(this, 'hide')"></span>
 
     <div class="popup-title">Enter site</div>
     <div class="popup-content">
 
       <% if false %>
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-              <div class="field">
-                <%= f.label :email %><br/>
-                <%= f.email_field :email, autofocus: true %>
-              </div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.label :email %><br/>
+            <%= f.email_field :email, autofocus: true %>
+          </div>
 
-              <div class="field">
-                <%= f.label :password %><br/>
-                <%= f.password_field :password, autocomplete: 'off' %>
-              </div>
+          <div class="field">
+            <%= f.label :password %><br/>
+            <%= f.password_field :password, autocomplete: 'off' %>
+          </div>
 
-              <% if devise_mapping.rememberable? -%>
-                  <div class="field">
-                    <%= f.check_box :remember_me %>
-                    <%= f.label :remember_me %>
-                  </div>
-              <% end -%>
+          <% if devise_mapping.rememberable? -%>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end -%>
 
-              <div class="actions">
-                <%= f.submit 'Log in' %>
-              </div>
-          <% end %>
+          <div class="actions">
+            <%= f.submit 'Log in' %>
+          </div>
+        <% end %>
       <% end %>
 
       <%#= render 'devise/shared/links' %>
 
       <form action="">
-        <div class="field">
-          <label for="email"></label>
-          <input type="email" name="email"/>
-        </div>
-        <div class="field">
-          <label for="password"></label>
-          <input type="password" name="password"/>
-        </div>
+        <input type="email"
+               class="default-input"
+               placeholder="email"
+               name="email"
+               required="true" />
+        <input type="password"
+               class="default-input"
+               placeholder="password"
+               name="password"
+               required="true" />
+        <input type="submit" class="default-btn primary-btn" value="Log in"/>
       </form>
 
+
+      <div class="popup-additional">
+        <p class="default-text"><%= I18n.t(:login_popop_text).html_safe %></p>
+        <a href="/users/sign_up">Register now</a>
+      </div>
 
     </div>
   </div>

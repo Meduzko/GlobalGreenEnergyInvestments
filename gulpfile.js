@@ -62,7 +62,7 @@ gulp.task('css', ['clean-css'], function () {
         assetsRoot + 'stylesheets/reset.scss',
         assetsRoot + 'stylesheets/general.scss',
         assetsRoot + 'stylesheets/ninja_slider.scss',
-        assetsRoot + 'stylesheets/*.scss',
+        assetsRoot + 'stylesheets/!(media_queries)*.scss',
         assetsRoot + 'stylesheets/media_queries.scss'
     ])
         .pipe(gulpFilter(['*', '!active_admin.css.scss']))

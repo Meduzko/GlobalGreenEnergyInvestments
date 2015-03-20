@@ -8,19 +8,6 @@
         padding: 26px 50px 36px;
         position: relative;
         text-align: center;
-        input[type='text'], input[type='email'] {
-            border: 0;
-            background-color: $white;
-            color: $grey;
-            font-size: 16px;
-            font-weight: bold;
-            margin: 0 11px;
-            padding: 19px;
-            text-transform: uppercase;
-            width: 260px;
-            @include box-shadow(0, 0, 24px, rgba(0, 0, 0, 0.15));
-            @include border-radius(5px);
-        }
         .default-btn {
             margin: 30px auto 0;
             padding: 16px 90px;

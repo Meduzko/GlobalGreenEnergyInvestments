@@ -27,6 +27,15 @@
         }
     }
 
+    header {
+        nav {
+            ul {
+                display: inline-block !important;
+            }
+
+        }
+    }
+
 }
 
 @media all and (max-width: 1024px) {
@@ -79,7 +88,7 @@
     header {
         nav, .auth-links {
             li {
-                a {
+                a, span {
                     font-size: 12px;
                     padding: 33px 5px 0;
                 }
@@ -106,8 +115,8 @@
     .subscription {
         form {
             input[type='text'], input[type='email'] {
-                margin: 0 5px;
-                width: 35%;
+                margin: 5px;
+                width: auto;
             }
         }
     }
@@ -120,8 +129,10 @@
             width: 100%;
             @include box-shadow(0, 0, 10px, rgba(0, 0, 0, 0.5));
 
-            ul, ul.auth-links {
+            ul, ul.auth-links, ul.site-links {
                 display: none;
+                padding-left: 0;
+                padding-right: 0;
                 position: relative;
                 top: 93px;
                 z-index: 2;
@@ -133,14 +144,14 @@
 
             li {
                 display: block;
-                a {
+                a, span {
                     display: block;
                     font-size: 30px !important;
                     font-weight: bold !important;
                     padding: 20px 0 15px 0 !important;
                     text-align: center;
                 }
-                &.active a, a:hover {
+                &.active a, a:hover, &.active span, span:hover {
                     border-color: transparent !important;
                     color: $grey;
                 }
@@ -159,9 +170,6 @@
                 left: auto;
                 right: 30px;
             }
-            .opened:before {
-                content: '\e80d';
-            }
         }
         .logo {
             span {
@@ -169,6 +177,24 @@
                     //display: none;
                 }
             }
+        }
+    }
+
+    .popup {
+        .popup-body {
+            margin-left: 0;
+            left: 0;
+            top: 50px;
+            width: 100%;
+            form {
+                .default-input {
+                    margin: 5px 0;
+                    width: auto;
+                }
+            }
+        }
+        .popup-title {
+            padding: 30px 0 20px 0;
         }
     }
 }
