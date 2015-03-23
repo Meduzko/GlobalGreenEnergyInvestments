@@ -24,7 +24,7 @@ gulp.task('bower-to-public', function () {
         .pipe(gulp.dest(publicRoot + 'javascripts/vendors'));
 });
 
-gulp.task('js', function () {
+gulp.task('js', ['bower-to-public'], function () {
     return gulp.src([
         publicRoot + 'javascripts/vendors/require.js',
         assetsRoot + 'javascripts/requireConfig.js',
@@ -126,7 +126,7 @@ gulp.task('clean', function () {
 
 gulp.task('build', function(callback) {
     runSequence('clean',
-        ['images', 'svg-optimization', 'js', 'js-components', 'bower-to-public', 'css', 'fonts'],
+        ['images', 'svg-optimization', 'js', 'js-components', 'css', 'fonts'],
         callback);
 });
 
