@@ -10,6 +10,7 @@ var gulp = require('gulp'), // Сообственно Gulp JS
     spritesmith = require('gulp.spritesmith'),
     browserSync = require('browser-sync'),
     gulpFilter = require('gulp-filter'),
+    runSequence = require('run-sequence');
     del = require('del'),
     mainBowerFiles = require('main-bower-files'),
     assetsRoot = 'app/assets/',
@@ -17,17 +18,13 @@ var gulp = require('gulp'), // Сообственно Gulp JS
 
 
 // Собираем JS
-gulp.task('clean-js', function () {
-    return del([publicRoot + 'javascripts/*.js']);
-});
-
 gulp.task('bower-to-public', function () {
     return gulp.src(mainBowerFiles())
         //.pipe(uglify())
         .pipe(gulp.dest(publicRoot + 'javascripts/vendors'));
 });
 
-gulp.task('js', ['clean-js'], function () {
+gulp.task('js', function () {
     return gulp.src([
         publicRoot + 'javascripts/vendors/require.js',
         assetsRoot + 'javascripts/requireConfig.js',
@@ -52,11 +49,7 @@ gulp.task('js-components', function () {
 });
 
 // Собираем CSS
-gulp.task('clean-css', function () {
-    return del(publicRoot + 'stylesheets/**');
-});
-
-gulp.task('css', ['clean-css'], function () {
+gulp.task('css', function () {
 
     gulp.src([
         assetsRoot + 'stylesheets/reset.scss',
@@ -74,11 +67,7 @@ gulp.task('css', ['clean-css'], function () {
 });
 
 
-gulp.task('clean-fonts', function () {
-    return del(publicRoot + 'fonts/**');
-});
-
-gulp.task('fonts', ['clean-fonts'], function () {
+gulp.task('fonts', function () {
 
     gulp.src(assetsRoot + 'fonts/*')
         .pipe(gulp.dest(publicRoot + 'fonts'));
@@ -86,11 +75,7 @@ gulp.task('fonts', ['clean-fonts'], function () {
 
 
 // Копируем и минимизируем изображения
-gulp.task('clean-images', function () {
-    return del(publicRoot + 'images/**');
-});
-
-gulp.task('images', ['clean-images'], function () {
+gulp.task('images', function () {
 
     gulp.src([
         assetsRoot + 'images/**/*',
@@ -104,18 +89,18 @@ gulp.task('images', ['clean-images'], function () {
 
 
 gulp.task('svg-optimization', function () {
-    gulp.src(assetsRoot + 'images/*.svg')
+    gulp.src(assetsRoot + 'images/svg/*.svg')
         .pipe(svgo())
         .pipe(gulp.dest(publicRoot + 'images'));
 });
 
 
-gulp.task('svg-sprites', function () {
-    return gulp.src(assetsRoot + 'images/svg/*.svg')
+/*gulp.task('svg-sprites', function () {
+    return gulp.src(assetsRoot + 'images/svg*//*.svg')
         .pipe(svgSprite())
         .pipe(svgo())
         .pipe(gulp.dest(publicRoot + 'images'));
-});
+});*/
 
 
 gulp.task('svg-to-png', function () {
@@ -134,7 +119,16 @@ gulp.task('browser-sync', function () {
 });
 
 
-gulp.task('build', ['images', 'svg-optimization', 'svg-sprites', 'js', 'js-components', 'bower-to-public', 'css', 'fonts']);
+gulp.task('clean', function () {
+    return del(publicRoot + 'public/**');
+});
+
+
+gulp.task('build', function(callback) {
+    runSequence('clean',
+        ['images', 'svg-optimization', 'js', 'js-components', 'bower-to-public', 'css', 'fonts'],
+        callback);
+});
 
 
 gulp.task('watch', ['images', 'js', 'js-components', 'css', 'browser-sync'], function () {

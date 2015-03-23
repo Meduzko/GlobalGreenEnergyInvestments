@@ -23,6 +23,7 @@
     "gulp-filter": "*",
     "gulp-svg2png": "*",
     "gulp.spritesmith": "*",
+    "run-sequence": "*",
     "del": "*"
   },
 
