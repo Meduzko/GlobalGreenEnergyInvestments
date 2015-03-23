@@ -14,8 +14,9 @@
         },
 
         "paths": {
-            "jquery": ["//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min", "/vendors/jquery"],
-            "jquery.validator": "/vendors/jquery.validator"
+            "jquery": ["//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min", "vendors/jquery"],
+            "jquery.validate": "vendors/jquery.validate"
+            //"ninjaSlider": "vendors/jquery.validate"
         },
 
         "shim": {

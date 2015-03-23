@@ -1,9 +1,9 @@
-<section class="subscription">
+<section class="subscription" id="subscription" data-jscomp="components/subscribes">
   <h2><%= I18n.t(:subscr_title) %></h2>
 
   <p class="default-text"><%= I18n.t(:subscr_text) %></p>
 
-  <form action="#" id="subscribeForm">
+  <form action="#" id="subscribeForm" data-jscomp="components/validator">
 
     <div class="updating-layer">
       <object data="../images/svg/spinner.svg" type="image/svg+xml">
@@ -17,15 +17,19 @@
              type="text"
              class="default-input"
              placeholder="<%= I18n.t(:subscr_name_field) %>"
-             required="true"/>
+             required />
 
       <input name="subscribe[email]"
              type="email"
              class="default-input"
              placeholder="<%= I18n.t(:subscr_email_field) %>"
-             required="true"/>
+             required />
     </div>
 
-    <input type="submit" class="default-btn" value="Stay informed" id="subscribe"/>
+    <input type="submit"
+           class="default-btn"
+           value="Stay informed"
+           id="subscribe"
+           onclick="compSupport.callFunc('#subscription', 'sendForm')" />
   </form>
 </section>

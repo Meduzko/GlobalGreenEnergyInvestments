@@ -5,6 +5,9 @@
   <p class="default-text"><%= I18n.t(:latest_project_text) %></p>
 
   <div class="ninja-slider" id='ninjaProjectsSlider'>
+    <!--<div class="ninja-slider"
+         data-jscomp="components/slider"
+         data-jscomp-config='{"aspectRatio": "1600:730"}'>-->
     <ul>
       <li>
         <div data-image="/images/projects/1/project_slide_1.jpg">
@@ -20,7 +23,11 @@
                 1%
                 <i>IRR</i>
               </span>
-              <canvas data-percentage="1" class="canvas-statistic" width="100" height="100"></canvas>
+              <canvas data-jscomp="components/projectStatistic"
+                      data-percentage="1"
+                      class="canvas-statistic"
+                      width="100"
+                      height="100"></canvas>
             </div>
             <div class="project-price">
               560 000
@@ -46,7 +53,11 @@
                 20%
                 <i>IRR</i>
               </span>
-              <canvas data-percentage="20" class="canvas-statistic" width="100" height="100"></canvas>
+              <canvas data-jscomp="components/projectStatistic"
+                      data-percentage="20"
+                      class="canvas-statistic"
+                      width="100"
+                      height="100"></canvas>
             </div>
             <div class="project-price">
               9 990 000
@@ -72,7 +83,11 @@
                 37%
                 <i>IRR</i>
               </span>
-              <canvas data-percentage="37" class="canvas-statistic" width="100" height="100"></canvas>
+              <canvas data-jscomp="components/projectStatistic"
+                      data-percentage="37"
+                      class="canvas-statistic"
+                      width="100"
+                      height="100"></canvas>
             </div>
             <div class="project-price">
               350 000

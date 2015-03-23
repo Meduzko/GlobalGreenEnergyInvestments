@@ -33,8 +33,9 @@ gulp.task('js', ['bower-to-public'], function () {
         assetsRoot + 'javascripts/index.js'
     ])
         .pipe(gulpFilter(['*', '!components']))
+        //.pipe(gulpFilter(['*', '!components', '!ninja_slider.js']))
         .pipe(concat('index.js'))
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest(publicRoot + 'javascripts'))
         .pipe(browserSync.reload({stream: true}));
 });
@@ -88,6 +89,12 @@ gulp.task('images', function () {
 });
 
 
+gulp.task('static', function () {
+    gulp.src(assetsRoot + 'static/*')
+        .pipe(gulp.dest(publicRoot));
+});
+
+
 gulp.task('svg-optimization', function () {
     gulp.src(assetsRoot + 'images/svg/*.svg')
         .pipe(svgo())
@@ -126,7 +133,7 @@ gulp.task('clean', function () {
 
 gulp.task('build', function(callback) {
     runSequence('clean',
-        ['images', 'svg-optimization', 'js', 'js-components', 'css', 'fonts'],
+        ['images', 'svg-optimization', 'js', 'js-components', 'css', 'fonts', 'static'],
         callback);
 });
 
