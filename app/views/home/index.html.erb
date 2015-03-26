@@ -1,37 +1,37 @@
-<section class="main-slider">
-  <div class="ninja-slider" id='ninjaSlider'>
-    <!--<div class="ninja-slider" data-jscomp="components/slider" data-jscomp-config='{"aspectRatio": "1550:683"}'>-->
-    <ul>
-      <li>
-        <div data-image="/images/slider/slide_11.jpg">
-          <div class="slider-content">
-            <h1><%= I18n.t(:title_main) %><span><%= I18n.t(:subtitle_main) %></span></h1>
-            <hr/>
-            <p><%= I18n.t(:main_slider_text_1).html_safe %></p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div data-image="/images/slider/slide_22.jpg">
-          <div class="slider-content">
-            <h1><%= I18n.t(:title_main) %><span><%= I18n.t(:subtitle_main) %></span></h1>
-            <hr/>
-            <p><%= I18n.t(:main_slider_text_2).html_safe %></p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div data-image="/images/slider/slide_33.jpg">
-          <div class="slider-content">
-            <h1><%= I18n.t(:title_main) %><span><%= I18n.t(:subtitle_main) %></span></h1>
-            <hr/>
-            <p><%= I18n.t(:main_slider_text_3).html_safe %></p>
-          </div>
-        </div>
-      </li>
-    </ul>
+<section class="main-slider swiper-container" data-jscomp="components/slider">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" style="background-image:url('/images/slider/slide_11.jpg')">
+      <div class="slider-content">
+        <h1><%= I18n.t(:title_main) %><span><%= I18n.t(:subtitle_main) %></span></h1>
+        <hr/>
+        <p><%= I18n.t(:main_slider_text_1).html_safe %></p>
+      </div>
+    </div>
+    <div class="swiper-slide" style="background-image:url('/images/slider/slide_22.jpg')">
+      <div class="slider-content">
+        <h1><%= I18n.t(:title_main) %><span><%= I18n.t(:subtitle_main) %></span></h1>
+        <hr/>
+        <p><%= I18n.t(:main_slider_text_2).html_safe %></p>
+      </div>
+    </div>
+    <div class="swiper-slide" style="background-image:url('/images/slider/slide_33.jpg')">
+      <div class="slider-content">
+        <h1><%= I18n.t(:title_main) %><span><%= I18n.t(:subtitle_main) %></span></h1>
+        <hr/>
+        <p><%= I18n.t(:main_slider_text_3).html_safe %></p>
+      </div>
+    </div>
   </div>
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <!--
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  -->
 </section>
+
+
 
 <main>
 
@@ -124,7 +124,7 @@
   <%= render 'partials/subscription' %>
 
   <% content_for :popups do %>
-      <%= render 'partials/login_popup' %>
+    <%= render 'partials/login_popup' %>
   <% end %>
 
 </main>
