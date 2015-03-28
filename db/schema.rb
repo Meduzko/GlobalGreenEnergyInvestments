@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311213033) do
+ActiveRecord::Schema.define(version: 20150328200847) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -30,6 +30,70 @@ ActiveRecord::Schema.define(version: 20150311213033) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",    limit: 255, null: false
+    t.string   "data_content_type", limit: 255
+    t.integer  "data_file_size",    limit: 4
+    t.integer  "assetable_id",      limit: 4
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width",             limit: 4
+    t.integer  "height",            limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "page_tabs", force: :cascade do |t|
+    t.integer  "page_id",     limit: 4
+    t.string   "tab_name",    limit: 255
+    t.integer  "position",    limit: 4,     default: 1
+    t.text     "description", limit: 65535
+    t.boolean  "status",      limit: 1,     default: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string   "name",       limit: 255,                 null: false
+    t.string   "slug",       limit: 255
+    t.boolean  "status",     limit: 1,   default: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+  end
+
+  add_index "pages", ["slug"], name: "index_pages_on_slug", unique: true, using: :btree
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "user_id",           limit: 4
+    t.string   "phone",             limit: 255
+    t.date     "date_of_birthday"
+    t.string   "country",           limit: 255
+    t.string   "address_street",    limit: 255
+    t.string   "address_num_house", limit: 255
+    t.string   "address_city",      limit: 255
+    t.integer  "adress_zip_code",   limit: 4
+    t.string   "bank_account_name", limit: 255
+    t.string   "bank_iban_code",    limit: 255
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  create_table "rich_rich_files", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "rich_file_file_name",    limit: 255
+    t.string   "rich_file_content_type", limit: 255
+    t.integer  "rich_file_file_size",    limit: 4
+    t.datetime "rich_file_updated_at"
+    t.string   "owner_type",             limit: 255
+    t.integer  "owner_id",               limit: 4
+    t.text     "uri_cache",              limit: 65535
+    t.string   "simplified_type",        limit: 255,   default: "file"
+  end
 
   create_table "subscribes", force: :cascade do |t|
     t.string   "name",          limit: 255

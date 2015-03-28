@@ -1,0 +1,22 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div align="center">
+  <h2><%= @page.name %></h2>
+  <div class="tabs">
+    <% @tabs.each_with_index do |tab, index| %>
+      <span><%= tab.tab_name %></span> | 
+      <div <%= "style='display:none'".html_safe if index > 0 %>>
+        <%= tab.description.html_safe %>
+      </div>
+    <% end %>
+  </div>
+</div>
+  
+  <% # don't remove this - need for another view %>
+  <%#= form_for root_path do |f| %>
+    <%#= f.country_select :country, ["NL"] %>
+  <%# end %>

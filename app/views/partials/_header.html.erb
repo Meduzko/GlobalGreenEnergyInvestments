@@ -6,10 +6,10 @@
       <div data-jscomp="components/mobileMenu">
         <span class="icon-menu menu-control" onclick="compSupport.callFunc(this, 'handleMenu', [this])"></span>
         <ul class="site-links">
-          <li><a href="#"><%= I18n.t(:menu_idea) %></a></li>
-          <li><a href="#"><%= I18n.t(:menu_invest) %></a></li>
-          <li class="active"><a href="#"><%= I18n.t(:menu_about) %></a></li>
-          <li><a href="#"><%= I18n.t(:menu_contact) %></a></li>
+          <%= nav_link I18n.t(:menu_idea), pages_path('idea') %>
+          <%= nav_link I18n.t(:menu_invest), pages_path('invest') %>
+          <%= nav_link I18n.t(:menu_about), pages_path('about') %>
+          <%= nav_link I18n.t(:menu_contact), pages_path('contact') %>
         </ul>
       </div>
 
@@ -18,7 +18,7 @@
         <ul class="auth-links">
           <li class="login-link">
             <% if current_user %>
-              <%= link_to "Hello, #{current_user.first_name}!", new_user_session_path %>
+              <%= link_to "Hello, #{current_user.first_name}!", edit_user_password_path %>
               <%= link_to 'Logout', destroy_user_session_path %>
             <% else %>
               <%#= link_to I18n.t(:menu_login), new_user_session_path %>

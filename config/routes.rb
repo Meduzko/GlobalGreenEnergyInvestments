@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, :controllers => { registrations: 'registrations' }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -8,4 +9,5 @@ Rails.application.routes.draw do
       get :confirmation
     end
   end
+  get ':slug' => 'pages#show',  :as => :pages
 end
