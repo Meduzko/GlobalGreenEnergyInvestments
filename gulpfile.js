@@ -20,7 +20,7 @@ var gulp = require('gulp'), // Сообственно Gulp JS
 // Собираем JS
 gulp.task('bower-to-public', function () {
     return gulp.src(mainBowerFiles())
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest(publicRoot + 'javascripts/vendors'));
 });
 
@@ -33,7 +33,6 @@ gulp.task('js', ['bower-to-public'], function () {
         assetsRoot + 'javascripts/index.js'
     ])
         .pipe(gulpFilter(['*', '!components']))
-        //.pipe(gulpFilter(['*', '!components', '!ninja_slider.js']))
         .pipe(concat('index.js'))
         .pipe(uglify())
         .pipe(gulp.dest(publicRoot + 'javascripts'))
