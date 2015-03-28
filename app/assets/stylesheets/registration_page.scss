@@ -1,0 +1,42 @@
+@import "variables";
+@import "mixins";
+
+.registration-page {
+    margin: 0 auto;
+
+    .default-text {
+        padding-top: 30px;
+        padding-bottom: 60px;
+    }
+
+    form {
+        .field {
+            margin: 50px 0;
+            position: relative;
+            text-align: center;
+        }
+        .default-label {
+            text-align: left;
+            width: 15%;
+        }
+        .default-input {
+            width: 30%;
+        }
+        .actions {
+            text-align: center;
+        }
+        .default-btn {
+            padding: 16px 120px;
+        }
+        hr {
+            border: 1px solid $light-grey2;
+            border-bottom: 0;
+            margin: 60px 0;
+        }
+        label.error {
+            text-align: left;
+            position: absolute;
+            top: 38%;
+        }
+    }
+}

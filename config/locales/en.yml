@@ -1,4 +1,9 @@
 en:
+
+  #Validation messages:
+  error_required: This field is required
+  error_email: Please enter a valid email address.
+
   # subscription locates
   sbsr_email_format: is not looking good
   sbsr_message_success: Thank you for your subscription! You need confirm you email for activation subscription.
@@ -69,3 +74,7 @@ en:
   main_phone: 0 880 444 555
   main_email: "info@ggig.com"
   copyright: "© Global Green Investment Group, 2015"
+
+  #Registration page
+  registr_title: Registration
+  registr_official_label: (Official)

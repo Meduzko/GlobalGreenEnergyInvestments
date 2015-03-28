@@ -55,7 +55,7 @@ gulp.task('css', function () {
     gulp.src([
         assetsRoot + 'stylesheets/reset.scss',
         assetsRoot + 'stylesheets/general.scss',
-        assetsRoot + 'stylesheets/ninja_slider.scss',
+        assetsRoot + 'stylesheets/swiper.scss',
         assetsRoot + 'stylesheets/!(media_queries)*.scss',
         assetsRoot + 'stylesheets/media_queries.scss'
     ])

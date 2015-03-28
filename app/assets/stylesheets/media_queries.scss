@@ -99,6 +99,7 @@
 
     .main-slider {
         .slider-content {
+            padding: 12% 0;
             h1 {
                 font-size: 60px;
                 line-height: 68px;
@@ -197,6 +198,29 @@
             padding: 30px 0 20px 0;
         }
     }
+
+    .registration-page {
+        form {
+            .field {
+                padding: 0 20px;
+                text-align: left;
+            }
+            .default-label {
+                display: block;
+                padding: 0 0 15px 12px;
+                width: auto;
+            }
+            .default-input {
+                width: 90%;
+            }
+            label.error {
+                position: relative;
+                left: 15px;
+                top: 15px;
+            }
+        }
+    }
+
 }
 
 @media all and (max-width: 640px) {
@@ -215,8 +239,9 @@
 }
 
 @media all and (max-width: 1600px) {
-    .latest-projects {
-        #ninjaProjectsSlider-prev, #ninjaProjectsSlider-next {
+    .projects-slider {
+        width: auto;
+        .swiper-button-prev, .swiper-button-next {
             display: none;
         }
     }
