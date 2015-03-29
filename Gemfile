@@ -26,3 +26,9 @@ group :development do
 	gem 'spring'
 end
 
+group :assets do
+  gem 'therubyracer'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+end
