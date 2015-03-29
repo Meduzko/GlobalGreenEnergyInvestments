@@ -1,0 +1,25 @@
+<div style="padding:50px;">
+<h2>Settings</h2>
+<br>
+<%= form_for root_path do |f| %>
+  
+  <%= f.label :first_name %>:
+  <%= f.text_field :first_name %><br />
+
+  <%= f.label :last_name %>:
+  <%= f.text_field :last_name %><br />
+
+  <%= f.label :email %>:
+  <%= f.text_field :email %><br />
+
+  
+
+  <br> Addition information:<br>
+
+  <%= f.label :date_of_birthday %>:
+  <%= f.date_select :date_of_birthday %><br />
+  <%= f.label :country %>:
+  <%= f.country_select :country, ["NL"] %>
+<% end %>
+
+</div>

@@ -9,5 +9,7 @@ Rails.application.routes.draw do
       get :confirmation
     end
   end
+  get 'profile' => 'profiles#edit', :as => :profile
   get ':slug' => 'pages#show',  :as => :pages
+  #resources 'profiles', only: [:create, :edit, :update]
 end
