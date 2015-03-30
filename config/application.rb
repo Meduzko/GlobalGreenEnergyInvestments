@@ -24,5 +24,6 @@ module GGIG
     config.active_record.raise_in_transactional_callbacks = true
 
     config.assets.enabled = false
+    config.assets.precompile += Ckeditor.assets
   end
 end
