@@ -57,7 +57,9 @@ en:
   key_values_growing: Growing
   key_values_growing_text: Join a growing community of people investing in green project
 
-  login_popop_text: "First time on the site and haven't account?<br>Please register to access to all projects and investments."
+  login_popop_title: Welcome
+  login_popop_text: "Please register to view more investment information"
+  login_popop_forgot_pswd: Forgot you password?
 
   #subscription
   subscr_title: Stay informed on new projects

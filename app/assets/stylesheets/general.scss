@@ -98,6 +98,10 @@
     content: '\e80e';
 }
 
+.icon-ok:before {
+    content: '\e80f';
+}
+
 body {
     background-color: $light-grey6;
     font-family: 'museo_sans_cyrl500';
@@ -112,6 +116,7 @@ h2 {
 a {
     color: $blue;
     text-decoration: none;
+    @include transition(color 0.3s ease-in-out, color 0.3s ease-in-out);
     &:hover {
         color: $blue-green;
     }
@@ -126,7 +131,7 @@ a {
     color: $blue;
     font-size: 42px;
     font-weight: 900;
-    letter-spacing: 10px;
+    letter-spacing: 28px;
     text-align: center;
     text-transform: uppercase;
 }

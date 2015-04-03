@@ -4,7 +4,7 @@
   <div class="popup-body">
     <span class="popup-close icon-font icon-cancel" onclick="compSupport.callFunc(this, 'hide')"></span>
 
-    <div class="popup-title">Enter site</div>
+    <div class="popup-title"><%= I18n.t(:login_popop_title) %></div>
     <div class="popup-content">
 
       <% if false %>
@@ -35,23 +35,32 @@
       <%#= render 'devise/shared/links' %>
 
       <form action="">
-        <input type="email"
-               class="default-input"
-               placeholder="email"
-               name="email"
-               required="true" />
-        <input type="password"
-               class="default-input"
-               placeholder="password"
-               name="password"
-               required="true" />
+        <div class="field">
+          <input type="email"
+                 class="default-input"
+                 placeholder="email"
+                 name="email"
+                 required="true"/>
+        </div>
+        <div class="field">
+          <input type="password"
+                 class="default-input"
+                 placeholder="password"
+                 name="password"
+                 required="true"/>
+        </div>
+
+        <div class="field">
+          <a href="#"><%= I18n.t(:login_popop_forgot_pswd) %></a>
+        </div>
+
         <input type="submit" class="default-btn primary-btn" value="Log in"/>
       </form>
 
 
       <div class="popup-additional">
-        <p class="default-text"><%= I18n.t(:login_popop_text).html_safe %></p>
         <a href="/users/sign_up">Register now</a>
+        <p class="default-text"><%= I18n.t(:login_popop_text).html_safe %></p>
       </div>
 
     </div>
