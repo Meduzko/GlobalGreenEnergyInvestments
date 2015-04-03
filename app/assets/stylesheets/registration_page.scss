@@ -31,7 +31,7 @@
         .default-input {
             width: 320px;
 
-            &.valid + span {
+            &.valid + span, &.valid + label + span {
                 display: inline-block;
             }
         }
