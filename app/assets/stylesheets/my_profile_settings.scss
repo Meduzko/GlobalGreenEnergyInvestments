@@ -1,0 +1,10 @@
+@import "variables";
+@import "mixins";
+
+.my-profile-settings-form {
+    .separator-with-text {
+        span {
+            color: $blue-green;
+        }
+    }
+}

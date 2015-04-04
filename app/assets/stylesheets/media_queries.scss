@@ -172,13 +172,6 @@
                 right: 30px;
             }
         }
-        .logo {
-            span {
-                i {
-                    //display: none;
-                }
-            }
-        }
     }
 
     .popup {
@@ -200,18 +193,24 @@
     }
 
     .registration-page {
+        h1 {
+            font-size: 34px;
+            letter-spacing: 10px;
+        }
         form {
             .field {
-                padding: 0 20px;
+                padding: 0 45px 0 20px;
                 text-align: left;
+                width: auto;
             }
+
             .default-label {
                 display: block;
                 padding: 0 0 15px 12px;
                 width: auto;
             }
             .default-input {
-                width: 90%;
+                width: 85%;
             }
             label.error {
                 position: relative;

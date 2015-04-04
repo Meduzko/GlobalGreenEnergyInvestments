@@ -147,8 +147,8 @@ a {
 
 @media all and (max-width: 1024px) {
     .default-text {
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-left: 10% !important;
+        padding-right: 10% !important;
     }
 }
 
@@ -219,5 +219,44 @@ label.error {
     background-color: $blue;
     &:hover, &:focus {
         color: $blue;
+    }
+}
+
+.separator-with-text {
+    margin-top: 80px;
+    text-align: center;
+    span {
+        background-color: $light-grey6;
+        padding: 0 20px;
+        text-transform: uppercase;
+    }
+    hr {
+        margin: -9px 0 80px !important;
+    }
+}
+
+.separator-with-icon {
+    div {
+        background-color: $light-grey6;
+        margin: 0 auto;
+        padding: 0 15px;
+        position: relative;
+        z-index: 1;
+        width: 40px;
+        span {
+            background: $light-grey7;
+            color: $light-grey6 !important;
+            display: block;
+            font-size: 20px;
+            font-family: icon_font;
+            @include border-radius(20px);
+            height: 30px;
+            padding: 10px 0 0 0;
+            width: 40px;
+        }
+    }
+
+    hr {
+        margin: -22px 0 80px !important;
     }
 }

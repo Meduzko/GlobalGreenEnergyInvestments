@@ -9,19 +9,19 @@
     }
 
     form {
-        margin: 0 auto;
-        width: 630px;
         .field {
-            margin: 55px 0;
+            margin: 55px auto;
+            padding-right: 45px;
             position: relative;
+            width: 630px;
             span {
                 color: $blue-green;
                 font-family: icon_font;
                 font-size: 22px;
                 display: none;
                 position: absolute;
-                top: 12px;
-                right: -20px;
+                bottom: 22px;
+                right: 3px;
             }
         }
         .default-label {
@@ -29,7 +29,7 @@
             width: 235px;
         }
         .default-input {
-            width: 320px;
+            width: 325px;
 
             &.valid + span, &.valid + label + span {
                 display: inline-block;

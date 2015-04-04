@@ -16,7 +16,8 @@
         "paths": {
             "jquery": ["//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min", "vendors/jquery"],
             "jquery.validate": "vendors/jquery.validate",
-            "swiper": "vendors/swiper"
+            "swiper": "vendors/swiper",
+            "jquery.responsiveTabs": "vendors/jquery.responsiveTabs"
         },
 
         "shim": {
