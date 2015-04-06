@@ -17,7 +17,8 @@
             "jquery": ["//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min", "vendors/jquery"],
             "jquery.validate": "vendors/jquery.validate",
             "swiper": "vendors/swiper",
-            "jquery.responsiveTabs": "vendors/jquery.responsiveTabs"
+            "jquery.responsiveTabs": "vendors/jquery.responsiveTabs",
+            "select2": "vendors/select2"
         },
 
         "shim": {

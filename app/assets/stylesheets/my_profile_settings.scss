@@ -7,4 +7,41 @@
             color: $blue-green;
         }
     }
+    .address-field {
+        label:first-child {
+            padding-top: 30px;
+            vertical-align: top;
+        }
+        > div {
+            display: inline-block;
+            width: 390px;
+        }
+        .default-input {
+            margin: 15px 11px;
+            width: 190px;
+        }
+        .small-input {
+            margin-right: 0;
+            width: 70px;
+        }
+    }
+    .select2-container {
+        margin: 15px 11px;
+    }
+    .birthday-field {
+        select {
+            width: 100px;
+            &:nth-child(2) {
+                width: 70px;
+            }
+            &:nth-child(4) {
+                width: 140px;
+            }
+        }
+    }
+    .country-field {
+        select {
+            width: 365px;
+        }
+    }
 }

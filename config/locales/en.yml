@@ -1,5 +1,8 @@
 en:
 
+  cmn_official_label: (Official)
+  cmn_not_required: (not required)
+
   #Validation messages:
   error_required: This field is required
   error_email: Please enter a valid email address.
@@ -79,4 +82,6 @@ en:
 
   #Registration page
   registr_title: Registration
-  registr_official_label: (Official)
+
+  #Seetings page
+  settings_title: Settings

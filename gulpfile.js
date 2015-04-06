@@ -57,7 +57,8 @@ gulp.task('css', function () {
         assetsRoot + 'stylesheets/general.scss',
         assetsRoot + 'stylesheets/swiper.scss',
         assetsRoot + 'stylesheets/!(media_queries)*.scss',
-        assetsRoot + 'stylesheets/media_queries.scss'
+        assetsRoot + 'stylesheets/media_queries.scss',
+        assetsRoot + 'stylesheets/select2.css'
     ])
         .pipe(gulpFilter(['*', '!active_admin.css.scss']))
         .pipe(sass())

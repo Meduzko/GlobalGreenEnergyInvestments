@@ -1,25 +1,20 @@
-<div style="padding:50px;">
-<h2>Settings</h2>
-<br>
-<%= form_for root_path do |f| %>
-  
-  <%= f.label :first_name %>:
-  <%= f.text_field :first_name %><br />
+<div class="inner-page registration-page">
+  <h1 class="inner-page-main-title"><%= I18n.t(:settings_title) %></h1>
 
-  <%= f.label :last_name %>:
-  <%= f.text_field :last_name %><br />
+  <p class="default-text">Omdat GGIG gelooft in een toekomst met 100% duurzame energie, waarbij zoveel mogelijk
+    huishoudens zelf hun energie opwekken, hebben we een unieke regeling voor eigenaren van zonnepanelen ontwikkeld.</p>
 
-  <%= f.label :email %>:
-  <%= f.text_field :email %><br />
 
-  
-
-  <br> Addition information:<br>
-
-  <%= f.label :date_of_birthday %>:
-  <%= f.date_select :date_of_birthday %><br />
-  <%= f.label :country %>:
-  <%= f.country_select :country, ["NL"] %>
-<% end %>
-
+  <div data-jscomp="components/tabs">
+    <ul>
+      <li><a href="#tab-1">My Investments</a></li>
+      <li><a href="#tab-2">Settings</a></li>
+    </ul>
+    <div class="tabs-content" id="tab-1">
+      <%= render 'partials/my_investments' %>
+    </div>
+    <div class="tabs-content" id="tab-2">
+      <%= render 'partials/profile_settings' %>
+    </div>
+  </div>
 </div>
