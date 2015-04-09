@@ -53,12 +53,11 @@ gulp.task('js-components', function () {
 gulp.task('css', function () {
 
     gulp.src([
-        assetsRoot + 'stylesheets/reset.scss',
-        assetsRoot + 'stylesheets/general.scss',
-        assetsRoot + 'stylesheets/swiper.scss',
-        assetsRoot + 'stylesheets/!(media_queries)*.scss',
-        assetsRoot + 'stylesheets/media_queries.scss',
-        assetsRoot + 'stylesheets/select2.css'
+        assetsRoot + 'stylesheets/general/*.scss',
+        assetsRoot + 'stylesheets/vendor/*.scss',
+        assetsRoot + 'stylesheets/partials/*.scss',
+        assetsRoot + 'stylesheets/inner_pages/*.scss',
+        assetsRoot + 'stylesheets/*.scss'
     ])
         .pipe(gulpFilter(['*', '!active_admin.css.scss']))
         .pipe(sass())

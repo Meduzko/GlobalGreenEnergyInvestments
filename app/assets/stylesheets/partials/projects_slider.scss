@@ -1,5 +1,5 @@
-@import "variables";
-@import "mixins";
+@import "../partials/variables";
+@import "../partials/mixins";
 
 .projects-slider {
 
@@ -15,7 +15,7 @@
         height: 732px;
     }
 
-    .slider-content {
+    .slider-content, .project-block {
         background-color: $white;
         margin: 40px auto 0;
         left: 50%;

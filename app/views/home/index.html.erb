@@ -30,40 +30,7 @@
 
   <section class="projects-statistic">
     <p class="default-text"><%= I18n.t(:stat_text) %></p>
-
-    <ul class="statistic-circles">
-      <li>
-        <div>
-          50.000
-          <span><%= I18n.t(:stat_investors) %></span>
-        </div>
-      </li>
-      <li>
-        <div>
-          100 <em>MLN</em>
-          <span><%= I18n.t(:stat_invested) %></span>
-        </div>
-      </li>
-      <li>
-        <div>
-          32
-          <span><%= I18n.t(:stat_projects) %></span>
-        </div>
-      </li>
-      <li>
-        <div>
-          504.000
-          <span><%= I18n.t(:stat_generated) %></span>
-        </div>
-      </li>
-      <li>
-        <div>
-          6.5%
-          <span><%= I18n.t(:stat_return) %></span>
-        </div>
-      </li>
-    </ul>
-
+    <%= render 'partials/projects_stat_circles' %>
   </section>
 
   <%= render 'partials/projects_slider' %>

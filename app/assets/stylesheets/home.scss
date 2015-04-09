@@ -1,5 +1,5 @@
-@import "variables";
-@import "mixins";
+@import "partials/variables";
+@import "partials/mixins";
 
 
 main {
@@ -22,41 +22,6 @@ main {
         background: url('/images/map_bg.gif') no-repeat 50% 97px;
         margin-top: 40px;
         text-align: center;
-        .statistic-circles {
-            padding: 109px 0 273px 0;
-            li {
-                background: rgb(255, 255, 255);
-                background: rgba(255, 255, 255, 0.8);
-                display: inline-block;
-                @include border-radius(93px);
-                @include box-shadow(0, 0, 24px, rgba(0, 0, 0, 0.15));
-                height: 179px;
-                margin: 0 24px 12px;
-                padding: 7px 0 0 7px;
-                text-align: center;
-                width: 179px;
-                div {
-                    background: url('../images/circles_border.png') no-repeat;
-                    display: table-cell;
-                    font-size: 30px;
-                    font-weight: 700;
-                    height: 171px;
-                    vertical-align: middle;
-                    width: 171px;
-                    em {
-                        font-size: 18px;
-                        font-style: normal;
-                    }
-                    span {
-                        display: block;
-                        color: $blue;
-                        font-size: 14px;
-                        font-weight: 500;
-                        padding-top: 10px;
-                    }
-                }
-            }
-        }
     }
 
     /* Key values section */

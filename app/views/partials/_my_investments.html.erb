@@ -1,1 +1,37 @@
-sdsdf
+<div class="my_investments">
+
+  <%= render 'partials/projects_stat_circles' %>
+
+  <ul class="projects-list">
+    <li class="project-block" style="background-image: url('/images/projects/1/small/img_1.jpg');">
+      <span><i class="sun-icon"></i></span>
+
+      <div class="project-location">ROTTERDAM, 3181 ML</div>
+      <h4 class="project-name"></h4>
+
+      <div class="project-price">
+        <span>needed:</span>
+        350 000 <sup>&euro;</sup>
+      </div>
+      <div class="project-statistic">
+
+        <span>37%<i>Funded</i></span>
+        <canvas data-jscomp="components/projectStatistic"
+                data-percentage="37"
+                class="canvas-statistic"
+                width="100"
+                height="100"></canvas>
+
+        <span>37%<i>Return</i></span>
+        <canvas data-jscomp="components/projectStatistic"
+                data-percentage="100"
+                class="canvas-statistic"
+                width="100"
+                height="100"></canvas>
+      </div>
+
+      <a href="#" class="default-btn">View project</a>
+    </li>
+  </ul>
+
+</div>
