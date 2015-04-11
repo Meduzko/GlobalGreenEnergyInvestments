@@ -1,25 +1,37 @@
 @import "../partials/variables";
 @import "../partials/mixins";
 
-.project-block {
-    background-color: $white;
-    background-repeat: no-repeat;
-    -webkit-background-size: 100%;
-    background-size: 100% 300px;
-    margin: 40px auto 0;
-    left: 50%;
-    padding: 300px 50px 70px;
+.projects-list {
+    padding-bottom: 50px;
     text-align: center;
-    width: 242px;
-    @include box-shadow(0, 0, 10px, rgba(0, 0, 0, .16));
-    h4 {
-        font-size: 24px;
-        line-height: 29px;
-        span {
+    .project-block {
+        background-color: $white;
+        background-repeat: no-repeat;
+        display: inline-block;
+        -webkit-background-size: 100%;
+        background-size: 100% 280px;
+        margin: 40px 30px 0;
+        min-height: 450px;
+        left: 50%;
+        padding: 280px 50px 35px;
+        text-align: center;
+        vertical-align: top;
+        width: 242px;
+        @include box-shadow(0, 0, 10px, rgba(0, 0, 0, .16));
+        h4 {
+            font-size: 24px;
+            font-weight: normal;
+            line-height: 29px;
+            min-height: 73px;
+            padding-top: 15px;
+
+        }
+
+        .project-type {
             background: url('/images/marker.png') no-repeat;
             display: block;
             height: 65px;
-            margin: 37px 0 24px 95px;
+            margin: -37px 0 24px 95px;
             padding: 13px 0 0 12px;
             width: 102px;
             i {
@@ -32,54 +44,80 @@
                 }
             }
         }
-    }
-    p {
-        color: $light-grey1;
-        font-size: 14px;
-        line-height: 16px;
-        margin-top: 22px;
-    }
-    .project-location {
-        color: $light-grey1;
-        font-size: 12px;
-        margin-top: 20px;
-        text-transform: uppercase;
-    }
-    .project-statistic {
-        background: $light-grey5;
-        font-size: 24px;
-        height: 92px;
-        margin: 28px auto 0;
-        position: relative;
-        text-align: center;
-        width: 92px;
-        @include border-radius(46px);
-        span {
 
-            display: block;
+        p {
+            color: $light-grey1;
+            font-size: 14px;
+            line-height: 16px;
+            margin-top: 22px;
+        }
+        .project-location {
+            color: $light-grey1;
+            font-size: 12px;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+        .project-statistic {
+            background: $light-grey5;
             font-size: 24px;
-            position: absolute;
+            display: inline-block;
+            height: 92px;
+            margin: 10px 10px 0;
+            position: relative;
             text-align: center;
-            top: 30px;
             width: 92px;
-            i {
-                color: $blue-green;
+            @include border-radius(46px);
+            span {
+
                 display: block;
-                font-size: 18px;
-                font-style: normal;
+                font-size: 24px;
+                position: absolute;
+                text-align: center;
+                top: 26px;
+                width: 92px;
+                i {
+                    color: $blue-green;
+                    display: block;
+                    font-size: 12px;
+                    font-style: normal;
+                    margin-top: 5px;
+                    text-transform: uppercase;
+                }
             }
         }
-    }
 
-    .project-price {
-        color: $blue;
-        font-size: 48px;
-        margin: 20px 0 13px 0;
-        white-space: nowrap;
-        sup {
-            font-size: 25px;
-            vertical-align: top;
+        .project-price {
+            color: $blue;
+            font-size: 48px;
+            margin: 15px 0 13px 0;
+            white-space: nowrap;
+            sup {
+                font-size: 25px;
+                vertical-align: top;
+            }
+            span {
+                color: $blue-green;
+                display: block;
+                font-size: 14px;
+                padding: 6px 0;
+                margin: 10px 0 4px;
+                text-transform: uppercase;
+            }
         }
-    }
 
+        &.finished-project .project-price {
+            span {
+                background-color: $blue-green;
+                color: $white;
+                margin: 4px 0 10px -50px;
+                width: 342px;
+            }
+        }
+
+        .default-btn {
+            margin-top: 20px;
+            padding: 22px 65px;
+        }
+
+    }
 }

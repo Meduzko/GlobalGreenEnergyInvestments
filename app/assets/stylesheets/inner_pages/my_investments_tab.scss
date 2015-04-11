@@ -1,10 +1,15 @@
 @import "../partials/variables";
 @import "../partials/mixins";
 
-.my_investments {
-    background: url('/images/map_bg.gif') no-repeat 50% 97px;
-    padding-top: 60px;
+.my-investments {
+    background: url('/images/map_bg.gif') no-repeat 50% 37px;
     .statistic-circles {
         text-align: center;
+    }
+    .my-investments-content {
+        margin-top: -220px;
+        h2 {
+            padding-top: 35px;
+        }
     }
 }

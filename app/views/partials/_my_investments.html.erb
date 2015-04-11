@@ -1,37 +1,185 @@
-<div class="my_investments">
+<div class="my-investments">
 
   <%= render 'partials/projects_stat_circles' %>
 
-  <ul class="projects-list">
-    <li class="project-block" style="background-image: url('/images/projects/1/small/img_1.jpg');">
-      <span><i class="sun-icon"></i></span>
 
-      <div class="project-location">ROTTERDAM, 3181 ML</div>
-      <h4 class="project-name"></h4>
+  <div class="my-investments-content">
 
-      <div class="project-price">
-        <span>needed:</span>
-        350 000 <sup>&euro;</sup>
-      </div>
-      <div class="project-statistic">
+    <!-- If no projects START -->
+    <h2 class="inner-page-sub-title">No projects, yet</h2>
 
-        <span>37%<i>Funded</i></span>
-        <canvas data-jscomp="components/projectStatistic"
-                data-percentage="37"
-                class="canvas-statistic"
-                width="100"
-                height="100"></canvas>
+    <p class="default-text">Omdat GGIG gelooft in een toekomst met 100% duurzame energie, waarbij zoveel mogelijk
+      huishoudens zelf hun energie opwekken, hebben we een unieke regeling voor eigenaren van zonnepanelen
+      ontwikkeld.</p>
 
-        <span>37%<i>Return</i></span>
-        <canvas data-jscomp="components/projectStatistic"
-                data-percentage="100"
-                class="canvas-statistic"
-                width="100"
-                height="100"></canvas>
-      </div>
 
-      <a href="#" class="default-btn">View project</a>
-    </li>
-  </ul>
+    <div class="separator-with-text">
+      <span>Latest projects</span>
+      <hr/>
+    </div>
+
+    <ul class="projects-list">
+      <li class="project-block finished-project" style="background-image: url('/images/projects/1/small/img_1.jpg');">
+        <span class="project-type"><i class="sun-icon"></i></span>
+
+        <div class="project-location">ROTTERDAM, 3181 ML</div>
+        <h4 class="project-name">Windpark</h4>
+
+        <div class="project-price">
+          <span>Successfully funded</span>
+          350 000 <sup>&euro;</sup>
+        </div>
+        <div class="project-statistic">
+          <span>100%<i>Funded</i></span>
+          <canvas data-jscomp="components/projectStatistic"
+                  data-percentage="100"
+                  class="canvas-statistic"
+                  width="100"
+                  height="100"></canvas>
+        </div>
+        <div class="project-statistic">
+          <span>7%<i>Return</i></span>
+          <canvas data-jscomp="components/projectStatistic"
+                  data-percentage="100"
+                  class="canvas-statistic"
+                  width="100"
+                  height="100"></canvas>
+        </div>
+
+        <a href="#" class="default-btn primary-btn">View project</a>
+      </li>
+      <li class="project-block finished-project" style="background-image: url('/images/projects/1/small/img_1.jpg');">
+        <span class="project-type"><i class="sun-icon"></i></span>
+
+        <div class="project-location">ROTTERDAM, 3181 ML</div>
+        <h4 class="project-name">Windpark</h4>
+
+        <div class="project-price">
+          <span>Successfully funded</span>
+          350 000 <sup>&euro;</sup>
+        </div>
+        <div class="project-statistic">
+          <span>100%<i>Funded</i></span>
+          <canvas data-jscomp="components/projectStatistic"
+                  data-percentage="100"
+                  class="canvas-statistic"
+                  width="100"
+                  height="100"></canvas>
+        </div>
+        <div class="project-statistic">
+          <span>7%<i>Return</i></span>
+          <canvas data-jscomp="components/projectStatistic"
+                  data-percentage="100"
+                  class="canvas-statistic"
+                  width="100"
+                  height="100"></canvas>
+        </div>
+
+        <a href="#" class="default-btn primary-btn">View project</a>
+      </li>
+    </ul>
+    <!-- If no projects END -->
+
+    <!-- If has projects START -->
+    <ul class="projects-list">
+
+      <li class="project-block" style="background-image: url('/images/projects/1/small/img_1.jpg');">
+        <span class="project-type"><i class="sun-icon"></i></span>
+
+        <div class="project-location">ROTTERDAM, 3181 ML</div>
+        <h4 class="project-name">Windpark Landtong Rozenburg</h4>
+
+        <div class="project-price">
+          <span>needed:</span>
+          350 000 <sup>&euro;</sup>
+        </div>
+        <div class="project-statistic">
+          <span>37%<i>Funded</i></span>
+          <canvas data-jscomp="components/projectStatistic"
+                  data-percentage="37"
+                  class="canvas-statistic"
+                  width="100"
+                  height="100"></canvas>
+        </div>
+        <div class="project-statistic">
+          <span>7%<i>Return</i></span>
+          <canvas data-jscomp="components/projectStatistic"
+                  data-percentage="100"
+                  class="canvas-statistic"
+                  width="100"
+                  height="100"></canvas>
+        </div>
+
+        <a href="#" class="default-btn primary-btn">View project</a>
+      </li>
+
+      <li class="project-block" style="background-image: url('/images/projects/1/small/img_1.jpg');">
+        <span class="project-type"><i class="sun-icon"></i></span>
+
+        <div class="project-location">ROTTERDAM, 3181 ML</div>
+        <h4 class="project-name">Windpark Landtong Rozenburg</h4>
+
+        <div class="project-price">
+          <span>needed:</span>
+          350 000 <sup>&euro;</sup>
+        </div>
+        <div class="project-statistic">
+          <span>37%<i>Funded</i></span>
+          <canvas data-jscomp="components/projectStatistic"
+                  data-percentage="37"
+                  class="canvas-statistic"
+                  width="100"
+                  height="100"></canvas>
+        </div>
+        <div class="project-statistic">
+          <span>7%<i>Return</i></span>
+          <canvas data-jscomp="components/projectStatistic"
+                  data-percentage="100"
+                  class="canvas-statistic"
+                  width="100"
+                  height="100"></canvas>
+        </div>
+
+        <a href="#" class="default-btn primary-btn">View project</a>
+      </li>
+
+      <li class="project-block" style="background-image: url('/images/projects/1/small/img_1.jpg');">
+        <span class="project-type"><i class="sun-icon"></i></span>
+
+        <div class="project-location">ROTTERDAM, 3181 ML</div>
+        <h4 class="project-name">Windpark Landtong Rozenburg</h4>
+
+        <div class="project-price">
+          <span>needed:</span>
+          350 000 <sup>&euro;</sup>
+        </div>
+        <div class="project-statistic">
+          <span>37%<i>Funded</i></span>
+          <canvas data-jscomp="components/projectStatistic"
+                  data-percentage="37"
+                  class="canvas-statistic"
+                  width="100"
+                  height="100"></canvas>
+        </div>
+        <div class="project-statistic">
+          <span>7%<i>Return</i></span>
+          <canvas data-jscomp="components/projectStatistic"
+                  data-percentage="100"
+                  class="canvas-statistic"
+                  width="100"
+                  height="100"></canvas>
+        </div>
+
+        <a href="#" class="default-btn primary-btn">View project</a>
+      </li>
+
+    </ul>
+
+    <p class="default-text">Omdat GGIG gelooft in een toekomst met 100% duurzame energie, waarbij zoveel mogelijk
+      huishoudens zelf hun energie opwekken, hebben we een unieke regeling voor eigenaren van zonnepanelen
+      ontwikkeld.</p>
+    <!-- If has projects END -->
+
+  </div>
 
 </div>

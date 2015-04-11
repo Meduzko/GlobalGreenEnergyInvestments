@@ -114,7 +114,14 @@ a {
     text-transform: uppercase;
 }
 
-.inner-page-sub-title {
+h2.inner-page-sub-title {
+    font-size: 48px;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h4.inner-page-sub-title {
     text-transform: uppercase;
 }
 
@@ -222,10 +229,13 @@ label.error {
     text-align: center;
     span {
         background-color: $light-grey6;
+        font-weight: bold;
         padding: 0 20px;
         text-transform: uppercase;
     }
     hr {
+        border: 1px solid $light-grey2;
+        border-bottom: 0;
         margin: -9px 0 80px !important;
     }
 }
