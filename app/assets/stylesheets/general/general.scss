@@ -1,28 +1,5 @@
 @import "../partials/variables";
-
 @import "../partials/mixins";
-
-@font-face {
-    font-family: 'museo_sans_cyrl500';
-    src: url('/fonts/museo_sans_cyrl_500.eot');
-    src: url('/fonts/museo_sans_cyrl_500.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/museo_sans_cyrl_500.woff2') format('woff2'),
-    url('/fonts/museo_sans_cyrl_500.woff') format('woff'),
-    url('/fonts/museo_sans_cyrl_500.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'museo_sans_cyrl100';
-    src: url('/fonts/museo_sans_cyrl_100.eot');
-    src: url('/fonts/museo_sans_cyrl_100.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/museo_sans_cyrl_100.woff2') format('woff2'),
-    url('/fonts/museo_sans_cyrl_100.woff') format('woff'),
-    url('/fonts/museo_sans_cyrl_100.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 
 @font-face {
     font-family: 'icon_font';
@@ -105,7 +82,7 @@
 
 body {
     background-color: $light-grey6;
-    font-family: 'museo_sans_cyrl500';
+    font-family: 'Roboto Condensed', sans-serif;
     color: $grey;
 }
 
@@ -199,31 +176,30 @@ label.error {
     color: $red;
 }
 
-.default-btn {
-    border: 3px solid $blue-green;
+.default-btn, a.default-btn {
+    border: 0;
     background-color: $blue-green;
     display: inline-block;
     color: $white;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    padding: 16px 16px;
+    padding: 22px;
     text-align: center;
     text-transform: uppercase;
     @include border-radius(5px);
     @include transition(background-color 0.3s ease-in-out, color 0.3s ease-in-out);
     &:hover, &:focus {
-        background-color: $white;
-        color: $blue-green;
+        background-color: $blue_green_hover;
+        color: $white;
         outline: none;
     }
 }
 
-.primary-btn {
-    border-color: $blue;
+.primary-btn, a.primary-btn {
     background-color: $blue;
     &:hover, &:focus {
-        color: $blue;
+        background-color: $blue_hover;
     }
 }
 

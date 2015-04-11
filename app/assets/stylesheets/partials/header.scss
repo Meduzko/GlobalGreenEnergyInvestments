@@ -88,7 +88,7 @@ header {
         margin-left: -104px;
         position: absolute;
         left: 50%;
-        top: 7px;
+        top: 14px;
         width: 207px;
         object {
             position: relative;
@@ -96,9 +96,9 @@ header {
         }
         span {
             display: block;
-            margin-left: -93px;
+            margin-left: -75px;
             position: absolute;
-            top: 86px;
+            top: 79px;
             left: 50%;
             height: 55px;
             width: 186px;
@@ -109,8 +109,8 @@ header {
                 display: block;
                 top: -141px;
                 position: absolute;
-                height: 186px;
-                width: 186px;
+                height: 188px;
+                width: 150px;
                 @include border-radius(93px);
                 @include box-shadow(0, 0, 10px, rgba(0, 0, 0, 0.5));
             }

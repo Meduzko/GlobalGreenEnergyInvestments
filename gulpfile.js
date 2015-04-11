@@ -142,6 +142,6 @@ gulp.task('watch', ['images', 'js', 'js-components', 'css', 'browser-sync'], fun
     gulp.watch(assetsRoot + 'javascripts/*.js', ['js']);
     gulp.watch(assetsRoot + 'javascripts/components/*.js', ['js-components']);
     gulp.watch(assetsRoot + 'images/*', ['images']);
-    gulp.watch(assetsRoot + 'stylesheets/*.scss', ['css']);
+    gulp.watch(assetsRoot + 'stylesheets/**/*.scss', ['css']);
     gulp.watch(assetsRoot + 'fonts/*', ['fonts']);
 });
