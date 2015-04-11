@@ -147,6 +147,12 @@ a {
     }
 }
 
+.input-wrapper {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 25px;
+}
+
 .default-input {
     border: 1px solid $light-grey4;
     background-color: $white;
@@ -165,7 +171,7 @@ a {
         border-color: $light-grey3;
     }
     &.valid {
-        @include box-shadow(0, 0, 12px, rgba(38, 213, 186, 0.7));
+        @include box-shadow(0, 0, 12px, rgba(0, 189, 227, 0.7));
     }
     &.error {
         @include box-shadow(0, 0, 12px, rgba(255, 123, 123, 0.7));
@@ -174,6 +180,14 @@ a {
 
 label.error {
     color: $red;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    text-align: right;
+    text-transform: uppercase;
 }
 
 .default-btn, a.default-btn {

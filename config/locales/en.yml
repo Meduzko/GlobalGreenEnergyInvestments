@@ -5,7 +5,7 @@ en:
 
   #Validation messages:
   error_required: This field is required
-  error_email: Please enter a valid email address.
+  error_email: Please enter a valid email address
 
   # subscription locates
   sbsr_email_format: is not looking good

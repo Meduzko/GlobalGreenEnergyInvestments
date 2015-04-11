@@ -13,23 +13,26 @@
     <div class="message-box"></div>
 
     <div>
-      <input name="subscribe[name]"
-             type="text"
-             class="default-input"
-             placeholder="<%= I18n.t(:subscr_name_field) %>"
-             required />
-
-      <input name="subscribe[email]"
-             type="email"
-             class="default-input"
-             placeholder="<%= I18n.t(:subscr_email_field) %>"
-             required />
+      <div class="input-wrapper">
+        <input name="subscribe[name]"
+               type="text"
+               class="default-input"
+               placeholder="<%= I18n.t(:subscr_name_field) %>"
+               required/>
+      </div>
+      <div class="input-wrapper">
+        <input name="subscribe[email]"
+               type="email"
+               class="default-input"
+               placeholder="<%= I18n.t(:subscr_email_field) %>"
+               required/>
+      </div>
     </div>
 
     <input type="submit"
            class="default-btn primary-btn"
            value="Stay informed"
            id="subscribe"
-           onclick="compSupport.callFunc('#subscription', 'sendForm')" />
+           onclick="compSupport.callFunc('#subscription', 'sendForm')"/>
   </form>
 </section>
