@@ -1,5 +1,5 @@
-@import "../partials/variables";
-@import "../partials/mixins";
+@import "partials/variables";
+@import "partials/mixins";
 
 @media all and (min-width: 1024px) {
     main {
@@ -198,10 +198,13 @@
             letter-spacing: 10px;
         }
         form {
-            .field {
-                padding: 0 45px 0 20px;
+            .field, #error_explanation {
+                padding: 0 45px 25px 20px;
                 text-align: left;
                 width: auto;
+                .field_with_errors {
+                    display: block;
+                }
             }
 
             .default-label {
@@ -216,6 +219,20 @@
                 position: relative;
                 left: 15px;
                 top: 15px;
+            }
+            .select2-container {
+                width: 100% !important;
+            }
+        }
+    }
+
+    .my-profile-settings-form {
+        .address-field {
+            > div {
+                width: auto;
+            }
+            .default-input {
+                width: 85%;
             }
         }
     }

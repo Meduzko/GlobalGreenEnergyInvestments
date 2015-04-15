@@ -185,6 +185,12 @@ h4.inner-page-sub-title {
     }
 }
 
+.field_with_errors {
+    .default-input {
+        @include box-shadow(0, 0, 12px, rgba(255, 123, 123, 0.7));
+    }
+}
+
 label.error {
     color: $red;
     display: block;

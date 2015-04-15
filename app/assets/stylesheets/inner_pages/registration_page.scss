@@ -9,9 +9,9 @@
     }
 
     form {
-        .field {
-            margin: 55px auto;
-            padding-right: 45px;
+        .field, #error_explanation {
+            margin: 35px auto;
+            padding: 0 15px 25px 0;
             position: relative;
             width: 630px;
             span.icon-ok {
@@ -20,8 +20,11 @@
                 font-size: 22px;
                 display: none;
                 position: absolute;
-                bottom: 22px;
-                right: 3px;
+                bottom: 45px;
+                right: -10px;
+            }
+            .field_with_errors {
+                display: inline-block;
             }
         }
         .default-label {
@@ -48,10 +51,21 @@
         label.error {
             display: block;
             font-weight: bold;
-            font-size: 11px;
+            font-size: 12px;
             padding: 12px 20px 0 0;
             text-align: right;
             text-transform: uppercase;
+        }
+
+        #error_explanation {
+            color: $red;
+            margin-top: 0;
+            h2, li {
+                font-weight: bold;
+                font-size: 12px;
+                padding-top: 10px;
+                text-transform: uppercase;
+            }
         }
     }
 }

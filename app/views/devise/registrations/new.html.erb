@@ -4,93 +4,79 @@
   <p class="default-text">Omdat GGIG gelooft in een toekomst met 100% duurzame energie, waarbij zoveel mogelijk
     huishoudens zelf hun energie opwekken, hebben we een unieke regeling voor eigenaren van zonnepanelen ontwikkeld.</p>
 
+  <%= form_for(resource,
+               as: resource_name,
+               url: registration_path(resource_name),
+               html: {'data-jscomp' => 'components/validator'}) do |f| %>
 
-  <div data-jscomp="components/tabs">
-    <ul>
-      <li><a href="#tab-1">My Investments</a></li>
-      <li><a href="#tab-2">Settings</a></li>
-    </ul>
-    <div class="tabs-content" id="tab-1">
-      <%= render 'partials/my_investments' %>
+    <%= devise_error_messages! %>
+    <div class="field">
+      <div class="default-label">
+        <%= f.label :first_name %>
+        <em><%= I18n.t(:cmn_official_label) %></em>
+      </div>
+      <%= f.text_field :first_name,
+                       autofocus: true,
+                       :'data-validator-required' => I18n.t(:error_required),
+                       :class => 'default-input' %>
+      <span class="icon-ok">&nbsp;</span>
     </div>
-    <div class="tabs-content" id="tab-2">
-      <%= render 'partials/profile_settings' %>
+
+    <div class="field">
+      <div class="default-label">
+        <%= f.label :last_name %>
+        <em><%= I18n.t(:cmn_official_label) %></em>
+      </div>
+      <%= f.text_field :last_name,
+                       :'data-validator-required' => I18n.t(:error_required),
+                       :class => 'default-input' %>
+      <span class="icon-ok">&nbsp;</span>
     </div>
-  </div>
 
+    <div class="field">
+      <%= f.label :email, :class => 'default-label' %>
+      <%= f.email_field :email,
+                        :required => true,
+                        :'data-validator-required' => I18n.t(:error_required),
+                        :'data-validator-email' => I18n.t(:error_email),
+                        :class => 'default-input' %>
+      <span class="icon-ok">&nbsp;</span>
+    </div>
 
-
-  <% if false %>
-    <%= form_for(resource,
-                 as: resource_name,
-                 url: registration_path(resource_name),
-                 html: {'data-jscomp' => 'components/validator'}) do |f| %>
-
-      <%= devise_error_messages! %>
-      <div class="field">
-        <div class="default-label">
-          <%= f.label :first_name %>
-          <em><%= I18n.t(:cmn_official_label) %></em>
-        </div>
-        <%= f.text_field :first_name,
-                         autofocus: true,
-                         :'data-validator-required' => I18n.t(:error_required),
-                         :class => 'default-input' %>
-        <span class="icon-ok">&nbsp;</span>
-      </div>
-
-      <div class="field">
-        <div class="default-label">
-          <%= f.label :last_name %>
-          <em><%= I18n.t(:cmn_official_label) %></em>
-        </div>
-        <%= f.text_field :last_name,
-                         :'data-validator-required' => I18n.t(:error_required),
-                         :class => 'default-input' %>
-        <span class="icon-ok">&nbsp;</span>
-      </div>
-
-      <div class="field">
-        <%= f.label :email, :class => 'default-label' %>
-        <%= f.email_field :email,
-                          :required => true,
-                          :'data-validator-required' => I18n.t(:error_required),
-                          :'data-validator-email' => I18n.t(:error_email),
-                          :class => 'default-input' %>
-        <span class="icon-ok">&nbsp;</span>
-      </div>
-
+    <div class="separator-with-text">
       <hr/>
+    </div>
 
-      <div class="field">
-        <div class="default-label">
-          <%= f.label :password %><br/>
-          <% if @validatable %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %>
-        </div>
-        <%= f.password_field :password,
-                             :'data-validator-required' => I18n.t(:error_required),
-                             autocomplete: 'off',
-                             :class => 'default-input' %>
-        <span class="icon-ok">&nbsp;</span>
+    <div class="field">
+      <div class="default-label">
+        <%= f.label :password %><br/>
+        <% if @validatable %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
       </div>
+      <%= f.password_field :password,
+                           :'data-validator-required' => I18n.t(:error_required),
+                           autocomplete: 'off',
+                           :class => 'default-input' %>
+      <span class="icon-ok">&nbsp;</span>
+    </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation, :class => 'default-label' %>
-        <%= f.password_field :password_confirmation,
-                             :'data-validator-required' => I18n.t(:error_required),
-                             autocomplete: 'off',
-                             :class => 'default-input' %>
-        <span class="icon-ok">&nbsp;</span>
-      </div>
+    <div class="field">
+      <%= f.label :password_confirmation, :class => 'default-label' %>
+      <%= f.password_field :password_confirmation,
+                           :'data-validator-required' => I18n.t(:error_required),
+                           autocomplete: 'off',
+                           :class => 'default-input' %>
+      <span class="icon-ok">&nbsp;</span>
+    </div>
 
+    <div class="separator-with-text">
       <hr/>
+    </div>
 
-      <div class="actions">
-        <%= f.submit 'Register', :class => 'default-btn primary-btn' %>
-      </div>
-    <% end %>
+    <div class="actions">
+      <%= f.submit 'Register', :class => 'default-btn primary-btn' %>
+    </div>
   <% end %>
 
   <%#= render 'devise/shared/links' %>
