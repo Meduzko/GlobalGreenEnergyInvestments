@@ -60,9 +60,14 @@ en:
   key_values_growing: Growing
   key_values_growing_text: Join a growing community of people investing in green project
 
-  login_popop_title: Welcome
-  login_popop_text: "Please register to view more investment information"
-  login_popop_forgot_pswd: Forgot you password?
+  login_popup_title: Welcome
+  login_popup_text: "Please register to view more investment information"
+  login_popup_forgot_pswd: Forgot you password?
+  login_popup_register_link: Register now
+  login_popup_btn_text: Log in
+
+  forgot_pass_popup_title: Recovery
+  forgot_pass_popup_btn_text: Send
 
   #subscription
   subscr_title: Stay informed on new projects

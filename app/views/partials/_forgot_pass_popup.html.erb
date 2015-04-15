@@ -1,0 +1,35 @@
+<div class="popup" id="forgotPassPopup" data-jscomp="components/popup">
+
+  <div class="fog" onclick="compSupport.callFunc(this, 'hide')"></div>
+  <div class="popup-body">
+    <span class="popup-close icon-font icon-cancel" onclick="compSupport.callFunc(this, 'hide')"></span>
+
+    <div class="popup-title"><%= I18n.t(:forgot_pass_popup_title) %></div>
+    <div class="popup-content">
+
+      <form action="" data-jscomp='components/validator'>
+        <div class="field">
+          <input type="email"
+                 class="default-input"
+                 placeholder="email"
+                 name="email"
+                 required="true"/>
+        </div>
+
+        <div class="field">
+          <p class="default-text">Write your email and we will send your password there</p>
+        </div>
+
+        <input type="submit" class="default-btn primary-btn" value="<%= I18n.t(:forgot_pass_popup_btn_text) %>"/>
+      </form>
+
+
+      <div class="popup-additional">
+        <a href="/users/sign_up"><%= I18n.t(:login_popup_register_link) %></a>
+        <p class="default-text"><%= I18n.t(:login_popup_text).html_safe %></p>
+      </div>
+
+    </div>
+  </div>
+
+</div>

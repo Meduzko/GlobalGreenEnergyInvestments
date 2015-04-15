@@ -5,6 +5,7 @@ define(['jquery'], function ($) {
         init: function (domId, config) {
             var thisComp = this;
             this.domId = $('#' + domId);
+            this.popupRef = $('.popup');
 
             $(document).keyup(function(e) {
                 if (e.keyCode == 27) {
@@ -14,6 +15,7 @@ define(['jquery'], function ($) {
         },
 
         show: function () {
+            this.popupRef.fadeOut(200);
             this.domId.fadeIn(200);
         },
 

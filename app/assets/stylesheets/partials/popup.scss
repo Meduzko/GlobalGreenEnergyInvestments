@@ -27,10 +27,17 @@
         left: 50%;
         width: 600px;
         form {
-            padding: 0 50px;
+            padding: 0 130px;
             text-align: center;
+            .field {
+                position: relative;
+                padding: 0 0 25px 0;
+                label.error {
+                    right: 17px;
+                }
+            }
             .default-input {
-                margin: 5px 0 15px;
+
             }
             .default-btn {
                 padding-left: 75px;
