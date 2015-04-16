@@ -110,6 +110,10 @@
         }
     }
 
+    .project-description {
+        width: 100%;
+    }
+
 }
 
 @media all and (max-width: 740px) {
@@ -233,6 +237,35 @@
             }
             .default-input {
                 width: 85%;
+            }
+        }
+    }
+
+    .project-description {
+        .project-description-content {
+            .project-description-content-row {
+                overflow: hidden;
+                border-top: 1px solid $light-grey2;
+                text-align: center;
+                > div {
+                    float: none;
+                    width: 100%;
+                }
+            }
+        }
+        .project-grid {
+            table {
+                width: 100%;
+                tr {
+                    th, td {
+                        padding: 10px 5px;
+                    }
+                }
+            }
+        }
+        .project-controls {
+            .default-btn {
+                padding: 22px;
             }
         }
     }

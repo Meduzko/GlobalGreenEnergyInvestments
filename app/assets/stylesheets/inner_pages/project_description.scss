@@ -72,10 +72,10 @@
             border-top: 1px solid $light-grey2;
             text-align: center;
             > div {
-                //display: inline-block;
                 float: left;
                 vertical-align: top;
-                width: 632px;
+                //width: 632px;
+                width: 50%;
                 h5 {
                     padding-bottom: 40px;
                 }
@@ -83,6 +83,10 @@
                     color: $light-grey1;
                     font-size: 18px;
                     line-height: 21px;
+                }
+                img {
+                    height: 100%;
+                    width: 100%;
                 }
                 ul {
                     li {
@@ -95,7 +99,7 @@
                     }
                 }
                 &:first-child {
-                    width: 628px;
+                    //width: 628px;
                 }
                 &:last-child {
                     font-size: 0;
@@ -165,6 +169,7 @@
             }
         }
         .default-btn {
+            margin-top: -15px;
             padding: 22px 120px;
         }
         .get-pdf {
