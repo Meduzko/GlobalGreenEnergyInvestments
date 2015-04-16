@@ -23,15 +23,16 @@ a {
 }
 
 .inner-page {
-    padding-top: 120px;
+    padding-top: 80px;
     padding-bottom: 120px;
 }
 
 .inner-page-main-title {
     color: $blue;
-    font-size: 42px;
+    font-size: 48px;
     font-weight: 900;
     letter-spacing: 28px;
+    line-height: 58px;
     text-align: center;
     text-transform: uppercase;
 }
@@ -45,6 +46,12 @@ h2.inner-page-sub-title {
 
 h4.inner-page-sub-title {
     text-transform: uppercase;
+}
+
+h5.inner-page-sub-title {
+    text-transform: uppercase;
+    font-size: 40px;
+    line-height: 45px;
 }
 
 .default-text {

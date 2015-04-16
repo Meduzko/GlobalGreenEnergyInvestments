@@ -1,31 +1,29 @@
 {
-  "name": "ggig",
-  "version": "0.0.1",
-  "description": "GGIG project",
-  "author": "Kramarenko Konstantin kramarenko.konstantin@gmail.com",
-
-  "dependencies": {
-    "bower": "*"
-  },
-
-  "devDependencies": {
-    "yo": "*",
-    "gulp": "*",
-    "gulp-csso": "*",
-    "gulp-svgo": "*",
-    "gulp-sass": "*",
-    "gulp-imagemin": "*",
-    "gulp-uglify": "*",
-    "main-bower-files": "*",
-    "gulp-concat": "*",
-    "gulp-svg-sprites": "*",
-    "browser-sync": "*",
-    "gulp-filter": "*",
-    "gulp-svg2png": "*",
-    "gulp.spritesmith": "*",
-    "run-sequence": "*",
-    "del": "*"
-  },
-
-  "private": true
+    "name": "ggig",
+    "version": "0.0.1",
+    "description": "GGIG project",
+    "author": "Kramarenko Konstantin kramarenko.konstantin@gmail.com",
+    "dependencies": {
+        "bower": "*"
+    },
+    "devDependencies": {
+        "yo": "*",
+        "gulp": "*",
+        "gulp-csso": "*",
+        "gulp-svgo": "*",
+        "gulp-sass": "*",
+        "gulp-imagemin": "*",
+        "gulp-uglify": "*",
+        "main-bower-files": "*",
+        "gulp-concat": "*",
+        "gulp-svg-sprites": "*",
+        "browser-sync": "*",
+        "gulp-filter": "*",
+        "gulp-svg2png": "*",
+        "gulp.spritesmith": "*",
+        "run-sequence": "*",
+        "del": "*",
+        "gulp-base64": "*"
+    },
+    "private": true
 }

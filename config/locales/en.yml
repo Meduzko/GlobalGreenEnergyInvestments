@@ -37,6 +37,7 @@ en:
   stat_projects: projects
   stat_generated: KWH generated
   stat_return: average return
+  stat_fixed_return: fixed return
   stat_text: Omdat GGIG gelooft in een toekomst met 100% duurzame energie, waarbij zoveel mogelijk huishoudens zelf hun energie opwekken, hebben we een unieke regeling voor eigenaren van zonnepanelen ontwikkeld.
 
   #latest project
@@ -87,6 +88,9 @@ en:
 
   #Registration page
   registr_title: Registration
+
+  #Project Description page
+  project_description_title: Windpark Rembrandt
 
   #Seetings page
   settings_title: Settings

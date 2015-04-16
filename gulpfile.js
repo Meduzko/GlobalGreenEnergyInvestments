@@ -12,6 +12,7 @@ var gulp = require('gulp'), // Сообственно Gulp JS
     gulpFilter = require('gulp-filter'),
     runSequence = require('run-sequence'),
     del = require('del'),
+    base64 = require('gulp-base64'),
     mainBowerFiles = require('main-bower-files'),
     assetsRoot = 'app/assets/',
     publicRoot = 'public/';
@@ -61,6 +62,12 @@ gulp.task('css', function () {
     ])
         .pipe(gulpFilter(['*', '!active_admin.css.scss']))
         .pipe(sass())
+        .pipe(base64({
+            baseDir: publicRoot,
+            //extensions: [/\.png#datauri$/i, /\.gif#datauri$/i],
+            extensions: ['png'],
+            maxImageSize: 8 * 1024
+        }))
         .pipe(csso())
         .pipe(concat('index.css'))
         .pipe(gulp.dest(publicRoot + 'stylesheets'))
@@ -103,11 +110,11 @@ gulp.task('svg-optimization', function () {
 
 
 /*gulp.task('svg-sprites', function () {
-    return gulp.src(assetsRoot + 'images/svg*//*.svg')
-        .pipe(svgSprite())
-        .pipe(svgo())
-        .pipe(gulp.dest(publicRoot + 'images'));
-});*/
+ return gulp.src(assetsRoot + 'images/svg*//*.svg')
+ .pipe(svgSprite())
+ .pipe(svgo())
+ .pipe(gulp.dest(publicRoot + 'images'));
+ });*/
 
 
 gulp.task('svg-to-png', function () {
@@ -131,7 +138,7 @@ gulp.task('clean', function () {
 });
 
 
-gulp.task('build', function(callback) {
+gulp.task('build', function (callback) {
     runSequence('clean',
         ['images', 'svg-optimization', 'js', 'js-components', 'css', 'fonts', 'static'],
         callback);

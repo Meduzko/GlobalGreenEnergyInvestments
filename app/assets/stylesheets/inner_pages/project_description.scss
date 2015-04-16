@@ -1,0 +1,196 @@
+@import "../partials/variables";
+@import "../partials/mixins";
+
+.project-description {
+    margin: 0 auto;
+    width: 1260px;
+
+    .inner-page-main-title {
+        padding: 0 20% 36px;
+    }
+
+    .default-text {
+        padding: 0 30%;
+        text-align: center;
+    }
+
+    .project-amount {
+        color: $blue;
+        font-size: 120px;
+        font-weight: 100;
+        text-align: center;
+        sup {
+            font-size: 63px;
+            vertical-align: top;
+        }
+    }
+
+    .separator-with-icon {
+        margin-top: 42px;
+        div {
+            top: 10px;
+            span {
+                background: url('/images/marker.png') no-repeat;
+                display: block;
+                height: 65px;
+                margin-left: -4px;
+                padding: 13px 0 0 12px;
+                width: 102px;
+                i {
+                    background-repeat: no-repeat;
+                    display: block;
+                    height: 23px;
+                    width: 25px;
+                    &.sun-icon {
+                        background-image: url('/images/sun_icon.png');
+                    }
+                }
+            }
+        }
+        hr {
+            margin: -22px 0 42px !important;
+        }
+    }
+
+    .project-location {
+        color: $light-grey1;
+        font-size: 12px;
+        padding: 5px 0 26px 0;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .statistic-circles {
+        background: url('/images/map_bg.gif') no-repeat 50% 10px;
+        text-align: center;
+        background-size: 50%;
+    }
+
+    .project-description-content {
+        .project-description-content-row {
+            overflow: hidden;
+            border-top: 1px solid $light-grey2;
+            text-align: center;
+            > div {
+                //display: inline-block;
+                float: left;
+                vertical-align: top;
+                width: 632px;
+                h5 {
+                    padding-bottom: 40px;
+                }
+                p {
+                    color: $light-grey1;
+                    font-size: 18px;
+                    line-height: 21px;
+                }
+                ul {
+                    li {
+                        background: url('/images/list_dot.png') no-repeat 2px 3px;
+                        color: $light-grey1;
+                        font-size: 18px;
+                        line-height: 21px;
+                        list-style-type: none;
+                        padding: 0 0 22px 30px;
+                    }
+                }
+                &:first-child {
+                    width: 628px;
+                }
+                &:last-child {
+                    font-size: 0;
+                }
+
+            }
+
+            &:nth-child(even) {
+                > div:first-child {
+                    float: right;
+                }
+            }
+            .block-with-text {
+                padding: 50px;
+                text-align: left;
+            }
+        }
+    }
+
+    .project-grid {
+        h5 {
+            padding: 40px 0 35px 0;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            tr {
+                th, td {
+                    padding: 16px 0 16px 50px;
+                    font-weight: normal;
+                    text-align: left;
+                }
+                th {
+                    border-top: 1px solid $light-grey2;
+                    padding: 30px 0 40px 50px;
+                }
+                td:first-child {
+                    font-weight: bold;
+                    width: 25%;
+                }
+                &:nth-child(odd) td {
+                    background-color: $white;
+                }
+                &:first-child td {
+                    color: $blue;
+                }
+            }
+        }
+    }
+
+    .project-controls {
+        padding-top: 85px;
+        text-align: center;
+        .get-back {
+            display: inline-block;
+            float: left;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 26px;
+            text-transform: uppercase;
+            &:before {
+                color: $grey;
+                font-size: 26px;
+                position: relative;
+                top: 4px;
+                padding-right: 32px;
+            }
+        }
+        .default-btn {
+            padding: 22px 120px;
+        }
+        .get-pdf {
+            display: inline-block;
+            float: right;
+            font-weight: bold;
+            position: relative;
+            text-align: left;
+            text-transform: uppercase;
+            span {
+                color: $light-grey1;
+                display: block;
+                font-size: 14px;
+                font-weight: normal;
+                padding-bottom: 2px;
+                text-transform: lowercase;
+            }
+            &:before {
+                color: $grey;
+                font-size: 32px;
+                font-weight: 100;
+                position: absolute;
+                left: -45px;
+                top: -2px;
+            }
+        }
+    }
+
+}
