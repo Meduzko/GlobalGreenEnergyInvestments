@@ -200,3 +200,36 @@ label.error {
         margin: -22px 0 80px !important;
     }
 }
+
+
+.grid {
+    h5 {
+        padding: 40px 0 35px 0;
+        text-align: center;
+    }
+    table {
+        font-size: 14px;
+        width: 100%;
+        tr {
+            th, td {
+                padding: 16px 0 16px 50px;
+                font-weight: normal;
+                text-align: left;
+                text-transform: uppercase;
+            }
+            th {
+                border-top: 1px solid $light-grey2;
+                padding: 30px 0 40px 50px;
+            }
+            td:first-child {
+                font-weight: bold;
+            }
+            &:nth-child(odd) td {
+                background-color: $white;
+            }
+            &:first-child td {
+                color: $blue;
+            }
+        }
+    }
+}

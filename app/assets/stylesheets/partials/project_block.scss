@@ -42,6 +42,14 @@
                 &.sun-icon {
                     background-image: url('/images/sun_icon.png');
                 }
+                &.wind-icon {
+                    background-image: url('/images/wind_icon.png');
+                    background-position: 2px 0;
+                }
+                &.bio-icon {
+                    background-image: url('/images/bio_icon.png');
+                    background-position: 5px 0;
+                }
             }
         }
 

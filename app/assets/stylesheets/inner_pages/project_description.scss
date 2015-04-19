@@ -44,6 +44,14 @@
                     &.sun-icon {
                         background-image: url('/images/sun_icon.png');
                     }
+                    &.wind-icon {
+                        background-image: url('/images/wind_icon.png');
+                        background-position: 2px 0;
+                    }
+                    &.bio-icon {
+                        background-image: url('/images/bio_icon.png');
+                        background-position: 5px 0;
+                    }
                 }
             }
         }
@@ -119,33 +127,13 @@
         }
     }
 
-    .project-grid {
-        h5 {
-            padding: 40px 0 35px 0;
-            text-align: center;
-        }
+    .grid {
         table {
-            width: 100%;
             tr {
-                th, td {
-                    padding: 16px 0 16px 50px;
-                    font-weight: normal;
-                    text-align: left;
-                }
-                th {
-                    border-top: 1px solid $light-grey2;
-                    padding: 30px 0 40px 50px;
-                }
                 td:first-child {
-                    font-weight: bold;
                     width: 25%;
                 }
-                &:nth-child(odd) td {
-                    background-color: $white;
-                }
-                &:first-child td {
-                    color: $blue;
-                }
+
             }
         }
     }

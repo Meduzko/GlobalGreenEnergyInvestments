@@ -5,8 +5,8 @@ define(['jquery', 'jquery.responsiveTabs'], function ($) {
         init: function (domId) {
             $('#' + domId).responsiveTabs({
                 active: 0,
-                disabled: [2],
-                animation: "slide"
+                animation: "slide",
+                duration: 300
             });
         }
     }
