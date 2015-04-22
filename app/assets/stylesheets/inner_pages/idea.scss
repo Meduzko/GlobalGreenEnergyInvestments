@@ -1,0 +1,131 @@
+@import "../partials/variables";
+@import "../partials/mixins";
+
+.idea-page {
+    margin: 0 auto;
+    width: 1500px;
+    .inner-page-main-title {
+        padding-bottom: 25px;
+    }
+    .top-default-text {
+        text-align: center;
+    }
+    .idea-main-image {
+        margin: 0 auto;
+        width: 1260px;
+        text-align: center;
+        img {
+            margin-top: 50px;
+        }
+    }
+    .project-infographic-content {
+        border-top: 1px solid $light-grey2;
+        padding-top: 95px;
+        margin: 0 auto;
+        margin-top: 65px;
+        width: 1260px;
+        > div {
+            display: inline-block;
+            padding: 0 6%;
+            vertical-align: top;
+            width: 37%;
+            > div {
+                padding-bottom: 70px;
+            }
+            p {
+                padding: 10px 0;
+            }
+        }
+    }
+
+    .how-it-works-video {
+        padding: 40px 0 100px 0;
+        text-align: center;
+    }
+
+    .steps-to-invest {
+        margin: 0 auto;
+        width: 1260px;
+        ul {
+            padding-top: 80px;
+            li {
+                border-top: 1px solid $light-grey2;
+                padding: 50px 288px;
+                position: relative;
+                text-align: right;
+                &:before {
+                    background-color: $white;
+                    color: $blue-green;
+                    content: '1';
+                    display: block;
+                    float: left;
+                    font-size: 18px;
+                    height: 33px;
+                    left: 50%;
+                    margin-left: -25px;
+                    padding-top: 17px;
+                    position: absolute;
+                    text-align: center;
+                    width: 50px;
+                    @include box-shadow(0, 0, 24px, rgba(0, 0, 0, 0.15));
+                    @include border-radius(25px);
+                }
+                &:after {
+                    display: block;
+                    content: '';
+                    clear: both;
+                }
+
+                div {
+                    position: relative;
+                    width: 275px;
+                    &:before {
+                        background: $light-grey2;
+                        content: '';
+                        display: block;
+                        height: 121%;
+                        position: absolute;
+                        right: -70px;
+                        top: 60px;
+                        width: 5px;
+                        @include border-radius(3px);
+                    }
+                }
+                h5 {
+                    font-size: 24px;
+                    font-weight: bold;
+                    padding-bottom: 35px;
+                    text-transform: uppercase;
+                }
+                p {
+                    font-size: 14px;
+                    color: $light-grey1;
+                }
+                &:nth-child(2){
+                    div {
+                        float: right;
+                        text-align: left;
+                        &:before {
+                            left: -70px;
+                            top: 60px;
+                        }
+                    }
+                    &:before {
+                        content: '2';
+                    }
+                }
+                &:nth-child(3){
+                    &:before {
+                        content: '3';
+                    }
+                    div {
+                        &:before {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
