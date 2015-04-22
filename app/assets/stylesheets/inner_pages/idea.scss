@@ -2,8 +2,10 @@
 @import "../partials/mixins";
 
 .idea-page {
-    margin: 0 auto;
-    width: 1500px;
+    .separator-with-text {
+        margin: 80px auto 0;
+        width: 1500px;
+    }
     .inner-page-main-title {
         padding-bottom: 25px;
     }
@@ -12,10 +14,11 @@
     }
     .idea-main-image {
         margin: 0 auto;
-        width: 1260px;
+        max-width: 1260px;
         text-align: center;
         img {
             margin-top: 50px;
+            width: 100%;
         }
     }
     .project-infographic-content {
@@ -23,7 +26,7 @@
         padding-top: 95px;
         margin: 0 auto;
         margin-top: 65px;
-        width: 1260px;
+        max-width: 1260px;
         > div {
             display: inline-block;
             padding: 0 6%;
@@ -39,37 +42,58 @@
     }
 
     .how-it-works-video {
+        max-width: 1500px;
+        margin: 0 auto;
         padding: 40px 0 100px 0;
         text-align: center;
+        img {
+            width: 100%;
+        }
     }
 
     .steps-to-invest {
         margin: 0 auto;
-        width: 1260px;
+        max-width: 1260px;
+        position: relative;
+
+        .steps-line {
+            left: 50%;
+            margin-left: -25px;
+            position: absolute;
+            top: 180px;
+            text-align: center;
+            width: 50px;
+            div {
+                background-color: $white;
+                color: $blue-green;
+                display: block;
+                font-size: 18px;
+                font-weight: bold;
+                height: 33px;
+                padding-top: 17px;
+                text-align: center;
+                width: 50px;
+                @include box-shadow(0, 0, 24px, rgba(0, 0, 0, 0.15));
+                @include border-radius(25px);
+            }
+            span {
+                background: $light-grey2;
+                display: block;
+                margin: 10px auto;
+                min-height: 168px;
+                width: 5px;
+                @include border-radius(3px);
+            }
+        }
+
         ul {
             padding-top: 80px;
             li {
                 border-top: 1px solid $light-grey2;
-                padding: 50px 288px;
+                padding: 50px 0;
                 position: relative;
                 text-align: right;
-                &:before {
-                    background-color: $white;
-                    color: $blue-green;
-                    content: '1';
-                    display: block;
-                    float: left;
-                    font-size: 18px;
-                    height: 33px;
-                    left: 50%;
-                    margin-left: -25px;
-                    padding-top: 17px;
-                    position: absolute;
-                    text-align: center;
-                    width: 50px;
-                    @include box-shadow(0, 0, 24px, rgba(0, 0, 0, 0.15));
-                    @include border-radius(25px);
-                }
+
                 &:after {
                     display: block;
                     content: '';
@@ -77,19 +101,9 @@
                 }
 
                 div {
+                    left: 22%;
                     position: relative;
                     width: 275px;
-                    &:before {
-                        background: $light-grey2;
-                        content: '';
-                        display: block;
-                        height: 121%;
-                        position: absolute;
-                        right: -70px;
-                        top: 60px;
-                        width: 5px;
-                        @include border-radius(3px);
-                    }
                 }
                 h5 {
                     font-size: 24px;
@@ -101,26 +115,30 @@
                     font-size: 14px;
                     color: $light-grey1;
                 }
-                &:nth-child(2){
+                &:nth-child(2) {
                     div {
                         float: right;
+                        left: auto;
+                        right: 22%;
                         text-align: left;
-                        &:before {
-                            left: -70px;
-                            top: 60px;
-                        }
-                    }
-                    &:before {
-                        content: '2';
                     }
                 }
-                &:nth-child(3){
-                    &:before {
-                        content: '3';
-                    }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1260px) {
+    .idea-page {
+        .steps-to-invest {
+            ul {
+                li {
                     div {
-                        &:before {
-                            display: none;
+                        left: 16%;
+                    }
+                    &:nth-child(2) {
+                        div {
+                            right: 16%;
                         }
                     }
                 }
@@ -129,3 +147,48 @@
     }
 }
 
+
+@media all and (max-width: 1000px) {
+    .idea-page {
+        .steps-to-invest {
+            ul {
+                li {
+                    div {
+                        left: 9%;
+                    }
+                    &:nth-child(2) {
+                        div {
+                            right: 9%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 768px) {
+    .idea-page {
+        .steps-to-invest {
+            .steps-line {
+                display: none;
+            }
+            ul {
+                li {
+                    div {
+                        left: auto;
+                        padding: 0 130px;
+                        text-align: center;
+                        width: auto;
+                    }
+                    &:nth-child(2) {
+                        div {
+                            right: auto;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
