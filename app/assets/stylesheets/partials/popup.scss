@@ -31,9 +31,13 @@
             text-align: center;
             .field {
                 position: relative;
-                padding: 0 0 25px 0;
+                padding: 0 0 45px 0;
                 label.error {
                     right: 17px;
+                    bottom: 20px;
+                }
+                &.forgot-link {
+                    padding-bottom: 25px;
                 }
             }
             .default-input {

@@ -23,3 +23,10 @@
     -o-transition: $args;
     transition: $args;
 }
+
+@mixin transform($args...) {
+    -moz-transform: $args;
+    -webkit-transform: $args;
+    -o-transform: $args;
+    transform: $args;
+}

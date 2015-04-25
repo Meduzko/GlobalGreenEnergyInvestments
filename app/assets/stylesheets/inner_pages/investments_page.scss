@@ -1,6 +1,6 @@
 .investments-page {
     margin: 0 auto;
-    width: 1260px;
+    max-width: 1260px;
     .default-text {
         padding: 30px 20% 60px;
     }
@@ -30,6 +30,26 @@
             .default-btn {
                 padding: 12px;
                 width: 120px;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 768px) {
+    .investments-page {
+        width: auto;
+        .inner-page-main-title {
+            font-size: 36px;
+            letter-spacing: 10px;
+        }
+    }
+}
+
+@media all and (max-width: 1050px) {
+    .investments-page {
+        .grid {
+            .grid-container {
+                overflow-x: scroll;
             }
         }
     }
