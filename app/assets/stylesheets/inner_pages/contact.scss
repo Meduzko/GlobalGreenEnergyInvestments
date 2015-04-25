@@ -1,0 +1,88 @@
+@import "../partials/variables";
+@import "../partials/mixins";
+
+.contact-page {
+    margin: 0 auto;
+    width: 1260px;
+    .default-text {
+        padding: 30px 20% 50px 20%;
+        text-align: center;
+    }
+    form {
+        background: url('/images/map_bg.gif') no-repeat 50% 0;
+        padding: 30px 0 0 0;
+        .field {
+            margin: 20px auto;
+            padding: 0 15px 25px 0;
+            position: relative;
+            width: 525px;
+            .default-label {
+                display: block;
+                margin: 40px 11px 11px 11px;
+            }
+            .default-input {
+                width: 460px;
+            }
+            span.icon-ok {
+                color: $blue-green;
+                font-family: icon_font;
+                font-size: 22px;
+                display: none;
+                position: absolute;
+                bottom: 45px;
+                right: -10px;
+            }
+            textarea {
+                min-height: 180px;
+                resize: vertical;
+            }
+            label.error {
+                right: 28px;
+            }
+        }
+        .actions {
+            text-align: center;
+            input {
+                margin-top: 30px;
+                padding-left: 80px;
+                padding-right: 80px;
+            }
+        }
+        .message-box {
+            color: $red;
+            font-size: 14px;
+            font-weight: 700;
+            margin: 0 auto;
+            text-transform: uppercase;
+            width: 520px;
+        }
+    }
+
+    .contact-data {
+        border-top: 1px solid $light-grey2;
+        font-size: 48px;
+        margin-top: 90px;
+        padding-top: 75px;
+        text-align: center;
+        div {
+            padding: 10px 0;
+        }
+        span {
+            color: $blue;
+            font-family: icon_font;
+        }
+        a {
+            color: $grey;
+            font-size: 30px;
+            &:hover {
+                color: $blue;
+            }
+        }
+        .icon-phone-1 {
+            font-size: 36px;
+            position: relative;
+            top: -4px;
+        }
+    }
+
+}

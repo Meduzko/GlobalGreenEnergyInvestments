@@ -75,6 +75,7 @@ en:
   subscr_text: De producenten verkopen hun stroom, wij regelen verder alles. Van de administratie tot de klantenservice en de levering van 100% CO2 gecompenseerd gas.
   subscr_name_field: Name
   subscr_email_field: Email
+  subscr_submit: Stay informed
 
   footer_about: About us
   footer_risks: Risks
@@ -94,6 +95,9 @@ en:
 
   idea_title: Idea
   idea_example_project_title: Project sunny
+
+  contact_title: Contact
+  contact_message: Question
 
   #Invest page
   invest_title: Investments

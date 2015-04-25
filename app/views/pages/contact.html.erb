@@ -1,2 +1,59 @@
-<h1>Pages#contact</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+<div class="inner-page contact-page" id="contact" data-jscomp="components/contact">
+  <h1 class="inner-page-main-title"><%= I18n.t(:contact_title) %></h1>
+
+  <p class="default-text top-default-text">Global Green Energy Investments is a platform where social investors meet green energy</p>
+
+  <form action="#" data-jscomp='components/validator'>
+
+    <div class="message-box"></div>
+
+    <div class="field">
+      <div class="default-label">
+        <label for="contact-email"><%= I18n.t(:subscr_email_field) %></label>
+      </div>
+      <input type="text"
+             id="contact-email"
+             class="default-input"
+             placeholder="example@mail.com"
+             name="contact[email]"
+             data-validator-email="Please write correct email"
+             data-validator-required="This field is required" />
+      <span class="icon-ok">&nbsp;</span>
+    </div>
+
+    <div class="field">
+      <div class="default-label">
+        <label for="contact-message"><%= I18n.t(:contact_message) %></label>
+      </div>
+      <textarea id="contact-message"
+                class="default-input"
+                name="contact[message]"
+                placeholder="Message"
+                data-validator-required="This field is required" ></textarea>
+      <span class="icon-ok">&nbsp;</span>
+    </div>
+
+    <div class="actions">
+      <input class='default-btn primary-btn'
+             type="submit"
+             value="<%= I18n.t(:forgot_pass_popup_btn_text) %>"
+             onclick="compSupport.callFunc('#contact', 'sendForm')"/>
+    </div>
+
+  </form>
+
+  <section class="contact-data">
+    <div>
+      <span class="icon-phone-1"></span>
+      <%= I18n.t(:main_phone) %>
+    </div>
+    <div>
+      <a href="mailto:<%= I18n.t(:main_email) %>">
+        <span class="icon-mail-2"></span>
+        <%= I18n.t(:main_email) %>
+      </a>
+    </div>
+  </section>
+
+
+</div>
