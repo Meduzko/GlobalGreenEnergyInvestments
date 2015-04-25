@@ -56,6 +56,24 @@
         max-width: 1260px;
         position: relative;
 
+        .inside-step {
+            display: none;
+            background-color: $white;
+            color: $blue-green;
+            font-size: 18px;
+            font-weight: bold;
+            height: 33px;
+            padding-top: 17px;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            margin: -25px 0 0 -25px;
+            text-align: center;
+            width: 50px;
+            @include box-shadow(0, 0, 24px, rgba(0, 0, 0, 0.15));
+            @include border-radius(25px);
+        }
+
         .steps-line {
             left: 50%;
             margin-left: -25px;
@@ -147,7 +165,6 @@
     }
 }
 
-
 @media all and (max-width: 1000px) {
     .idea-page {
         .steps-to-invest {
@@ -169,7 +186,21 @@
 
 @media all and (max-width: 768px) {
     .idea-page {
+
+        .project-infographic-content {
+            > div {
+                width: 88%;
+                p.default-text {
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                }
+            }
+        }
+
         .steps-to-invest {
+            .inside-step {
+                display: block;
+            }
             .steps-line {
                 display: none;
             }
