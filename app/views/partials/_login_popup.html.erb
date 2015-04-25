@@ -1,4 +1,4 @@
-<div class="popup" id="loginPopup" data-jscomp="components/popup">
+<div class="popup" id="loginPopup" data-jscomp="components/loginPopup">
 
   <div class="fog" onclick="compSupport.callFunc(this, 'hide')"></div>
   <div class="popup-body">
@@ -51,10 +51,16 @@
         </div>
 
         <div class="field forgot-link">
-          <a href="#" onclick="compSupport.callFunc('#forgotPassPopup', 'show')"><%= I18n.t(:login_popup_forgot_pswd) %></a>
+          <a href="#"
+             onclick="compSupport.callFunc('#forgotPassPopup', 'show')">
+            <%= I18n.t(:login_popup_forgot_pswd) %>
+          </a>
         </div>
 
-        <input type="submit" class="default-btn primary-btn" value="<%= I18n.t(:login_popup_btn_text) %>"/>
+        <input type="submit"
+               onclick="compSupport.callFunc('#loginPopup', 'sendForm')"
+               class="default-btn primary-btn"
+               value="<%= I18n.t(:login_popup_btn_text) %>"/>
       </form>
 
 
