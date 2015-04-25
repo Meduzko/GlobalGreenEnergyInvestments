@@ -101,6 +101,8 @@ en:
 
   #Invest page
   invest_title: Investments
+  invest_popup_title: Participations
+  invest_popup_button: Next
 
   #Seetings page
   settings_title: Settings

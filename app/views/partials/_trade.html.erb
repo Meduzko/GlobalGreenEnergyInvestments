@@ -27,7 +27,7 @@
         <td>€ 498.20</td>
         <td>€ 498.20</td>
         <td>€ 498.20</td>
-        <td><a href="#" class="default-btn">Make offer</a></td>
+        <td><a href="#" onclick="compSupport.callFunc('#participationsPopup', 'show')" class="default-btn">Make offer</a></td>
       </tr>
       <tr>
         <td>curacao 2</td>
@@ -37,7 +37,7 @@
         <td>€ 498.20</td>
         <td>€ 498.20</td>
         <td>€ 498.20</td>
-        <td><a href="#" class="default-btn">Make offer</a></td>
+        <td><a href="#" onclick="compSupport.callFunc('#participationsPopup', 'show')" class="default-btn">Make offer</a></td>
       </tr>
       <tr>
         <td>rembrand windpark</td>
@@ -65,5 +65,6 @@
 
 </section>
 
+<%= render 'partials/participations_popup' %>
 
 <%= render 'partials/subscription' %>

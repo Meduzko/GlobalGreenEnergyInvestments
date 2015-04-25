@@ -31,9 +31,9 @@ a {
     color: $blue;
     font-size: 48px;
     font-weight: 900;
-    letter-spacing: 28px;
+    letter-spacing: 20px;
     line-height: 58px;
-    text-indent: 28px;
+    text-indent: 20px;
     text-align: center;
     text-transform: uppercase;
 }
@@ -210,6 +210,10 @@ label.error {
 
 
 .grid {
+    .grid-container {
+        overflow-x: auto;
+        padding-bottom: 15px;
+    }
     h5 {
         padding: 40px 0 35px 0;
         text-align: center;

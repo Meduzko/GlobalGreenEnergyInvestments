@@ -1,0 +1,38 @@
+<div class="popup participation-popup" id="participationsPopup" data-jscomp="components/popup">
+
+  <div class="fog" onclick="compSupport.callFunc(this, 'hide')"></div>
+  <div class="popup-body">
+    <span class="popup-close icon-font icon-cancel" onclick="compSupport.callFunc(this, 'hide')"></span>
+
+    <div class="popup-title"><%= I18n.t(:invest_popup_title) %></div>
+    <div class="popup-content">
+
+      <div class="field">
+        <p class="default-text">Write your email and we will send your password there</p>
+      </div>
+
+      <div class="participations-table">
+        <table>
+          <tr>
+            <th>Numbers of participations</th>
+            <th>Amount to invest</th>
+            <th>Total interest payed</th>
+            <th></th>
+          </tr>
+          <tr>
+            <td><input class="default-input" type="number" value="1"/></td>
+            <td><span>€ 498.20</span></td>
+            <td><span>€ 498.20</span></td>
+            <td><span class="grid-ok-icon"></span></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="actions">
+        <a href="#" class="default-btn"><%= I18n.t(:invest_popup_button) %></a>
+      </div>
+
+    </div>
+  </div>
+
+</div>

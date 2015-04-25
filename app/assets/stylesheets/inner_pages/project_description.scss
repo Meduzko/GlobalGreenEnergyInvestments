@@ -70,6 +70,7 @@
 
     .statistic-circles {
         background: url('/images/map_bg.gif') no-repeat 50% 10px;
+        padding-bottom: 90px;
         text-align: center;
         background-size: 50%;
     }
@@ -186,4 +187,16 @@
         }
     }
 
+}
+
+@media all and (max-width: 768px) {
+    .project-description {
+        .project-controls {
+            .get-pdf {
+                display: block;
+                float: none;
+                margin: 20px 0 0 50px;
+            }
+        }
+    }
 }
