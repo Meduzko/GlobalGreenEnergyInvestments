@@ -11,6 +11,6 @@ class PagesController < ApplicationController
   def contact
   end
 
-  def privacy
+  def legal
   end
 end

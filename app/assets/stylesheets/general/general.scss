@@ -208,6 +208,9 @@ label.error {
     }
 }
 
+.tabs-component {
+    display: none;
+}
 
 .grid {
     .grid-container {
@@ -241,6 +244,38 @@ label.error {
             &:first-child td {
                 color: $blue;
             }
+        }
+    }
+}
+
+.content-with-text {
+    border-top: 1px solid $light-grey2;
+    padding: 60px 125px;
+    &:first-child {
+        border: 0;
+    }
+    h5 {
+        font-size: 30px;
+        line-height: 35px;
+        padding-bottom: 35px;
+        text-transform: uppercase;
+    }
+    p {
+        color: $light-grey1;
+        font-size: 18px;
+        line-height: 21px;
+        margin: 0 auto;
+        padding: 10px 0;
+    }
+    ul {
+        padding: 25px 200px 0 0;
+        li {
+            background: url('/images/list_dot.png') no-repeat 0 5px;
+            color: $light-grey1;
+            font-size: 18px;
+            line-height: 21px;
+            margin: 0 auto;
+            padding: 0 0 25px 30px;
         }
     }
 }
