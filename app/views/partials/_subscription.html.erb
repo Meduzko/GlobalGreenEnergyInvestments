@@ -3,7 +3,7 @@
 
   <p class="default-text"><%= I18n.t(:subscr_text) %></p>
 
-  <form action="#" id="subscribeForm" data-jscomp="components/validator">
+  <form action="#" method="POST" id="subscribeForm" data-jscomp="components/validator">
 
     <div class="updating-layer">
       <object data="../images/svg/spinner.svg" type="image/svg+xml">
@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <input type="submit"
+    <input type="button"
            class="default-btn primary-btn"
            value="<%= I18n.t(:subscr_submit) %>"
            id="subscribe"

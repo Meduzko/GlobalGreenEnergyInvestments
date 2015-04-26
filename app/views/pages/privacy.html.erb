@@ -1,0 +1,32 @@
+<div class="inner-page investments-page">
+  <h1 class="inner-page-main-title"><%= I18n.t(:privacy_title) %></h1>
+
+  <p class="default-text">View the projects that you are interested in to further understand the risks and the return of
+    a participation.</p>
+
+
+  <div data-jscomp="components/tabs">
+    <ul>
+      <li><a href="#about_us">About us</a></li>
+      <li><a href="#risks">Risks</a></li>
+      <li><a href="#terms_and_conditions">Terms & conditions</a></li>
+      <li><a href="#privacy_policy">Privacy policy</a></li>
+      <li><a href="#disclaimer">Disclaimer</a></li>
+    </ul>
+    <div class="tabs-content" id="about_us">
+      <%= render 'partials/about_us' %>
+    </div>
+    <div class="tabs-content" id="risks">
+      <%= render 'partials/risks' %>
+    </div>
+    <div class="tabs-content" id="terms_and_conditions">
+      <%= render 'partials/terms_and_conditions' %>
+    </div>
+    <div class="tabs-content" id="privacy_policy">
+      <%= render 'partials/privacy_policy' %>
+    </div>
+    <div class="tabs-content" id="disclaimer">
+      <%= render 'partials/disclaimer' %>
+    </div>
+  </div>
+</div>

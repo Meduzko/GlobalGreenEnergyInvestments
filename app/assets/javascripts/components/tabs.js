@@ -1,4 +1,3 @@
-
 define(['jquery', 'jquery.responsiveTabs'], function ($) {
 
     return {

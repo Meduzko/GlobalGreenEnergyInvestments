@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'invest' => 'pages#invest', :as => :page_invest
   get 'about' => 'pages#about', :as => :page_about
   get 'contact' => 'pages#contact', :as => :page_contact
+  get 'privacy' => 'pages#privacy', :as => :page_privacy
 
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, :controllers => { registrations: 'registrations' }
