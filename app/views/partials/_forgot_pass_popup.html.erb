@@ -7,13 +7,13 @@
     <div class="popup-title"><%= I18n.t(:forgot_pass_popup_title) %></div>
     <div class="popup-content">
 
-      <form action="" data-jscomp='components/validator'>
+      <%= form_for(:user, :url => session_path(:user), html: { method: :post, :'data-jscomp' => 'components/validator' }) do |f| %>
         <div class="field">
-          <input type="email"
-                 class="default-input"
-                 placeholder="email"
-                 name="email"
-                 required="true"/>
+          <%= f.email_field :email, 
+                      autofocus: true,
+                      class: 'default-input',
+                      placeholder: 'email',
+                      required: 'true' %>
         </div>
 
         <div class="field">
@@ -21,7 +21,7 @@
         </div>
 
         <input type="submit" class="default-btn primary-btn" value="<%= I18n.t(:forgot_pass_popup_btn_text) %>"/>
-      </form>
+      <% end %>
 
 
       <div class="popup-additional">

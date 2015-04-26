@@ -7,50 +7,22 @@
     <div class="popup-title"><%= I18n.t(:login_popup_title) %></div>
     <div class="popup-content">
 
-      <% if false %>
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="field">
-            <%= f.label :email %><br/>
-            <%= f.email_field :email, autofocus: true %>
-          </div>
-
-          <div class="field">
-            <%= f.label :password %><br/>
-            <%= f.password_field :password, autocomplete: 'off' %>
-          </div>
-
-          <% if devise_mapping.rememberable? -%>
-            <div class="field">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
-            </div>
-          <% end -%>
-
-          <div class="actions">
-            <%= f.submit 'Log in' %>
-          </div>
-        <% end %>
-      <% end %>
-
-      <%#= render 'devise/shared/links' %>
-
-      <form action="" method="POST" data-jscomp='components/validator'>
-
+      <%= form_for(:user, :url => session_path(:user), 
+            :html => { :'data-jscomp' => 'components/validator', method: 'post' } ) do |f| %>
         <div class="message-box"></div>
-
         <div class="field">
-          <input type="email"
-                 class="default-input"
-                 placeholder="email"
-                 name="email"
-                 required="true"/>
+          <%= f.email_field :email, 
+                            autofocus: true, 
+                            class: 'default-input',
+                            placeholder: 'email',
+                            required: 'true' %>
         </div>
         <div class="field">
-          <input type="password"
-                 class="default-input"
-                 placeholder="password"
-                 name="password"
-                 required="true"/>
+          <%= f.password_field :password, 
+                                autocomplete: 'off',
+                                class: 'default-input',
+                                placeholder: 'password',
+                                required: 'true' %>
         </div>
 
         <div class="field forgot-link">
@@ -59,14 +31,13 @@
             <%= I18n.t(:login_popup_forgot_pswd) %>
           </a>
         </div>
-
-        <input type="button"
-               onclick="compSupport.callFunc('#loginPopup', 'sendForm')"
-               class="default-btn primary-btn"
-               value="<%= I18n.t(:login_popup_btn_text) %>"/>
-      </form>
-
-
+        
+        <%= f.button I18n.t(:login_popup_btn_text), 
+                      class: 'default-btn primary-btn',
+                      type: 'button',
+                      onclick: "compSupport.callFunc('#loginPopup', 'sendForm')".html_safe %>
+      <% end %>
+  
       <div class="popup-additional">
         <a href="/users/sign_up"><%= I18n.t(:login_popup_register_link) %></a>
         <p class="default-text"><%= I18n.t(:login_popup_text).html_safe %></p>
