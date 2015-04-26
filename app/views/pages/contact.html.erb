@@ -3,7 +3,7 @@
 
   <p class="default-text top-default-text">Global Green Energy Investments is a platform where social investors meet green energy</p>
 
-  <form action="#" data-jscomp='components/validator'>
+  <form action="#" method="POST" data-jscomp='components/validator'>
 
     <div class="message-box"></div>
 
@@ -35,7 +35,7 @@
 
     <div class="actions">
       <input class='default-btn primary-btn'
-             type="submit"
+             type="button"
              value="<%= I18n.t(:forgot_pass_popup_btn_text) %>"
              onclick="compSupport.callFunc('#contact', 'sendForm')"/>
     </div>

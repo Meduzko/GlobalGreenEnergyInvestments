@@ -155,7 +155,6 @@ define(["jquery", "jquery.validate"], function ($) {
                 }
 
             });
-            console.log(configuration);
             return configuration;
         },
 

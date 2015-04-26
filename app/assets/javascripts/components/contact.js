@@ -5,15 +5,6 @@ define(['jquery'], function ($) {
             this.domId = $('#' + domId);
             this.updatingLayer = '.updating-layer';
             this.mesageBox = '.message-box';
-
-            console.log(this.domId.find('form'));
-
-            this.domId.find('form').on('submit', function (e) {
-                console.log(e);
-                //e.preventDefault();
-                //e.stopPropagation();
-            })
-
         },
 
         showUpdatingLayer: function () {
@@ -33,12 +24,10 @@ define(['jquery'], function ($) {
             var form = this.domId.find('form');
             var formData = form.serialize();
 
-            console.log(formData);
-
             if (form.valid()) {
                 thisComp.showUpdatingLayer();
 
-                /*$.ajax({
+                $.ajax({
                     beforeSend: function (xhr) {
                         xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
                     },
@@ -58,7 +47,7 @@ define(['jquery'], function ($) {
                     })
                     .fail(function (data) {
                         thisComp.showMessage(data.messages, 'error');
-                    });*/
+                    });
             }
         }
 

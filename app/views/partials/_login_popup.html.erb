@@ -34,7 +34,10 @@
 
       <%#= render 'devise/shared/links' %>
 
-      <form action="" data-jscomp='components/validator'>
+      <form action="" method="POST" data-jscomp='components/validator'>
+
+        <div class="message-box"></div>
+
         <div class="field">
           <input type="email"
                  class="default-input"
@@ -57,7 +60,7 @@
           </a>
         </div>
 
-        <input type="submit"
+        <input type="button"
                onclick="compSupport.callFunc('#loginPopup', 'sendForm')"
                class="default-btn primary-btn"
                value="<%= I18n.t(:login_popup_btn_text) %>"/>
