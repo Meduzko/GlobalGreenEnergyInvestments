@@ -45,6 +45,12 @@
         display: block;
     }
 
+    .r-tabs-state-default {
+        h1 {
+            display: none;
+        }
+    }
+
 }
 
 /* Accordion responsive breakpoint */

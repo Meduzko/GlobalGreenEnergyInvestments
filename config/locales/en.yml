@@ -104,7 +104,12 @@ en:
   invest_popup_title: Participations
   invest_popup_button: Next
 
-  privacy_title: Privacy
+  legal_privacy_title: Privacy
+  legal_about_us_title: About us
+  legal_risks_title: Risks
+  legal_terms_title: Terms & conditions
+  legal_disclaimer_title: Disclaimer
 
   #Seetings page
-  settings_title: Settings
+  profile_settings_title: Settings
+  profile_my_invest_title: My investments

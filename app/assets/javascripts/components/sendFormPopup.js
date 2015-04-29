@@ -2,6 +2,10 @@ define(['jquery', 'components/popup'], function ($, popup) {
 
     return compSupport.extend(popup, {
         init: function (domId, config) {
+
+            console.log(config.url);
+            this.url = config.url;
+
             popup.init.apply(this, arguments);
         },
 
@@ -16,12 +20,14 @@ define(['jquery', 'components/popup'], function ($, popup) {
 
             if (form.valid()) {
 
+                console.log(this.url);
+
                 $.ajax({
                     beforeSend: function (xhr) {
                         xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
                     },
                     method: "POST",
-                    url: "/users/sign_in",
+                    url: this.url,
                     data: formData
                 })
                     .done(function (data) {

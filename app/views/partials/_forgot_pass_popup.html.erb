@@ -1,4 +1,4 @@
-<div class="popup" id="forgotPassPopup" data-jscomp="components/popup">
+<div class="popup" id="forgotPassPopup" data-jscomp="components/sendFormPopup" data-jscomp-config='{"url": "/users/forgot_pass"}'>
 
   <div class="fog" onclick="compSupport.callFunc(this, 'hide')"></div>
   <div class="popup-body">
@@ -20,7 +20,7 @@
           <p class="default-text">Write your email and we will send your password there</p>
         </div>
 
-        <input type="submit" class="default-btn primary-btn" value="<%= I18n.t(:forgot_pass_popup_btn_text) %>"/>
+        <input type="button" class="default-btn primary-btn" value="<%= I18n.t(:forgot_pass_popup_btn_text) %>" onclick="compSupport.callFunc('#forgotPassPopup', 'sendForm')" />
       <% end %>
 
 

@@ -3,6 +3,16 @@
 
 .registration-page {
     margin: 0 auto;
+    max-width: 1260px;
+    padding-top: 180px;
+
+    .inner-page-main-title {
+        position: absolute;
+        left: 0;
+        top: 90px;
+        text-align: center;
+        width: 100%;
+    }
 
     .default-text {
         padding: 35px 28% 60px;
