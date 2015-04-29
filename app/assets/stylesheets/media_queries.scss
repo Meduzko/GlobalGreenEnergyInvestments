@@ -207,6 +207,7 @@
     }
 
     .registration-page {
+        padding-top: 80px;
         h1 {
             font-size: 34px;
             letter-spacing: 10px;
@@ -218,6 +219,9 @@
                 width: auto;
                 .field_with_errors {
                     display: block;
+                }
+                span.icon-ok {
+                    right: 5px;
                 }
             }
 

@@ -90,5 +90,17 @@
 @media all and (max-width: 768px) {
     .contact-page {
         width: auto;
+        form {
+            .field {
+                width: auto;
+                .default-input {
+                    width: 85%;
+                }
+            }
+            .message-box {
+                margin: 0 11px;
+                width: auto;
+            }
+        }
     }
 }
