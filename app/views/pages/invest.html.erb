@@ -7,9 +7,9 @@
 
   <div class="tabs-component" data-jscomp="components/tabs">
     <ul>
-      <li><a href="#fundable">Fundable</a></li>
-      <li><a href="#funded">Funded</a></li>
-      <li><a href="#trade">Trade</a></li>
+      <li><a href="#fundable"><%= I18n.t(:invest_fundable_title) %></a></li>
+      <li><a href="#funded"><%= I18n.t(:invest_funded_title) %></a></li>
+      <li><a href="#trade"><%= I18n.t(:invest_trade_title) %></a></li>
     </ul>
     <div class="tabs-content" id="fundable">
       <%= render 'partials/fundable' %>

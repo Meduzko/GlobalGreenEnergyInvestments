@@ -101,6 +101,9 @@ en:
 
   #Invest page
   invest_title: Investments
+  invest_fundable_title: Fundable
+  invest_trade_title: Trade
+  invest_funded_title: Funded
   invest_popup_title: Participations
   invest_popup_button: Next
 
@@ -109,6 +112,10 @@ en:
   legal_risks_title: Risks
   legal_terms_title: Terms & conditions
   legal_disclaimer_title: Disclaimer
+
+  about_the_team_title: The team
+  about_mission_title: Mission
+  about_board_title: Board
 
   #Seetings page
   profile_settings_title: Settings
