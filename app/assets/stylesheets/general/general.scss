@@ -1,7 +1,6 @@
 @import "../partials/variables";
 @import "../partials/mixins";
 
-
 body {
     background-color: $light-grey6;
     font-family: 'Roboto Condensed', sans-serif;
@@ -277,6 +276,15 @@ label.error {
             line-height: 21px;
             margin: 0 auto;
             padding: 0 0 25px 30px;
+        }
+    }
+}
+
+@media all and (max-width: 740px) {
+    .content-with-text {
+        padding: 60px 20px;
+        ul {
+            padding-right: 20px;
         }
     }
 }
