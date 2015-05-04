@@ -35,7 +35,7 @@ define(['jquery', 'components/popup'], function ($, popup) {
                             thisComp.showMessage(data.messages, 'errors');
                         } else {
                             thisComp.hide();
-                            //window.location.href = data.redirect_to;
+                            window.location.href = data.redirect_to;
                         }
                     })
                     .fail(function (data) {

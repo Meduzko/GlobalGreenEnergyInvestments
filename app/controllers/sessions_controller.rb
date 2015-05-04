@@ -12,6 +12,6 @@ class SessionsController < Devise::SessionsController
   end
 
    def failure
-    return render :json => {:success => 'errors', :errors => alert}
+    return render :json => {:status => 'errors', :errors => alert}
   end
 end
