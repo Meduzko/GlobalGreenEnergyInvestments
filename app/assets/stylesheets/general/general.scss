@@ -282,6 +282,10 @@ label.error {
 }
 
 @media all and (max-width: 740px) {
+    .inner-page-main-title {
+        letter-spacing: 5px;
+        text-indent: 5px;
+    }
     .content-with-text {
         padding: 60px 20px;
         ul {
