@@ -31,14 +31,15 @@ define(['jquery', 'components/popup'], function ($, popup) {
                     data: formData
                 })
                     .done(function (data) {
-                        if (data.status === 'error') {
-                            thisComp.showMessage(data.messages, 'error');
+                        if (data.status === 'errors') {
+                            thisComp.showMessage(data.messages, 'errors');
                         } else {
                             thisComp.hide();
+                            //window.location.href = data.redirect_to;
                         }
                     })
                     .fail(function (data) {
-                        thisComp.showMessage(data.messages, 'error');
+                        thisComp.showMessage(data.messages, 'errors');
                     });
             }
         }

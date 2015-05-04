@@ -1,18 +1,18 @@
   <h1 class="inner-page-main-title"><%= I18n.t(:profile_settings_title) %></h1>
 
-<%= form_for root_path,
+<%= form_for :profile,
              :html => {
                  'data-jscomp' => 'components/validator',
                  :class => 'my-profile-settings-form'
              } do |f| %>
 
-
+  <%= f.hidden_field :user_id, :value => current_user.id %>
   <div class="field">
     <div class="default-label">
       <%= f.label :first_name %>
       <em><%= I18n.t(:cmn_official_label) %></em>
     </div>
-    <%= f.text_field :first_name,
+    <%= text_field_tag 'user[first_name]', current_user.first_name,
                      autofocus: true,
                      :'data-validator-required' => I18n.t(:error_required),
                      :placeholder => 'First name',
@@ -26,7 +26,7 @@
       <%= f.label :last_name %>
       <em><%= I18n.t(:cmn_official_label) %></em>
     </div>
-    <%= f.text_field :last_name,
+    <%= text_field_tag 'user[last_name]', current_user.last_name,
                      :'data-validator-required' => I18n.t(:error_required),
                      :placeholder => 'Last name',
                      :class => 'default-input' %>
@@ -35,11 +35,11 @@
 
   <div class="field">
     <%= f.label :email, :class => 'default-label' %>
-    <%= f.email_field :email,
+    <%= text_field_tag 'user[email]', current_user.email,
                       :'data-validator-required' => I18n.t(:error_required),
                       :'data-validator-email' => I18n.t(:error_email),
                       :placeholder => 'example@mail.com',
-                      :class => 'default-input' %>
+                      :class => 'default-input'  %>
     <span class="icon-ok">&nbsp;</span>
   </div>
 
@@ -48,7 +48,8 @@
       <%= f.label :phone %>
       <em><%= I18n.t(:cmn_not_required) %></em>
     </div>
-    <%= f.email_field :phone,
+    <%= f.text_field :phone,
+                      :value => @profile.try(:phone),
                       :class => 'default-input' %>
     <span class="icon-ok">&nbsp;</span>
   </div>
@@ -63,6 +64,7 @@
   <div class="field birthday-field" data-jscomp="components/select2">
     <%= f.label :date_of_birthday, :class => 'default-label' %>
     <%= f.date_select :date_of_birthday,
+                      :value => @profile.try(:date_of_birthday),
                       order: [:day, :month, :year],
                       :'data-validator-required' => I18n.t(:error_required),
                       :class => 'default-input' %>
@@ -72,6 +74,7 @@
   <div class="field country-field" data-jscomp="components/select2">
     <%= f.label :country, :class => 'default-label' %>
     <%= f.country_select :country, ['NL'],
+                         :value => @profile.try(:country),
                          :'data-validator-required' => I18n.t(:error_required),
                          :class => 'default-input' %>
     <span class="icon-ok">&nbsp;</span>
@@ -80,16 +83,20 @@
   <div class="field address-field">
     <%= f.label :address, :class => 'default-label' %>
     <div>
-      <%= f.text_field :street,
+      <%= f.text_field :address_street,
+                       :value => @profile.try(:address_street),
                        :placeholder => 'Street',
                        :class => 'default-input' %>
-      <%= f.text_field :flat_number,
+      <%= f.text_field :address_num_house,
+                       :value => @profile.try(:address_num_house),
                        :placeholder => 'Number',
                        :class => 'default-input small-input' %>
-      <%= f.text_field :city,
+      <%= f.text_field :address_city,
+                       :value => @profile.try(:address_city),
                        :placeholder => 'City',
                        :class => 'default-input' %>
-      <%= f.text_field :postal,
+      <%= f.text_field :adress_zip_code,
+                       :value => @profile.try(:adress_zip_code),
                        :placeholder => 'Postal',
                        :class => 'default-input small-input' %>
     </div>
@@ -101,7 +108,8 @@
 
   <div class="field">
     <%= f.label :name, :class => 'default-label' %>
-    <%= f.email_field :bank_account_name,
+    <%= f.text_field :bank_account_name,
+                      :value => @profile.try(:bank_account_name),
                       :'data-validator-required' => I18n.t(:error_required),
                       :placeholder => 'Bank account name',
                       :class => 'default-input' %>
@@ -110,7 +118,8 @@
 
   <div class="field">
     <%= f.label :iban, :class => 'default-label' %>
-    <%= f.email_field :iban,
+    <%= f.text_field :bank_iban_code,
+                      :value => @profile.try(:bank_iban_code),
                       :'data-validator-required' => I18n.t(:error_required),
                       :placeholder => 'Iban',
                       :class => 'default-input' %>

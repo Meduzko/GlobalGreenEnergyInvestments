@@ -18,7 +18,7 @@
         <ul class="auth-links">
           <li class="login-link">
             <% if current_user %>
-              <%= link_to current_user.first_name, edit_user_password_path, 'class' => 'icon-font icon-user' %>
+              <%= link_to current_user.first_name, profile_path, 'class' => 'icon-font icon-user' %>
               <%= link_to 'Logout', destroy_user_session_path %>
             <% else %>
               <%#= link_to I18n.t(:menu_login), new_user_session_path %>

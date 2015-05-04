@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'legal' => 'pages#legal', :as => :page_legal
 
   mount Ckeditor::Engine => '/ckeditor'
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, :controllers => { registrations: 'registrations', sessions: 'sessions' }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'home#index'
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     end
   end
   get 'profile' => 'profiles#edit', :as => :profile
+  post 'profile' => 'profiles#create_or_update', :as => :profile_ctr_or_upd
   #get ':slug' => 'pages#show',  :as => :pages
   #resources 'profiles', only: [:create, :edit, :update]
 end
