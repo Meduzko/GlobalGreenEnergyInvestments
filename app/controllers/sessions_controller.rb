@@ -7,7 +7,7 @@ class SessionsController < Devise::SessionsController
     render :status => 200,
            :json => { :status => 'success',
                       :user => current_user,
-                      :redirect_to => request.base_url + "profile#profile_settings",
+                      :redirect_to => request.base_url + "/profile#profile_settings",
            }
   end
 

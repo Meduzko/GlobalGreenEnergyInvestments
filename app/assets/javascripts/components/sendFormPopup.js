@@ -2,15 +2,13 @@ define(['jquery', 'components/popup'], function ($, popup) {
 
     return compSupport.extend(popup, {
         init: function (domId, config) {
-
-            console.log(config.url);
             this.url = config.url;
-
+            this.messageBox = '.message-box';
             popup.init.apply(this, arguments);
         },
 
         showMessage: function (message, messageType) {
-            this.domId.find(this.mesageBox).html('<div class="' + messageType + '-msg">' + message + '</div>');
+            this.domId.find(this.messageBox).html('<div class="' + messageType + '-msg">' + message + '</div>');
         },
 
         sendForm: function () {
@@ -19,8 +17,6 @@ define(['jquery', 'components/popup'], function ($, popup) {
             var formData = form.serialize();
 
             if (form.valid()) {
-
-                console.log(this.url);
 
                 $.ajax({
                     beforeSend: function (xhr) {
@@ -32,14 +28,14 @@ define(['jquery', 'components/popup'], function ($, popup) {
                 })
                     .done(function (data) {
                         if (data.status === 'errors') {
-                            thisComp.showMessage(data.messages, 'errors');
+                            thisComp.showMessage(data.errors, 'errors');
                         } else {
                             thisComp.hide();
                             window.location.href = data.redirect_to;
                         }
                     })
                     .fail(function (data) {
-                        thisComp.showMessage(data.messages, 'errors');
+                        thisComp.showMessage(data.responseText, 'errors');
                     });
             }
         }

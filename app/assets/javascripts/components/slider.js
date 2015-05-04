@@ -1,9 +1,8 @@
-
 define(['jquery', 'swiper'], function ($, Swiper) {
 
     return {
         init: function (domId, config) {
-            new Swiper ('#' + domId, {
+            var slider = new Swiper('#' + domId, {
                 // Optional parameters
                 autoplay: 7000,
                 loop: true,
@@ -12,6 +11,15 @@ define(['jquery', 'swiper'], function ($, Swiper) {
                 pagination: '.swiper-pagination',
                 paginationClickable: true
             });
+
+            /*slider.on('init', function (swiper) {
+                console.log(swiper);
+            });
+
+            slider.on('slideChangeStart', function (swiper) {
+                console.log(swiper);
+            });*/
+
         }
     }
 
