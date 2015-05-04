@@ -23,8 +23,7 @@
         "gulp.spritesmith": "*",
         "run-sequence": "*",
         "del": "*",
-        "gulp-base64": "*",
-        "gulp-gzip": "*"
+        "gulp-base64": "*"
     },
     "private": true
 }
