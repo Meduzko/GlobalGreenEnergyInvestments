@@ -123,6 +123,9 @@
                 margin: 5px;
                 width: auto;
             }
+            .default-btn {
+                padding: 16px 30px;
+            }
         }
     }
     header {
@@ -178,12 +181,12 @@
             .menu-control {
                 display: block;
                 position: absolute;
-                left: 30px;
+                left: 15px;
                 top: 25px;
             }
             .auth-menu-control {
                 left: auto;
-                right: 30px;
+                right: 15px;
             }
         }
     }
@@ -290,10 +293,12 @@
     .main-slider {
         .slider-content {
             h1 {
-                font-size: 40px;
-                line-height: 48px;
+                font-size: 38px;
+                line-height: 42px;
+                padding-top: 10px;
                 span {
-                    font-size: 30px;
+                    font-size: 28px;
+                    line-height: 32px;
                 }
             }
         }
