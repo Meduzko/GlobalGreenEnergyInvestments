@@ -13,9 +13,12 @@ var gulp = require('gulp'), // Сообственно Gulp JS
     runSequence = require('run-sequence'),
     del = require('del'),
     base64 = require('gulp-base64'),
+    gzip = require('gulp-gzip'),
     mainBowerFiles = require('main-bower-files'),
     assetsRoot = 'app/assets/',
     publicRoot = 'public/';
+
+var gzipConfig = { gzipOptions: { level: 9 } };
 
 
 // Собираем JS
@@ -37,6 +40,7 @@ gulp.task('js', ['bower-to-public'], function () {
         .pipe(gulpFilter(['*', '!components', '!application.js']))
         .pipe(concat('index.js'))
         .pipe(uglify())
+        .pipe(gzip(gzipConfig))
         .pipe(gulp.dest(publicRoot + 'javascripts'))
         .pipe(browserSync.reload({stream: true}));
 });
@@ -46,6 +50,7 @@ gulp.task('js-components', function () {
         assetsRoot + 'javascripts/components/*.js'
     ])
         .pipe(uglify())
+        .pipe(gzip(gzipConfig))
         .pipe(gulp.dest(publicRoot + 'javascripts/components'))
         .pipe(browserSync.reload({stream: true}));
 });
@@ -69,6 +74,7 @@ gulp.task('css', function () {
             maxImageSize: 8 * 1024
         }))
         .pipe(csso())
+        .pipe(gzip(gzipConfig))
         .pipe(concat('index.css'))
         .pipe(gulp.dest(publicRoot + 'stylesheets'))
         .pipe(browserSync.reload({stream: true}));
@@ -105,6 +111,7 @@ gulp.task('static', function () {
 gulp.task('svg-optimization', function () {
     gulp.src(assetsRoot + 'images/svg/*.svg')
         .pipe(svgo())
+        .pipe(gzip(gzipConfig))
         .pipe(gulp.dest(publicRoot + 'images'));
 });
 
