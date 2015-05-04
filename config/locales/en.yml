@@ -51,13 +51,13 @@ en:
   key_values_easy: Easy
   key_values_easy_text: Join a growing community of people investing in green project
   key_values_transparent: Transparant
-  key_values_transparent_text: Join a growing community of people investing in green project
+  key_values_transparent_text: We are committed to a transparent legal structure and inform you of the risks
   key_values_secure: Secure
-  key_values_secure_text: Join a growing community of people investing in green project
+  key_values_secure_text: Generate green energy to offset your own use of energy
   key_values_return: Stable return
-  key_values_return_text: Join a growing community of people investing in green project
+  key_values_return_text: We offer a safe alternative investment to improve your portfolio
   key_values_trade: Trade
-  key_values_trade_text: Join a growing community of people investing in green project
+  key_values_trade_text: Sell your stake in the project easily through the site
   key_values_growing: Growing
   key_values_growing_text: Join a growing community of people investing in green project
 
@@ -79,7 +79,7 @@ en:
 
   footer_about: About us
   footer_risks: Risks
-  footer_terms: Terms and condition
+  footer_terms: Terms and conditions
   footer_policy: Privacy policy
   footer_disclaimer: Disclaimer
 

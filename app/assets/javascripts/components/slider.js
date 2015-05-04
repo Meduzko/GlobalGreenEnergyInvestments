@@ -12,11 +12,23 @@ define(['jquery', 'swiper'], function ($, Swiper) {
                 paginationClickable: true
             });
 
-            /*slider.on('init', function (swiper) {
-                console.log(swiper);
+
+            /*setInterval(function () {
+
+                $('#' + domId + ' .swiper-slide-next').css('background-image', $(this).attr('data-src'));
+            }, 5000);
+
+            $('#' + domId + ' .swiper-slide').each(function () {
+                console.log($(this));
+                $(this).prev('.swiper-slide-active').css('background-image', $(this).attr('data-src'));
             });
 
-            slider.on('slideChangeStart', function (swiper) {
+
+            slider.on('init', function (swiper) {
+                console.log(swiper);
+            });*/
+
+            /*slider.on('slideChangeStart', function (swiper) {
                 console.log(swiper);
             });*/
 
