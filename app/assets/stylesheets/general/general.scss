@@ -150,6 +150,7 @@ label.error {
     padding: 22px;
     text-align: center;
     text-transform: uppercase;
+    -webkit-appearance: none;
     @include border-radius(5px);
     @include transition(background-color 0.3s ease-in-out, color 0.3s ease-in-out);
     &:hover, &:focus {
