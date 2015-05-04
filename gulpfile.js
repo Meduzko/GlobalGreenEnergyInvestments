@@ -74,7 +74,6 @@ gulp.task('css', function () {
             maxImageSize: 8 * 1024
         }))
         .pipe(csso())
-        .pipe(gzip(gzipConfig))
         .pipe(concat('index.css'))
         .pipe(gulp.dest(publicRoot + 'stylesheets'))
         .pipe(browserSync.reload({stream: true}));
