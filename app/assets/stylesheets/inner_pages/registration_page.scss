@@ -24,6 +24,9 @@
             padding: 0 15px 25px 0;
             position: relative;
             width: 630px;
+            select {
+                display: none;
+            }
             span.icon-ok {
                 color: $blue-green;
                 font-family: icon_font;
