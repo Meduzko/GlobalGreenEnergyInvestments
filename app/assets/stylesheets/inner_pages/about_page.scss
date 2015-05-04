@@ -69,3 +69,22 @@
         }
     }
 }
+
+@media all and (max-width: 740px) {
+    .about-page {
+        .team-tab {
+            ul {
+                li {
+                    margin: 0 30px 20px;
+                    padding: 35px 20px 40px;
+                    width: auto;
+                }
+                &.founders {
+                    li {
+                        margin: 50px 20px 20px;
+                    }
+                }
+            }
+        }
+    }
+}

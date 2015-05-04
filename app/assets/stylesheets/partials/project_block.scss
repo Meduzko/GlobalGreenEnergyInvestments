@@ -129,3 +129,22 @@
 
     }
 }
+
+@media all and (max-width: 740px) {
+    .projects-list {
+        .project-block {
+            margin: 40px 20px 0;
+            padding: 280px 20px 35px;
+            width: auto;
+            .project-type {
+                margin: -37px 0 24px 83px;
+            }
+            &.finished-project .project-price {
+                span {
+                    margin: 4px -20px 10px -20px;
+                    width: auto;
+                }
+            }
+        }
+    }
+}

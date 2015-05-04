@@ -119,6 +119,7 @@
 @media all and (max-width: 740px) {
     .subscription {
         form {
+            padding: 0 20px 36px;
             input[type='text'], input[type='email'] {
                 margin: 5px;
                 width: auto;
@@ -198,6 +199,7 @@
             top: 50px;
             width: 100%;
             form {
+                padding: 0;
                 .default-input {
                     margin: 5px 0;
                     width: auto;
@@ -207,13 +209,19 @@
         .popup-title {
             padding: 30px 0 20px 0;
         }
+        .popup-additional {
+            padding: 40px 20px 50px;
+        }
     }
 
     .registration-page {
-        padding-top: 80px;
+        padding-top: 100px;
         h1 {
             font-size: 34px;
-            letter-spacing: 10px;
+        }
+        .inner-page-main-title {
+            top: 62px;
+            line-height: 32px;
         }
         form {
             .field, #error_explanation {
@@ -235,6 +243,9 @@
             }
             .default-input {
                 width: 85%;
+            }
+            .default-btn {
+                padding: 16px 50px;
             }
             label.error {
                 position: relative;

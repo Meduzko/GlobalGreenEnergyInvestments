@@ -49,8 +49,8 @@
             text-align: center;
         }
         .participations-table {
-            margin: 0 auto 50px;
-            width: 500px;
+            margin: 0 auto;
+            width: 80%;
         }
         table {
             th {
@@ -84,9 +84,18 @@
 @media all and (max-width: 768px) {
     .investments-page {
         width: auto;
+        .grid {
+            h5 {
+                padding: 80px 10px 60px 10px;
+            }
+        }
         .inner-page-main-title {
             font-size: 36px;
-            letter-spacing: 10px;
+        }
+        .participation-popup {
+            .popup-title {
+                font-size: 36px;
+            }
         }
     }
 }
