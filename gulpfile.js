@@ -95,6 +95,11 @@ gulp.task('images', function () {
 });
 
 
+gulp.task('video', function () {
+    gulp.src(assetsRoot + 'video/*')
+        .pipe(gulp.dest(publicRoot + 'video'));
+});
+
 gulp.task('static', function () {
     gulp.src(assetsRoot + 'static/*')
         .pipe(gulp.dest(publicRoot));
@@ -139,7 +144,7 @@ gulp.task('clean', function () {
 
 gulp.task('build', function (callback) {
     runSequence('clean',
-        ['images', 'svg-optimization', 'js', 'js-components', 'css', 'fonts', 'static'],
+        ['images', 'svg-optimization', 'js', 'js-components', 'css', 'fonts', 'static', 'video'],
         callback);
 });
 
