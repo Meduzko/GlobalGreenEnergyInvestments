@@ -26,6 +26,7 @@ gulp.task('bower-to-public', function () {
     return gulp.src(mainBowerFiles())
         .pipe(gulpFilter(['*', '!*.css', '!*.scss', '!*.less']))
         .pipe(uglify())
+        .pipe(gzip(gzipConfig))
         .pipe(gulp.dest(publicRoot + 'javascripts/vendors'));
 });
 
