@@ -66,9 +66,10 @@
         }
         .project-statistic {
             background: $light-grey5;
+            display: inline-block;
             font-size: 24px;
             height: 92px;
-            margin: 28px auto 0;
+            margin: 10px 10px 35px;
             position: relative;
             text-align: center;
             width: 92px;
@@ -77,6 +78,7 @@
 
                 display: block;
                 font-size: 24px;
+                font-weight: bold;
                 position: absolute;
                 text-align: center;
                 top: 30px;
@@ -84,8 +86,11 @@
                 i {
                     color: $blue-green;
                     display: block;
-                    font-size: 18px;
+                    font-size: 12px;
+                    font-weight: normal;
                     font-style: normal;
+                    margin-top: 5px;
+                    text-transform: uppercase;
                 }
             }
         }
@@ -98,6 +103,14 @@
             sup {
                 font-size: 25px;
                 vertical-align: top;
+            }
+            span {
+                color: $blue-green;
+                display: block;
+                font-size: 14px;
+                padding: 6px 0;
+                margin: 10px 0 4px;
+                text-transform: uppercase;
             }
         }
 

@@ -1,17 +1,12 @@
 <div class="inner-page idea-page">
   <h1 class="inner-page-main-title"><%= I18n.t(:idea_title) %></h1>
 
-  <p class="default-text top-default-text">Global Green Energy Investments is a platform where social investors meet green energy
-    projects worldwide. The general goal is to source projects that help accelerate the transition to clean energy.
-    These projects are carefully assessed and furthermore have a certificate to ensure the quality of the project.<br>
-    When a project is sourced, assessed and approved a part of the equity or debt is acquired by Global Green Energy
-    Investments, which connects the acquired to investors by giving out participations</p>
-
+  <p class="default-text top-default-text"><%= I18n.t(:idea_page_text).html_safe %></p>
 
   <div class="separator-with-text">
     <div>
       <span>
-        Example
+        <%= I18n.t(:idea_example_project_example).html_safe %>
       </span>
     </div>
     <hr/>
@@ -24,61 +19,35 @@
     <img src="/images/idea_infographic.jpg" alt=""/>
   </div>
 
-
   <section class="project-infographic-content">
     <div>
       <div>
-        <h3 class="inner-page-sub-title">accelerator for green energy projects</h3>
+        <h3 class="inner-page-sub-title"><%= I18n.t(:idea_page_paragraph_1_title).html_safe %></h3>
 
-        <p class="default-text">By selling individual participations of €5.000 per share, the project can be sold to 50
-          separate investors.
-          Investors have the choice to invest more with a maximum of 10 shares which is equivalent to €50.000,-. Having
-          one share (€5.000,-) gives the investor the right to receive a 7% return on their invested capital for the
-          coming 15 years.</p>
+        <p class="default-text"><%= I18n.t(:idea_page_paragraph_1_1_text).html_safe %></p>
+        <p class="default-text"><%= I18n.t(:idea_page_paragraph_1_2_text).html_safe %></p>
       </div>
       <div>
-        <h3 class="inner-page-sub-title">accelerator for green energy projects</h3>
+        <h3 class="inner-page-sub-title"><%= I18n.t(:idea_page_paragraph_2_title).html_safe %></h3>
 
-        <p class="default-text">By selling individual participations of €5.000 per share, the project can be sold to 50
-          separate investors.
-          Investors have the choice to invest more with a maximum of 10 shares which is equivalent to €50.000,-. Having
-          one share (€5.000,-) gives the investor the right to receive a 7% return on their invested capital for the
-          coming 15 years.</p>
+        <p class="default-text"><%= I18n.t(:idea_page_paragraph_2_text).html_safe %></p>
       </div>
     </div>
     <div>
-      <h3 class="inner-page-sub-title">new ideas for green projects</h3>
-
-      <p class="default-text">Je kiest zelf de producent en de manier van opwekken waar je achter staat, zo weet je
-        zeker dat je geld goed
-        terechtkomt. Omdat GGIG gelooft in een toekomst met 100% duurzame energie, <a href="#">link in the context</a>
-        mogelijk
-        huishoudens zelf hun energie opwekken, hebben we een unieke regeling voor eigenaren van zonnepanelen ontwikkeld.
-        Je kiest zelf de producent en de manier van opwekken waar je achter staat, zo weet je zeker dat je geld goed
-        terechtkomt.</p>
-
-      <p class="default-text">Omdat GGIG gelooft in een toekomst met 100% duurzame energie, waarbij zoveel mogelijk
-        huishoudens zelf hun
-        energie opwekken, hebben we een unieke regeling voor eigenaren van zonnepanelen ontwikkeld. Je kiest zelf de
-        producent en de manier van opwekken waar je achter staat, zo weet je zeker dat je geld goed terechtkomt. Omdat
-        GGIG gelooft in een toekomst met 100% duurzame energie, waarbij zoveel mogelijk huishoudens zelf hun energie
-        opwekken, hebben we een unieke regeling voor eigenaren van zonnepanelen ontwikkeld.</p>
-
-      <p class="default-text">Je kiest zelf de producent en de manier van opwekken waar je achter staat, zo weet je
-        zeker dat je geld goed
-        terechtkomt.</p>
+      <h3 class="inner-page-sub-title"><%= I18n.t(:idea_page_paragraph_3_title).html_safe %></h3>
+      <p class="default-text"><%= I18n.t(:idea_page_paragraph_3_1_text).html_safe %></p>
+      <p class="default-text"><%= I18n.t(:idea_page_paragraph_3_2_text).html_safe %></p>
+      <p class="default-text"><%= I18n.t(:idea_page_paragraph_3_3_text).html_safe %></p>
+      <p class="default-text"><%= I18n.t(:idea_page_paragraph_3_4_text).html_safe %></p>
     </div>
   </section>
 
   <section class="how-it-works-video">
-    <video width="1280" controls>
-      <source src="/video/human_javascript_hd.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video>
+    <img src="/images/idea_video.jpg" alt=""/>
   </section>
 
   <section class="steps-to-invest">
-    <h2 class="inner-page-sub-title">steps to invest</h2>
+    <h2 class="inner-page-sub-title"><%= I18n.t(:idea_page_steps_title).html_safe %></h2>
 
     <div class="steps-line">
       <div>1</div>
@@ -92,30 +61,27 @@
       <li>
         <span class="inside-step">1</span>
         <div>
-          <h5>Select<br>a project</h5>
+          <h5><%= I18n.t(:idea_page_step_1_title).html_safe %></h5>
 
-          <p>De producenten verkopen hun stroom, wij regelen verder alles. Van de administratie tot de klantenservice en
-            de levering van 100% CO2 gecompenseerd gas.</p>
+          <p><%= I18n.t(:idea_page_step_1_text).html_safe %></p>
         </div>
       </li>
 
       <li>
         <span class="inside-step">2</span>
         <div>
-          <h5>Decide on how<br> much to invest</h5>
+          <h5><%= I18n.t(:idea_page_step_2_title).html_safe %></h5>
 
-          <p>De producenten verkopen hun stroom, wij regelen verder alles. Van de administratie tot de klantenservice en
-            de levering van 100% CO2 gecompenseerd gas.</p>
+          <p><%= I18n.t(:idea_page_step_2_text).html_safe %></p>
         </div>
       </li>
 
       <li>
         <span class="inside-step">3</span>
         <div>
-          <h5>Transfer the money to 3rd party fund</h5>
+          <h5><%= I18n.t(:idea_page_step_3_title).html_safe %> </h5>
 
-          <p>De producenten verkopen hun stroom, wij regelen verder alles. Van de administratie tot de klantenservice en
-            de levering van 100% CO2 gecompenseerd gas.</p>
+          <p><%= I18n.t(:idea_page_step_3_text).html_safe %></p>
         </div>
       </li>
 

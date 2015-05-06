@@ -1,40 +1,50 @@
+<% projects_count = 1 %>
+
 <section class="projects-slider">
 
   <h2><%= I18n.t(:title_latest_project) %></h2>
 
   <p class="default-text"><%= I18n.t(:latest_project_text) %></p>
 
-  <div class="swiper-container" data-jscomp="components/slider">
+  <div class="swiper-container" <% if projects_count > 1 %>data-jscomp="components/slider"<% end %>>
     <div class="swiper-wrapper">
       <div class="swiper-slide" data-src="/images/projects/1/project_slide_1.jpg" style="background-image:url('/images/projects/1/project_slide_1.jpg')">
         <div class="slider-content">
           <h4>
             <span><i class="sun-icon"></i></span>
-            Windpark Landtong Rozenburg
+            Curacao Airport Solar
           </h4>
 
-          <div class="project-location">ROTTERDAM, 3181 ML</div>
+          <div class="project-location">Willemstad, Curacao</div>
+
+          <div class="project-price">
+            <span>needed:</span>
+            150 000 <sup>&euro;</sup>
+          </div>
+
           <div class="project-statistic">
-              <span>
-                2%
-                <i>IRR</i>
-              </span>
+            <span>16%<i>Funded</i></span>
             <canvas data-jscomp="components/projectStatistic"
-                    data-percentage="2"
+                    data-percentage="16"
                     class="canvas-statistic"
                     width="100"
                     height="100"></canvas>
           </div>
-          <div class="project-price">
-            560 000
-            <sup>&euro;</sup>
+          <div class="project-statistic">
+            <span>6%<i>Return</i></span>
+            <canvas data-jscomp="components/projectStatistic"
+                    data-percentage="100"
+                    class="canvas-statistic"
+                    width="100"
+                    height="100"></canvas>
           </div>
+
           <a href="#" class="default-btn primary-btn">View project</a>
 
           <p><%= I18n.t(:latest_project_slider_text_1) %></p>
         </div>
       </div>
-      <div class="swiper-slide" data-src="/images/projects/1/project_slide_2.jpg" style="background-image:url('/images/projects/1/project_slide_2.jpg')">
+      <!--<div class="swiper-slide" data-src="/images/projects/1/project_slide_2.jpg" style="background-image:url('/images/projects/1/project_slide_2.jpg')">
         <div class="slider-content">
           <h4>
             <span><i class="sun-icon"></i></span>
@@ -89,13 +99,15 @@
 
           <p><%= I18n.t(:latest_project_slider_text_3) %></p>
         </div>
-      </div>
+      </div>-->
     </div>
     <div class="swiper-pagination"></div>
 
   </div>
 
-  <div class="swiper-button-prev icon-left-dir"></div>
-  <div class="swiper-button-next icon-right-dir"></div>
+  <% if projects_count > 1 %>
+    <div class="swiper-button-prev icon-left-dir"></div>
+    <div class="swiper-button-next icon-right-dir"></div>
+  <% end %>
 
 </section>
