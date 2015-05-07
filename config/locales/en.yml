@@ -3,6 +3,7 @@ en:
   cmn_official_label: (Official)
   cmn_not_required: (not required)
   cmn_html5_video_not_supported: Your browser does not support HTML5 video.
+  cmn_view_project: View project
 
   #Validation messages:
   error_required: This field is required
@@ -85,8 +86,8 @@ en:
   footer_policy: Privacy policy
   footer_disclaimer: Disclaimer
 
-  main_phone: 0 880 444 555
-  main_email: "info@ggig.com"
+  main_phone: +31 65 430 63 26
+  main_email: "info@globalgreeninvestmentgroup.com"
   copyright: "© Global Green Investment Group, 2015"
 
   #Registration page
@@ -98,6 +99,7 @@ en:
   #Contact
   contact_title: Contact
   contact_message: Question
+  contact_text: We are happy to hear any suggestions or answer any questions you might have
 
   #Invest page
   invest_title: Investments
@@ -107,19 +109,50 @@ en:
   invest_popup_title: Participations
   invest_popup_button: Next
 
+  invest_fundable_text: View the projects that you are interested in to further understand the risks and the return of a participation.
+  invest_funded_text: Project that were successfully funded through the platform.
+  invest_trade_text: The trade page allows you to sell your stake via our platform. Note that there are additional administrative costs involved.
+  invest_trade_send_email: "If you want to sell your participation, please <a href='mailto:info@globalgreeninvestmentgroup.com'>send an mail</a> and our team will put it on the trade page"
+
   legal_privacy_title: Privacy
   legal_about_us_title: About us
   legal_risks_title: Risks
   legal_terms_title: Terms & conditions
   legal_disclaimer_title: Disclaimer
 
+  about_main_title: About
   about_the_team_title: The team
   about_mission_title: Mission
-  about_board_title: Board
+  about_board_title: ADVISORY BOARD
+  about_the_team_support: Support Team
+
+  about_team_x: Mr./Mrs. X
+  about_team_x_role: CEO
+  about_team_x_descr: 10 years of experience in the energy market
+  about_team_ben: Benoit van Beeck Calkoen
+  about_team_ben_role: Sales Representative
+  about_team_ben_descr: International Management at Nyenrode Business University. Passionate for solutions with global impact.
+  about_team_duco: Duco<br/> Van Rossem
+  about_team_duco_role: Finance
+  about_team_duco_descr: Graduated Econometrics from University of Amsterdam. Interested in Sustainability and algorithms.
+  about_team_vitaly: Vitaliy Dzhenkov
+  about_team_vitaly_role: Project manager
+  about_team_vitaly_descr: Ukrainian Gangster from the 20’s
+  about_team_kramar: Konstantin Kramarenko
+  about_team_kramar_role: developer
+  about_team_kramar_descr: Web developer from 2010. Expert in front-end technologies
+  about_team_yuriy: Yuriy Nagorniy
+  about_team_yuriy_role: ui/ux designer
+  about_team_yuriy_descr: De Wolff Nederland Windenergie (WNW) is een bedrijf met ruim 20 jaar ervaring in windenergie en is één van de marktleiders in Nederland.
+  about_team_y: Ms. XYZ
+  about_team_y_role: Banker
+  about_team_y_descr: 10 years of experience in private banking
 
   #Seetings page
   profile_settings_title: Settings
   profile_my_invest_title: My investments
+  profile_my_invest_text: View the current status of your investment.
+  profile_settings_text: Your personal details and contact informations are required before you can make an investment
 
   #Idea page
   idea_title: Idea

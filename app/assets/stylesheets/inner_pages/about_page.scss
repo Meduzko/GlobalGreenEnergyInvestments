@@ -17,13 +17,14 @@
     }
     .team-tab {
         ul {
+            padding-top: 70px;
             text-align: center;
 
             li {
                 background-color: $white;
                 display: inline-block;
-                margin: 0 30px 80px;
                 left: 50%;
+                margin: 20px 30px 30px;
                 min-height: 417px;
                 padding: 75px 60px 70px;
                 text-align: center;
@@ -62,10 +63,8 @@
                     text-transform: uppercase;
                 }
             }
-            &.founders {
-                li {
-                    margin: 80px 60px 20px;
-                }
+            &.team-support {
+                padding-top: 0;
             }
         }
     }
@@ -82,7 +81,7 @@
                 }
                 &.founders {
                     li {
-                        margin: 50px 20px 20px;
+                        margin: 20px;
                     }
                 }
             }

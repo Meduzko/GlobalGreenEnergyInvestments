@@ -4,7 +4,8 @@
 .registration-page {
     margin: 0 auto;
     max-width: 1260px;
-    padding-top: 180px;
+    padding-top: 250px;
+    position: relative;
 
     .inner-page-main-title {
         position: absolute;
@@ -16,6 +17,22 @@
 
     .default-text {
         padding: 35px 28% 60px;
+    }
+
+    .top-default-text {
+        display: none;
+        padding: 30px 0 60px;
+        position: absolute;
+        top: 155px;
+        left: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .r-tabs-state-active {
+        .top-default-text {
+            display: block;
+        }
     }
 
     form {
