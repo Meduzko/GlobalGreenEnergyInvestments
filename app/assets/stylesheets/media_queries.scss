@@ -86,50 +86,6 @@
     }
 
     header {
-        nav, .auth-links {
-            li {
-                a, span {
-                    font-size: 12px;
-                    padding: 33px 5px 0;
-                }
-            }
-
-        }
-    }
-
-    .main-slider {
-        .slider-content {
-            padding: 12% 0;
-            h1 {
-                font-size: 60px;
-                line-height: 68px;
-                span {
-                    font-size: 40px;
-                }
-            }
-        }
-    }
-
-    .project-description {
-        width: 100%;
-    }
-
-}
-
-@media all and (max-width: 740px) {
-    .subscription {
-        form {
-            padding: 0 20px 36px;
-            input[type='text'], input[type='email'] {
-                margin: 5px;
-                width: auto;
-            }
-            .default-btn {
-                padding: 16px 30px;
-            }
-        }
-    }
-    header {
         nav {
             background: $white;
             position: absolute;
@@ -188,6 +144,39 @@
             .auth-menu-control {
                 left: auto;
                 right: 15px;
+            }
+        }
+    }
+
+    .main-slider {
+        .slider-content {
+            padding: 12% 0;
+            h1 {
+                font-size: 60px;
+                line-height: 68px;
+                span {
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+
+    .project-description {
+        width: 100%;
+    }
+
+}
+
+@media all and (max-width: 740px) {
+    .subscription {
+        form {
+            padding: 0 20px 36px;
+            input[type='text'], input[type='email'] {
+                margin: 5px;
+                width: auto;
+            }
+            .default-btn {
+                padding: 16px 30px;
             }
         }
     }

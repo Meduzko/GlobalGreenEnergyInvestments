@@ -8,6 +8,7 @@
     <div class="popup-content">
 
       <%= form_for(:user, :url => session_path(:user), html: { method: :post, :'data-jscomp' => 'components/validator' }) do |f| %>
+        <div class="message-box"></div>
         <div class="field">
           <%= f.email_field :email, 
                       autofocus: true,

@@ -140,6 +140,15 @@ label.error {
     text-transform: uppercase;
 }
 
+.message-box {
+    .success-msg {
+        color: $green;
+    }
+    .error-msg {
+        color: $red;
+    }
+}
+
 .default-btn, a.default-btn {
     border: 0;
     background-color: $blue-green;
@@ -164,7 +173,7 @@ label.error {
 .primary-btn, a.primary-btn {
     background-color: $blue;
     &:hover, &:focus {
-        background-color: $blue_hover;
+        background-color: $blue_green;
     }
 }
 
