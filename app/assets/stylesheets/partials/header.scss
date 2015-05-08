@@ -97,6 +97,13 @@ header {
         left: 50%;
         top: 14px;
         width: 207px;
+        a {
+            display: block;
+            height: 126px;
+            position: absolute;
+            width: 207px;
+            z-index: 10;
+        }
         object {
             position: relative;
             z-index: 10;
