@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'legal' => 'pages#legal', :as => :page_legal
 
   mount Ckeditor::Engine => '/ckeditor'
-  devise_for :users, :controllers => { registrations: 'registrations', sessions: 'sessions' }
+  devise_for :users, :controllers => { registrations: 'registrations', sessions: 'sessions', passwords: 'passwords' }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'home#index'
