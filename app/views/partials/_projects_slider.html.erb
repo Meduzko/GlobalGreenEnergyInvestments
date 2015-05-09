@@ -1,5 +1,4 @@
-<% projects_count = 1 %>
-
+<% projects_count = projects.count %>
 <section class="projects-slider">
 
   <h2><%= I18n.t(:title_latest_project) %></h2>
@@ -8,98 +7,44 @@
 
   <div class="swiper-container" <% if projects_count > 1 %>data-jscomp="components/slider"<% end %>>
     <div class="swiper-wrapper">
-      <div class="swiper-slide" data-src="/images/projects/1/project_slide_1.jpg" style="background-image:url('/images/projects/1/project_slide_1.jpg')">
-        <div class="slider-content">
-          <h4>
-            <span><i class="sun-icon"></i></span>
-            Curacao Airport Solar
-          </h4>
+      <% projects.each do |project| %>
+        <div class="swiper-slide" data-src="<%= project.big_foto.url %>" style="background-image:url('<%= project.big_foto.url %>')">
+          <div class="slider-content">
+            <h4>
+              <span><i class="sun-icon"></i></span>
+              <%= project.name %>
+            </h4>
 
-          <div class="project-location">Willemstad, Curacao</div>
+            <div class="project-location"><%= project.location %></div>
 
-          <div class="project-price">
-            <span>needed:</span>
-            150 000 <sup>&euro;</sup>
+            <div class="project-price">
+              <span>needed:</span>
+              <%= cute_amount(project.total_amount_need) %><sup>&euro;</sup>
+            </div>
+
+            <div class="project-statistic">
+              <span><%= calculate_funded(project.total_amount_need, project.total_amount_invested) %>%<i>Funded</i></span>
+              <canvas data-jscomp="components/projectStatistic"
+                      data-percentage="16"
+                      class="canvas-statistic"
+                      width="100"
+                      height="100"></canvas>
+            </div>
+            <div class="project-statistic">
+              <span><%= project.irr.round %>%<i>Return</i></span>
+              <canvas data-jscomp="components/projectStatistic"
+                      data-percentage="100"
+                      class="canvas-statistic"
+                      width="100"
+                      height="100"></canvas>
+            </div>
+
+            <%= link_to 'View project', project_path(project.id), class: 'default-btn primary-btn' %>
+
+            <p><%= project.title %></p>
           </div>
-
-          <div class="project-statistic">
-            <span>16%<i>Funded</i></span>
-            <canvas data-jscomp="components/projectStatistic"
-                    data-percentage="16"
-                    class="canvas-statistic"
-                    width="100"
-                    height="100"></canvas>
-          </div>
-          <div class="project-statistic">
-            <span>6%<i>Return</i></span>
-            <canvas data-jscomp="components/projectStatistic"
-                    data-percentage="100"
-                    class="canvas-statistic"
-                    width="100"
-                    height="100"></canvas>
-          </div>
-
-          <a href="#" class="default-btn primary-btn">View project</a>
-
-          <p><%= I18n.t(:latest_project_slider_text_1) %></p>
         </div>
-      </div>
-      <!--<div class="swiper-slide" data-src="/images/projects/1/project_slide_2.jpg" style="background-image:url('/images/projects/1/project_slide_2.jpg')">
-        <div class="slider-content">
-          <h4>
-            <span><i class="sun-icon"></i></span>
-            Windpark Landtong Rozenburg
-          </h4>
-
-          <div class="project-location">ROTTERDAM, 3181 ML</div>
-          <div class="project-statistic">
-              <span>
-                20%
-                <i>IRR</i>
-              </span>
-            <canvas data-jscomp="components/projectStatistic"
-                    data-percentage="20"
-                    class="canvas-statistic"
-                    width="100"
-                    height="100"></canvas>
-          </div>
-          <div class="project-price">
-            9 990 000
-            <sup>&euro;</sup>
-          </div>
-          <a href="#" class="default-btn primary-btn">View project</a>
-
-          <p><%= I18n.t(:latest_project_slider_text_2) %></p>
-        </div>
-      </div>
-      <div class="swiper-slide" data-src="/images/projects/1/project_slide_3.jpg" style="background-image:url('/images/projects/1/project_slide_3.jpg')">
-        <div class="slider-content">
-          <h4>
-            <span><i class="sun-icon"></i></span>
-            Windpark Landtong Rozenburg
-          </h4>
-
-          <div class="project-location">ROTTERDAM, 3181 ML</div>
-          <div class="project-statistic">
-              <span>
-                37%
-                <i>IRR</i>
-              </span>
-            <canvas data-jscomp="components/projectStatistic"
-                    data-percentage="37"
-                    class="canvas-statistic"
-                    width="100"
-                    height="100"></canvas>
-          </div>
-          <div class="project-price">
-            350 000
-            <sup>&euro;</sup>
-          </div>
-          <a href="#" class="default-btn primary-btn">View project</a>
-
-          <p><%= I18n.t(:latest_project_slider_text_3) %></p>
-        </div>
-      </div>-->
+      <% end %>
     </div>
     <div class="swiper-pagination"></div>
 

@@ -1,0 +1,98 @@
+<div class="inner-page project-description">
+  <h1 class="inner-page-main-title"><%= @project.name %></h1>
+
+  <p class="default-text"><%= @project.title %></p>
+
+
+  <div class="separator-with-text separator-with-icon">
+    <div>
+      <span>
+        <i class="sun-icon"></i>
+      </span>
+    </div>
+    <hr/>
+  </div>
+
+  <div class="project-location"><%= @project.location %></div>
+
+  <h3 class="project-amount"><%= cute_amount(@project.total_amount_need) %><sup>&euro;</sup></h3>
+
+  <%= render 'partials/project_descr_stat_circles', invested: @project.total_amount_invested, irr: @project.irr, launch: @project.launch,  kwh: @project.kwh_generated %>
+
+  <section class="project-description-content">
+    <% if @project.desc_1.present? %>
+      <div class="project-description-content-row">
+        <div>
+          <div class="block-with-text">
+            <p><%= @project.desc_1.html_safe %></p>
+          </div>
+        </div>
+        <div><%= image_tag(@project.img_1.url) if @project.img_1.url %></div>
+      </div>
+    <% end %>
+
+    <% if @project.desc_2.present? %>
+      <div class="project-description-content-row">
+        <div>
+          <div class="block-with-text">
+            <p><%= @project.desc_2.html_safe %></p>
+          </div>
+        </div>
+        <div><%= image_tag(@project.img_2.url) if @project.img_2.url %></div>
+      </div>
+    <% end %>
+
+    <% if @project.desc_3.present? %>
+      <div class="project-description-content-row">
+        <div>
+          <div class="block-with-text">
+            <p><%= @project.desc_3.html_safe %></p>
+          </div>
+        </div>
+        <div><%= image_tag(@project.img_3.url) if @project.img_3.url %></div>
+      </div>
+    <% end %>
+
+    <% if @project.desc_4.present? %>
+      <div class="project-description-content-row">
+        <div>
+          <div class="block-with-text">
+            <p><%= @project.desc_4.html_safe %></p>
+          </div>
+        </div>
+        <div><%= image_tag(@project.img_4.url) if @project.img_4.url %></div>
+      </div>
+    <% end %>
+
+    <% if @project.desc_5.present? %>
+      <div class="project-description-content-row">
+        <div>
+          <div class="block-with-text">
+            <p><%= @project.desc_5.html_safe %></p>
+          </div>
+        </div>
+        <div><%= image_tag(@project.img_5.url) if @project.img_5.url %></div>
+      </div>
+    <% end %>
+
+  </section>
+
+  <section class="grid">
+    <h5 class="inner-page-sub-title">single participant: standart amoritisaztion</h5>
+  
+    <div class="grid-container">
+      <%= generate_table(@project.id) %>
+    </div>
+
+  </section>
+
+  <section class="project-controls">
+    <%= link_to 'All Projects', projects_path, class: 'get-back icon-font icon-left-dir' %>
+    <a href="#" class="default-btn">Invest</a>
+    <a href="#" class="get-pdf icon-font icon-pdf">
+      <span>For more information see our</span>
+      Information memorandum
+    </a>
+  </section>
+
+</div>

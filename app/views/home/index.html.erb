@@ -24,10 +24,10 @@
 
   <section class="projects-statistic">
     <p class="default-text"><%= I18n.t(:stat_text) %></p>
-    <%= render 'partials/projects_stat_circles' %>
+    <%= project_stats %>
   </section>
 
-  <%= render 'partials/projects_slider' %>
+  <%= render 'partials/projects_slider', projects: @projects %>
 
   <section class="key-values">
     <h2><%= I18n.t(:title_key_values) %></h2>

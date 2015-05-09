@@ -1,20 +1,22 @@
 <ul class="statistic-circles">
   <li>
     <div>
-      100 <em>MLN</em>
+      <%= cute_amount(invested) %>
       <span><%= I18n.t(:stat_invested) %></span>
     </div>
   </li>
   <li>
     <div>
-      6.5%
+      <%= number_with_precision(irr, strip_insignificant_zeros: true) %>%
       <span><%= I18n.t(:stat_fixed_return) %></span>
     </div>
   </li>
-  <li>
-    <div>
-      504.000
-      <span><%= I18n.t(:stat_generated) %></span>
-    </div>
-  </li>
+  <% if launch %>
+    <li>
+      <div>
+        <%= number_with_precision(kwh, strip_insignificant_zeros: true) %>
+        <span><%= I18n.t(:stat_generated) %></span>
+      </div>
+    </li>
+  <% end %>
 </ul>

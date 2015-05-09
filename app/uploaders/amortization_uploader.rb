@@ -1,10 +1,10 @@
 # encoding: utf-8
 
-class ProjectUploader < CarrierWave::Uploader::Base
+class AmortizationUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  include CarrierWave::MiniMagick
+  # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -32,22 +32,14 @@ class ProjectUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  version :thumb do
-    process :resize_to_fit => [200, 200]
-  end
-
-  version :project_page do
-    process :resize_to_fit => [628, 628]
-  end
-
-  version :project_page_small do
-    process :resize_to_fit => [345, 345]
-  end
+  # version :thumb do
+  #   process :resize_to_fit => [50, 50]
+  # end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list
-    %w(jpg jpeg gif png)
+    %w(csv)
   end
 
   # Override the filename of the uploaded files:
