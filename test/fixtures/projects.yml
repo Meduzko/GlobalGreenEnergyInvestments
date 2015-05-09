@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  title: MyString
+  location: MyString
+  small_foto: MyString
+  big_foto: MyString
+  type_of_participation: MyString
+  type_of_energe: MyString
+  total_amount_need: 1
+  total_amount_invested: 1
+  irr: 1.5
+  desc_1: MyText
+  img_1: MyString
+  desc_2: MyText
+  img_2: MyString
+  desc_3: MyText
+  img_3: MyString
+  desc_4: MyText
+  img_4: MyString
+  desc_5: MyText
+  img_5: MyString
+  launch: false
+  kwh_generated: 1.5
+  status: false
+
+two:
+  name: MyString
+  title: MyString
+  location: MyString
+  small_foto: MyString
+  big_foto: MyString
+  type_of_participation: MyString
+  type_of_energe: MyString
+  total_amount_need: 1
+  total_amount_invested: 1
+  irr: 1.5
+  desc_1: MyText
+  img_1: MyString
+  desc_2: MyText
+  img_2: MyString
+  desc_3: MyText
+  img_3: MyString
+  desc_4: MyText
+  img_4: MyString
+  desc_5: MyText
+  img_5: MyString
+  launch: false
+  kwh_generated: 1.5
+  status: false

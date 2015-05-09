@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about', :as => :page_about
   get 'contact' => 'pages#contact', :as => :page_contact
   get 'legal' => 'pages#legal', :as => :page_legal
+  get 'project' => 'pages#project_descr', :as => :page_project_desc
 
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, :controllers => { registrations: 'registrations', sessions: 'sessions', passwords: 'passwords' }

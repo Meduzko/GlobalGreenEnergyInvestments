@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150328200847) do
+ActiveRecord::Schema.define(version: 20150508182627) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -80,6 +80,34 @@ ActiveRecord::Schema.define(version: 20150328200847) do
     t.string   "bank_iban_code",    limit: 255
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "name",                  limit: 255
+    t.string   "title",                 limit: 255
+    t.string   "location",              limit: 255
+    t.string   "small_foto",            limit: 255
+    t.string   "big_foto",              limit: 255
+    t.string   "type_of_participation", limit: 255
+    t.string   "type_of_energe",        limit: 255
+    t.integer  "total_amount_need",     limit: 4
+    t.integer  "total_amount_invested", limit: 4
+    t.float    "irr",                   limit: 24
+    t.text     "desc_1",                limit: 65535
+    t.string   "img_1",                 limit: 255
+    t.text     "desc_2",                limit: 65535
+    t.string   "img_2",                 limit: 255
+    t.text     "desc_3",                limit: 65535
+    t.string   "img_3",                 limit: 255
+    t.text     "desc_4",                limit: 65535
+    t.string   "img_4",                 limit: 255
+    t.text     "desc_5",                limit: 65535
+    t.string   "img_5",                 limit: 255
+    t.boolean  "launch",                limit: 1
+    t.float    "kwh_generated",         limit: 24
+    t.boolean  "status",                limit: 1
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   create_table "rich_rich_files", force: :cascade do |t|

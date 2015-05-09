@@ -68,6 +68,8 @@
     <%= f.date_select :date_of_birthday,
                       :value => @profile.try(:date_of_birthday),
                       order: [:day, :month, :year],
+                      start_year: 1920,
+                      include_blank: true,
                       :'data-validator-required' => I18n.t(:error_required),
                       :class => 'default-input' %>
     <span class="icon-ok">&nbsp;</span>
@@ -77,6 +79,7 @@
     <%= f.label :country, :class => 'default-label' %>
     <%= f.country_select :country, ['NL'],
                          :value => @profile.try(:country),
+                         include_blank: true,
                          :'data-validator-required' => I18n.t(:error_required),
                          :class => 'default-input' %>
     <span class="icon-ok">&nbsp;</span>

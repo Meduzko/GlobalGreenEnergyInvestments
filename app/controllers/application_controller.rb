@@ -13,6 +13,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    profile_path
+    profile_path + "#profile_settings"
   end
 end
