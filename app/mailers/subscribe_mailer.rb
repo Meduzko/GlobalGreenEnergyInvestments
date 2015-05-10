@@ -11,4 +11,10 @@ class SubscribeMailer < ApplicationMailer
     @url = "http://globalgreeninvestmentgroup.com/projects/#{project.id}"
     mail(to: @user.email, subject: "GGIG Subscription. Present the new Project #{project.name}" )
   end
+
+  # contact form
+  def contact_form(form)
+      @form = form
+      mail(:to => 'ggigsite@gmail.com', :subject => "GGIG site: contact form")
+  end
 end

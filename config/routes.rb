@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   get 'idea' => 'pages#idea', :as => :page_idea
   get 'invest' => 'pages#invest', :as => :page_invest
   get 'about' => 'pages#about', :as => :page_about
-  get 'contact' => 'pages#contact', :as => :page_contact
+
   get 'legal' => 'pages#legal', :as => :page_legal
-  get 'project' => 'pages#project_descr', :as => :page_project_desc
+
+  get 'contact' => 'pages#contact', :as => :page_contact
+  post 'contact' => 'pages#send_contact'
 
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, :controllers => { registrations: 'registrations', sessions: 'sessions', passwords: 'passwords' }
@@ -17,8 +19,7 @@ Rails.application.routes.draw do
       get :confirmation
     end
   end
-  get 'profile' => 'profiles#edit', :as => :profile
+  get  'profile' => 'profiles#edit', :as => :profile
   post 'profile' => 'profiles#create_or_update', :as => :profile_ctr_or_upd
   #get ':slug' => 'pages#show',  :as => :pages
-  #resources 'profiles', only: [:create, :edit, :update]
 end

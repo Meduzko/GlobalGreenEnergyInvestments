@@ -3,7 +3,7 @@
 
   <p class="default-text top-default-text"><%= I18n.t(:contact_text) %></p>
 
-  <form action="#" method="POST" data-jscomp='components/validator'>
+  <form action="/contact" method="POST" data-jscomp='components/validator'>
 
     <div class="message-box"></div>
 
@@ -27,7 +27,7 @@
       </div>
       <textarea id="contact-message"
                 class="default-input"
-                name="contact[message]"
+                name="contact[body]"
                 placeholder="Message"
                 data-validator-required="This field is required" ></textarea>
       <span class="icon-ok">&nbsp;</span>
