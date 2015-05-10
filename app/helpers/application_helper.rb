@@ -94,4 +94,17 @@ module ApplicationHelper
       html = ''
     end
   end
+
+  def icon_energy(type)
+    case type
+      when 'solar'
+        'sun-icon'
+      when 'wind'
+        'wind-icon'
+      when 'bio'
+        'bio-icon'
+      else
+        'sun-icon'
+      end
+  end
 end

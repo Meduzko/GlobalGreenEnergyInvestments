@@ -4,6 +4,9 @@ class Subscribe < ActiveRecord::Base
 
   before_validation :downcase_email
 
+  scope :confirmed, -> { where(confirmed: true) }
+  scope :active,    -> { where(active: true) }
+
   private
     def downcase_email
       self.email = self.email.downcase if self.email.present?

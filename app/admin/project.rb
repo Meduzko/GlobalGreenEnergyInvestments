@@ -9,6 +9,18 @@ ActiveAdmin.register Project do
                 :desc_1, :img_1, :desc_3, :img_2, :desc_3, :img_3, :desc_4, :img_4, :desc_5, :img_5, 
                 :launch, :kwh_generated, :status
 
+  member_action :sent_event, method: :get do
+    project = Project.find_by(id: params[:id])
+    if project && project.status
+      Subscribe.confirmed.active.each do |user|
+        SubscribeMailer.new_project(project, user).deliver_later
+      end
+      redirect_to admin_projects_path, notice: "Success! Emails about project #{project.name} were sent."
+    else
+      redirect_to admin_projects_path, alert: "Error. Project not active on site or Couldn't find the project."
+    end
+  end
+
   controller do
     def update
       update! do |format|
@@ -29,6 +41,9 @@ ActiveAdmin.register Project do
     column :name
     column :location
     column :launch
+    column :subscibers do |s|
+      link_to 'Send the emails', sent_event_admin_project_path(s.id), data: { :confirm => "Are you sure? Need active status" }
+    end
     column :status
     column :created_at
     column :updated_at

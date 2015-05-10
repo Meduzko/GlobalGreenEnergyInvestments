@@ -15,3 +15,10 @@ class SessionsController < Devise::SessionsController
     return render :json => {:status => 'errors', :errors => alert}
   end
 end
+
+# hook to redirect to needed admin zone (conflict with custom devise)
+class ActiveAdmin::Devise::SessionsController
+  def after_sign_in_path_for(resource)
+    admin_dashboard_path
+  end
+end

@@ -11,7 +11,7 @@
         <div class="swiper-slide" data-src="<%= project.big_foto.url %>" style="background-image:url('<%= project.big_foto.url %>')">
           <div class="slider-content">
             <h4>
-              <span><i class="sun-icon"></i></span>
+              <span><i class="<%= icon_energy(project.type_of_energe) %>"></i></span>
               <%= project.name %>
             </h4>
 
