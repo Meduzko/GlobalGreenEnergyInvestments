@@ -7,26 +7,28 @@
     <div class="popup-title"><%= I18n.t(:forgot_pass_popup_title) %></div>
     <div class="popup-content">
 
-      <%= form_for(:user, :url => session_path(:user), html: { method: :post, :'data-jscomp' => 'components/validator' }) do |f| %>
-      <div class="message-box"></div>
+      <%= form_for(:user, :url => session_path(:user),
+                   html: {method: :post, :'data-jscomp' => 'components/validator'}) do |f| %>
+        <div class="message-box"></div>
         <div class="field">
-          <%= f.email_field :email, 
-                      autofocus: true,
-                      class: 'default-input',
-                      placeholder: 'email',
-                      required: 'true' %>
+          <%= f.email_field :email,
+                            autofocus: true,
+                            class: 'default-input',
+                            placeholder: 'email',
+                            required: 'true' %>
         </div>
 
         <div class="field">
           <p class="default-text">Write your email and we will send your password there</p>
         </div>
 
-        <input type="button" class="default-btn primary-btn" value="<%= I18n.t(:forgot_pass_popup_btn_text) %>" onclick="compSupport.callFunc('#forgotPassPopup', 'sendForm')" />
+        <button type="button" class="default-btn primary-btn" onclick="compSupport.callFunc('#forgotPassPopup', 'sendForm')"><%= I18n.t(:forgot_pass_popup_btn_text) %></button>
       <% end %>
 
 
       <div class="popup-additional">
         <a href="/users/sign_up"><%= I18n.t(:login_popup_register_link) %></a>
+
         <p class="default-text"><%= I18n.t(:login_popup_text).html_safe %></p>
       </div>
 

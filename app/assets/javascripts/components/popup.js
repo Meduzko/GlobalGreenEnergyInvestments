@@ -2,13 +2,16 @@
 define(['jquery'], function ($) {
 
     return {
+
+        ESC_CODE: 27,
+
         init: function (domId, config) {
             var thisComp = this;
             this.domId = $('#' + domId);
             this.popupRef = $('.popup');
 
             $(document).keyup(function(e) {
-                if (e.keyCode == 27) {
+                if (e.keyCode == thisComp.ESC_CODE) {
                     thisComp.hide();
                 }
             });

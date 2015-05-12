@@ -7,8 +7,8 @@
     <div class="popup-title"><%= I18n.t(:login_popup_title) %></div>
     <div class="popup-content">
 
-      <%= form_for(:user, :url => session_path(:user), 
-            :html => { :'data-jscomp' => 'components/validator', method: 'post' } ) do |f| %>
+      <%= form_for(:user, :url => session_path(:user),
+                   :html => { :'data-jscomp' => 'components/validator', method: 'post' } ) do |f| %>
         <div class="message-box"></div>
         <div class="field">
           <%= f.email_field :email, 
