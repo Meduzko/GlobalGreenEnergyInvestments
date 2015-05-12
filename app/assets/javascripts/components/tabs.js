@@ -5,7 +5,8 @@ define(['jquery', 'jquery.responsiveTabs'], function ($) {
             $('#' + domId).responsiveTabs({
                 active: 0,
                 animation: "slide",
-                setHash: true,
+                rotate: false,
+                collapsible: false,
                 duration: 300
             }).show();
         }
