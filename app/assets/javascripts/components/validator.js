@@ -41,6 +41,8 @@
 
 define(["jquery", "jquery.validate"], function ($) {
 
+    'use strict';
+
     return {
 
         /**

@@ -1,5 +1,7 @@
 define(['jquery'], function ($) {
 
+    'use strict';
+
     return {
         init: function (domId, config) {
             this.domId = $('#' + domId);

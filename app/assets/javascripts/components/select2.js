@@ -1,5 +1,6 @@
-
 define(['jquery', 'select2'], function ($) {
+
+    'use strict';
 
     return {
         init: function (domId, config) {

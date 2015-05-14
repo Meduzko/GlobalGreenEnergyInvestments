@@ -43,12 +43,89 @@
 
     .how-it-works-video {
         max-width: 1500px;
-        margin: 0 auto;
-        padding: 80px 0 100px 0;
+        margin: 80px auto 100px;
+        position: relative;
         text-align: center;
-        img {
+
+        video {
             width: 100%;
         }
+
+        .video-controls {
+
+            background: $black;
+            opacity: 0.8;
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+
+            h2 {
+                color: $white;
+                margin-top: -120px;
+                position: absolute;
+                top: 50%;
+                text-align: center;
+                width: 100%;
+            }
+
+            div {
+                color: $white;
+                margin-top: 80px;
+                position: absolute;
+                top: 50%;
+                text-align: center;
+                width: 100%;
+            }
+
+            .play-pause {
+                background-color: $blue-green;
+                color: $white;
+                cursor: pointer;
+                display: block;
+                font-size: 42px;
+                line-height: 104px;
+                height: 104px;
+                margin: -52px 0 0 -52px;
+                opacity: 1;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 104px;
+                @include border-radius(52px);
+                @include transition(opacity 0.5s ease-in-out, opacity 0.5s ease-in-out);
+                &:before {
+                    margin-left: 18px;
+                }
+                &:hover {
+                    background-color: $blue-green-hover;
+                }
+            }
+
+        }
+
+        &.playing {
+            .video-controls {
+                background: none;
+                h2, div {
+                    display: none;
+                }
+            }
+            .play-pause {
+                opacity: 0;
+                &:before {
+                    margin-left: 8px;
+                    content: '\e813';
+                }
+            }
+            &:hover {
+                .play-pause {
+                    opacity: 1;
+                }
+            }
+        }
+
     }
 
     .steps-to-invest {

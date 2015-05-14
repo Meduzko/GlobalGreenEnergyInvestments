@@ -1,5 +1,7 @@
 define(['jquery', 'swiper'], function ($, Swiper) {
 
+    'use strict';
+
     return {
         init: function (domId, config) {
             var slider = new Swiper('#' + domId, {

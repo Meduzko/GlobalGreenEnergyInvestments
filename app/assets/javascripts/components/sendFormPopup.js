@@ -1,5 +1,7 @@
 define(['jquery', 'components/popup'], function ($, popup) {
 
+    'use strict';
+
     return compSupport.extend(popup, {
 
         ENTER_CODE: 13,
