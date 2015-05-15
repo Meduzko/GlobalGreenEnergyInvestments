@@ -22,7 +22,7 @@ var gulp = require('gulp'), // Сообственно Gulp JS
 gulp.task('bower-to-public', function () {
     return gulp.src(mainBowerFiles())
         .pipe(gulpFilter(['*', '!*.css', '!*.scss', '!*.less']))
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest(publicRoot + 'javascripts/vendors'));
 });
 
@@ -45,7 +45,7 @@ gulp.task('js-components', function () {
     return gulp.src([
         assetsRoot + 'javascripts/components/*.js'
     ])
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest(publicRoot + 'javascripts/components'))
         .pipe(browserSync.reload({stream: true}));
 });

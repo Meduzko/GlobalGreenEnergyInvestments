@@ -28,10 +28,11 @@
             }
             span {
                 display: block;
-                color: $blue;
+                color: $blue-green;
                 font-size: 14px;
                 font-weight: 500;
                 padding-top: 10px;
+                text-transform: uppercase;
             }
         }
     }
