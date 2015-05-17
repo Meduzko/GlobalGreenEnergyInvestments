@@ -26,6 +26,7 @@ gulp.task('bower-to-public', function () {
         .pipe(gulp.dest(publicRoot + 'javascripts/vendors'));
 });
 
+
 gulp.task('js', ['bower-to-public'], function () {
     return gulp.src([
         publicRoot + 'javascripts/vendors/require.js',
@@ -41,6 +42,7 @@ gulp.task('js', ['bower-to-public'], function () {
         .pipe(browserSync.reload({stream: true}));
 });
 
+
 gulp.task('js-components', function () {
     return gulp.src([
         assetsRoot + 'javascripts/components/*.js'
@@ -49,6 +51,7 @@ gulp.task('js-components', function () {
         .pipe(gulp.dest(publicRoot + 'javascripts/components'))
         .pipe(browserSync.reload({stream: true}));
 });
+
 
 // Собираем CSS
 gulp.task('css', function () {
@@ -82,12 +85,11 @@ gulp.task('fonts', function () {
 
 
 // Копируем и минимизируем изображения
-gulp.task('images', function () {
-
+gulp.task('images', ['svg-optimization'], function () {
     gulp.src([
         assetsRoot + 'images/**/*',
-        assetsRoot + 'images/*',
-        !assetsRoot + 'images/svg/*'
+        assetsRoot + 'images/**',
+        assetsRoot + 'images/*'
     ])
         .pipe(imagemin())
         .pipe(gulp.dest(publicRoot + 'images'))
@@ -100,6 +102,7 @@ gulp.task('video', function () {
         .pipe(gulp.dest(publicRoot + 'video'));
 });
 
+
 gulp.task('static', function () {
     gulp.src(assetsRoot + 'static/*')
         .pipe(gulp.dest(publicRoot));
@@ -109,22 +112,7 @@ gulp.task('static', function () {
 gulp.task('svg-optimization', function () {
     gulp.src(assetsRoot + 'images/svg/*.svg')
         .pipe(svgo())
-        .pipe(gulp.dest(publicRoot + 'images'));
-});
-
-
-/*gulp.task('svg-sprites', function () {
- return gulp.src(assetsRoot + 'images/svg*//*.svg')
- .pipe(svgSprite())
- .pipe(svgo())
- .pipe(gulp.dest(publicRoot + 'images'));
- });*/
-
-
-gulp.task('svg-to-png', function () {
-    return gulp.src(assetsRoot + 'images/svg/*.svg')
-        .pipe(svgToPng())
-        .pipe(gulp.dest(publicRoot + 'images/generated'));
+        .pipe(gulp.dest(publicRoot + 'images/svg'));
 });
 
 
@@ -137,16 +125,20 @@ gulp.task('browser-sync', function () {
 });
 
 
+//Run if you need to remove static
 gulp.task('clean', function () {
-    return del(publicRoot + 'public/**');
+    return del([
+        publicRoot + 'images',
+        publicRoot + 'stylesheets',
+        publicRoot + 'javascripts',
+        publicRoot + 'video',
+        publicRoot + 'fonts'
+    ]);
 });
 
 
-gulp.task('build', function (callback) {
-    runSequence('clean',
-        ['images', 'svg-optimization', 'js', 'js-components', 'css', 'fonts', 'static', 'video'],
-        callback);
-});
+//Run if you need to build static
+gulp.task('build', ['images', 'js', 'js-components', 'css', 'fonts', 'static', 'video']);
 
 
 gulp.task('watch', ['images', 'js', 'js-components', 'css', 'browser-sync'], function () {
