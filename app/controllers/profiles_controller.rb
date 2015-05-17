@@ -1,7 +1,8 @@
 class ProfilesController < ApplicationController
   before_filter :authenticate_user!
-  
+
   def edit
+    @projects = Project.active
     @profile = current_user.profile
   end
 

@@ -151,6 +151,7 @@ en:
   #Seetings page
   profile_settings_title: Settings
   profile_my_invest_title: My investments
+  profile_my_invest_no_projects: No projects, yet
   profile_my_invest_text: View the current status of your investment.
   profile_settings_text: Your personal details and contact informations are required before you can make an investment
 

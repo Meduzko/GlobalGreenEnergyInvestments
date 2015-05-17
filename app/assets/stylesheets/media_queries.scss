@@ -1,7 +1,7 @@
 @import "partials/variables";
 @import "partials/mixins";
 
-@media all and (min-width: 1024px) {
+@media all and (min-width: 1025px) {
     main {
         .key-values {
             li {
@@ -35,6 +35,8 @@
 
         }
     }
+
+
 
 }
 
@@ -165,6 +167,13 @@
         width: 100%;
     }
 
+    .registration-page {
+        .default-text {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
+
 }
 
 @media all and (max-width: 740px) {
@@ -204,12 +213,16 @@
     }
 
     .registration-page {
-        padding-top: 100px;
+        padding-top: 200px;
         h1 {
             font-size: 34px;
         }
+        .default-text {
+            top: -75px;
+            padding: 0 !important;
+        }
         .inner-page-main-title {
-            top: 62px;
+            top: -125px;
             line-height: 32px;
         }
         form {
@@ -242,7 +255,7 @@
                 top: 15px;
             }
             .select2-container {
-                width: 100% !important;
+                width: 92% !important;
             }
         }
     }

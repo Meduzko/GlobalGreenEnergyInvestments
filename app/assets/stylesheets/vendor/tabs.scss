@@ -2,6 +2,7 @@
 @import "../partials/mixins";
 
 .r-tabs {
+    position: relative;
     .tabs-content {
         display: none;
     }
@@ -38,7 +39,9 @@
     }
 
     .r-tabs-accordion-title {
-        display: none;
+        opacity: 0;
+        position: absolute;
+        top: 0;
     }
 
     .r-tabs-panel.r-tabs-state-active {
@@ -60,7 +63,8 @@
             display: none;
         }
         .r-tabs-accordion-title {
-            display: block;
+            opacity: 1;
+            position: inherit;
             a {
                 border-top: 1px solid $light-grey2;
                 border-bottom: 1px solid $light-grey2;

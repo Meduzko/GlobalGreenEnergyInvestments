@@ -1,11 +1,10 @@
-<% projects_count = projects.count %>
 <section class="projects-slider">
 
-  <h2><%= I18n.t(:title_latest_project) %></h2>
+  <h2 class="inner-page-sub-title"><%= I18n.t(:title_latest_project) %></h2>
 
   <p class="default-text"><%= I18n.t(:latest_project_text) %></p>
 
-  <div class="swiper-container" <% if projects_count > 1 %>data-jscomp="components/slider"<% end %>>
+  <div class="swiper-container">
     <div class="swiper-wrapper">
       <% projects.each do |project| %>
         <div class="swiper-slide" data-src="<%= project.big_foto.url %>" style="background-image:url('<%= project.big_foto.url %>')">
@@ -49,10 +48,5 @@
     <div class="swiper-pagination"></div>
 
   </div>
-
-  <% if projects_count > 1 %>
-    <div class="swiper-button-prev icon-left-dir"></div>
-    <div class="swiper-button-next icon-right-dir"></div>
-  <% end %>
 
 </section>
