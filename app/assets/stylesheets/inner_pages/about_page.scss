@@ -33,15 +33,17 @@
                 @include box-shadow(0, 0, 10px, rgba(0, 0, 0, .16));
 
                 .team-img {
-                    border: 2px solid $blue;
                     display: inline-block;
                     height: 160px;
                     overflow: hidden;
                     width: 160px;
+                    @include background-gradient($blue, $blue-green);
                     @include border-radius(80px);
                     img {
-                        height: 160px;
-                        width: 160px;
+                        height: 156px;
+                        margin-top: 2px;
+                        width: 156px;
+                        @include border-radius(77px);
                     }
                 }
 
