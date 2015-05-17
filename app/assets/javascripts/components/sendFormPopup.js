@@ -13,7 +13,7 @@ define(['jquery', 'components/popup'], function ($, popup) {
             this.messageBox = '.message-box';
             popup.init.apply(this, arguments);
 
-            $(document).keyup(function (e) {
+            $('#' + domId).keyup(function (e) {
                 if (e.keyCode == thisComp.ENTER_CODE) {
                     thisComp.sendForm();
                 }
