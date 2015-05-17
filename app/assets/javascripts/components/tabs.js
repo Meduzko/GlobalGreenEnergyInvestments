@@ -4,7 +4,7 @@ define(['jquery', 'jquery.responsiveTabs'], function ($) {
 
     return {
         init: function (domId) {
-            $('#' + domId).responsiveTabs({
+            var tabs = $('#' + domId).responsiveTabs({
                 active: 0,
                 animation: "slide",
                 scrollToAccordion: true,
@@ -13,6 +13,11 @@ define(['jquery', 'jquery.responsiveTabs'], function ($) {
                 collapsible: false,
                 duration: 300
             }).show();
+
+            tabs.on('tabs-activate', function () {
+                compSupport.callFunc('#editProfileForm', 'checkIfPrefilledAreValid');
+            });
+
         }
     }
 

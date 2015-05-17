@@ -221,6 +221,20 @@ define(["jquery", "jquery.validate"], function ($) {
                 this.validator.showErrors(this.backEndMsg.messages);
             }
 
+
+            setTimeout(function () {
+                thisComp.checkIfPrefilledAreValid();
+            }, 100);
+
+        },
+
+        checkIfPrefilledAreValid: function () {
+            var thisComp = this;
+            $(thisComp.formSelector).find('input[type="text"], input[type="email"], input[type="password"]').each(function () {
+                if ($(this).val()){
+                    thisComp.validator.element($(this));
+                }
+            });
         },
 
         /**
