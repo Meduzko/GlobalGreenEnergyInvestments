@@ -17,18 +17,20 @@ module ApplicationHelper
     end
   end
 
-  def project_stats
+  def project_stats(is_my_invest=false)
     projects = Project.active
     stat = ''
     stat += '<ul class="statistic-circles">'
-      stat += '<li>'
-        stat += '<div>'
-        stat += User.count.to_s
-        stat += '<span>' 
-          stat += I18n.t(:stat_investors)
-        stat += '</span>'
-        stat += '</div>'
-      stat += '</li>'
+      unless is_my_invest
+        stat += '<li>'
+          stat += '<div>'
+          stat += User.count.to_s
+          stat += '<span>'
+            stat += I18n.t(:stat_investors)
+          stat += '</span>'
+          stat += '</div>'
+        stat += '</li>'
+      end
       stat += '<li>'
         stat += '<div>'
         stat += cute_amount(projects.map(&:total_amount_invested).inject(:+))
@@ -61,6 +63,16 @@ module ApplicationHelper
         stat += '</span>'
         stat += '</div>'
       stat += '</li>'
+      if is_my_invest
+        stat += '<li>'
+          stat += '<div>'
+          stat += (projects.map(&:irr).inject(:+) / projects.size).round(2).to_s + '%'
+          stat += '<span>'
+            stat += I18n.t(:stat_total_return)
+          stat += '</span>'
+          stat += '</div>'
+        stat += '</li>'
+      end
     stat += '</ul>'
     stat.html_safe
   end

@@ -41,6 +41,7 @@ en:
   stat_generated: KWH generated
   stat_return: average return
   stat_fixed_return: fixed return
+  stat_total_return: total return
   stat_text: GGIG believes that anyone should be able to invest in medium to large Green energy projects while getting a stable return and contributing to future clean energy.
 
   #latest project
