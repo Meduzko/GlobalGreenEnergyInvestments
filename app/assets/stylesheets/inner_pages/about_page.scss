@@ -39,11 +39,18 @@
                     width: 160px;
                     @include background-gradient($blue, $blue-green);
                     @include border-radius(80px);
-                    img {
+                    div {
+                        background-color: $white;
                         height: 156px;
-                        margin-top: 2px;
+                        margin: 2px 0 0 2px;
                         width: 156px;
                         @include border-radius(77px);
+                    }
+                    img {
+                        margin-top: 2px;
+                        height: 152px;
+                        width: 152px;
+                        @include border-radius(76px);
                     }
                 }
 
