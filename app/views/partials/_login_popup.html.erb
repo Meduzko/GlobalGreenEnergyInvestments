@@ -31,11 +31,11 @@
             <%= I18n.t(:login_popup_forgot_pswd) %>
           </a>
         </div>
-        
-        <%= f.button I18n.t(:login_popup_btn_text), 
-                      class: 'default-btn primary-btn',
-                      type: 'button',
-                      onclick: "compSupport.callFunc('#loginPopup', 'sendForm')".html_safe %>
+
+        <%= f.submit I18n.t(:login_popup_btn_text),
+                     class: 'default-btn primary-btn',
+                     type: 'submit',
+                     onclick: "compSupport.callFunc('#loginPopup', 'sendForm')".html_safe %>
       <% end %>
   
       <div class="popup-additional">

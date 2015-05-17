@@ -13,11 +13,16 @@ define(['jquery', 'components/popup'], function ($, popup) {
             this.messageBox = '.message-box';
             popup.init.apply(this, arguments);
 
-            $('#' + domId).keyup(function (e) {
-                if (e.keyCode == thisComp.ENTER_CODE) {
-                    thisComp.sendForm();
-                }
-            });
+            compSupport.callFunc($('#' + domId).find('form'), "addAsyncValidator", [function (validatorComp) {
+                thisComp.sendForm(
+                    function () {
+                        validatorComp.asyncValidatorFail();
+                    },
+                    function () {
+                        validatorComp.asyncValidatorPass();
+                    }, thisComp
+                );
+            }]);
 
         },
 
@@ -37,7 +42,7 @@ define(['jquery', 'components/popup'], function ($, popup) {
             this.domId.find('.spinner').remove();
         },
 
-        sendForm: function () {
+        sendForm: function (validationFailed, validationPass, callbackContext) {
             var thisComp = this;
             var form = this.domId.find('form');
             var formData = form.serialize();
@@ -60,13 +65,17 @@ define(['jquery', 'components/popup'], function ($, popup) {
                         thisComp.hideSpinner();
                         if (data.status === 'errors') {
                             thisComp.showMessage(data.errors, 'error');
+                            validationFailed.call(callbackContext);
+
                         } else {
+                            validationPass.call(callbackContext);
                             thisComp.showMessage(data.success, 'success');
                             if (thisComp.needRedirect) {
                                 window.location.href = data.redirect_to;
                             }
                         }
                     })
+
                     .fail(function (data) {
                         thisComp.hideSpinner();
                         if (data.status === 422) {
