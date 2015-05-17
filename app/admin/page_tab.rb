@@ -22,7 +22,7 @@ ActiveAdmin.register PageTab do
       f.input :page
       f.input :tab_name
       f.input :position
-      f.input :description, :as => :ckeditor, :config => { :width => '76%', :height => '400px' }
+      f.input :description, input_html: {class: 'ckeditor'}
       f.input :status
     end
     f.actions
