@@ -25,5 +25,6 @@ module GGIG
 
     config.assets.enabled = true
     config.assets.precompile += Ckeditor.assets
+    config.assets.precompile += [ /.*config\.js/, /.*en.js/, /.*editor.css/ ]
   end
 end
