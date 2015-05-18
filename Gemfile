@@ -28,7 +28,7 @@ end
 
 group :assets do
   gem 'therubyracer'
-  gem 'sass-rails'
+  gem 'sass-rails', github: 'rails/sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
 end
