@@ -1,6 +1,10 @@
 @import "../partials/variables";
 @import "../partials/mixins";
 
+html {
+    zoom: 90%;
+}
+
 body {
     background-color: $light-grey6;
     font-family: 'Roboto Condensed', sans-serif;
