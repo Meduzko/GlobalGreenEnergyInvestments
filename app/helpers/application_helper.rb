@@ -34,7 +34,8 @@ module ApplicationHelper
       stat += '<li>'
         stat += '<div>'
         stat += cute_amount(projects.map(&:total_amount_invested).inject(:+))
-        stat += '<span>' 
+        stat += ' <sup>€</sup>'
+        stat += '<span>'
           stat += I18n.t(:stat_invested)
         stat += '</span>'
         stat += '</div>'
