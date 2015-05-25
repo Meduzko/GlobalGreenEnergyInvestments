@@ -56,9 +56,18 @@ main {
             &:first-child, &:nth-child(4) {
                 border-left: 0;
             }
+
+            svg * {
+                transition: all .5s;
+            }
+
+            .icon-font {
+                font-size: 42px;
+                color: $blue;
+                transition: all .5s;
+            }
+
             span {
-                //background: url('../images/svg/sprite.svg') no-repeat;
-                background: url('/images/key_values.png') no-repeat;
                 display: inline-block;
                 position: relative;
                 top: 0;
@@ -78,68 +87,52 @@ main {
                 position: relative;
             }
 
+            &:hover svg path {
+                fill: $white;
+                stroke: $white;
+            }
+
+            &:hover .icon-font {
+                color: $white;
+            }
+
             &.easy span {
-                //background-position: 0 0;
-                background-position: -9px -2px;
                 height: 41px;
                 width: 41px;
             }
-            &.easy:hover span {
-                background-position: -5px -291px;
-            }
 
             &.transparent span {
-                //background-position: 0 -195px;
-                background-position: -131px -3px;
                 height: 41px;
                 width: 42px;
             }
-            &.transparent:hover span {
-                background-position: -128px -291px;
-            }
 
             &.secure span {
-                //background-position: 0 -77px;
-                background-position: -261px 0;
+                font-size: 56px;
                 margin-bottom: 41px;
                 height: 46px;
                 width: 35px;
             }
-            &.secure:hover span {
-                background-position: -254px -286px;
-            }
 
             &.stable-return span {
-                //background-position: 0 -123px;
-                background-position: 0 -132px;
                 margin-bottom: 47px;
                 height: 40px;
                 width: 48px;
             }
-            &.stable-return:hover span {
-                background-position: -1px -428px;
-            }
 
             &.trade span {
-                //background-position: 0 -163px;
-                background-position: -120px -139px;
+                font-size: 26px;
                 margin-bottom: 55px;
+                margin-left: -10px;
                 height: 32px;
                 width: 55px;
             }
-            &.trade:hover span {
-                background-position: -121px -437px;
-            }
 
             &.growing span {
-                //background-position: 0 -41px;
-                background-position: -254px -136px;
+                font-size: 24px;
                 margin-bottom: 51px;
+                margin-left: -10px;
                 height: 36px;
                 width: 42px;
-            }
-            &.growing:hover span {
-                background-position: -251px -434px;
             }
 
         }

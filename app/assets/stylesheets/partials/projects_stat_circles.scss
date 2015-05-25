@@ -9,19 +9,19 @@
         display: inline-block;
         @include border-radius(93px);
         @include box-shadow(0, 0, 24px, rgba(0, 0, 0, 0.15));
-        height: 179px;
+        height: 182px;
         margin: 0 24px 12px;
-        padding: 7px 0 0 7px;
+        padding: 6px 0 0 7px;
         text-align: center;
-        width: 179px;
+        width: 182px;
         div {
-            background: url('/images/circles_border.png') no-repeat;
+            background: url('/images/svg/gradient.svg') no-repeat -333px -211px;
             display: table-cell;
             font-size: 30px;
             font-weight: 700;
-            height: 171px;
+            height: 175px;
             vertical-align: middle;
-            width: 171px;
+            width: 175px;
             em {
                 font-size: 18px;
                 font-style: normal;
