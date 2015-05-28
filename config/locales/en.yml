@@ -42,10 +42,11 @@ en:
   stat_return: average return
   stat_fixed_return: fixed return
   stat_total_return: total return
-  stat_text: GGIG believes that anyone should be able to invest in medium to large Green energy projects while getting a stable return and contributing to future clean energy.
+  stat_text: We find renewable energy projects on the world’s most effective place, whether in your neighborhood or on the other side of the equator.
+  stat_text_link: How it works video
 
   #latest project
-  latest_project_text: You choose the projects you believe in and fit your risk profile. Explore our selection of projects and review its details.
+  latest_project_text: Explore our latest project and review its details. Within each project are risks involved, only invest if you fully understand the risks.
   latest_project_slider_text_1: Project developer with over 15 years of experience in the clean energy development.
   latest_project_slider_text_2: De Wolff Nederland Windenergie (WNW) is een bedrijf met ruim 20 jaar ervaring in windenergie en is één van de marktleiders in Nederlan2.
   latest_project_slider_text_3: De Wolff Nederland Windenergie (WNW) is een bedrijf met ruim 20 jaar ervaring in windenergie en is één van de marktleiders in Nederland3.
@@ -53,17 +54,17 @@ en:
   #key values
   key_values_text: The values we strive to commit to.
   key_values_easy: Easy
-  key_values_easy_text: A 3-step process to participate in a project
+  key_values_easy_text: A 4-step process to participate in a project
   key_values_transparent: Transparant
-  key_values_transparent_text: We are committed to a transparent legal structure and inform you of the risks
+  key_values_transparent_text: We are committed to a transparent legal structure and inform you on the potential risks
   key_values_secure: Secure
-  key_values_secure_text: Make your investment directly to an independent 3rd party fund
+  key_values_secure_text: Transfer your investment directly to an independent 3rd party
   key_values_return: Stable return
   key_values_return_text: We offer an alternative investment to diversify your portfolio
   key_values_trade: Trade
   key_values_trade_text: We facilitate the possibility to offer your stake on the platform
   key_values_growing: Growing
-  key_values_growing_text: Join a growing community of people investing in green projects
+  key_values_growing_text: Join a growing community of people investing in green energy projects
 
   login_popup_title: Welcome
   login_popup_text: "Please register to view more investment information"
@@ -76,7 +77,7 @@ en:
 
   #subscription
   subscr_title: Stay informed on new projects
-  subscr_text: We would be happy to keep you informed on when new investment opportunities become available.
+  subscr_text: Please fill in your name and email in order to receive information on new investment opportunities.
   subscr_name_field: Name
   subscr_email_field: Email
   subscr_submit: Stay informed
@@ -100,7 +101,7 @@ en:
   #Contact
   contact_title: Contact
   contact_message: Question
-  contact_text: We are happy to hear any suggestions or answer any questions you might have
+  contact_text: We are happy to answer all your questions, or hear any suggestions that you might have.
 
   #Invest page
   invest_title: Investments
@@ -112,7 +113,7 @@ en:
 
   invest_fundable_text: View the projects that you are interested in to further understand the risks and the return of a participation.
   invest_funded_text: Project that were successfully funded through the platform.
-  invest_trade_text: The trade page allows you to sell your stake via our platform. Note that there are additional administrative costs involved.
+  invest_trade_text: The trade page allows you to sell your stake via our platform. Note that there is an additional administration fee.
   invest_trade_send_email: "If you want to sell your participation, please <a href='mailto:info@globalgreeninvestmentgroup.com'>send an mail</a> and our team will put it on the trade page"
 
   legal_privacy_title: Privacy
@@ -122,7 +123,7 @@ en:
   legal_disclaimer_title: Disclaimer
 
   about_main_title: About
-  about_the_team_title: The team
+  about_the_team_title: Team
   about_mission_title: Mission
   about_board_title: ADVISORY BOARD
   about_the_team_support: Support Team
@@ -131,11 +132,11 @@ en:
   about_team_x_role: CEO
   about_team_x_descr: 10 years of experience in the energy market.
   about_team_ben: Benoit van Beeck Calkoen
-  about_team_ben_role: Sales Representative
-  about_team_ben_descr: International Management at Nyenrode Business University. Passionate for solutions with global impact.
+  about_team_ben_role: Sales
+  about_team_ben_descr: Graduated International Management from Nyenrode Business University. Passionate about technical solutions with global impact.
   about_team_duco: Duco<br/> Van Rossem
   about_team_duco_role: Finance
-  about_team_duco_descr: Graduated Econometrics from University of Amsterdam. Interested in Sustainability and algorithms.
+  about_team_duco_descr: Graduated Econometrics from University of Amsterdam. Interested in sustainability, algorithms and cultures.
   about_team_vitaly: Vitaliy Dzhenkov
   about_team_vitaly_role: Project manager
   about_team_vitaly_descr: Expert in business analysis, strategic planning and project management.
@@ -145,9 +146,16 @@ en:
   about_team_yuriy: Yuriy Nagorniy
   about_team_yuriy_role: ui/ux designer
   about_team_yuriy_descr: De Wolff Nederland Windenergie (WNW) is een bedrijf met ruim 20 jaar ervaring in windenergie en is één van de marktleiders in Nederland.
+  about_team_nana: Nana Kwaku Duah
+  about_team_nana_role: Africa Expert
+  about_team_nana_descr: Associate - Business & Investments at Omaboe Associates Ltd.
   about_team_y: Ms. XYZ
   about_team_y_role: Banker
   about_team_y_descr: 10 years of experience in private banking.
+  about_mission_title_1: MISSION
+  about_mission_text_1: We want to accelerate the transition to clean energy by enabling anyone to participate in renewable energy initiatives in their neighborhood or on the other side of the world.
+  about_mission_title_2: VISION
+  about_mission_text_2: Global Green Energy Investments believes that renewable energy will become the main generator of power in the coming decades. To speed up the transition, large investments are required and therefore, everybody should be encouraged to engage in this movement while receiving a stable return.
 
   #Seetings page
   profile_settings_title: Settings
@@ -160,21 +168,24 @@ en:
   idea_title: Idea
   idea_example_project_title: Project sunny
   idea_example_project_example: Example
-  idea_page_text: Global Green Energy Investments is a platform where socially minded investors meet green energy projects worldwide. These projects are carefully assessed and furthermore have certificates to ensure the quality of the project. When a project is sourced, assessed and approved a part of the equity or debt is acquired by Global Green Energy Investments. These stakes are connected to investors through a 3rd party fund.
-  idea_page_paragraph_1_title: CAREFULLY SELECTED
-  idea_page_paragraph_1_1_text: We are committed to connect you to quality projects. GGIG is structured such that as long as the project succeeds, GGIG receives income as a percentage of the total money paid out from the project to the third party fund.
-  idea_page_paragraph_1_2_text: The returns displayed on the investment pages of the project is the fixed expected return that you will receive.
-  idea_page_paragraph_2_title: Information
-  idea_page_paragraph_2_text: Through the project memoranda we provide information to make an educated decision on your investment. E.g. insurances, expected KWh generated, power purchasing agreements, etc.
+  idea_page_text: We believe in collective decentralized initiatives of medium large scale projects where anyone should be able to participate and benefit. We aim to find projects with a ‘logical’ location on our planet. A place where the yields of the projects are high while having a relatively stable economy, trustworthy project developers with a track record and stable buyers of the power.
+  idea_page_paragraph_1_title: CAREFULLY SELECTED PROJECTS
+  idea_page_paragraph_1_1_text: We are committed to connect you to quality projects which have a life span of 8 to 20 years. Global Green Energy Investments is structured in such a way that as long as the project succeeds we earn money. So instead of a fixed fee up front, we receive income as a percentage of the total money paid out to the investors. Also see the video  (make link to video) for an illustration. Notice that we benefit financially when a successfully funded project reaches its full lifetime. Therefore it is within our interest to source good projects that are expected to fulfill their commitments.
+  idea_page_paragraph_1_2_text: Note that the returns displayed on the investment page are the effective returns that you will receive, so no other fees will be charged. Only if unexpectedly you want to sell the stake before the prescribed lifetime of the project an administrative fee is incurred. This fee is for administration expenses to put the stake on offer via our ‘trade’ section.
+  idea_page_paragraph_1_3_text: To inform you on the risks we provide project memoranda. Furthermore in our dedicated risks ( make link to risks) section we discuss risks involved. In this way you can make an educated decision on your investment. Global Green Energy Investments is not authorized to provide financial advice to investors. Investors have to make their own judgement to participate in a project. We emphasize that <strong>if you do not fully understand the risks regarding an investment, you should look for independent financial advisor to help you</strong>.
+  idea_page_paragraph_2_title: EVERYBODY SHOULD BE ABLE TO PARTICIPATE
+  idea_page_paragraph_2_text: We believe in collective decentralized initiatives of medium large scale projects where anyone should be able to participate and benefit. We encourage people from all over the world to invest and participate in renewable energy projects, and thereby we work for a rapid transition to clean energy. Whether the project is in your neighborhood or on the other side of the planet, our cross-border focus is based on logical positioning of the projects.
   idea_page_paragraph_3_title: A Walkthrough
   idea_page_paragraph_3_1_text: You choose a project you feel comfortable investing in.  You decide on how you want to invest and transfer your investment amount to the third party fund.
   idea_page_paragraph_3_2_text: Within this 3rd party fund the investment amount of all other participants is gathered until the required amount is reached. Using those funds the 3rd party then acquires a stake in the project.
   idea_page_paragraph_3_3_text: As the project starts to make a return on its energy sales (PPA), money is returned to the 3rd party fund. The 3rd party fund then distributes the money through interest payments to the participants. GGIG at this stage also receives a percentage of the yearly return to third party fund. Therefore it is within GGIG’s best interest to source good projects that are expected to fulfill their commitments.
   idea_page_paragraph_3_4_text: Generally projects have a longterm duration around 8-20 years. If unexpectedly the stake needs to be sold during the run-time of the project, we facilitate the possibility to put the stake on offer via our ‘trade’ section.
-  idea_page_steps_title: Steps
+  idea_page_steps_title: A STEP BY STEP WALKTHROUGH
   idea_page_step_1_title: Select<br>a project
   idea_page_step_1_text: Review project details so that you can make a calculated decision and feel confident with your investment. We provide information memorandums to inform you on the risks involved.
   idea_page_step_2_title: DECIDE ON HOW<br> MUCH TO INVEST
   idea_page_step_2_text: Determine the exposure to the project you are comfortable with and see what the expected returns are.
-  idea_page_step_3_title: TRANSFER THE MONEY<br> TO INVEST
-  idea_page_step_3_text: An independent 3rd party fund will oversee the transaction between you and the project.
+  idea_page_step_3_title: TRANSFER THE MONEY
+  idea_page_step_3_text: An independent trust client bank account will oversee the transaction between you and the project.
+  idea_page_step_4_title: PERIODIC CASH <br>TRANSFER
+  idea_page_step_4_text: The interest payment is transferred to your bank account for the lifetime of the project. Additionally, over of the lifetime your debenture is paid back.

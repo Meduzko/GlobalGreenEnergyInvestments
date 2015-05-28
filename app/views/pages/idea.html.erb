@@ -16,7 +16,7 @@
 
     <h2 class="inner-page-sub-title"><%= I18n.t(:idea_example_project_title) %></h2>
 
-    <img src="/images/idea_infographic.jpg" alt=""/>
+    <img src="/images/infographic.png" alt=""/>
   </div>
 
   <section class="project-infographic-content">
@@ -26,6 +26,7 @@
 
         <p class="default-text"><%= I18n.t(:idea_page_paragraph_1_1_text).html_safe %></p>
         <p class="default-text"><%= I18n.t(:idea_page_paragraph_1_2_text).html_safe %></p>
+        <p class="default-text"><%= I18n.t(:idea_page_paragraph_1_3_text).html_safe %></p>
       </div>
       <div>
         <h3 class="inner-page-sub-title"><%= I18n.t(:idea_page_paragraph_2_title).html_safe %></h3>
@@ -42,6 +43,7 @@
     </div>
   </section>
 
+  <a id="video"></a>
   <section class="how-it-works-video" data-jscomp="components/video">
     <video preload>
       <source src="/video/human_javascript_hd.mp4" type="video/mp4">
@@ -63,6 +65,8 @@
       <div>2</div>
       <span>&nbsp;</span>
       <div>3</div>
+      <span>&nbsp;</span>
+      <div>4</div>
     </div>
 
     <ul>
@@ -90,6 +94,15 @@
           <h5><%= I18n.t(:idea_page_step_3_title).html_safe %> </h5>
 
           <p><%= I18n.t(:idea_page_step_3_text).html_safe %></p>
+        </div>
+      </li>
+
+      <li>
+        <span class="inside-step">4</span>
+        <div>
+          <h5><%= I18n.t(:idea_page_step_4_title).html_safe %> </h5>
+
+          <p><%= I18n.t(:idea_page_step_4_text).html_safe %></p>
         </div>
       </li>
 

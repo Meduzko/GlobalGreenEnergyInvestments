@@ -175,9 +175,17 @@
                 background: $light-grey2;
                 display: block;
                 margin: 10px auto;
-                min-height: 168px;
                 width: 5px;
                 @include border-radius(3px);
+                &:nth-child(2) {
+                    min-height: 188px;
+                }
+                &:nth-child(4) {
+                    min-height: 156px;
+                }
+                &:nth-child(6) {
+                    min-height: 136px;
+                }
             }
         }
 
@@ -210,7 +218,7 @@
                     font-size: 14px;
                     color: $light-grey1;
                 }
-                &:nth-child(2) {
+                &:nth-child(2), &:nth-child(4) {
                     div {
                         float: right;
                         left: auto;
@@ -231,7 +239,7 @@
                     div {
                         left: 16%;
                     }
-                    &:nth-child(2) {
+                    &:nth-child(2), &:nth-child(4) {
                         div {
                             right: 16%;
                         }
@@ -250,7 +258,7 @@
                     div {
                         left: 9%;
                     }
-                    &:nth-child(2) {
+                    &:nth-child(2), &:nth-child(4) {
                         div {
                             right: 9%;
                         }
@@ -289,7 +297,7 @@
                         text-align: center;
                         width: auto;
                     }
-                    &:nth-child(2) {
+                    &:nth-child(2), &:nth-child(4) {
                         div {
                             right: auto;
                             text-align: center;

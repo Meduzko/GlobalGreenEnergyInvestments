@@ -9,12 +9,12 @@ define(['jquery', 'jquery.responsiveTabs'], function ($) {
 
             var tabs = $('#' + domId).responsiveTabs({
                 active: 0,
-                animation: "slide",
+                //animation: "slide",
                 scrollToAccordion: isMobile,
                 setHash: true,
                 rotate: false,
                 collapsible: false,
-                duration: 300
+                duration: 500
             }).show();
 
             tabs.on('tabs-activate', function () {
