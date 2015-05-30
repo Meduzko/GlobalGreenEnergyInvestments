@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @projects = Project.active
+    @projects = Project.active.limit(1)
   end
 
 end

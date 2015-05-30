@@ -13,6 +13,11 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    profile_path + "#profile_settings"
+    case resource
+      when User
+        profile_path + "#profile_settings"
+      when AdminUser
+        admin_dashboard_path
+      end
   end
 end
