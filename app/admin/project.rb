@@ -15,6 +15,7 @@ ActiveAdmin.register Project do
       Subscribe.confirmed.active.each do |user|
         SubscribeMailer.new_project(project, user).deliver_later
       end
+      project.update(sent_subscription: project.sent_subscription + 1)
       redirect_to admin_projects_path, notice: "Success! Emails about project #{project.name} were sent."
     else
       redirect_to admin_projects_path, alert: "Error. Project not active on site or Couldn't find the project."
@@ -42,7 +43,11 @@ ActiveAdmin.register Project do
     column :location
     column :launch
     column :subscibers do |s|
-      link_to 'Send the emails', sent_event_admin_project_path(s.id), data: { :confirm => "Are you sure? Need active status" }
+      if s.sent_subscription > 0
+        link_to "Already sent #{s.sent_subscription} times, repeat?", sent_event_admin_project_path(s.id), data: { :confirm => "Are you sure? You already sent emails." }
+      else
+        link_to 'Send the emails', sent_event_admin_project_path(s.id), data: { :confirm => "Are you sure? Need active status" }
+      end
     end
     column :status
     column :created_at

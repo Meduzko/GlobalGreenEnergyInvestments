@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150509191358) do
+ActiveRecord::Schema.define(version: 20150530094540) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -113,8 +113,9 @@ ActiveRecord::Schema.define(version: 20150509191358) do
     t.boolean  "launch",                limit: 1
     t.float    "kwh_generated",         limit: 24
     t.boolean  "status",                limit: 1
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.integer  "sent_subscription",     limit: 4,     default: 0
   end
 
   create_table "rich_rich_files", force: :cascade do |t|
