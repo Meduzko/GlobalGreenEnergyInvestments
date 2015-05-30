@@ -1,6 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   layout :layout_by_resource
+  before_filter :set_page_legal
+
+  def set_page_legal
+    @page_legal = Page.active.find_by(slug: 'legal')
+  end
 
   protected
 
