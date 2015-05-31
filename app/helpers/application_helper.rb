@@ -67,7 +67,7 @@ module ApplicationHelper
       if is_my_invest
         stat += '<li>'
           stat += '<div>'
-          stat += (projects.map(&:irr).inject(:+) / projects.size).round(2).to_s + '%'
+          stat += (projects.map(&:total_amount_invested).inject(:+)).round(2).to_s + ' <sup>€</sup>'
           stat += '<span>'
             stat += I18n.t(:stat_total_return)
           stat += '</span>'
