@@ -71,7 +71,7 @@
 
 
   <div class="field birthday-field" data-jscomp="components/select2">
-    <%= f.label :date_of_birthday, :class => 'default-label' %>
+    <%= f.label 'Date of Birth', :class => 'default-label' %>
     <%= f.date_select :date_of_birthday,
                       :value => @profile.try(:date_of_birthday),
                       order: [:day, :month, :year],

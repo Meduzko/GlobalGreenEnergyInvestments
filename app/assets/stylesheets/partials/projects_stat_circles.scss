@@ -7,7 +7,7 @@
         background: rgb(255, 255, 255);
         background: rgba(255, 255, 255, 0.8);
         display: inline-block;
-        @include border-radius(93px);
+        @include border-radius(95px);
         @include box-shadow(0, 0, 24px, rgba(0, 0, 0, 0.15));
         height: 182px;
         margin: 0 24px 12px;

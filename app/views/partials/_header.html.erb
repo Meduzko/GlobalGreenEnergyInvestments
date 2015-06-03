@@ -23,6 +23,7 @@
             <% else %>
               <%#= link_to I18n.t(:menu_login), new_user_session_path %>
               <span onclick="compSupport.callFunc('#loginPopup', 'show')" class="popup-link"><%= I18n.t(:menu_login) %></span>
+              <a class="popup-link" href="/users/sign_up"><%= I18n.t(:login_popup_register) %></a>
             <% end %>
           </li>
         </ul>

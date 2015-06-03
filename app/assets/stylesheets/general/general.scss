@@ -2,7 +2,7 @@
 @import "../partials/mixins";
 
 html {
-    zoom: 90%;
+    zoom: 80%;
 }
 
 body {
@@ -216,6 +216,9 @@ label.error {
             height: 30px;
             padding: 10px 0 0 0;
             width: 40px;
+            &:before {
+                padding: 10px 0 0 0;
+            }
         }
     }
 
@@ -330,7 +333,10 @@ label.error {
         span {
             display: block;
             float: left;
-            width: 210px;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            width: 280px;
             padding: 3px 0 0 40px;
         }
 
