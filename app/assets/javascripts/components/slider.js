@@ -4,6 +4,10 @@ define(['jquery', 'swiper'], function ($, Swiper) {
 
     return {
         init: function (domId, config) {
+
+            var thisComp = this;
+            this.domId = domId;
+
             var slider = new Swiper('#' + domId, {
                 // Optional parameters
                 autoplay: 7000,
@@ -11,30 +15,28 @@ define(['jquery', 'swiper'], function ($, Swiper) {
                 nextButton: '.swiper-button-next',
                 prevButton: '.swiper-button-prev',
                 pagination: '.swiper-pagination',
-                paginationClickable: true
+                paginationClickable: true,
+                onInit: function () {
+                    thisComp.lazyLoad();
+                }
             });
+        },
 
+        lazyLoad: function () {
 
-            /*setInterval(function () {
+            var thisComp = this;
 
-                $('#' + domId + ' .swiper-slide-next').css('background-image', $(this).attr('data-src'));
-            }, 5000);
-
-            $('#' + domId + ' .swiper-slide').each(function () {
-                console.log($(this));
-                $(this).prev('.swiper-slide-active').css('background-image', $(this).attr('data-src'));
+            $('#' + this.domId + ' .swiper-slide').each(function () {
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                    $(this).css('background-image', "");
+                    $('#' + thisComp.domId).addClass('mobile-slider').css('background-image', "url(" + $('.first-slide').attr('data-src') + ")");
+                } else {
+                    $(this).css('background-image', "url(" + $(this).attr('data-src') + ")");
+                }
             });
-
-
-            slider.on('init', function (swiper) {
-                console.log(swiper);
-            });*/
-
-            /*slider.on('slideChangeStart', function (swiper) {
-                console.log(swiper);
-            });*/
 
         }
+
     }
 
 });

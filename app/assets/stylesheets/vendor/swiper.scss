@@ -85,6 +85,11 @@
     position: relative;
 }
 
+.mobile-slider {
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
 /* a11y */
 .swiper-container .swiper-notification {
     position: absolute;
