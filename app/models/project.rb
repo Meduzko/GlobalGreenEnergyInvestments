@@ -3,7 +3,7 @@ class Project < ActiveRecord::Base
   has_one :amoritisaztion, dependent: :destroy
 
   before_validation :remove_images
-  scope :active, -> { where(status: true) }
+  scope :active, -> { where(status: true).order('created_at desc') }
 
   mount_uploader :small_foto, ProjectUploader
   mount_uploader :big_foto, ProjectUploader

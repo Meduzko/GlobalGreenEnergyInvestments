@@ -1,0 +1,18 @@
+
+<%= form_for '', as: :post, url: admin_subscribesender_sent_email_path do |f| %>
+  <fieldset class="inputs">
+  <ol>
+    <li class="phone input optional stringish">
+      <%= f.label :subject %>
+      <%= f.text_field :subject %>
+    </li>
+    <li class="phone input optional stringish">
+      <%= f.label :body %>
+      <%= f.text_area :body, cols: 20, rows: 20 %>
+    </li>
+  </ol>
+  </fieldset>
+  <fieldset class="actions">
+    <%= f.submit 'Sent' %>
+  </fieldset>
+<% end %>

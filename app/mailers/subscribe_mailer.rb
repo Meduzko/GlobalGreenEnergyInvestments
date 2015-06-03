@@ -15,6 +15,14 @@ class SubscribeMailer < ApplicationMailer
   # contact form
   def contact_form(form)
       @form = form
-      mail(:to => 'ggigsite@gmail.com', :subject => "GGIG site: contact form")
+      mail(to: 'ggigsite@gmail.com', subject: "GGIG site: contact form")
   end
+
+  # for emails subsribe
+  def sent_email(user, subject, body)
+      @body = body
+      mail(to: user.email, subject: subject)
+  end
+
+
 end

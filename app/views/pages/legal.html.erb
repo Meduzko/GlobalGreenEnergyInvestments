@@ -6,26 +6,17 @@
 
   <div class="tabs-component" data-jscomp="components/tabs">
     <ul>
-      <li><a href="#about_us"><%= I18n.t(:legal_about_us_title) %></a></li>
-      <li><a href="#risks"><%= I18n.t(:legal_risks_title) %></a></li>
-      <li><a href="#terms_and_conditions"><%= I18n.t(:legal_terms_title) %></a></li>
-      <li><a href="#privacy_policy"><%= I18n.t(:legal_privacy_title) %></a></li>
-      <li><a href="#disclaimer"><%= I18n.t(:legal_disclaimer_title) %></a></li>
+      <% @page_legal.page_tabs.active.each do |tab| %>
+        <li><%= link_to tab.tab_name, '#'.concat(tab.slug_ancor) %></li>
+      <% end %>
     </ul>
-    <div class="tabs-content" id="about_us">
-      <%= render 'partials/about_us' %>
-    </div>
-    <div class="tabs-content" id="risks">
-      <%= render 'partials/risks' %>
-    </div>
-    <div class="tabs-content" id="terms_and_conditions">
-      <%= render 'partials/terms_and_conditions' %>
-    </div>
-    <div class="tabs-content" id="privacy_policy">
-      <%= render 'partials/privacy_policy' %>
-    </div>
-    <div class="tabs-content" id="disclaimer">
-      <%= render 'partials/disclaimer' %>
-    </div>
+    <% @page_legal.page_tabs.active.each do |tab| %>
+      <div class="tabs-content" id="<%= tab.slug_ancor %>">
+        <div class="content-with-text">
+          <h1 class="inner-page-main-title"><%= tab.tab_name %></h1>
+          <%= tab.description.html_safe %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
