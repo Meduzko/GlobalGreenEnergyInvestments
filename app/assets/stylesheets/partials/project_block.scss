@@ -28,16 +28,17 @@
         }
 
         .project-type {
-            background: url('/images/marker.png') no-repeat;
-            display: block;
+            background: url('/images/marker.png') no-repeat 67px 0;
+            display: inline-block;
             height: 65px;
-            margin: -37px 0 24px 95px;
+            margin: -37px 0 24px 0;
             padding: 13px 0 0 12px;
-            width: 102px;
+            width: 170px;
             i {
                 background-repeat: no-repeat;
                 display: block;
                 height: 23px;
+                margin-left: 67px;
                 width: 25px;
                 &.sun-icon {
                     background-image: url('/images/sun_icon.png');
@@ -123,6 +124,7 @@
         }
 
         .default-btn {
+            display: block;
             margin-top: 20px;
             padding: 22px 65px;
         }
@@ -135,9 +137,9 @@
         .project-block {
             margin: 40px 20px 0;
             padding: 280px 20px 35px;
-            width: auto;
+            min-width: 300px;
             .project-type {
-                margin: -37px 0 24px 83px;
+                margin: -37px 0 24px 0;
             }
             &.finished-project .project-price {
                 span {

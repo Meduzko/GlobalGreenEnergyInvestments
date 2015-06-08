@@ -70,7 +70,7 @@
   </div>
 
 
-  <div class="field birthday-field" data-jscomp="components/select2">
+  <div class="field birthday-field">
     <%= f.label 'Date of Birth', :class => 'default-label' %>
     <%= f.date_select :date_of_birthday,
                       :value => @profile.try(:date_of_birthday),
@@ -82,7 +82,7 @@
     <span class="icon-ok">&nbsp;</span>
   </div>
 
-  <div class="field country-field" data-jscomp="components/select2">
+  <div class="field country-field">
     <%= f.label :country, :class => 'default-label' %>
     <%= f.country_select :country, ['NL'],
                          :value => @profile.try(:country),

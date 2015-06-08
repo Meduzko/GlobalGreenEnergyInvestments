@@ -213,17 +213,16 @@
     }
 
     .registration-page {
-        padding-top: 200px;
         h1 {
-            font-size: 34px;
+            font-size: 36px;
         }
         .default-text {
             top: -75px;
             padding: 0 !important;
         }
         .inner-page-main-title {
-            top: -125px;
-            line-height: 32px;
+            top: -181px;
+            //line-height: 32px;
         }
         form {
             .field, #error_explanation {
@@ -297,6 +296,32 @@
             .default-btn {
                 padding: 22px;
             }
+        }
+    }
+
+    .my-investments {
+        .projects-slider {
+            width: auto;
+        }
+        .view-all-projects {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        .get-back {
+            float: none;
+        }
+        .my-investments-content h2 {
+            padding-bottom: 30px;
+        }
+    }
+
+    .legal-page {
+        padding-top: 130px;
+    }
+
+    .contact-page {
+        .default-text {
+            padding-top: 0;
         }
     }
 

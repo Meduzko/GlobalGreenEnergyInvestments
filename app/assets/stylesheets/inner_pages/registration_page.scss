@@ -24,7 +24,7 @@
             position: relative;
             width: 630px;
             select {
-                display: none;
+                //display: none;
             }
             span.icon-ok {
                 color: $blue-green;
@@ -82,14 +82,14 @@
     }
 
     &.profile-page {
-        padding-top: 250px;
+        padding-top: 240px;
         .default-text {
             padding-bottom: 0;
         }
         .inner-page-main-title {
             position: absolute;
             left: 0;
-            top: -150px;
+            top: -160px;
             text-align: center;
             width: 100%;
         }
