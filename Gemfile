@@ -17,6 +17,7 @@ gem 'country_select', github: 'stefanpenner/country_select'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'sucker_punch'
 
 group :development do
   gem 'byebug'

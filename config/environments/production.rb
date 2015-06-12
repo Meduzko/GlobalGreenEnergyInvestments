@@ -89,4 +89,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { :host => "globalgreeninvestmentgroup.com" }
+
+  config.active_job.queue_adapter = :sucker_punch
 end
