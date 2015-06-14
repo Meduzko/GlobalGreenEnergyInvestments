@@ -65,7 +65,7 @@ ActiveAdmin.register Project do
         f.input :remove_small_foto, as: :boolean, required: :false, label: 'Remove image' if f.object.small_foto?
       end
       f.inputs "Big image" do
-        f.input :big_foto, :as => :file, :label => '-', :hint => (image_tag(f.object.big_foto.url(:thumb)) if f.object.big_foto?) 
+        f.input :big_foto, :as => :file, :label => '20Mb limit', :hint => (image_tag(f.object.big_foto.url(:thumb)) if f.object.big_foto?) 
         f.input :remove_big_foto, as: :boolean, required: :false, label: 'Remove image' if f.object.big_foto?
       end
       f.inputs "Numeric and selection:" do
