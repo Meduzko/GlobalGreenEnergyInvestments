@@ -14,17 +14,10 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :domain               => "gmail.com",
-    :user_name            => 'ggigsite',
-    :password             => 'ggig2015site',
-    :authentication       => 'plain',
-    :enable_starttls_auto => true
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+    api_key: 'key-bd7291dd273e750fbfd0a2bb8280c142',
+    domain: 'sandbox022fcc54a1b440ca8170ad6fbdf91f6b.mailgun.org'
   }
 
 
