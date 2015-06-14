@@ -3,7 +3,9 @@ class Project < ActiveRecord::Base
   has_one :amoritisaztion, dependent: :destroy
 
   before_validation :remove_images
-  scope :active, -> { where(status: true).order('created_at desc') }
+  scope :active,   -> { where(status: true).order('created_at desc') }
+  scope :fundable, -> { where('projects.total_amount_need != projects.total_amount_invested') }
+  scope :funded,   -> { where('projects.total_amount_need = projects.total_amount_invested') }
 
   mount_uploader :small_foto, ProjectUploader
   mount_uploader :big_foto, ProjectUploader

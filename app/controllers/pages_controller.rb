@@ -3,6 +3,8 @@ class PagesController < ApplicationController
   end
 
   def invest
+    @fundable_projects = Project.active.fundable
+    @funded_projects = Project.active.funded
   end
 
   def about
