@@ -10,6 +10,7 @@ define(['jquery', 'components/popup'], function ($, popup) {
             var thisComp = this;
             this.url = config.url;
             this.needRedirect = config.needRedirect;
+            this.showSignInPopup = config.showSignInPopup;
             this.messageBox = '.message-box';
             popup.init.apply(this, arguments);
 
@@ -26,8 +27,9 @@ define(['jquery', 'components/popup'], function ($, popup) {
 
         },
 
-        showMessage: function (message, messageType) {
-            this.domId.find(this.messageBox).html('<div class="' + messageType + '-msg">' + message + '</div>');
+        showMessage: function (message, messageType, compId) {
+            var componentId = compId || this.domId;
+            componentId.find(this.messageBox).html('<div class="' + messageType + '-msg">' + message + '</div>');
         },
 
         clearMessage: function () {
@@ -63,15 +65,23 @@ define(['jquery', 'components/popup'], function ($, popup) {
                 })
                     .done(function (data) {
                         thisComp.hideSpinner();
+                        console.log(data);
                         if (data.status === 'errors') {
                             thisComp.showMessage(data.errors, 'error');
                             validationFailed.call(callbackContext);
 
                         } else {
-                            validationPass.call(callbackContext);
-                            thisComp.showMessage(data.success, 'success');
+
                             if (thisComp.needRedirect) {
                                 window.location.href = data.redirect_to;
+                            }
+                            if(thisComp.showSignInPopup){
+                                //compSupport.callFunc('#forgotPassPopup', 'hide');
+                                compSupport.callFunc('#loginPopup', 'show');
+                                thisComp.showMessage(data.success, 'success', $('#loginPopup'));
+                            } else {
+                                thisComp.showMessage(data.success, 'success');
+                                validationPass.call(callbackContext);
                             }
                         }
                     })
