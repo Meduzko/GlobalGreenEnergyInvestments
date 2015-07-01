@@ -107,6 +107,9 @@ ActiveAdmin.register Project do
       f.inputs "Status" do
         f.input :status, :label => 'Dispaly on site'
       end
+      f.inputs "Change Project Sorting" do
+        f.input :created_at
+      end
     end
     f.actions
   end

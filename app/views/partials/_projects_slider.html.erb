@@ -30,7 +30,7 @@
                       height="100"></canvas>
             </div>
             <div class="project-statistic">
-              <span><%= project.irr.round %>%<i>Return</i></span>
+              <span><%= number_with_precision(project.irr, strip_insignificant_zeros: true, precision: 2) %>%<i>Return</i></span>
               <canvas data-jscomp="components/projectStatistic"
                       data-percentage="100"
                       class="canvas-statistic"
