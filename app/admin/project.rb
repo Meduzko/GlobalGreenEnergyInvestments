@@ -3,11 +3,11 @@ ActiveAdmin.register Project do
   menu priority: 7
   before_filter :skip_sidebar!, :only => :index
   permit_params :name, :title, :location, :small_foto, :big_foto,
-                :remove_small_foto, :remove_big_foto,  
+                :remove_small_foto, :remove_big_foto,
                 :remove_img_1, :remove_img_2, :remove_img_3, :remove_img_4, :remove_img_5,
-                :type_of_participation, :type_of_energe, :total_amount_need, :total_amount_invested, :irr, 
-                :desc_1, :img_1, :desc_3, :img_2, :desc_3, :img_3, :desc_4, :img_4, :desc_5, :img_5, 
-                :launch, :kwh_generated, :status
+                :type_of_participation, :type_of_energe, :total_amount_need, :total_amount_invested, :irr,
+                :desc_1, :img_1, :desc_2, :img_2, :desc_3, :img_3, :desc_4, :img_4, :desc_5, :img_5,
+                :launch, :kwh_generated, :status, :created_at
 
   member_action :sent_event, method: :get do
     project = Project.find_by(id: params[:id])
@@ -65,7 +65,7 @@ ActiveAdmin.register Project do
         f.input :remove_small_foto, as: :boolean, required: :false, label: 'Remove image' if f.object.small_foto?
       end
       f.inputs "Big image" do
-        f.input :big_foto, :as => :file, :label => '20Mb limit', :hint => (image_tag(f.object.big_foto.url(:thumb)) if f.object.big_foto?) 
+        f.input :big_foto, :as => :file, :label => 'Recommended: 1500x730px.', :hint => (image_tag(f.object.big_foto.url(:thumb)) if f.object.big_foto?)
         f.input :remove_big_foto, as: :boolean, required: :false, label: 'Remove image' if f.object.big_foto?
       end
       f.inputs "Numeric and selection:" do

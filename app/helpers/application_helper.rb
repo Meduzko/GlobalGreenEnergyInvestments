@@ -19,6 +19,8 @@ module ApplicationHelper
 
   def project_stats(is_my_invest=false)
     projects = Project.active
+    average_return = (projects.map(&:total_amount_need).inject(:+) / projects.map{ |x| ((x.irr/100).round(2)*x.total_amount_need).round }.inject(:+)).round(2)
+    kwh_generated = projects.map{|x| x.kwh_generated if x.launch == true }.compact.inject(:+)
     stat = ''
     stat += '<ul class="statistic-circles">'
       unless is_my_invest
@@ -50,7 +52,7 @@ module ApplicationHelper
       stat += '</li>'
       stat += '<li>'
         stat += '<div>'
-        stat += projects.map(&:kwh_generated).inject(:+).to_s
+        stat += number_with_precision(kwh_generated, strip_insignificant_zeros: true).to_s
         stat += '<span>' 
           stat += I18n.t(:stat_generated)
         stat += '</span>'
@@ -58,7 +60,7 @@ module ApplicationHelper
       stat += '</li>'
       stat += '<li>'
         stat += '<div>'
-        stat += (projects.map(&:irr).inject(:+) / projects.size).round(2).to_s + '%'
+        stat += number_with_precision(average_return, strip_insignificant_zeros: true).to_s + '%'
         stat += '<span>' 
           stat += I18n.t(:stat_return)
         stat += '</span>'
