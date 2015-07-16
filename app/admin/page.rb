@@ -1,6 +1,6 @@
 ActiveAdmin.register Page do
   before_filter :skip_sidebar!, :only => :index
-  menu priority: 2
+  menu false
   permit_params :name, :slug, :status, :id
 
   form do |f|

@@ -1,7 +1,7 @@
 <p class="default-text top-default-text"><%= I18n.t(:invest_funded_text) %></p>
 
 <ul class="projects-list">
-  <%= 'Doest have funded projects yet.' if projects.count == 0 %>
+  <%= 'No funded projects yet.' if projects.count == 0 %>
   <% projects.each do |project| %>
     <li class="project-block finished-project" style="background-image:url('<%= project.small_foto.url(:thumb) %>')">
       <span class="project-type"><i class="<%= icon_energy(project.type_of_energe) %>"></i></span>

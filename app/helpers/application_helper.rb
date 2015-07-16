@@ -1,4 +1,8 @@
 module ApplicationHelper
+
+  def title_slug
+    ' - ' + request.fullpath.split('/')[1].to_s.capitalize unless request.fullpath == '/'
+  end
   
   def calculate_funded(amount_needed, amount_invested)
     funded = (amount_invested*100)/amount_needed

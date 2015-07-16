@@ -5,7 +5,7 @@
     <ul>
       <li><a href="#fundable"><%= I18n.t(:invest_fundable_title) %></a></li>
       <li><a href="#funded"><%= I18n.t(:invest_funded_title) %></a></li>
-      <li><a href="#trade"><%= I18n.t(:invest_trade_title) %></a></li>
+      <% #<li><a href="#trade"><%= I18n.t(:invest_trade_title) </a></li> %>
     </ul>
     <div class="tabs-content" id="fundable">
       <%= render 'partials/fundable', projects: @fundable_projects %>
@@ -14,7 +14,7 @@
       <%= render 'partials/funded', projects: @funded_projects %>
     </div>
     <div class="tabs-content" id="trade">
-      <%= render 'partials/trade' %>
+      <%#= render 'partials/trade' %>
     </div>
   </div>
 </div>
