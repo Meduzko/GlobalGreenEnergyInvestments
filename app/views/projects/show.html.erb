@@ -89,10 +89,7 @@
   <section class="project-controls">
     <%= link_to 'All Projects', '/invest#fundable', class: 'get-back icon-font icon-left-dir' %>
     <a href="#" class="default-btn">Invest</a>
-    <a href="#" class="get-pdf icon-font icon-pdf">
-      <span>For more information see our</span>
-      Information memorandum
-    </a>
+    <%= link_to '<span>For more information see our</span>Information memorandum'.html_safe, @project.pdf.url, class: 'get-pdf icon-font icon-pdf' if @project.pdf.url.present?%>
   </section>
 
 </div>

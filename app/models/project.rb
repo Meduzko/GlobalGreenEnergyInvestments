@@ -18,16 +18,18 @@ class Project < ActiveRecord::Base
   mount_uploader :img_3,      ProjectUploader
   mount_uploader :img_4,      ProjectUploader
   mount_uploader :img_5,      ProjectUploader
+  mount_uploader :pdf,        ProjectPdfUploader
 
   private
     def remove_images
       self.remove_small_foto! if self.remove_small_foto == '1'
-      self.remove_big_foto! if self.remove_big_foto == '1'
-      self.remove_img_1! if self.remove_img_1 == '1'
-      self.remove_img_2! if self.remove_img_2 == '1'
-      self.remove_img_3! if self.remove_img_3 == '1'
-      self.remove_img_4! if self.remove_img_4 == '1'
-      self.remove_img_5! if self.remove_img_5 == '1'
+      self.remove_big_foto!   if self.remove_big_foto == '1'
+      self.remove_img_1!      if self.remove_img_1 == '1'
+      self.remove_img_2!      if self.remove_img_2 == '1'
+      self.remove_img_3!      if self.remove_img_3 == '1'
+      self.remove_img_4!      if self.remove_img_4 == '1'
+      self.remove_img_5!      if self.remove_img_5 == '1'
+      self.remove_pdf!        if self.remove_pdf == '1'
     end
 
 end

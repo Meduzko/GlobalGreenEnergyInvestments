@@ -7,7 +7,7 @@ ActiveAdmin.register Project do
                 :remove_img_1, :remove_img_2, :remove_img_3, :remove_img_4, :remove_img_5,
                 :type_of_participation, :type_of_energe, :total_amount_need, :total_amount_invested, :irr,
                 :desc_1, :img_1, :desc_2, :img_2, :desc_3, :img_3, :desc_4, :img_4, :desc_5, :img_5,
-                :launch, :kwh_generated, :status, :created_at
+                :launch, :kwh_generated, :status, :created_at, :pdf, :remove_pdf
 
   member_action :sent_event, method: :get do
     project = Project.find_by(id: params[:id])
@@ -106,6 +106,10 @@ ActiveAdmin.register Project do
       end
       f.inputs "Status" do
         f.input :status, :label => 'Dispaly on site'
+      end
+      f.inputs "Upload Memorandum PDF" do
+        f.input :pdf, :label => 'Only pdf:', :hint => (link_to 'Download pdf', f.object.pdf.url if f.object.pdf?) 
+        f.input :remove_pdf, as: :boolean, required: :false, label: 'Remove pdf' if f.object.pdf?
       end
       f.inputs "Change Project Sorting" do
         f.input :created_at
