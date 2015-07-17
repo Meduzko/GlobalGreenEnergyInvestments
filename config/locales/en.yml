@@ -169,27 +169,29 @@ en:
   idea_title: Idea
   idea_example_project_title: Project sunny
   idea_example_project_example: Example
-  idea_page_text: We believe in collective decentralized initiatives of medium large scale projects where anyone should be able to participate and benefit. We aim to find projects with a ‘logical’ location on our planet. A place where the yields of the projects are high while having a relatively stable economy, trustworthy project developers with a track record and stable buyers of the power.
-  idea_page_paragraph_1_title: CAREFULLY SELECTED PROJECTS
-  idea_page_paragraph_1_1_text: We are committed to connect you to quality projects which have a life span of 8 to 20 years. Global Green Energy Investments is structured in such a way that as long as the project succeeds we earn money. So instead of a fixed fee up front, we receive income as a percentage of the total money paid out to the investors. Also see the video  (make link to video) for an illustration. Notice that we benefit financially when a successfully funded project reaches its full lifetime. Therefore it is within our interest to source good projects that are expected to fulfill their commitments.
-  idea_page_paragraph_1_2_text: Note that the returns displayed on the investment page are the effective returns that you will receive, so no other fees will be charged. Only if unexpectedly you want to sell the stake before the prescribed lifetime of the project an administrative fee is incurred. This fee is for administration expenses to put the stake on offer via our ‘trade’ section.
-  idea_page_paragraph_1_3_text: To inform you on the risks we provide project memoranda. Furthermore in our dedicated risks ( make link to risks) section we discuss risks involved. In this way you can make an educated decision on your investment. Global Green Energy Investments is not authorized to provide financial advice to investors. Investors have to make their own judgement to participate in a project. We emphasize that <strong>if you do not fully understand the risks regarding an investment, you should look for independent financial advisor to help you</strong>.
-  idea_page_paragraph_2_title: EVERYBODY SHOULD BE ABLE TO PARTICIPATE
-  idea_page_paragraph_2_text: We believe in collective decentralized initiatives of medium large scale projects where anyone should be able to participate and benefit. We encourage people from all over the world to invest and participate in renewable energy projects, and thereby we work for a rapid transition to clean energy. Whether the project is in your neighborhood or on the other side of the planet, our cross-border focus is based on logical positioning of the projects.
-  idea_page_paragraph_3_title: A Walkthrough
-  idea_page_paragraph_3_1_text: You choose a project you feel comfortable investing in.  You decide on how you want to invest and transfer your investment amount to the third party fund.
-  idea_page_paragraph_3_2_text: Within this 3rd party fund the investment amount of all other participants is gathered until the required amount is reached. Using those funds the 3rd party then acquires a stake in the project.
-  idea_page_paragraph_3_3_text: As the project starts to make a return on its energy sales (PPA), money is returned to the 3rd party fund. The 3rd party fund then distributes the money through interest payments to the participants. GGIG at this stage also receives a percentage of the yearly return to third party fund. Therefore it is within GGIG’s best interest to source good projects that are expected to fulfill their commitments.
-  idea_page_paragraph_3_4_text: Generally projects have a longterm duration around 8-20 years. If unexpectedly the stake needs to be sold during the run-time of the project, we facilitate the possibility to put the stake on offer via our ‘trade’ section.
+  idea_page_text: "We believe in collective decentralized initiatives of medium to large scale projects where anyone should be able to participate and benefit. We aim to find projects with a ‘logical’ location on our planet. Important here is: a stable economy, trustworthy project developer, high energy yield for the solution and a reliable purchaser of energy."
+  idea_page_paragraph_1_title: EVERYBODY SHOULD BE ABLE TO PARTICIPATE
+  idea_page_paragraph_1_1_text: We believe in collective decentralized initiatives of medium to large scale projects. Our vision is that the public should be able to invest together with larger investors and institutions. In this way anyone should be able to participate and benefit from our future energy infrastructure.
+  idea_page_paragraph_1_2_text: We encourage people from all over the world to invest and participate in renewable energy projects. Whether the project is in your neighborhood or on the other side of the planet, our cross-border focus is based on logical positioning of the projects.
+  idea_page_paragraph_2_title: OUR INCENTIVES
+  idea_page_paragraph_2_1_text: We are committed to connect you to quality projects which have a life span of 8 to 20 years. Global Green Energy Investments is structured in such a way that as long as the project succeeds we receive income as a percentage of the total money paid out to the investors. See the <a href="#video">video</a> for an illustration.
+  idea_page_paragraph_2_2_text: The returns displayed on the investment page are the effective returns that you will receive. Only if you want to sell the stake before the prescribed lifetime of the project an administrative fee is incurred.
+  idea_page_paragraph_3_title: RISKS
+  idea_page_paragraph_3_1_text: To inform you on the risks we provide project memoranda. Furthermore in our dedicated <a href="/legal/#risks">risks</a> section we highlight the risks involved. In this way you can make an educated decision on your investment. Global Green Energy Investments is not authorized to provide financial advice to investors. Investors have to make their own judgement to participate in a project. We emphasize that if you do not fully understand the risks regarding an investment, you should look for independent financial advisor to help you.
+  idea_page_paragraph_4_title: A WALKTHROUGH
+  idea_page_paragraph_4_1_text: The first thing is finding a project you feel comfortable investing in. Secondly, is deciding how much you want to invest. Then, you transfer the amount to the 3rd party fund.
+  idea_page_paragraph_4_2_text: Within this fund, the invested amount of the other participants is gathered. Only when the full required amount is reached, a stake in the project is acquired.
+  idea_page_paragraph_4_3_text: As the project starts to receive income from its energy sales (PPA), the dividends are returned to the 3rd party fund. The 3rd party fund then distributes the money through interest payments to the participants.
+
   idea_page_steps_title: A STEP BY STEP WALKTHROUGH
   idea_page_step_1_title: Select<br>a project
-  idea_page_step_1_text: Review project details so that you can make a calculated decision and feel confident with your investment. We provide information memorandums to inform you on the risks involved.
+  idea_page_step_1_text: Review project details so that you make a calculated decision and feel confident with your investment. We provide information memoranda to inform you on the risks involved.
   idea_page_step_2_title: DECIDE ON HOW<br> MUCH TO INVEST
-  idea_page_step_2_text: Determine the exposure to the project you are comfortable with and see what the expected returns are.
+  idea_page_step_2_text: Determine the exposure to the project you are comfortable with and consider your expected returns.
   idea_page_step_3_title: TRANSFER THE MONEY
-  idea_page_step_3_text: An independent trust client bank account will oversee the transaction between you and the project.
+  idea_page_step_3_text: A independent 3rd party fund will oversee the transaction between you and the project.
   idea_page_step_4_title: PERIODIC CASH <br>TRANSFER
-  idea_page_step_4_text: The interest payment is transferred to your bank account for the lifetime of the project. Additionally, over of the lifetime your debenture is paid back.
+  idea_page_step_4_text: Over the lifetime of the project, the periodic interest payments and the principal amount are transferred to your bank account.
   idea_page_video_title: How it works
   idea_page_video_not_supported: Your browser does not support HTML5 video.
   idea_page_video_play: Play now!
