@@ -4,7 +4,7 @@
 
     <ul class="site-links">
       <% @page_legal.page_tabs.active.each do |tab| %>
-        <li><%= link_to tab.tab_name, '/legal/#'.concat(tab.slug_ancor) %></li>
+        <li><%= link_to tab.tab_name, '/legal/#'.concat(tab.slug) %></li>
       <% end %>
     </ul>
 
