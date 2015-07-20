@@ -25,6 +25,16 @@ class SubscribesController < ApplicationController
     end
   end
 
+  def unsubscribe
+    subscribe = Subscribe.find_by_confirm_token(params[:id])
+    if subscribe && subscribe.confirmed == true && subscribe.active == true
+      subscribe.update_attributes(confirmed: true, active: false)
+      @status = I18n.t(:sbsr_unsubscribe_good)
+    else
+      @status = I18n.t(:sbsr_confirm_bad)
+    end
+  end
+
   private
     def subscribe_params
       params.require(:subscribe).permit(:name, :email)

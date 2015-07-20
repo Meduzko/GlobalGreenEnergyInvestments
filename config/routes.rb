@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources 'subscribes', only: [:create] do
     member do
       get :confirmation
+      get :unsubscribe
     end
   end
   get  'profile' => 'profiles#edit', :as => :profile
