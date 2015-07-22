@@ -13,7 +13,7 @@ en:
   sbsr_email_format: is not looking good
   sbsr_message_success: Thank you for your subscription. You will receive an activation email.
   sbsr_confirm_good: Congratulations! You have successfully subscribed.
-  sbsr_confirm_bad: Sorry. You have bad confirmation code or you confirm your subscription already.
+  sbsr_confirm_bad: You probably subscribed already, otherwise try again.
   sbsr_unsubscribe_good: You successfully unsubscribed!
 
   #header
