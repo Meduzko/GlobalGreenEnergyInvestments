@@ -13,7 +13,7 @@
     <hr/>
   </div>
 
-  <div class="project-location">!<%= @project.location %></div>
+  <div class="project-location"><%= @project.location %></div>
 
   <h3 class="project-amount"><%= cute_amount(@project.total_amount_need) %><sup>&euro;</sup></h3>
 
@@ -88,8 +88,13 @@
 
   <section class="project-controls">
     <%= link_to 'All Projects', '/invest#fundable', class: 'get-back icon-font icon-left-dir' %>
-    <a href="#" class="default-btn">Invest</a>
+    <!--<a href="#" class="default-btn">Invest</a>-->
+    <a href="#" onclick="compSupport.callFunc('#participationsPopup', 'show')" class="default-btn">Make offer</a>
     <%= link_to '<span>For more information see our</span>Information memorandum'.html_safe, @project.pdf.url, class: 'get-pdf icon-font icon-pdf' if @project.pdf.url.present?%>
   </section>
+
+  <%= render 'partials/participations_popup' %>
+  <%= render 'partials/participations_confirmation_popup' %>
+  <%= render 'partials/participations_thanks_popup' %>
 
 </div>

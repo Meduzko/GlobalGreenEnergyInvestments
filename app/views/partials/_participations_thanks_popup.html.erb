@@ -1,0 +1,55 @@
+<div class="popup participation-popup participation-thanks-popup" id="participationsThanksPopup" data-jscomp="components/popup">
+
+  <div class="fog" onclick="compSupport.callFunc(this, 'hide')"></div>
+  <div class="popup-body">
+    <span class="popup-close icon-font icon-cancel" onclick="compSupport.callFunc(this, 'hide')"></span>
+
+    <div class="popup-title"><%= I18n.t(:participation_thanks_title) %></div>
+    <div class="popup-content">
+
+      <form action="">
+
+        <div class="section-to-print">
+
+          <p>
+            Dear Person<br>
+            <strong>Benoit van Beeck Calkoen</strong>,
+          </p>
+
+          <p>
+            Thank you for becoming an investor. By transferring the amount within 24 hours to the bank account of our
+            notaries 3rd party fund, you ensure yourself on buying a participation(s). When the money is not received
+            within a two days time frame, we might be obliged to sell the participations to other investors.
+          </p>
+
+          <div class="generated-number">
+            NL17ABNA0481489339
+          </div>
+
+          <span>
+            When the amount is received by the notary, he will verify your details and after approval, we will confirm your investment in <strong>3 working days</strong> after receiving the amount.
+          </span>
+
+          <span>
+            If you have any remaining questions, please <a href="/contact" target="_blank">contact us</a>
+          </span>
+
+
+          <span>
+            Kind regards,<br>
+            Managing director,<br>
+            Benoit van Beeck Calkoen
+          </span>
+
+        </div>
+
+      </form>
+
+      <div class="additional-actions">
+        <a class="get-pdf icon-font icon-pdf" onclick="print()">Print</a>
+      </div>
+
+    </div>
+  </div>
+
+</div>

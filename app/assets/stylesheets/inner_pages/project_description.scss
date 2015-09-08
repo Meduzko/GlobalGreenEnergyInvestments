@@ -142,48 +142,217 @@
     .project-controls {
         padding-top: 85px;
         text-align: center;
-        .get-back {
-            display: inline-block;
-            float: left;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 26px;
-            text-transform: uppercase;
-            &:before {
-                color: $grey;
-                font-size: 26px;
-                position: relative;
-                top: 4px;
-                padding-right: 32px;
-            }
-        }
+
         .default-btn {
             margin-top: -15px;
             padding: 22px 120px;
         }
-        .get-pdf {
-            display: inline-block;
-            float: right;
-            font-weight: bold;
-            position: relative;
-            text-align: left;
-            text-transform: uppercase;
-            span {
-                color: $light-grey1;
-                display: block;
-                font-size: 14px;
+    }
+
+    .participation-popup {
+        .default-text {
+            text-align: center;
+        }
+        .participations-table {
+            margin: 0 auto;
+            width: 100%;
+        }
+        table {
+            th {
+                border-top: 0;
                 font-weight: normal;
-                padding-bottom: 2px;
-                text-transform: lowercase;
+                font-size: 14px;
+                text-align: left;
+                text-transform: uppercase;
+                padding: 20px 0 30px 35px;
             }
-            &:before {
+            td {
+                border-top: 1px solid $light-grey2;
+                border-bottom: 1px solid $light-grey2;
+                padding: 15px 0 15px 35px;
+                font-size: 16px;
+                span {
+                    color: $light-grey1;
+                }
+                input {
+                    font-size: 20px;
+                    padding: 10px 19px;
+                    width: 80px;
+                }
+            }
+        }
+        .default-input {
+            margin: 0;
+            width: 70px;
+        }
+        .actions {
+            text-align: center;
+            .default-btn {
+                padding-left: 120px;
+                padding-right: 120px;
+                height: auto;
+            }
+        }
+        .popup-body form {
+            padding: 0 50px;
+        }
+    }
+
+    .participation-confirm-popup {
+        .actions {
+            .default-btn {
+                padding-right: 50px;
+                padding-left: 50px;
+            }
+        }
+        .additional-actions {
+            overflow: hidden;
+            padding: 20px;
+            .get-back {
+                &:before {
+                    padding-right: 15px;
+                }
+            }
+            .get-pdf {
+                line-height: 26px;
+                margin-top: 4px;
+                &:before {
+                    font-size: 20px;
+                    left: -28px;
+                    top: -1px;
+                }
+            }
+        }
+        .section-to-print {
+            div {
+                padding: 0 50px;
+            }
+            .name {
+                border-top: 1px solid $light-grey2;
+                font-size: 22px;
+                font-weight: 700;
+                padding-top: 25px;
+                text-transform: uppercase;
+            }
+            .address {
+                border-bottom: 1px solid $light-grey2;
+                color: $light-grey1;
+                font-size: 14px;
+                padding: 10px 0 25px 0;
+            }
+            .amount {
+                color: $light-grey1;
+                font-size: 18px;
+                line-height: 26px;
+                padding: 20px 50px;
+                strong {
+                    color: $grey;
+                }
+                span {
+                    color: $blue;
+                    font-weight: 700;
+                }
+            }
+            .info {
+                color: $light-grey1;
+                font-size: 14px;
+                line-height: 18px;
+                padding: 30px 50px 20px 50px;
+                span {
+                    color: $grey;
+                }
+            }
+        }
+    }
+
+    .participation-thanks-popup {
+        form {
+            text-align: left;
+        }
+        p {
+            color: $light-grey1;
+            font-size: 18px;
+            line-height: 24px;
+            padding: 15px 10px;
+            strong {
                 color: $grey;
-                font-size: 32px;
-                font-weight: 100;
-                position: absolute;
-                left: -45px;
-                top: -2px;
             }
+        }
+        span {
+            color: $light-grey1;
+            display: block;
+            font-size: 14px;
+            line-height: 18px;
+            padding: 15px 10px;
+            strong {
+                color: $grey;
+            }
+        }
+        .generated-number {
+            border-top: 1px solid $light-grey2;
+            border-bottom: 1px solid $light-grey2;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin: 25px 0;
+            padding: 25px 0;
+            text-align: center;
+        }
+        .additional-actions {
+            overflow: hidden;
+            padding: 20px;
+            .get-pdf {
+                line-height: 26px;
+                margin-top: 4px;
+                &:before {
+                    font-size: 20px;
+                    left: -28px;
+                    top: -1px;
+                }
+            }
+        }
+    }
+
+    .get-back {
+        cursor: pointer;
+        display: inline-block;
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 26px;
+        text-transform: uppercase;
+        &:before {
+            color: $grey;
+            font-size: 26px;
+            position: relative;
+            top: 4px;
+            padding-right: 32px;
+        }
+    }
+
+    .get-pdf {
+        cursor: pointer;
+        display: inline-block;
+        float: right;
+        font-weight: bold;
+        position: relative;
+        text-align: left;
+        text-transform: uppercase;
+        span {
+            color: $light-grey1;
+            display: block;
+            font-size: 14px;
+            font-weight: normal;
+            padding-bottom: 2px;
+            text-transform: lowercase;
+        }
+        &:before {
+            color: $grey;
+            font-size: 32px;
+            font-weight: 100;
+            position: absolute;
+            left: -45px;
+            top: -2px;
         }
     }
 
@@ -201,5 +370,19 @@
         .project-amount {
             font-size: 70px;
         }
+    }
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #section-to-print, #section-to-print * {
+        visibility: visible;
+    }
+    #section-to-print {
+        position: absolute;
+        left: 0;
+        top: 0;
     }
 }

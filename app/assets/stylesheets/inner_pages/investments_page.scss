@@ -61,41 +61,6 @@
             }
         }
     }
-    .participation-popup {
-        .default-text {
-            text-align: center;
-        }
-        .participations-table {
-            margin: 0 auto;
-            width: 80%;
-        }
-        table {
-            th {
-                font-weight: normal;
-                font-size: 14px;
-                text-align: left;
-                text-transform: uppercase;
-                padding: 10px 10px 20px 10px;
-            }
-            td {
-                border-top: 1px solid $light-grey2;
-                border-bottom: 1px solid $light-grey2;
-                padding: 15px 10px;
-            }
-        }
-        .default-input {
-            margin: 0;
-            width: 70px;
-        }
-        .actions {
-            padding-bottom: 50px;
-            text-align: center;
-            .default-btn {
-                padding-left: 120px;
-                padding-right: 120px;
-            }
-        }
-    }
 }
 
 @media all and (max-width: 768px) {

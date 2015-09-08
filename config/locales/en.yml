@@ -111,7 +111,17 @@ en:
   invest_trade_title: Trade
   invest_funded_title: Funded
   invest_popup_title: Participations
+  invest_popup_grid_title_1: Numbers <br> of participations
+  invest_popup_grid_title_2: Amount <br> to invest
+  invest_popup_grid_title_3: Total <br> interest payed
+
+  participation_confirm_title: Confirmation
+  participation_confirm_button: Continue to payment
+
+  participation_thanks_title: Thank you
+
   invest_popup_button: Next
+  invest_participation_popup_button: Continue
 
   invest_fundable_text: View the projects that you are interested in to further understand the risks and the return of a participation.
   invest_funded_text: Project that were successfully funded through the platform.
@@ -128,6 +138,7 @@ en:
   about_the_team_title: Team
   about_mission_title: Mission
   about_board_title: ADVISORY BOARD
+  about_board_title: infographics
   about_the_team_support: Support Team
 
   about_team_x: Mr / Ms. X
@@ -158,6 +169,8 @@ en:
   about_mission_text_1: We want to accelerate the transition to clean energy by enabling anyone to participate in renewable energy initiatives in their neighborhood or on the other side of the world.
   about_mission_title_2: VISION
   about_mission_text_2: Global Green Energy Investments believes that renewable energy will become the main generator of power in the coming decades. To speed up the transition, large investments are required and therefore, everybody should be encouraged to engage in this movement while receiving a stable return.
+  about_infographics_title_1: Infographics title
+  about_infographics_text_1: Infographics text
 
   #Seetings page
   profile_settings_title: Settings

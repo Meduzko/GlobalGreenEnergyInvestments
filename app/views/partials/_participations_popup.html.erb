@@ -7,32 +7,33 @@
     <div class="popup-title"><%= I18n.t(:invest_popup_title) %></div>
     <div class="popup-content">
 
-      <div class="field">
-        <p class="default-text">Write your email and we will send your password there</p>
-      </div>
-
-      <div class="participations-table grid">
-        <div class="grid-container">
-          <table>
-            <tr>
-              <th>Numbers of participations</th>
-              <th>Amount to invest</th>
-              <th>Total interest payed</th>
-              <th></th>
-            </tr>
-            <tr>
-              <td><input class="default-input" type="number" value="1"/></td>
-              <td><span>€ 498.20</span></td>
-              <td><span>€ 498.20</span></td>
-              <td><span class="grid-ok-icon"></span></td>
-            </tr>
-          </table>
+      <form action="">
+        <div class="participations-table grid">
+          <div class="grid-container">
+            <table>
+              <tr>
+                <th><%= I18n.t(:invest_popup_grid_title_1).html_safe %></th>
+                <th><%= I18n.t(:invest_popup_grid_title_2).html_safe %></th>
+                <th><%= I18n.t(:invest_popup_grid_title_3).html_safe %></th>
+                <th></th>
+              </tr>
+              <tr>
+                <td style="width: 40%;"><input class="default-input" type="number" value="1"/></td>
+                <td style="width: 30%;"><span>€ 498.20</span></td>
+                <td style="width: 30%;"><span>€ 498.20</span></td>
+                <td><span class="grid-ok-icon"></span></td>
+              </tr>
+            </table>
+          </div>
         </div>
-      </div>
 
-      <div class="actions">
-        <a href="#" class="default-btn"><%= I18n.t(:invest_popup_button) %></a>
-      </div>
+        <div class="actions">
+          <a class="default-btn" onclick="compSupport.callFunc('#participationsConfirmationPopup', 'show')">
+            <%= I18n.t(:invest_participation_popup_button) %>
+          </a>
+          <!--<a href="#" class="default-btn"><%= I18n.t(:invest_popup_button) %></a>-->
+        </div>
+      </form>
 
     </div>
   </div>

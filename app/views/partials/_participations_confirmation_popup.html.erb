@@ -1,0 +1,41 @@
+<div class="popup participation-popup participation-confirm-popup" id="participationsConfirmationPopup" data-jscomp="components/popup">
+
+  <div class="fog" onclick="compSupport.callFunc(this, 'hide')"></div>
+  <div class="popup-body">
+    <span class="popup-close icon-font icon-cancel" onclick="compSupport.callFunc(this, 'hide')"></span>
+
+    <div class="popup-title"><%= I18n.t(:participation_confirm_title) %></div>
+    <div class="popup-content">
+
+      <form action="">
+
+
+        <div class="section-to-print">
+          <div class="name">Benoit van Beeck Calkoen</div>
+          <div class="address">10.04.1980, amsterdam, holland</div>
+
+          <div class="amount">confirms to buy <strong>5 participations</strong> for the amount of <span>€35000</span> in Project Solary Energy.</div>
+
+          <div class="info">Person <span>Benoit van Beeck Calkoen</span> confirms to understand the duration and risks that come with this
+            investment and only invests with money that is free of any obligations.
+          </div>
+        </div>
+
+
+        <div class="actions">
+          <a class="default-btn" onclick="compSupport.callFunc('#participationsThanksPopup', 'show')">
+            <%= I18n.t(:participation_confirm_button) %>
+          </a>
+          <!--<a href="#" class="default-btn"><%= I18n.t(:invest_popup_button) %></a>-->
+        </div>
+      </form>
+
+      <div class="additional-actions">
+        <a class="get-back icon-font icon-left-dir" onclick="compSupport.callFunc('#participationsPopup', 'show')">Back</a>
+        <a class="get-pdf icon-font icon-pdf" onclick="print()">Print</a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
