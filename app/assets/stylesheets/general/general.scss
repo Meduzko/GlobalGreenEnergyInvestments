@@ -385,3 +385,23 @@ select {
         }
     }
 }
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .section-to-print, .section-to-print * {
+        color: #000 !important;
+        font-size: 130% !important;
+        line-height: 130% !important;
+        visibility: visible;
+    }
+    .section-to-print {
+        position: absolute;
+        left: 0;
+        top: 0;
+        .left-aligned-text {
+            text-align: left;
+        }
+    }
+}

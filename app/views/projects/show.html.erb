@@ -78,7 +78,7 @@
   </section>
 
   <section class="grid">
-    <h5 class="inner-page-sub-title">single participant: standart amoritisaztion</h5>
+    <h5 class="inner-page-sub-title"><%= I18n.t(:participation_thanks_text_6) %></h5>
   
     <div class="grid-container">
       <%= generate_table(@project.id) %>
@@ -87,10 +87,14 @@
   </section>
 
   <section class="project-controls">
-    <%= link_to 'All Projects', '/invest#fundable', class: 'get-back icon-font icon-left-dir' %>
+    <div class="get-back">
+      <%= link_to 'All Projects', '/invest#fundable', class: 'icon-font icon-left-dir' %>
+    </div>
     <!--<a href="#" class="default-btn">Invest</a>-->
-    <a href="#" onclick="compSupport.callFunc('#participationsPopup', 'show')" class="default-btn">Make offer</a>
-    <%= link_to '<span>For more information see our</span>Information memorandum'.html_safe, @project.pdf.url, class: 'get-pdf icon-font icon-pdf' if @project.pdf.url.present?%>
+    <a href="#" onclick="compSupport.callFunc('#participationsPopup', 'show')" class="default-btn"><%= I18n.t(:cmn_make_offer) %></a>
+    <div class="get-pdf">
+      <%= link_to '<span>For more information see our</span>Information memorandum'.html_safe, @project.pdf.url, class: 'get-pdf icon-font icon-pdf' if @project.pdf.url.present?%>
+    </div>
   </section>
 
   <%= render 'partials/participations_popup' %>

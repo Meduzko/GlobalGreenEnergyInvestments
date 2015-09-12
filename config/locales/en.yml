@@ -4,6 +4,9 @@ en:
   cmn_not_required: (not required)
   cmn_html5_video_not_supported: Your browser does not support HTML5 video.
   cmn_view_project: View project
+  cmn_print: Print
+  cmn_back: Back
+  cmn_make_offer: Make offer
 
   #Validation messages:
   error_required: This field is required
@@ -117,8 +120,16 @@ en:
 
   participation_confirm_title: Confirmation
   participation_confirm_button: Continue to payment
+  participation_confirm_text_1: confirms to buy <strong><strong class="confirmCount"></strong> participations</strong> for the amount of <span>€<span class="confirmTotalAmount"></span></span> in %{project_name}.
+  participation_confirm_text_2: Person <span>%{name}</span> confirms to understand the duration and risks that come with this investment and only invests with money that is free of any obligations.
 
   participation_thanks_title: Thank you
+  participation_thanks_text_1: Dear Person<br> <strong>%{name}</strong>
+  participation_thanks_text_2: Thank you for becoming an investor. By transferring the amount within 24 hours to the bank account of our notaries 3rd party fund, you ensure yourself on buying a participation(s). When the money is not received within a two days time frame, we might be obliged to sell the participations to other investors.
+  participation_thanks_text_3: When the amount is received by the notary, he will verify your details and after approval, we will confirm your investment in <strong>3 working days</strong> after receiving the amount.
+  participation_thanks_text_4: If you have any remaining questions, please
+  participation_thanks_text_5: Kind regards,<br> Managing director,<br> Benoit van Beeck Calkoen
+  participation_thanks_text_6: single participant: standart amoritisaztion
 
   invest_popup_button: Next
   invest_participation_popup_button: Continue

@@ -208,12 +208,12 @@
         .additional-actions {
             overflow: hidden;
             padding: 20px;
-            .get-back {
+            .get-back a {
                 &:before {
                     padding-right: 15px;
                 }
             }
-            .get-pdf {
+            .get-pdf a {
                 line-height: 26px;
                 margin-top: 4px;
                 &:before {
@@ -301,7 +301,7 @@
         .additional-actions {
             overflow: hidden;
             padding: 20px;
-            .get-pdf {
+            .get-pdf a {
                 line-height: 26px;
                 margin-top: 4px;
                 &:before {
@@ -314,46 +314,59 @@
     }
 
     .get-back {
-        cursor: pointer;
         display: inline-block;
         float: left;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 26px;
-        text-transform: uppercase;
-        &:before {
-            color: $grey;
-            font-size: 26px;
-            position: relative;
-            top: 4px;
-            padding-right: 32px;
+        min-height: 1px;
+        width: 30%;
+        a {
+            cursor: pointer;
+            display: inline-block;
+            float: left;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 26px;
+            text-transform: uppercase;
+            &:before {
+                color: $grey;
+                font-size: 26px;
+                position: relative;
+                top: 4px;
+                padding-right: 32px;
+            }
         }
     }
 
     .get-pdf {
-        cursor: pointer;
         display: inline-block;
         float: right;
-        font-weight: bold;
-        position: relative;
-        text-align: left;
-        text-transform: uppercase;
-        span {
-            color: $light-grey1;
-            display: block;
-            font-size: 14px;
-            font-weight: normal;
-            padding-bottom: 2px;
-            text-transform: lowercase;
+        min-height: 1px;
+        width: 30%;
+        a {
+            cursor: pointer;
+            display: inline-block;
+            float: right;
+            font-weight: bold;
+            position: relative;
+            text-align: left;
+            text-transform: uppercase;
+            span {
+                color: $light-grey1;
+                display: block;
+                font-size: 14px;
+                font-weight: normal;
+                padding-bottom: 2px;
+                text-transform: lowercase;
+            }
+            &:before {
+                color: $grey;
+                font-size: 32px;
+                font-weight: 100;
+                position: absolute;
+                left: -45px;
+                top: -2px;
+            }
         }
-        &:before {
-            color: $grey;
-            font-size: 32px;
-            font-weight: 100;
-            position: absolute;
-            left: -45px;
-            top: -2px;
-        }
+
     }
 
 }
@@ -370,19 +383,5 @@
         .project-amount {
             font-size: 70px;
         }
-    }
-}
-
-@media print {
-    body * {
-        visibility: hidden;
-    }
-    #section-to-print, #section-to-print * {
-        visibility: visible;
-    }
-    #section-to-print {
-        position: absolute;
-        left: 0;
-        top: 0;
     }
 }

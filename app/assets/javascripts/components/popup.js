@@ -8,6 +8,7 @@ define(['jquery'], function ($) {
 
         init: function (domId, config) {
             var thisComp = this;
+            this.domRef = '#' + domId;
             this.domId = $('#' + domId);
             this.popupRef = $('.popup');
 
@@ -16,14 +17,24 @@ define(['jquery'], function ($) {
                     thisComp.hide();
                 }
             });
+
+            this.domId.on('showed', function () {
+                compSupport.triggerCompEvent(thisComp.domRef, 'showed');
+            });
+
+            this.domId.on('hided', function () {
+                compSupport.triggerCompEvent(thisComp.domRef, 'hided');
+            });
         },
 
         show: function () {
+            this.domId.trigger('showed');
             this.popupRef.fadeOut(200);
             this.domId.fadeIn(200);
         },
 
         hide: function () {
+            this.domId.trigger('hided');
             this.domId.fadeOut(100);
         }
 

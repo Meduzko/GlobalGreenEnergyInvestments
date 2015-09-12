@@ -5,7 +5,7 @@
     <span class="popup-close icon-font icon-cancel" onclick="compSupport.callFunc(this, 'hide')"></span>
 
     <div class="popup-title"><%= I18n.t(:invest_popup_title) %></div>
-    <div class="popup-content">
+    <div class="popup-content" id="investComp" data-jscomp="components/invest">
 
       <form action="">
         <div class="participations-table grid">
@@ -18,9 +18,15 @@
                 <th></th>
               </tr>
               <tr>
-                <td style="width: 40%;"><input class="default-input" type="number" value="1"/></td>
-                <td style="width: 30%;"><span>€ 498.20</span></td>
-                <td style="width: 30%;"><span>€ 498.20</span></td>
+                <td style="width: 40%;">
+                  <input class="default-input count"
+                         onchange="compSupport.callFunc('#investComp', 'calculateTotal', [this])"
+                         type="number"
+                         min="1"
+                         value="1"/>
+                </td>
+                <td style="width: 30%;"><span>€ <span class="amount">498.20</span></span></td>
+                <td style="width: 30%;"><span>€ <span class="totalAmount">498.20</span></span></td>
                 <td><span class="grid-ok-icon"></span></td>
               </tr>
             </table>
@@ -31,7 +37,6 @@
           <a class="default-btn" onclick="compSupport.callFunc('#participationsConfirmationPopup', 'show')">
             <%= I18n.t(:invest_participation_popup_button) %>
           </a>
-          <!--<a href="#" class="default-btn"><%= I18n.t(:invest_popup_button) %></a>-->
         </div>
       </form>
 

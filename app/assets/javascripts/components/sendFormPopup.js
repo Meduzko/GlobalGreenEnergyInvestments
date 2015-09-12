@@ -11,6 +11,7 @@ define(['jquery', 'components/popup'], function ($, popup) {
             this.url = config.url;
             this.needRedirect = config.needRedirect;
             this.showSignInPopup = config.showSignInPopup;
+            this.showNextPopup = config.showNextPopup;
             this.messageBox = '.message-box';
             popup.init.apply(this, arguments);
 
@@ -65,7 +66,6 @@ define(['jquery', 'components/popup'], function ($, popup) {
                 })
                     .done(function (data) {
                         thisComp.hideSpinner();
-                        console.log(data);
                         if (data.status === 'errors') {
                             thisComp.showMessage(data.errors, 'error');
                             validationFailed.call(callbackContext);
@@ -76,9 +76,12 @@ define(['jquery', 'components/popup'], function ($, popup) {
                                 window.location.href = data.redirect_to;
                             }
                             if(thisComp.showSignInPopup){
-                                //compSupport.callFunc('#forgotPassPopup', 'hide');
                                 compSupport.callFunc('#loginPopup', 'show');
                                 thisComp.showMessage(data.success, 'success', $('#loginPopup'));
+                            }
+                            if(thisComp.showNextPopup){
+                                compSupport.callFunc(thisComp.showNextPopup, 'show');
+                                $(thisComp.showNextPopup).find('.generated-number').text(data.generatedBankNumber);
                             } else {
                                 thisComp.showMessage(data.success, 'success');
                                 validationPass.call(callbackContext);
