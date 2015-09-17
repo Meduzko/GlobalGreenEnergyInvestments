@@ -2,13 +2,13 @@ class SubscribeMailer < ApplicationMailer
   #before_action :unsubscribe, only: [:new_project, :sent_email]
   def new_subscription(user)
     @user = user
-    @url  = "http://globalgreeninvestmentgroup.com/subscribes/#{@user.confirm_token}/confirmation"
+    @url  = "http://globalgreenenergyinvestments.com/subscribes/#{@user.confirm_token}/confirmation"
     mail(to: @user.email, subject: 'GGEI Subscription. Confirm your email.')
   end
 
   def new_project(project, user)
     @user = user
-    @url = "http://globalgreeninvestmentgroup.com/projects/#{project.id}"
+    @url = "http://globalgreenenergyinvestments.com/projects/#{project.id}"
     unsubscribe(user)
     mail(to: @user.email, subject: "GGEI Subscription. Present the new Project #{project.name}" )
   end
@@ -29,7 +29,7 @@ class SubscribeMailer < ApplicationMailer
   private
     def unsubscribe(user)
       @unsubscribe = true
-      @unsubscribe_url =  "http://globalgreeninvestmentgroup.com/subscribes/#{user.confirm_token}/unsubscribe"
+      @unsubscribe_url =  "http://globalgreenenergyinvestments.com/subscribes/#{user.confirm_token}/unsubscribe"
     end
 
 

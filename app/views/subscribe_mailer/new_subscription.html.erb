@@ -1,0 +1,44 @@
+<table cellpadding="0" cellspacing="0" style="width: 100%; background-color: #f7f7f7; font-family: arial;">
+
+  <tr valign="middle">
+    <td style="height: 100px; text-align: center; vertical-align: middle; color: #818181; font-size: 14px;">Tuesday, March 24th 2015 </td>
+  </tr>
+  <tr valign="middle">
+    <td style="text-align: center;">
+      <table cellpadding="0" cellspacing="0" style="width: 650px; background: #ffffff; box-shadow: 1px 1px 1px #cccccc; margin: 0 auto;">
+        <tr valign="top">
+          <td style="text-align: center; background: url('http://globalgreenenergyinvestments.com/images/ggig_newsletter.jpg') no-repeat 0 100%; height: 450px;">
+            <a href="http://globalgreenenergyinvestments.com" target="_blank"><img src="http://globalgreenenergyinvestments.com/images/ggig_newsletter_logo.png" alt="Global Green Energy Investments"/></a>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td style="color: #3e3e3e; padding: 30px 58px 20px 58px; text-align: left; font-size: 40px; line-height: 46px; font-weight: bold; text-transform: uppercase;">
+            Hello, <%= @user.name %> !
+          </td>
+        </tr>
+        <tr valign="top">
+          <td style="text-align: left; font-size: 18px; line-height: 22px; color: #818181">
+            <p style="margin: 0 0 0 0; padding: 10px 58px 10px 58px;"><span style="color: #818181">You add your email to subscription on site</span>
+              <a href="http://globalgreenenergyinvestments.com" style="color: #00bfe3;" target="_blank"></a>http://globalgreenenergyinvestments.com<br>
+              <span style="color: #818181">and you need to confirm your email.</span></p>
+            <p style="margin: 0 0 0 0; padding: 10px 58px 10px 58px;"><span style="color: #818181">Please click to link below:</span><br>
+            <%= @url %>
+            <p style="margin: 0 0 0 0; padding: 10px 58px 10px 58px;"><span style="color: #818181">Thanks!</span></p>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td style="color: #b0b0b0; padding: 20px 58px 50px 58px; text-align: left; font-size: 14px;">Regards, GGIG Team</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="text-align: center; color: #b0b0b0;">
+      <p style="margin: 0 0 0 0; padding: 40px 10px 10px 10px;">We sincerely appreciate your kind support.</p>
+      <a href="<%= @unsubscribe_url %>" style="color: #00bfe3; font-size: 14px;">unsubscribe</a>
+      <p style="margin: 0 0 0 0; padding: 20px 10px 20px 10px;">&nbsp;</p>
+    </td>
+  </tr>
+
+</table>
