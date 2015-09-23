@@ -1,25 +1,18 @@
 <footer>
-
   <div class="footer-block">
-
     <ul class="site-links">
       <% @page_legal.page_tabs.active.each do |tab| %>
         <li><%= link_to tab.tab_name, '/legal/#'.concat(tab.slug) %></li>
       <% end %>
     </ul>
-
     <ul class="contact-links">
       <li><span class="icon-phone-1"></span><%= I18n.t(:main_phone) %></li>
       <li><a href="mailto:<%= I18n.t(:main_email) %>"><span class="icon-mail-2"></span><%= I18n.t(:main_email) %></a></li>
     </ul>
-
     <small><%= I18n.t(:copyright) %></small>
-
     <ul class="social-links">
       <li><a class="icon-twitter" href="http://twitter.com" target="_blank"></a></li>
       <li><a class="icon-facebook" href="http://facebook.com" target="_blank"></a></li>
     </ul>
-
   </div>
-
 </footer>

@@ -196,6 +196,22 @@
         .popup-body form {
             padding: 0 50px;
         }
+
+        .grid-container {
+            overflow: visible;
+        }
+
+        .count-wrapper {
+            position: relative;
+            label.error {
+                right: auto;
+                bottom: 0;
+                top: 75px;
+                width: 350px;
+                left: 0;
+                text-align: left;
+            }
+        }
     }
 
     .participation-confirm-popup {

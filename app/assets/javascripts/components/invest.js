@@ -8,7 +8,10 @@ define(['jquery'], function ($) {
             this.count = $('#' + domId + ' .count');
             this.amount = $('#' + domId + ' .amount');
             this.totalAmount = $('#' + domId + ' .totalAmount');
+            this.totalAmountNeeded = parseInt(config.totalAmountNeeded, 10);
+            this.totalAmountInvested = parseInt(config.totalAmountInvested, 10);
             this.setCount();
+            this.setMaxCounts();
             this.setTotalAmount();
         },
 
@@ -22,8 +25,22 @@ define(['jquery'], function ($) {
 
         },
 
+        checkValid: function () {
+            if (this.count.hasClass('error')) {
+                return false;
+            } else {
+                compSupport.callFunc('#participationsConfirmationPopup', 'show')
+            }
+        },
+
         setCount: function () {
             localStorage.setItem('confirmCount', parseFloat(this.count.val()));
+        },
+
+        setMaxCounts: function () {
+            console.log(this.totalAmountNeeded);
+            console.log(parseInt(this.amount.text(), 10));
+            this.count.prop('max', Math.floor((this.totalAmountNeeded - this.totalAmountInvested) / parseInt(this.amount.text(), 10)));
         },
 
         setTotalAmount: function () {

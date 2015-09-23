@@ -1,13 +1,18 @@
-<div class="popup participation-popup" id="participationsPopup" data-jscomp="components/popup">
+<div class="popup participation-popup"
+     id="participationsPopup"
+     data-jscomp="components/popup">
 
   <div class="fog" onclick="compSupport.callFunc(this, 'hide')"></div>
   <div class="popup-body">
     <span class="popup-close icon-font icon-cancel" onclick="compSupport.callFunc(this, 'hide')"></span>
 
     <div class="popup-title"><%= I18n.t(:invest_popup_title) %></div>
-    <div class="popup-content" id="investComp" data-jscomp="components/invest">
+    <div class="popup-content"
+         id="investComp"
+         data-jscomp="components/invest"
+         data-jscomp-config='{"totalAmountNeeded": "<%= @project.total_amount_need %>", "totalAmountInvested": "<%= @project.total_amount_invested %>"}'>
 
-      <form action="">
+      <form action="" id="investForm" data-jscomp="components/validator">
         <div class="participations-table grid">
           <div class="grid-container">
             <table>
@@ -19,11 +24,14 @@
               </tr>
               <tr>
                 <td style="width: 40%;">
+                  <div class="count-wrapper" style="position: relative;">
                   <input class="default-input count"
+                         id="investCount"
                          onchange="compSupport.callFunc('#investComp', 'calculateTotal', [this])"
                          type="number"
                          min="1"
                          value="1"/>
+                  </div>
                 </td>
                 <td style="width: 30%;"><span>€ <span class="amount">498.20</span></span></td>
                 <td style="width: 30%;"><span>€ <span class="totalAmount">498.20</span></span></td>
@@ -34,7 +42,7 @@
         </div>
 
         <div class="actions">
-          <a class="default-btn" onclick="compSupport.callFunc('#participationsConfirmationPopup', 'show')">
+          <a class="default-btn" onclick="compSupport.callFunc('#investComp', 'checkValid')">
             <%= I18n.t(:invest_participation_popup_button) %>
           </a>
         </div>

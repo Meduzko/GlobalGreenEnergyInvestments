@@ -23,7 +23,7 @@
         background-color: $light-grey6;
         margin-left: -300px;
         position: absolute;
-        top: 15%;
+        top: 200px;
         left: 50%;
         width: 600px;
         form {
@@ -103,4 +103,8 @@
             padding: 20px 0 0 0;
         }
     }
+}
+
+.inner-page .popup .popup-body {
+    top: 108px;
 }

@@ -99,6 +99,7 @@ en:
 
   #Registration page
   registr_title: Registration
+  registr_text: Please register to view more investment information
 
   #Project Description page
   project_description_title: Windpark Rembrandt
@@ -121,7 +122,7 @@ en:
   participation_confirm_title: Confirmation
   participation_confirm_button: Continue to payment
   participation_confirm_text_1: confirms to buy <strong><strong class="confirmCount"></strong> participations</strong> for the amount of <span>€<span class="confirmTotalAmount"></span></span> in %{project_name}.
-  participation_confirm_text_2: Person <span>%{name}</span> confirms to understand the duration and risks that come with this investment and only invests with money that is free of any obligations.
+  participation_confirm_text_2: <span>%{name}</span> confirms to understand the duration and <a href="/legal/#risks" target="_blank">risks</a> that come with this investment and only invests with money that is free of any obligations.
 
   participation_thanks_title: Thank you
   participation_thanks_text_1: Dear Person<br> <strong>%{name}</strong>
@@ -129,8 +130,7 @@ en:
   participation_thanks_text_3: When the amount is received by the notary, he will verify your details and after approval, we will confirm your investment in <strong>3 working days</strong> after receiving the amount.
   participation_thanks_text_4: If you have any remaining questions, please
   participation_thanks_text_5: Kind regards,<br> Managing director,<br> Benoit van Beeck Calkoen
-  participation_thanks_text_6: single participant
-  participation_thanks_text_7: standart amoritisaztion
+  participation_thanks_text_6: Single participation
 
   invest_popup_button: Next
   invest_participation_popup_button: Continue
