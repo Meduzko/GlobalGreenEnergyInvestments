@@ -6,7 +6,7 @@ en:
   cmn_view_project: View project
   cmn_print: Print
   cmn_back: Back
-  cmn_make_offer: Make offer
+  cmn_invest: Invest
 
   #Validation messages:
   error_required: This field is required
