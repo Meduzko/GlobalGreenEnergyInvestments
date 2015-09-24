@@ -1,6 +1,8 @@
 <div class="inner-page project-description">
   <h1 class="inner-page-main-title"><%= @project.name %></h1>
+
   <p class="default-text"><%= @project.title %></p>
+
   <div class="separator-with-text separator-with-icon">
     <div>
       <span>
@@ -11,7 +13,7 @@
   </div>
   <div class="project-location"><%= @project.location %></div>
   <h3 class="project-amount"><%= cute_amount(@project.total_amount_need) %><sup>&euro;</sup></h3>
-  <%= render 'partials/project_descr_stat_circles', invested: @project.total_amount_invested, irr: @project.irr, launch: @project.launch,  kwh: @project.kwh_generated %>
+  <%= render 'partials/project_descr_stat_circles', invested: @project.total_amount_invested, irr: @project.irr, launch: @project.launch, kwh: @project.kwh_generated %>
   <section class="project-description-content">
     <% if @project.desc_1.present? %>
       <div class="project-description-content-row">
@@ -66,6 +68,7 @@
   </section>
   <section class="grid">
     <h5 class="inner-page-sub-title"><%= I18n.t(:participation_thanks_text_6) %></h5>
+
     <div class="grid-container">
       <%= generate_table(@project.id) %>
     </div>
@@ -75,12 +78,18 @@
       <%= link_to 'All Projects', '/invest#fundable', class: 'icon-font icon-left-dir' %>
     </div>
     <!--<a href="#" class="default-btn">Invest</a>-->
-    <a href="#" onclick="compSupport.callFunc('#participationsPopup', 'show')" class="default-btn"><%= I18n.t(:cmn_invest) %></a>
+    <% if current_user %>
+      <a href="#" onclick="compSupport.callFunc('#participationsPopup', 'show')" class="default-btn"><%= I18n.t(:cmn_invest) %></a>
+    <% else %>
+      <a href="#" onclick="compSupport.callFunc('#loginPopup', 'show')" class="default-btn"><%= I18n.t(:cmn_invest) %></a>
+    <% end %>
     <div class="get-pdf">
-      <%= link_to '<span>For more information see our</span>Information memorandum'.html_safe, @project.pdf.url, class: 'get-pdf icon-font icon-pdf' if @project.pdf.url.present?%>
+      <%= link_to '<span>For more information see our</span>Information memorandum'.html_safe, @project.pdf.url, class: 'get-pdf icon-font icon-pdf' if @project.pdf.url.present? %>
     </div>
   </section>
-  <%= render 'partials/participations_popup' %>
-  <%= render 'partials/participations_confirmation_popup' %>
-  <%= render 'partials/participations_thanks_popup' %>
+  <% if current_user %>
+    <%= render 'partials/participations_popup' %>
+    <%= render 'partials/participations_confirmation_popup' %>
+    <%= render 'partials/participations_thanks_popup' %>
+  <% end %>
 </div>

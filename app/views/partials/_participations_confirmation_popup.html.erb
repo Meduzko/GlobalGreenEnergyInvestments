@@ -18,10 +18,10 @@
         <div class="message-box"></div>
 
         <div class="section-to-print">
-          <div class="name"><%= current_user.first_name %></div>
+          <div class="name"><%= current_user ? current_user.first_name : '' %></div>
           <div class="address">10.04.1980, amsterdam, holland</div>
           <div class="amount left-aligned-text"><%= I18n.t(:participation_confirm_text_1, project_name: @project.name).html_safe %></div>
-          <div class="info left-aligned-text"><%= I18n.t(:participation_confirm_text_2, name: current_user.first_name).html_safe %></div>
+          <div class="info left-aligned-text"><%= I18n.t(:participation_confirm_text_2, name: current_user ? current_user.first_name : '').html_safe %></div>
         </div>
 
 
