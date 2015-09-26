@@ -74,18 +74,27 @@
     </div>
   </section>
   <section class="project-controls">
-    <div class="get-back">
-      <%= link_to 'All Projects', '/invest#fundable', class: 'icon-font icon-left-dir' %>
-    </div>
-    <!--<a href="#" class="default-btn">Invest</a>-->
-    <% if current_user %>
-      <a href="#" onclick="compSupport.callFunc('#participationsPopup', 'show')" class="default-btn"><%= I18n.t(:cmn_invest) %></a>
-    <% else %>
-      <a href="#" onclick="compSupport.callFunc('#loginPopup', 'show')" class="default-btn"><%= I18n.t(:cmn_invest) %></a>
-    <% end %>
-    <div class="get-pdf">
-      <%= link_to '<span>For more information see our</span>Information memorandum'.html_safe, @project.pdf.url, class: 'get-pdf icon-font icon-pdf' if @project.pdf.url.present? %>
-    </div>
+    <table>
+      <tr>
+        <td>
+          <div class="get-back">
+            <%= link_to 'All Projects', '/invest#fundable', class: 'icon-font icon-left-dir' %>
+          </div>
+        </td>
+        <td>
+          <% if current_user %>
+            <a href="#" onclick="compSupport.callFunc('#participationsPopup', 'show')" class="default-btn"><%= I18n.t(:cmn_invest) %></a>
+          <% else %>
+            <a href="#" onclick="compSupport.callFunc('#loginPopup', 'show')" class="default-btn"><%= I18n.t(:cmn_invest) %></a>
+          <% end %>
+        </td>
+        <td>
+          <div class="get-pdf">
+            <%= link_to '<span>For more information see our</span>Information memorandum'.html_safe, @project.pdf.url, class: 'get-pdf icon-font icon-pdf' if @project.pdf.url.present? %>
+          </div>
+        </td>
+      </tr>
+    </table>
   </section>
   <% if current_user %>
     <%= render 'partials/participations_popup' %>

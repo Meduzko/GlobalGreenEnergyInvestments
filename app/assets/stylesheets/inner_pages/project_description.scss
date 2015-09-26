@@ -329,11 +329,20 @@
         }
     }
 
+    .project-controls {
+        table {
+            width: 100%;
+            td {
+                width: 33%;
+            }
+        }
+
+    }
+
     .get-back {
         display: inline-block;
         float: left;
         min-height: 1px;
-        width: 30%;
         a {
             cursor: pointer;
             display: inline-block;
@@ -356,7 +365,6 @@
         display: inline-block;
         float: right;
         min-height: 1px;
-        width: 30%;
         a {
             cursor: pointer;
             display: inline-block;
@@ -393,7 +401,7 @@
             .get-pdf {
                 display: block;
                 float: none;
-                margin: 20px 0 0 50px;
+                margin: 0 0 0 20px;
             }
         }
         .project-amount {
