@@ -84,6 +84,11 @@
         }
         ul {
             padding: 30px 100px 50px 0;
+            li span {
+                color: $blue-green;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
         }
     }
 }
