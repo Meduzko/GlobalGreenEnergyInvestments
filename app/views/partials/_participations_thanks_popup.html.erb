@@ -10,7 +10,7 @@
       <form action="">
 
         <div class="section-to-print">
-          <p><%= I18n.t(:participation_thanks_text_1, name: 'Benoit van Beeck Calkoen').html_safe %>,</p>
+          <p><%= I18n.t(:participation_thanks_text_1, name: current_user.full_name).html_safe %>,</p>
           <p><%= I18n.t(:participation_thanks_text_2) %></p>
           <div class="generated-number">NL17ABNA0481489339</div>
           <span><%= I18n.t(:participation_thanks_text_3).html_safe %></span>

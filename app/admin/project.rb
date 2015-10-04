@@ -42,7 +42,7 @@ ActiveAdmin.register Project do
     column :name
     column :location
     column :launch
-    column :subscibers do |s|
+    column :subscribers do |s|
       if s.sent_subscription > 0
         link_to "Already sent #{s.sent_subscription} times, repeat?", sent_event_admin_project_path(s.id), data: { :confirm => "Are you sure? You already sent emails." }
       else

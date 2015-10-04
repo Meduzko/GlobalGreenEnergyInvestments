@@ -9,4 +9,8 @@ class ProjectsController < ApplicationController
       redirect_to root_path and return
     end
   end
+
+  def confirm_participation
+    render text: :nothing
+  end
 end

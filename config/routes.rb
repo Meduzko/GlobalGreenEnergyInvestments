@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'home#index'
-  resources 'projects', only: [:index, :show]
+  resources 'projects', only: [:index, :show] do
+    post :confirm_participation
+  end
   resources 'subscribes', only: [:create] do
     member do
       get :confirmation

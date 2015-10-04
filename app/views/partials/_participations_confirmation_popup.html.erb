@@ -1,7 +1,7 @@
 <div class="popup participation-popup participation-confirm-popup"
      id="participationsConfirmationPopup"
      data-jscomp="components/investConfirmPopup"
-     data-jscomp-config='{"url": "/testUrl", "showNextPopup": "#participationsThanksPopup"}'>
+     data-jscomp-config='{"url": "/projects/6/confirm_participation", "showNextPopup": "#participationsThanksPopup"}'>
 
   <div class="fog" onclick="compSupport.callFunc(this, 'hide')"></div>
   <div class="popup-body">
@@ -35,9 +35,6 @@
       <div class="additional-actions">
         <div class="get-back">
           <a class="icon-font icon-left-dir" onclick="compSupport.callFunc('#participationsPopup', 'show')"><%= I18n.t(:cmn_back) %></a></div>
-        <div class="get-pdf">
-          <a class="icon-font icon-pdf" onclick="print()"><%= I18n.t(:cmn_print) %></a>
-        </div>
       </div>
 
     </div>
