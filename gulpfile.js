@@ -2,7 +2,6 @@ var gulp = require('gulp'), // Сообственно Gulp JS
     sass = require('gulp-sass'),
     csso = require('gulp-csso'), // Минификация CSS
     imagemin = require('gulp-imagemin'), // Минификация изображений
-    svgo = require('gulp-svgo'),
     uglify = require('gulp-uglify'), // Минификация JS
     concat = require('gulp-concat'), // Склейка файлов
     svgSprite = require("gulp-svg-sprites"),
@@ -111,7 +110,7 @@ gulp.task('static', function () {
 
 gulp.task('svg-optimization', function () {
     gulp.src(assetsRoot + 'images/svg/*.svg')
-        .pipe(svgo())
+        .pipe(imagemin())
         .pipe(gulp.dest(publicRoot + 'images/svg'));
 });
 

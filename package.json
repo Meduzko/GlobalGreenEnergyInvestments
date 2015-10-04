@@ -10,7 +10,6 @@
         "yo": "*",
         "gulp": "*",
         "gulp-csso": "*",
-        "gulp-svgo": "*",
         "gulp-sass": "*",
         "gulp-imagemin": "*",
         "gulp-uglify": "*",
