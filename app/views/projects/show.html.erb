@@ -82,11 +82,10 @@
           </div>
         </td>
         <td>
-          <% if current_user %>
-            <a href="#" onclick="compSupport.callFunc('#participationsPopup', 'show')" class="default-btn"><%= I18n.t(:cmn_invest) %></a>
-          <% else %>
-            <a href="#" onclick="compSupport.callFunc('#loginPopup', 'show')" class="default-btn"><%= I18n.t(:cmn_invest) %></a>
-          <% end %>
+        <% unless @project.amount_to_invest.zero? %>
+          <% js_method =  current_user ? '#participationsPopup' : '#loginPopup' %>
+          <a href="#" onclick="compSupport.callFunc('<%= js_method %>', 'show')" class="default-btn"><%= I18n.t(:cmn_invest) %></a>
+        <% end %>
         </td>
         <td>
           <div class="get-pdf">
@@ -97,8 +96,8 @@
     </table>
   </section>
   <% if current_user %>
-    <%= render 'partials/participations_popup' %>
-    <%= render 'partials/participations_confirmation_popup' %>
+    <%= render partial: 'partials/participations_popup', locals: { amount_to_invest: @project.amount_to_invest } %>
+    <%= render partial: 'partials/participations_confirmation_popup', object: @project %>
     <%= render 'partials/participations_thanks_popup' %>
   <% end %>
 </div>

@@ -7,7 +7,7 @@ ActiveAdmin.register Project do
                 :remove_img_1, :remove_img_2, :remove_img_3, :remove_img_4, :remove_img_5,
                 :type_of_participation, :type_of_energe, :total_amount_need, :total_amount_invested, :irr,
                 :desc_1, :img_1, :desc_2, :img_2, :desc_3, :img_3, :desc_4, :img_4, :desc_5, :img_5,
-                :launch, :kwh_generated, :status, :created_at, :pdf, :remove_pdf
+                :launch, :kwh_generated, :status, :created_at, :pdf, :remove_pdf, :amount_to_invest
 
   member_action :sent_event, method: :get do
     project = Project.find_by(id: params[:id])
@@ -49,6 +49,7 @@ ActiveAdmin.register Project do
         link_to 'Send the emails', sent_event_admin_project_path(s.id), data: { :confirm => "Are you sure? Need active status" }
       end
     end
+    column :amount_to_invest
     column :status
     column :created_at
     column :updated_at
@@ -113,6 +114,9 @@ ActiveAdmin.register Project do
       end
       f.inputs "Change Project Sorting" do
         f.input :created_at
+      end
+      f.inputs 'Invest Button' do
+        f.input :amount_to_invest
       end
     end
     f.actions
