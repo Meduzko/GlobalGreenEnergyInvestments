@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151004084109) do
+ActiveRecord::Schema.define(version: 20151004173849) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -53,6 +53,21 @@ ActiveRecord::Schema.define(version: 20151004084109) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "investors", force: :cascade do |t|
+    t.integer  "user_id",          limit: 4
+    t.integer  "project_id",       limit: 4
+    t.integer  "participations",   limit: 4
+    t.float    "amount",           limit: 24
+    t.float    "total_amount",     limit: 24
+    t.boolean  "confirm_paid",     limit: 1,  default: false
+    t.datetime "expired_datetime"
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+  end
+
+  add_index "investors", ["project_id"], name: "index_investors_on_project_id", using: :btree
+  add_index "investors", ["user_id"], name: "index_investors_on_user_id", using: :btree
 
   create_table "page_tabs", force: :cascade do |t|
     t.integer  "page_id",     limit: 4

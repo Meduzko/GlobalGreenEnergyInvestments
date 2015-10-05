@@ -65,6 +65,7 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
+    active_skin (0.0.9)
     activejob (4.2.0)
       activesupport (= 4.2.0)
       globalid (>= 0.3.0)
@@ -92,6 +93,9 @@ GEM
       sass (~> 3.4)
       thor
     builder (3.2.2)
+    business_time (0.7.4)
+      activesupport (>= 3.1.0)
+      tzinfo
     byebug (3.5.1)
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
@@ -289,8 +293,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_skin
   activeadmin!
   awesome_print
+  business_time
   byebug
   carrierwave
   ckeditor!

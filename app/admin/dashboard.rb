@@ -34,8 +34,12 @@ ActiveAdmin.register_page "Dashboard" do
      end
      columns do
       column do
-         panel "Some information" do
-           para "Welcome to Admin Panel."
+         panel "Investors" do
+           ul do
+             Investor.limit(10).order('created_at desc').each do |s|
+               li link_to "#{s.user.full_name} - #{time_ago_in_words(s.created_at)} ago", admin_subscribe_path(s.id)
+             end
+           end
          end
        end
      end

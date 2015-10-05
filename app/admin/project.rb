@@ -50,6 +50,9 @@ ActiveAdmin.register Project do
       end
     end
     column :amount_to_invest
+    column :investors do |i|
+      i.investors.count
+    end
     column :status
     column :created_at
     column :updated_at

@@ -30,7 +30,7 @@ module ApplicationHelper
       unless is_my_invest
         stat += '<li>'
           stat += '<div>'
-          stat += User.count.to_s
+          stat += Investor.count.to_s
           stat += '<span>'
             stat += I18n.t(:stat_investors)
           stat += '</span>'

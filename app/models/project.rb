@@ -4,12 +4,13 @@ class Project < ActiveRecord::Base
   ENERGY = ['solar', 'wind', 'bio', 'etc']
 
   has_one :amoritisaztion, dependent: :destroy
+  has_many :investors
 
   before_validation :remove_images
   
   scope :active,   -> { where(status: true).order('created_at desc') }
-  scope :fundable, -> { where('projects.total_amount_need != projects.total_amount_invested') }
-  scope :funded,   -> { where('projects.total_amount_need = projects.total_amount_invested') }
+  scope :fundable, -> { where('projects.total_amount_need != projects.total_amount_invested AND projects.total_amount_need > projects.total_amount_invested') }
+  scope :funded,   -> { where('projects.total_amount_invested >= projects.total_amount_need') }
 
   mount_uploader :small_foto, ProjectUploader
   mount_uploader :big_foto,   ProjectUploader
