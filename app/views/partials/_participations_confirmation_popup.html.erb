@@ -1,7 +1,7 @@
 <div class="popup participation-popup participation-confirm-popup"
      id="participationsConfirmationPopup"
      data-jscomp="components/investConfirmPopup"
-     data-jscomp-config='{"url": "/projects/1/confirm_participation", "showNextPopup": "#participationsThanksPopup"}'>
+     data-jscomp-config='{"url": "/projects/<%= @project.id %>/confirm_participation", "showNextPopup": "#participationsThanksPopup"}'>
 
   <div class="fog" onclick="compSupport.callFunc(this, 'hide')"></div>
   <div class="popup-body">

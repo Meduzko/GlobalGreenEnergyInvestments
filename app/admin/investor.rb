@@ -40,7 +40,15 @@ ActiveAdmin.register Investor do
       link_to i.total_amount, admin_investor_path(i.id), title: 'Details'
     end
     column :confirm_paid
-    column :expired_datetime
+    column :expired_datetime do |i|
+      if (i.is_expired? && !i.is_paid?)
+        status_tag('Expired')
+      elsif i.is_paid?
+        status_tag('Paid')
+      else
+        i.expired_datetime
+      end
+    end
     column :created_at
     column :updated_at
     actions

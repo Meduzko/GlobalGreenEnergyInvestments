@@ -13,6 +13,13 @@
 
 $skinLogo: url("/assets/favicon.png ") no-repeat 50% 50%;
 
+.expired {
+    background-color: #e73c3c;
+}
+.paid {
+    background-color: #191;
+}
+
 @import "active_skin";
 
 // Overriding any non-variable SASS must be done after the fact.
