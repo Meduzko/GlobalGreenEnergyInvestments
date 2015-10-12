@@ -22,6 +22,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sucker_punch'
 gem 'mailgun_rails'
 
+gem 'whenever', :require => false
+
 group :development do
   gem 'byebug'
   gem 'meta_request'

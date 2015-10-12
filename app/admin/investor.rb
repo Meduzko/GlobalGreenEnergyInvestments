@@ -8,13 +8,13 @@ ActiveAdmin.register Investor do
 
   scope :all, :default => true
   scope :confirm do |investors|
-    investors.where(confirm_paid: true)
+    Investor.confirm
   end
   scope :expired do |investors|
-    investors.where('expired_datetime < ?', Time.now)
+    Investor.expired
   end  
   scope :unconfirm do |investors|
-    investors.where(confirm_paid: false)
+    Investor.unconfirm
   end
 
   controller do
@@ -41,7 +41,7 @@ ActiveAdmin.register Investor do
     end
     column :confirm_paid
     column :expired_datetime do |i|
-      if (i.is_expired? && !i.is_paid?)
+      if i.is_expired?
         status_tag('Expired')
       elsif i.is_paid?
         status_tag('Paid')
