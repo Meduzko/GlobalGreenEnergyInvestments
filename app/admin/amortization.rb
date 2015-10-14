@@ -1,6 +1,6 @@
 ActiveAdmin.register Amortization do
   before_filter :skip_sidebar!, :only => :index
-  menu priority: 8
+  menu priority: 9
 
   permit_params :project_id, :csv_name
 

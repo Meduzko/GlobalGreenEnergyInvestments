@@ -40,8 +40,6 @@ ActiveAdmin.register Project do
     selectable_column
     id_column
     column :name
-    column :location
-    column :launch
     column :subscribers do |s|
       if s.sent_subscription > 0
         link_to "Already sent #{s.sent_subscription} times, repeat?", sent_event_admin_project_path(s.id), data: { :confirm => "Are you sure? You already sent emails." }
@@ -49,13 +47,15 @@ ActiveAdmin.register Project do
         link_to 'Send the emails', sent_event_admin_project_path(s.id), data: { :confirm => "Are you sure? Need active status" }
       end
     end
+    column :total_amount_need
     column :amount_to_invest
+    column :total_amount_invested
     column :investors do |i|
-      i.investors.count
+      link_to i.investors.count, admin_investors_path(scope: i.name.parameterize("_"))
     end
+    column :launch
     column :status
     column :created_at
-    column :updated_at
     actions
   end
 

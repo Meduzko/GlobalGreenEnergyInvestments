@@ -3,6 +3,8 @@ class Investor < ActiveRecord::Base
   belongs_to :project
 
   scope :expired,   ->{ where('expired_datetime < ? and confirm_paid = ?', Time.now, false) }
+  scope :unchecked, ->{ where(check_expired: false) }
+  scope :checked,   ->{ where(check_expired: true) }
   scope :unconfirm, ->{ where(confirm_paid: false) }
   scope :confirm,   ->{ where(confirm_paid: true) }
 

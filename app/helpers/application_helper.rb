@@ -25,12 +25,13 @@ module ApplicationHelper
     projects = Project.active
     average_return = (projects.map(&:total_amount_need).inject(:+) / projects.map{ |x| ((x.irr/100).round(2)*x.total_amount_need).round }.inject(:+)).round(2)
     kwh_generated = projects.map{|x| x.kwh_generated if x.launch == true }.compact.inject(:+)
+    investors = Investor.count - Investor.expired.checked.count
     stat = ''
     stat += '<ul class="statistic-circles">'
       unless is_my_invest
         stat += '<li>'
           stat += '<div>'
-          stat += Investor.count.to_s
+          stat += investors.to_s
           stat += '<span>'
             stat += I18n.t(:stat_investors)
           stat += '</span>'
