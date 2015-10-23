@@ -291,6 +291,9 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
     whenever (0.9.4)
       chronic (>= 0.6.3)
+    wicked_pdf (0.11.0)
+      rails
+    wkhtmltopdf-binary (0.9.9.3)
 
 PLATFORMS
   ruby
@@ -324,3 +327,5 @@ DEPENDENCIES
   validates_email_format_of
   web-console (~> 2.0)
   whenever
+  wicked_pdf
+  wkhtmltopdf-binary

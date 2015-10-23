@@ -15,6 +15,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'country_select', github: 'stefanpenner/country_select'
 gem 'business_time'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
