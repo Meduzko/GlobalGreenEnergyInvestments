@@ -22,7 +22,7 @@
 
       <div class="additional-actions">
         <div class="get-pdf">
-          <a class="icon-font icon-pdf" onclick="print()"><%= I18n.t(:cmn_print) %></a>
+          <%= link_to_print(@project.id, current_user.id) %>
         </div>
       </div>
 
