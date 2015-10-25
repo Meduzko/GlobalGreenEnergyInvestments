@@ -23,7 +23,13 @@ class ProjectsController < ApplicationController
                       expired_datetime: 3.business_day.from_now,
                       pdf_name: "#{current_user.full_name.parameterize}_#{project_id}_#{Time.now.to_i}.pdf"
                       )
-    change_invested_amount(project_id, total_amount) if investor
+    if investor
+      change_invested_amount(project_id, total_amount)
+      GeneratePdfJob.new.async.later(60, investor)
+
+    end
+    # run generating job
+    # sent mail with attachemnt
     render nothing: true
 #    render      pdf: project_id, layout: 'layouts/payment_info.pdf.erb',
 #                margin: {top:               0,
