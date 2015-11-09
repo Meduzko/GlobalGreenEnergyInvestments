@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GGEI <%= title_slug %></title>
+  <title><%= @page_title || I18n.t(:title_default) %></title>
+  <meta name="description" content="<%= @description || I18n.t(:description_default) %>">
+  <meta name="keywords" content="<%= @keywords || I18n.t(:keywords_default) %>">
+
   <meta name="viewport" content="width=device-width"/>
-  <meta name="description" content="Green energy project">
-  <meta name="keywords" content="green energy">
   <!--<meta name="google-site-verification" content="POMS-edpJMekFLLUwzkIMS9_QRSPzyaYJpNa-mB4KyE">-->
   <meta name="google-site-verification" content="rmYfVQWITdhhqDzvowK7AiCjSd9xGRDSLVR_TjSlpyc" />
   <meta name="google-site-verification" content="0JIeJoL0gN3aogTV3uuvxtsiHNk0uzkwi5VAAap4OuE" />

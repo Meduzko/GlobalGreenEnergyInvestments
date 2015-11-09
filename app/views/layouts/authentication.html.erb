@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GGEI <%= title_slug %></title>
+  <title><%= @page_title || I18n.t(:title_default) %></title>
+  <meta name="description" content="<%= @description || I18n.t(:description_default) %>">
+  <meta name="keywords" content="<%= @keywords || I18n.t(:keywords_default) %>">
+
   <meta name="viewport" content="width=device-width"/>
   <meta name="description" content="Green energy project">
   <meta name="keywords" content="green energy">
