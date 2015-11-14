@@ -15,4 +15,9 @@
 node_modules
 bower_components
 .rvmrc
-/public
+/public/fonts
+/public/images
+/public/stylesheets
+/public/uploads
+/public/video
+/public/pdf/*
