@@ -28,4 +28,6 @@ Rails.application.routes.draw do
   post 'profile' => 'profiles#create_or_update', :as => :profile_ctr_or_upd
   root 'home#index'
   #get ':slug' => 'pages#show',  :as => :pages
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 end

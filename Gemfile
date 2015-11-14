@@ -21,7 +21,7 @@ gem 'wkhtmltopdf-binary'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'sucker_punch'
+gem 'sidekiq'
 gem 'mailgun_rails'
 
 gem 'whenever', :require => false
@@ -32,6 +32,7 @@ group :development do
 	gem 'awesome_print'
 	gem 'web-console', '~> 2.0'
 	gem 'spring'
+	gem 'sinatra', '>= 1.3.0', :require => nil
 end
 
 group :assets do

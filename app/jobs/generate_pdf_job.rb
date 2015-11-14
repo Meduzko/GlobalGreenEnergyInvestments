@@ -1,5 +1,5 @@
-class GeneratePdfJob 
-  include SuckerPunch::Job
+class GeneratePdfJob < ActiveJob::Base
+  queue_as :default
   
   def perform(investor)
     return if investor.nil?

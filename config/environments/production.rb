@@ -84,5 +84,5 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { :host => "globalgreeninvestmentgroup.com" }
 
-  config.active_job.queue_adapter = :sucker_punch
+  config.active_job.queue_adapter = :sidekiq
 end
