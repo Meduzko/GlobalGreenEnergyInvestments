@@ -21,6 +21,6 @@ class GeneratePdfJob < ActiveJob::Base
       file << gen_pdf
     end
 
-    InvestorMailer.new_investor(investor.user, pdf_path).deliver_later if File.exist?(pdf_path)
+    InvestorMailer.new_investor(investor.user, pdf_path).deliver if File.exist?(pdf_path)
   end
 end
