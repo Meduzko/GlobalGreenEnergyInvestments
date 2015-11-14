@@ -26,7 +26,6 @@ class ProjectsController < ApplicationController
     if investor
       change_invested_amount(project_id, total_amount)
       GeneratePdfJob.perform_later(investor)
-      InvestorMailer.new_investor(current_user, pdf_path).deliver if File.exist?(pdf_path)
     end
     # run generating job
     # sent mail with attachemnt
