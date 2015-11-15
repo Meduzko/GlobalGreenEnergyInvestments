@@ -23,7 +23,7 @@ class Project < ActiveRecord::Base
   mount_uploader :pdf,        ProjectPdfUploader
 
   def is_power_saved?
-    self.power_saved.started_at < Time.now
+    self.power_saved && (self.power_saved.started_at < Time.now)
   end
 
   private
