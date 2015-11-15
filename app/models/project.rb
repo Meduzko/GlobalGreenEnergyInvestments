@@ -4,6 +4,7 @@ class Project < ActiveRecord::Base
   ENERGY = ['solar', 'wind', 'bio', 'etc']
 
   has_one :amoritisaztion, dependent: :destroy
+  has_one :power_saved,    dependent: :destroy
   has_many :investors
 
   before_validation :remove_images
@@ -20,6 +21,10 @@ class Project < ActiveRecord::Base
   mount_uploader :img_4,      ProjectUploader
   mount_uploader :img_5,      ProjectUploader
   mount_uploader :pdf,        ProjectPdfUploader
+
+  def is_power_saved?
+    self.power_saved.started_at < Time.now
+  end
 
   private
     def remove_images

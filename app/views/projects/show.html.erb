@@ -13,7 +13,7 @@
   </div>
   <div class="project-location"><%= @project.location %></div>
   <h3 class="project-amount"><%= cute_amount(@project.total_amount_need) %><sup>&euro;</sup></h3>
-  <%= render 'partials/project_descr_stat_circles', invested: @project.total_amount_invested, irr: @project.irr, launch: @project.launch, kwh: @project.kwh_generated %>
+  <%= render 'partials/project_descr_stat_circles', project: @project %>
   <section class="project-description-content">
     <% if @project.desc_1.present? %>
       <div class="project-description-content-row">

@@ -46,6 +46,7 @@ en:
   stat_return: average return
   stat_fixed_return: fixed return
   stat_total_return: total return
+  stat_saved: KWH saved
   stat_text: We find renewable energy projects on the world’s most effective places, whether in your neighborhood or on the other side of the equator.
   stat_text_link: How it works video
 

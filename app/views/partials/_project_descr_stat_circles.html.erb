@@ -1,22 +1,36 @@
 <ul class="statistic-circles">
   <li>
     <div>
-      <%= cute_amount(invested) %> <sup>€</sup>
+      <%= cute_amount(project.total_amount_invested) %> <sup>€</sup>
       <span><%= I18n.t(:stat_invested) %></span>
     </div>
   </li>
   <li>
     <div>
-      <%= number_with_precision(irr, strip_insignificant_zeros: true) %>%
+      <%= number_with_precision(project.irr, strip_insignificant_zeros: true) %>%
       <span><%= I18n.t(:stat_fixed_return) %></span>
     </div>
   </li>
-  <% if launch %>
+  <% if project.launch %>
     <li>
       <div>
-        <%= number_with_precision(kwh, strip_insignificant_zeros: true) %>
+        <%= number_with_precision(project.kwh_generated, strip_insignificant_zeros: true) %>
         <span><%= I18n.t(:stat_generated) %></span>
       </div>
     </li>
   <% end %>
+  <% if project.is_power_saved? %>
+    <li>
+      <div>
+        <%= saved_kwh(project.id) %>
+        <span><%= I18n.t(:stat_saved) %></span>
+      </div>
+    </li>
+  <% end %>
 </ul>
+
+<%
+#FOR KOSTYA
+# started_value - saved_kwh(project.id)
+# inverval per second - project.power_saved.kwh_every_second
+%>
