@@ -21,16 +21,14 @@
   <% end %>
   <% if project.is_power_saved? %>
     <li>
-      <div>
-        <%= saved_kwh(project.id) %>
+      <div data-jscomp='components/statisticCounter'
+           data-jscomp-config='{
+           "stepValue": "<%= project.power_saved.kwh_every_second %>",
+           "updateInterval": "1000"
+           }'>
+        <p class="savedStatistic"><%= saved_kwh(project.id) %></p>
         <span><%= I18n.t(:stat_saved) %></span>
       </div>
     </li>
   <% end %>
 </ul>
-
-<%
-#FOR KOSTYA
-# started_value - saved_kwh(project.id)
-# inverval per second - project.power_saved.kwh_every_second
-%>
