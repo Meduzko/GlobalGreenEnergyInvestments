@@ -81,8 +81,22 @@ module ApplicationHelper
           stat += '</div>'
         stat += '</li>'
       end
+      stat += total_saved_kwh_html
     stat += '</ul>'
     stat.html_safe
+  end
+
+  def total_saved_kwh_html
+    stat = '<li>'
+      stat += '<div>'
+      stat += "<div data-jscomp='components/statisticCounter' data-jscomp-config='{\"stepValue\": \"#{total_saved_kwh[:total_kwd_seconds]}\" }'>"
+      stat += '<p class="savedStatistic">' + total_saved_kwh[:total_saved].round(2).to_s + '</p>'
+      stat += '<span>'
+        stat += I18n.t(:stat_saved)
+      stat += '</span>'
+      stat += '</div>'
+    stat += '</li>'
+    stat
   end
 
   def generate_table(project_id = nil)
@@ -126,5 +140,22 @@ module ApplicationHelper
       else
         'sun-icon'
       end
+  end
+
+
+  def saved_kwh(project_id, every_second = false)
+    project = Project.find(project_id)
+    ps = project.power_saved
+    seconds = Time.now.minus_with_coercion(ps.started_at)
+    result = ps.already_saved + seconds*ps.kwh_every_second
+    return every_second ? {saved: result.round(2), every_second: ps.kwh_every_second} : result.round(2)
+  end
+
+  def total_saved_kwh
+    projects = Project.active.select{|p| p.is_power_saved? }
+    kwh_hash = projects.map{ |ps| saved_kwh(ps.id, true) }
+    kwd_saved = kwh_hash.map{ |h| h[:saved]}.sum
+    kwd_seconds = kwh_hash.map{ |h| h[:every_second]}.sum
+    return {total_saved: kwd_saved, total_kwd_seconds: kwd_seconds}
   end
 end
