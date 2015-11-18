@@ -71,10 +71,10 @@ module ApplicationHelper
         stat += '</span>'
         stat += '</div>'
       stat += '</li>'
-      if is_my_invest
+      if is_my_invest && current_user && current_user.money_returns.count > 0
         stat += '<li>'
           stat += '<div>'
-          stat += (projects.map(&:total_amount_invested).inject(:+)).round(2).to_s + ' <sup>€</sup>'
+          stat += total_money_return.to_s + ' <sup>€</sup>'
           stat += '<span>'
             stat += I18n.t(:stat_total_return)
           stat += '</span>'
@@ -84,6 +84,16 @@ module ApplicationHelper
       stat += total_saved_kwh_html if Project.power_saved.count > 0
     stat += '</ul>'
     stat.html_safe
+  end
+
+  def total_money_return
+    return 0 unless current_user
+    amount = 0
+    current_user.money_returns.each do |mr|
+      amount += TimeDifference.between(mr.start_paid, Time.now).in_months.floor*mr.amount if mr.end_paid.nil?
+      amount += TimeDifference.between(mr.start_paid, mr.end_paid,).in_months.floor*mr.amount if mr.end_paid.present? && mr.end_paid > mr.start_paid
+    end
+    amount
   end
 
   def total_saved_kwh_html
@@ -152,10 +162,13 @@ module ApplicationHelper
   end
 
   def total_saved_kwh
-    projects = Project.active.select{|p| p.is_power_saved? }
+    projects = Project.power_saved
     kwh_hash = projects.map{ |ps| saved_kwh(ps.id, true) }
     kwd_saved = kwh_hash.map{ |h| h[:saved]}.sum
     kwd_seconds = kwh_hash.map{ |h| h[:every_second]}.sum
     return {total_saved: kwd_saved, total_kwd_seconds: kwd_seconds}
+  end
+
+  def return_money(project_id)
   end
 end

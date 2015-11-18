@@ -15,6 +15,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'country_select', github: 'stefanpenner/country_select'
 gem 'business_time'
+gem 'time_difference'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
