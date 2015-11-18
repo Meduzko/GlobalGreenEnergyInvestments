@@ -81,7 +81,7 @@ module ApplicationHelper
           stat += '</div>'
         stat += '</li>'
       end
-      stat += total_saved_kwh_html
+      stat += total_saved_kwh_html if Project.power_saved.count > 0
     stat += '</ul>'
     stat.html_safe
   end
