@@ -188,6 +188,7 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kgio (2.10.0)
     libv8 (3.16.14.7)
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
@@ -244,6 +245,7 @@ GEM
       activesupport (= 4.2.0)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
+    raindrops (0.15.0)
     rake (10.4.2)
     ransack (1.6.3)
       actionpack (>= 3.0)
@@ -311,6 +313,10 @@ GEM
       unf_ext
     unf_ext (0.0.7.1)
     unicode_utils (1.4.0)
+    unicorn (5.0.1)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     validates_email_format_of (1.6.2)
       i18n
     warden (1.2.3)
@@ -357,6 +363,7 @@ DEPENDENCIES
   time_difference
   turbolinks
   uglifier
+  unicorn
   validates_email_format_of
   web-console (~> 2.0)
   whenever

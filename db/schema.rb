@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024105711) do
+ActiveRecord::Schema.define(version: 20151118194829) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -71,6 +71,17 @@ ActiveRecord::Schema.define(version: 20151024105711) do
   add_index "investors", ["project_id"], name: "index_investors_on_project_id", using: :btree
   add_index "investors", ["user_id"], name: "index_investors_on_user_id", using: :btree
 
+  create_table "money_returns", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.float    "amount",     limit: 24
+    t.date     "start_paid"
+    t.date     "end_paid"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "money_returns", ["user_id"], name: "index_money_returns_on_user_id", using: :btree
+
   create_table "page_tabs", force: :cascade do |t|
     t.integer  "page_id",     limit: 4
     t.string   "tab_name",    limit: 255
@@ -91,6 +102,15 @@ ActiveRecord::Schema.define(version: 20151024105711) do
   end
 
   add_index "pages", ["slug"], name: "index_pages_on_slug", unique: true, using: :btree
+
+  create_table "power_saveds", force: :cascade do |t|
+    t.integer  "project_id",    limit: 4
+    t.float    "already_saved", limit: 24
+    t.float    "kwh_at_month",  limit: 24
+    t.datetime "started_at"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id",           limit: 4

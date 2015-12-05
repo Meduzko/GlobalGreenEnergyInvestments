@@ -36,6 +36,10 @@ group :development do
 	gem 'sinatra', '>= 1.3.0', :require => nil
 end
 
+group :production do
+  gem 'unicorn'
+end
+
 group :assets do
   gem 'therubyracer'
   gem 'sass-rails', github: 'rails/sass-rails'
