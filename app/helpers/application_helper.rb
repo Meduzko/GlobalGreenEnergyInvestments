@@ -92,8 +92,8 @@ module ApplicationHelper
     return 0 unless current_user
     amount = 0
     current_user.money_returns.each do |mr|
-      amount += TimeDifference.between(mr.start_paid, Time.now).in_months.floor*mr.amount if mr.end_paid.nil?
-      amount += TimeDifference.between(mr.start_paid, mr.end_paid,).in_months.floor*mr.amount if mr.end_paid.present? && mr.end_paid > mr.start_paid
+      amount += TimeDifference.between(mr.start_paid, Time.now).in_months.ceil*mr.amount if mr.end_paid.nil?
+      amount += TimeDifference.between(mr.start_paid, mr.end_paid,).in_months.ceil*mr.amount if mr.end_paid.present? && mr.end_paid > mr.start_paid
     end
     amount
   end
