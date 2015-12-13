@@ -3,7 +3,7 @@ module ApplicationHelper
   def title_slug
     ' - ' + request.fullpath.split('/')[1].to_s.capitalize unless request.fullpath == '/'
   end
-  
+
   def calculate_funded(amount_needed, amount_invested)
     funded = (amount_invested*100)/amount_needed
     number_with_precision(funded, strip_insignificant_zeros: true)
@@ -23,9 +23,9 @@ module ApplicationHelper
 
   def project_stats(is_my_invest=false)
     projects = Project.active
-    average_return = (projects.map(&:total_amount_need).inject(:+) / projects.map{ |x| ((x.irr/100).round(2)*x.total_amount_need).round }.inject(:+)).round(2)
+    average_return = (projects.map{ |x| ((x.irr/100).round(2)*x.total_amount_need).round }.inject(:+) / projects.map(&:total_amount_need).inject(:+).to_f)*100.round(2)
     kwh_generated = projects.map{|x| x.kwh_generated if x.launch == true }.compact.inject(:+)
-    investors = Investor.count - Investor.expired.checked.count
+    investors = Investor.select(:user_id).uniq.count
     stat = ''
     stat += '<ul class="statistic-circles">'
       unless is_my_invest
@@ -50,27 +50,29 @@ module ApplicationHelper
       stat += '<li>'
         stat += '<div>'
         stat += projects.size.to_s
-        stat += '<span>' 
+        stat += '<span>'
           stat += I18n.t(:stat_projects)
         stat += '</span>'
         stat += '</div>'
       stat += '</li>'
       stat += '<li>'
         stat += '<div>'
-        stat += number_with_precision(kwh_generated, strip_insignificant_zeros: true).to_s
-        stat += '<span>' 
-          stat += I18n.t(:stat_generated)
-        stat += '</span>'
-        stat += '</div>'
-      stat += '</li>'
-      stat += '<li>'
-        stat += '<div>'
         stat += number_with_precision(average_return, strip_insignificant_zeros: true).to_s + '%'
-        stat += '<span>' 
+        stat += '<span>'
           stat += I18n.t(:stat_return)
         stat += '</span>'
         stat += '</div>'
       stat += '</li>'
+      if kwh_generated.present?
+        stat += '<li>'
+          stat += '<div>'
+          stat += number_with_precision(kwh_generated, strip_insignificant_zeros: true).to_s
+          stat += '<span>'
+            stat += I18n.t(:stat_generated)
+          stat += '</span>'
+          stat += '</div>'
+        stat += '</li>'
+      end
       if is_my_invest && current_user && current_user.money_returns.count > 0
         stat += '<li>'
           stat += '<div>'

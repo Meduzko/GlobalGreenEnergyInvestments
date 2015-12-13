@@ -3,7 +3,7 @@ ActiveAdmin.register Investor do
   before_filter :skip_sidebar!, :only => :index
   menu priority: 8
 
-  permit_params :user_id, :project_id, :participations, :amount, :total_amount, :confirm_paid, 
+  permit_params :user_id, :project_id, :participations, :amount, :total_amount, :confirm_paid,
                 :expired_datetime, :created_at, :updated_at
 
   scope :all, :default => true
@@ -12,7 +12,7 @@ ActiveAdmin.register Investor do
   end
   scope :expired do |investors|
     Investor.expired
-  end  
+  end
   scope :unconfirm do |investors|
     Investor.unconfirm
   end
@@ -29,7 +29,25 @@ ActiveAdmin.register Investor do
           project.investors
         end)
       end
+    end
 
+    def destroy
+      investor = Investor.find(params[:id])
+      if investor
+        changed_total_amount_invested = investor.project.total_amount_invested - investor.total_amount
+        investor.project.update(total_amount_invested: changed_total_amount_invested)
+      end
+      super
+    end
+  end
+
+  form do |f|
+    inputs 'Investor Paid Info' do
+      input :user, :input_html => { :disabled => true }
+      input :project, :input_html => { :disabled => true }
+      input :total_amount, :input_html => { :disabled => true }
+      input :confirm_paid
+      actions
     end
   end
 
