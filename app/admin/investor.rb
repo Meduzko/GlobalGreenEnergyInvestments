@@ -29,7 +29,7 @@ ActiveAdmin.register Investor do
         next if resource.scopes.any? { |scope| scope.name == project.name }
         resource.scopes << (ActiveAdmin::Scope.new project.name do |projects|
           project.investors
-        end)
+        end) if project.investors.count > 0
       end
     end
 
