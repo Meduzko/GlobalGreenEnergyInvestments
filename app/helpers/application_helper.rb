@@ -25,13 +25,12 @@ module ApplicationHelper
     projects = Project.active
     average_return = (projects.map{ |x| ((x.irr/100).round(2)*x.total_amount_need).round }.inject(:+) / projects.map(&:total_amount_need).inject(:+).to_f)*100.round(2)
     kwh_generated = projects.map{|x| x.kwh_generated if x.launch == true }.compact.inject(:+)
-    investors = Investor.select(:user_id).uniq.count
     stat = ''
     stat += '<ul class="statistic-circles">'
       unless is_my_invest
         stat += '<li>'
           stat += '<div>'
-          stat += investors.to_s
+          stat += investor_stats.to_s
           stat += '<span>'
             stat += I18n.t(:stat_investors)
           stat += '</span>'
@@ -86,6 +85,10 @@ module ApplicationHelper
       stat += total_saved_kwh_html if Project.power_saved.count > 0
     stat += '</ul>'
     stat.html_safe
+  end
+
+  def investor_stats
+    Investor.where('confirm_paid = 1 or (confirm_paid = 0 and expired_datetime > NOW())').map(&:user_id).uniq.count
   end
 
   def total_money_return
