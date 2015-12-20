@@ -32,3 +32,13 @@ $skinLogo: url("/images/favicon.png ") no-repeat 50% 50%;
     color: #fff !important;
     background: linear-gradient(180deg, #999, #333) !important;
 }
+
+tr.odd, tr.even {
+  &.hightlightuser {
+    td.col {
+      color: #333;
+      background-color: #F5B3B2;
+      font-weight: 900;
+    }
+  }
+}

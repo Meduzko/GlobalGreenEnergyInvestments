@@ -1,7 +1,8 @@
 ActiveAdmin.register Investor do
   config.batch_actions = false
   before_filter :skip_sidebar!, :only => :index
-  menu priority: 8
+  #menu priority: 8
+  menu parent: 'Investors', label: 'All invesments'
 
   permit_params :user_id, :project_id, :participations, :amount, :total_amount, :confirm_paid,
                 :expired_datetime, :created_at, :updated_at
@@ -19,6 +20,7 @@ ActiveAdmin.register Investor do
 
   controller do
     before_filter :update_scopes, :only => :index
+    before_filter :add_user_scope, :only => :index
 
     def update_scopes
       resource = active_admin_config
@@ -27,6 +29,16 @@ ActiveAdmin.register Investor do
         next if resource.scopes.any? { |scope| scope.name == project.name }
         resource.scopes << (ActiveAdmin::Scope.new project.name do |projects|
           project.investors
+        end)
+      end
+    end
+
+    def add_user_scope
+      resource = active_admin_config
+      User.all.each do |u|
+        next if resource.scopes.any? { |scope| scope.name == u.full_name }
+        resource.scopes << (ActiveAdmin::Scope.new u.full_name do |projects|
+          u.investors
         end)
       end
     end
@@ -51,7 +63,7 @@ ActiveAdmin.register Investor do
     end
   end
 
-  index do
+  index title: 'All investments' do
     column :project
     column :user
     column :total_amount do |i|

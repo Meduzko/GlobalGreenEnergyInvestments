@@ -1,6 +1,6 @@
 ActiveAdmin.register Project do
 
-  menu priority: 7
+  menu priority: 7, parent: 'Projects', label: 'List of projects'
   before_filter :skip_sidebar!, :only => :index
   permit_params :name, :title, :location, :small_foto, :big_foto,
                 :remove_small_foto, :remove_big_foto,

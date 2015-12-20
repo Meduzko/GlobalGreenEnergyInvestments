@@ -1,6 +1,7 @@
 ActiveAdmin.register MoneyReturn do
   before_filter :skip_sidebar!, :only => :index
-  menu priority: 8, label: 'MR'
+  #menu priority: 8, label: 'MR'
+  menu parent: 'Investors'
 
   permit_params :user_id, :amount, :start_paid, :end_paid
 

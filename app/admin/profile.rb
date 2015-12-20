@@ -1,6 +1,6 @@
 ActiveAdmin.register Profile do
 
-  menu priority: 6
+  menu false
 
   permit_params :user_id, :phone, :date_of_birthday, :country, :address_street, :address_num_house, :address_city, :adress_zip_code, :bank_account_name, :bank_iban_code
 
