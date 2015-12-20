@@ -37,8 +37,14 @@ tr.odd, tr.even {
   &.hightlightuser {
     td.col {
       color: #333;
-      background-color: #F5B3B2;
+      background-color: #ECF0F1;
       font-weight: 900;
     }
+  }
+}
+
+#index_table_users tr.odd, #index_table_users tr.even {
+  td.col {
+    background-color: #fff;
   }
 }
