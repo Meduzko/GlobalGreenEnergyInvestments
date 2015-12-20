@@ -68,6 +68,29 @@ ActiveAdmin.register Project do
       f.input :name, :label => 'Project name'
       f.input :title, :label => 'Subtitle'
       f.input :location, :label => 'Location (address)'
+      f.inputs "Investment information" do
+        f.input :type_of_participation, :as => :select, :collection => Project::PARTICIPATION
+        f.input :type_of_energe, :as => :select, :collection => Project::ENERGY
+        f.input :total_amount_need, :label => 'Total amount needed'
+        f.input :total_amount_invested, :label => 'Total already invested'
+        f.input :irr, :label => 'IRR'
+        f.input :kwh_generated
+        f.input :launch, :label => 'Click here if you want to display kwh generated'
+      end
+      f.inputs "Change Project Sorting" do
+        f.input :created_at
+      end
+      f.inputs "Upload Memorandum PDF" do
+        f.input :pdf, :label => 'Only pdf:', :hint => (link_to 'Download pdf', f.object.pdf.url if f.object.pdf?)
+        f.input :remove_pdf, as: :boolean, required: :false, label: 'Remove pdf' if f.object.pdf?
+      end
+      f.inputs "Status", class: 'hightlightinputs' do
+        f.input :status, :label => 'Dispaly on site'
+      end
+      f.inputs 'Invest Button' do
+        f.input :amount_to_invest
+      end
+
       f.inputs "Small image" do
         f.input :small_foto, :as => :file, :label => '', :hint => (image_tag(f.object.small_foto.url(:thumb)) if f.object.small_foto?)
         f.input :remove_small_foto, as: :boolean, required: :false, label: 'Remove image' if f.object.small_foto?
@@ -76,13 +99,7 @@ ActiveAdmin.register Project do
         f.input :big_foto, :as => :file, :label => 'Recommended: 1500x730px.', :hint => (image_tag(f.object.big_foto.url(:thumb)) if f.object.big_foto?)
         f.input :remove_big_foto, as: :boolean, required: :false, label: 'Remove image' if f.object.big_foto?
       end
-      f.inputs "Numeric and selection:" do
-        f.input :type_of_participation, :as => :select, :collection => Project::PARTICIPATION
-        f.input :type_of_energe, :as => :select, :collection => Project::ENERGY
-        f.input :total_amount_need, :label => 'Total amount needed'
-        f.input :total_amount_invested, :label => 'Total already invested'
-        f.input :irr, :label => 'IRR'
-      end
+
       f.inputs "First block" do
         f.input :desc_1, :label => 'Descripton', :as => :ckeditor, :config => { :width => '76%', :height => '400px' }
         f.input :img_1, :as => :file, :label => 'Image for Descripton', :hint => (image_tag(f.object.img_1.url(:project_page)) if f.object.img_1?)
@@ -107,23 +124,6 @@ ActiveAdmin.register Project do
         f.input :desc_5, :label => 'Descripton', :as => :ckeditor, :config => { :width => '76%', :height => '400px' }
         f.input :img_5, :as => :file, :label => 'Image for Descripton', :hint => (image_tag(f.object.img_5.url(:project_page)) if f.object.img_5?)
         f.input :remove_img_5, as: :boolean, required: :false, label: 'Remove image' if f.object.img_5?
-      end
-      f.inputs "Project start" do
-        f.input :launch, :label => 'Click here if you want to display kwh generated'
-        f.input :kwh_generated
-      end
-      f.inputs "Status" do
-        f.input :status, :label => 'Dispaly on site'
-      end
-      f.inputs "Upload Memorandum PDF" do
-        f.input :pdf, :label => 'Only pdf:', :hint => (link_to 'Download pdf', f.object.pdf.url if f.object.pdf?)
-        f.input :remove_pdf, as: :boolean, required: :false, label: 'Remove pdf' if f.object.pdf?
-      end
-      f.inputs "Change Project Sorting" do
-        f.input :created_at
-      end
-      f.inputs 'Invest Button' do
-        f.input :amount_to_invest
       end
     end
     f.actions

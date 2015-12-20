@@ -33,18 +33,29 @@ $skinLogo: url("/images/favicon.png ") no-repeat 50% 50%;
     background: linear-gradient(180deg, #999, #333) !important;
 }
 
+#index_table_users tr.odd, #index_table_users tr.even {
+  td.col {
+    background-color: #fff;
+  }
+}
+
 tr.odd, tr.even {
   &.hightlightuser {
     td.col {
       color: #333;
-      background-color: #ECF0F1;
+      background-color: #ECF0F1 !important;
       font-weight: 900;
     }
   }
 }
 
-#index_table_users tr.odd, #index_table_users tr.even {
-  td.col {
-    background-color: #fff;
+.hightlightinputs {
+  background: #E07171 !important;
+  label {
+    color: #fff;
+  }
+  legend span {
+    background: #C73939 !important;
+    color: #fff !important;
   }
 }
