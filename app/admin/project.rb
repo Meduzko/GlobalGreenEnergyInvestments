@@ -68,17 +68,16 @@ ActiveAdmin.register Project do
       f.input :name, :label => 'Project name'
       f.input :title, :label => 'Subtitle'
       f.input :location, :label => 'Location (address)'
+      f.input :type_of_energe, :as => :select, :collection => Project::ENERGY, label: 'Type of energy'
+      f.input :created_at
       f.inputs "Investment information" do
         f.input :type_of_participation, :as => :select, :collection => Project::PARTICIPATION
-        f.input :type_of_energe, :as => :select, :collection => Project::ENERGY
         f.input :total_amount_need, :label => 'Total amount needed'
         f.input :total_amount_invested, :label => 'Total already invested'
         f.input :irr, :label => 'IRR'
         f.input :kwh_generated
         f.input :launch, :label => 'Click here if you want to display kwh generated'
-      end
-      f.inputs "Change Project Sorting" do
-        f.input :created_at
+        f.input :amount_to_invest
       end
       f.inputs "Upload Memorandum PDF" do
         f.input :pdf, :label => 'Only pdf:', :hint => (link_to 'Download pdf', f.object.pdf.url if f.object.pdf?)
@@ -86,9 +85,6 @@ ActiveAdmin.register Project do
       end
       f.inputs "Status", class: 'hightlightinputs' do
         f.input :status, :label => 'Dispaly on site'
-      end
-      f.inputs 'Invest Button' do
-        f.input :amount_to_invest
       end
 
       f.inputs "Small image" do
