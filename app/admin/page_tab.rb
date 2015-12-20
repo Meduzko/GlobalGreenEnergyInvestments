@@ -1,7 +1,7 @@
 ActiveAdmin.register PageTab do
-  
+
   before_filter :skip_sidebar!, :only => :index
-  menu priority: 3
+  menu priority: 99
 
   permit_params :page_id, :tab_name, :position, :description, :status
 

@@ -1,6 +1,6 @@
 ActiveAdmin.register Subscribe do
 
-  menu priority: 4, label: 'Subscribers'
+  menu priority: 98, label: 'Subscribers'
 
   permit_params :email, :name, :confirm_token, :confirmed, :active
 

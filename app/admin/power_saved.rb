@@ -1,7 +1,7 @@
 ActiveAdmin.register PowerSaved do
   before_filter :skip_sidebar!, :only => :index
   #menu priority: 8, label: 'PS'
-  menu parent: 'Projects'
+  menu parent: 'Projects', label: 'Power saved'
 
   permit_params :project_id, :already_saved, :kwh_at_month, :started_at
 

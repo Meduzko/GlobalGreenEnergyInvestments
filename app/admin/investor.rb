@@ -2,7 +2,7 @@ ActiveAdmin.register Investor do
   config.batch_actions = false
   before_filter :skip_sidebar!, :only => :index
   #menu priority: 8
-  menu parent: 'Investors', label: 'All invesments'
+  menu parent: 'Investors', label: 'All invesments', priority: 55
 
   permit_params :user_id, :project_id, :participations, :amount, :total_amount, :confirm_paid,
                 :expired_datetime, :created_at, :updated_at
