@@ -16,7 +16,7 @@ class SubscribeMailer < ApplicationMailer
   # contact form
   def contact_form(form)
       @form = form
-      mail(to: 'ggigsite@gmail.com', subject: "GGEI site: contact form")
+      mail(to: 'bd_vbc@me.com', subject: "GGEI site: contact form")
   end
 
   # for emails subsribe
