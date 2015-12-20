@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
 
+  scope :with_investment, -> { joins(:investors).uniq }
+
   def full_name
     " #{self.first_name.camelcase} #{self.last_name.camelcase} "
   end

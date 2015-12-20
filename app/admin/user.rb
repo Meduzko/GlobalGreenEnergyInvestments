@@ -2,6 +2,12 @@ ActiveAdmin.register User do
 
   menu priority: 50, label: 'List of inverstors', parent: 'Investors'
 
+  scope :all, :default => true
+  scope :with_investment do |users|
+    User.with_investment
+  end
+
+
   index title: 'Investors', :row_class => -> record { 'hightlightuser' if record.investors.count > 0 } do
     selectable_column
     id_column
