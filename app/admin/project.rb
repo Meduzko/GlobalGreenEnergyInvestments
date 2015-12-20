@@ -41,7 +41,7 @@ ActiveAdmin.register Project do
     selectable_column
     id_column
     column :name
-    column :subscribers do |s|
+    column 'Email to subscribers' do |s|
       if s.sent_subscription > 0
         link_to "Already sent #{s.sent_subscription} times, repeat?", sent_event_admin_project_path(s.id), data: { :confirm => "Are you sure? You already sent emails." }
       else
@@ -49,8 +49,10 @@ ActiveAdmin.register Project do
       end
     end
     column :total_amount_need
-    column :amount_to_invest
     column :total_amount_invested
+    column 'Min. investment' do |ati|
+      ati.amount_to_invest
+    end
     column :investors do |i|
       link_to i.investors.count, admin_investors_path(scope: i.name.parameterize("_"))
     end
@@ -77,7 +79,7 @@ ActiveAdmin.register Project do
         f.input :irr, :label => 'IRR'
         f.input :kwh_generated
         f.input :launch, :label => 'Click here if you want to display kwh generated'
-        f.input :amount_to_invest
+        f.input :amount_to_invest, label: 'Min. investment'
       end
       f.inputs "Upload Memorandum PDF" do
         f.input :pdf, :label => 'Only pdf:', :hint => (link_to 'Download pdf', f.object.pdf.url if f.object.pdf?)

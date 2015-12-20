@@ -8,6 +8,6 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
 
   def full_name
-    " #{self.first_name} #{self.last_name} "
+    " #{self.first_name.camelcase} #{self.last_name.camelcase} "
   end
 end
