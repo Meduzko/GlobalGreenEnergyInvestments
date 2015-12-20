@@ -1,6 +1,6 @@
 class GeneratePdfJob < ActiveJob::Base
   queue_as :default
-  
+
   def perform(investor)
     return if investor.nil?
     av = ActionView::Base.new()
@@ -10,8 +10,8 @@ class GeneratePdfJob < ActiveJob::Base
       include ApplicationHelper
     end
 
-    pdf_html = av.render  template: "investor/show.pdf.erb", 
-                          layout: 'layouts/payment_info.pdf.erb', 
+    pdf_html = av.render  template: "investor/show.pdf.erb",
+                          layout: 'layouts/payment_info.pdf.erb',
                           locals: {investor: investor}
 
     gen_pdf = WickedPdf.new.pdf_from_string(pdf_html, margin: {top:0, bottom:0, left:0, right:0} )
@@ -21,6 +21,6 @@ class GeneratePdfJob < ActiveJob::Base
       file << gen_pdf
     end
 
-    InvestorMailer.new_investor(investor.user, pdf_path).deliver if File.exist?(pdf_path)
+    InvestorMailer.new_investor(investor.user, pdf_path).deliver if File.exist?(pdf_path) && investor
   end
 end
