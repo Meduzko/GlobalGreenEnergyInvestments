@@ -177,7 +177,7 @@ module ApplicationHelper
   def generate_table(project_id = nil)
     return if project_id.nil?
     begin
-      csv_file = Amortization.find_by(project_id: project_id).csv_name.path
+      csv_file = Project.find(project_id).csv_name.path
       html = '<table>'
         table = CSV.table(csv_file, headers:false)
         html += '<thead>'
