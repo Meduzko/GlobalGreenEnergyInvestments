@@ -7,7 +7,7 @@ ActiveAdmin.register Project do
                 :remove_img_1, :remove_img_2, :remove_img_3, :remove_img_4, :remove_img_5,
                 :type_of_participation, :type_of_energe, :total_amount_need, :total_amount_invested, :irr,
                 :desc_1, :img_1, :desc_2, :img_2, :desc_3, :img_3, :desc_4, :img_4, :desc_5, :img_5,
-                :launch, :kwh_generated, :status, :created_at, :pdf, :remove_pdf, :amount_to_invest
+                :launch, :kwh_generated, :status, :created_at, :pdf, :remove_pdf, :amount_to_invest, :csv_name, :remove_csv_name
   actions :all, except: [:destroy]
 
   member_action :sent_event, method: :get do
@@ -80,6 +80,10 @@ ActiveAdmin.register Project do
         f.input :kwh_generated
         f.input :launch, :label => 'Click here if you want to display kwh generated'
         f.input :amount_to_invest, label: 'Min. investment'
+      end
+      f.inputs "Upload Amortization Table" do
+        f.input :csv_name, :label => 'Only CSV:', :hint => (link_to 'Download csv', f.object.csv_name.url if f.object.csv_name?)
+        f.input :remove_csv_name, as: :boolean, required: :false, label: 'Remove csv fi;e' if f.object.csv_name?
       end
       f.inputs "Upload Memorandum PDF" do
         f.input :pdf, :label => 'Only pdf:', :hint => (link_to 'Download pdf', f.object.pdf.url if f.object.pdf?)

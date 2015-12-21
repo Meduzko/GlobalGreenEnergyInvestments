@@ -23,6 +23,7 @@ class Project < ActiveRecord::Base
   mount_uploader :img_4,      ProjectUploader
   mount_uploader :img_5,      ProjectUploader
   mount_uploader :pdf,        ProjectPdfUploader
+  mount_uploader :csv_name, AmortizationUploader
 
   def is_power_saved?
     self.power_saved && (self.power_saved.started_at < Time.now)
@@ -38,6 +39,7 @@ class Project < ActiveRecord::Base
       self.remove_img_4!      if self.remove_img_4 == '1'
       self.remove_img_5!      if self.remove_img_5 == '1'
       self.remove_pdf!        if self.remove_pdf == '1'
+      self.remove_csv_name!        if self.remove_csv_name == '1'
     end
 
 end
