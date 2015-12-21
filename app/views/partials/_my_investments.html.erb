@@ -4,13 +4,14 @@
 
   <h1 class="inner-page-main-title"><%= I18n.t(:profile_my_invest_title) %></h1>
 
-  <%= project_stats(true) %>
+  <%= my_investment %>
 
   <div class="my-investments-content">
-
-    <!-- If no projects START -->
-    <%= render 'partials/projects_slider', projects: @projects %>
-    <!-- If has projects END -->
+    <% if @count_projects.size > 0 %>
+      <%= render 'partials/fundable', projects: Project.where(id: @count_projects) %>
+    <% else %>
+      <%= render 'partials/projects_slider', projects: @projects %>
+    <% end %>
 
     <div class="view-all-projects">
       <a class="get-back icon-font icon-left-dir" href="/invest#fundable">View all Projects</a>
