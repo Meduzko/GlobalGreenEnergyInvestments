@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy
-  has_many :investors
-  has_many :money_returns
+  has_many :investors, dependent: :destroy
 
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+  enum role: [:regular, :applicant, :investor]
+
+  devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
   validates :first_name, presence: true
   validates :last_name, presence: true
 

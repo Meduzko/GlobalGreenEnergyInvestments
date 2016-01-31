@@ -2,7 +2,7 @@ ActiveAdmin.register_page "SubscribeSender" do
 
   menu false
 
-  action_item only: :index do
+  action_item :subscibers_back_btn do
     link_to 'Back to subscibers', admin_subscribes_path
   end
 

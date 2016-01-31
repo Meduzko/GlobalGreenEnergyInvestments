@@ -25,4 +25,8 @@ class ApplicationController < ActionController::Base
           admin_dashboard_path
         end
     end
+
+    def after_confirmation_path_for(resource_or_scope)
+      profile_path || root_path
+    end
 end

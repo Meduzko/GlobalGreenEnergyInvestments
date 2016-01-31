@@ -13,7 +13,7 @@
   </div>
   <div class="project-location"><%= @project.location %></div>
   <h3 class="project-amount"><%= cute_amount(@project.total_amount_need) %><sup>&euro;</sup></h3>
-  <%= render 'partials/project_descr_stat_circles', project: @project %>
+  <%#= render 'partials/project_descr_stat_circles', project: @project %>
   <section class="project-description-content">
     <% if @project.desc_1.present? %>
       <div class="project-description-content-row">
@@ -96,7 +96,7 @@
     </table>
   </section>
   <% if current_user %>
-    <%= render partial: 'partials/participations_popup', locals: { amount_to_invest: @project.amount_to_invest } %>
+    <%= render partial: 'partials/participations_popup', locals: { amount_to_invest: @project.amount_to_invest, interest_paid:  @project.interest_paid } %>
     <%= render partial: 'partials/participations_confirmation_popup', object: @project %>
     <%= render 'partials/participations_thanks_popup' %>
   <% end %>

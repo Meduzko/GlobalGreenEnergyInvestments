@@ -1,0 +1,40 @@
+<ul class="statistic-circles">
+  <% unless is_my_investment_page? %>
+    <li>
+     <div>
+       <%= Investor.investor_count %>
+       <span>investors</span>
+     </div>
+    </li>
+  <% end %>
+  <li>
+   <div>
+     <%= cute_amount(infographics_invested) %> <sup>€</sup>
+     <span>invested</span>
+   </div>
+  </li>
+  <li>
+   <div>
+     <%= infographics_projects %>
+     <span>projects</span>
+   </div>
+  </li>
+  <li>
+   <div>
+     <%= infographics_average %>%
+     <span>average return</span>
+   </div>
+  </li>
+  <li>
+   <div>
+     504.000
+     <span>KWH generated</span>
+   </div>
+  </li>
+  <li>
+   <div>
+     504.000
+     <span>KWH saved</span>
+   </div>
+  </li>
+ </ul>

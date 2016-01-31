@@ -1,5 +1,34 @@
 module ApplicationHelper
 
+  def infographics_average
+    if is_my_investment_page?
+      projects = Project.active
+    else
+      projects = Project.active
+    end
+    ((projects.map{ |x| ((x.irr/100).round(2)*x.total_amount_need).round }.inject(:+) / projects.map(&:total_amount_need).inject(:+).to_f)*100).round(1)
+  end
+
+  def infographics_projects
+    if is_my_investment_page?
+      current_user.investors.confirm.map(&:project_id).uniq.size
+    else
+      Project.active.count
+    end
+  end
+
+  def infographics_invested
+    if is_my_investment_page?
+      current_user.investors.confirm.map(&:total_amount).inject(:+) || 0
+    else
+      Project.project_count
+    end
+  end
+
+  def is_my_investment_page?
+    controller_name == 'profiles' && current_user || false
+  end
+
   def title_slug
     ' - ' + request.fullpath.split('/')[1].to_s.capitalize unless request.fullpath == '/'
   end

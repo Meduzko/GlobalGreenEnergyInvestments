@@ -1,4 +1,4 @@
-<div class="popup" id="loginPopup" data-jscomp="components/sendFormPopup" data-jscomp-config='{"url": "/users/sign_in", "needRedirect": true}'>
+<div  class="popup <%= 'popup_show' if params[:login] == 'true'%>" id="loginPopup" data-jscomp="components/sendFormPopup" data-jscomp-config='{"url": "/users/sign_in", "needRedirect": true}'>
 
   <div class="fog" onclick="compSupport.callFunc(this, 'hide')"></div>
   <div class="popup-body">
@@ -11,14 +11,14 @@
                    :html => { :'data-jscomp' => 'components/validator', method: 'post' } ) do |f| %>
         <div class="message-box"></div>
         <div class="field">
-          <%= f.email_field :email, 
-                            autofocus: true, 
+          <%= f.email_field :email,
+                            autofocus: true,
                             class: 'default-input',
                             placeholder: 'email',
                             required: 'true' %>
         </div>
         <div class="field">
-          <%= f.password_field :password, 
+          <%= f.password_field :password,
                                 autocomplete: 'off',
                                 class: 'default-input',
                                 placeholder: 'password',
@@ -37,7 +37,7 @@
                      type: 'button',
                      onclick: "compSupport.callFunc('#loginPopup', 'sendForm')".html_safe %>
       <% end %>
-  
+
       <div class="popup-additional">
         <a href="/users/sign_up"><%= I18n.t(:login_popup_register_link) %></a>
         <p class="default-text"><%= I18n.t(:login_popup_text).html_safe %></p>

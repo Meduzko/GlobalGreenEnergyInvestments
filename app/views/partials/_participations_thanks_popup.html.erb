@@ -11,8 +11,11 @@
 
         <div class="section-to-print">
           <p><%= I18n.t(:participation_thanks_text_1, name: current_user.full_name).html_safe %>,</p>
-          <p><%= I18n.t(:participation_thanks_text_2) %></p>
-          <div class="generated-number"><%= Project::BANK_ACCOUNT %></div>
+          <p><%= I18n.t(:participation_thanks_text_2, amount: current_user.investors.last.total_amount).html_safe %></p>
+          <div class="generated-number">
+            Name: 	Global Green Energy Lease<br><br>
+            IBAN:  	<%= Project::BANK_ACCOUNT %>
+          </div>
           <span><%= I18n.t(:participation_thanks_text_3).html_safe %></span>
           <span><%= I18n.t(:participation_thanks_text_4) %> <a href="/contact" target="_blank">contact us</a></span>
           <span><%= I18n.t(:participation_thanks_text_5).html_safe %></span>

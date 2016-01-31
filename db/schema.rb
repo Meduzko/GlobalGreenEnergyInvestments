@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151221082341) do
+ActiveRecord::Schema.define(version: 20160131142159) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -128,35 +128,40 @@ ActiveRecord::Schema.define(version: 20151221082341) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string   "name",                  limit: 255
-    t.string   "title",                 limit: 255
-    t.string   "location",              limit: 255
-    t.string   "small_foto",            limit: 255
-    t.string   "big_foto",              limit: 255
-    t.string   "type_of_participation", limit: 255
-    t.string   "type_of_energe",        limit: 255
-    t.integer  "total_amount_need",     limit: 4
-    t.integer  "total_amount_invested", limit: 4
-    t.float    "irr",                   limit: 24
-    t.text     "desc_1",                limit: 65535
-    t.string   "img_1",                 limit: 255
-    t.text     "desc_2",                limit: 65535
-    t.string   "img_2",                 limit: 255
-    t.text     "desc_3",                limit: 65535
-    t.string   "img_3",                 limit: 255
-    t.text     "desc_4",                limit: 65535
-    t.string   "img_4",                 limit: 255
-    t.text     "desc_5",                limit: 65535
-    t.string   "img_5",                 limit: 255
-    t.boolean  "launch",                limit: 1
-    t.float    "kwh_generated",         limit: 24
-    t.boolean  "status",                limit: 1
-    t.datetime "created_at",                                        null: false
-    t.datetime "updated_at",                                        null: false
-    t.integer  "sent_subscription",     limit: 4,     default: 0
-    t.string   "pdf",                   limit: 255
-    t.float    "amount_to_invest",      limit: 24,    default: 0.0
-    t.string   "csv_name",              limit: 255
+    t.string   "name",                     limit: 255
+    t.string   "title",                    limit: 255
+    t.string   "location",                 limit: 255
+    t.string   "small_foto",               limit: 255
+    t.string   "big_foto",                 limit: 255
+    t.string   "type_of_participation",    limit: 255
+    t.string   "type_of_energe",           limit: 255
+    t.integer  "total_amount_need",        limit: 4
+    t.integer  "total_amount_invested",    limit: 4
+    t.float    "irr",                      limit: 24
+    t.text     "desc_1",                   limit: 65535
+    t.string   "img_1",                    limit: 255
+    t.text     "desc_2",                   limit: 65535
+    t.string   "img_2",                    limit: 255
+    t.text     "desc_3",                   limit: 65535
+    t.string   "img_3",                    limit: 255
+    t.text     "desc_4",                   limit: 65535
+    t.string   "img_4",                    limit: 255
+    t.text     "desc_5",                   limit: 65535
+    t.string   "img_5",                    limit: 255
+    t.boolean  "status",                   limit: 1
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+    t.integer  "sent_subscription",        limit: 4,     default: 0
+    t.string   "pdf",                      limit: 255
+    t.string   "csv_name",                 limit: 255
+    t.integer  "number_of_participations", limit: 4,     default: 0
+    t.date     "payments_start_date"
+    t.integer  "payments_duration_months", limit: 4,     default: 0
+    t.float    "money_return_per_month",   limit: 24,    default: 0.0
+    t.date     "kwh_start_date"
+    t.integer  "kwh_already_have",         limit: 4,     default: 0
+    t.integer  "kwh_generated_per_month",  limit: 4,     default: 0
+    t.integer  "kwh_saved_per_month",      limit: 4,     default: 0
   end
 
   create_table "rich_rich_files", force: :cascade do |t|
@@ -197,8 +202,12 @@ ActiveRecord::Schema.define(version: 20151221082341) do
     t.datetime "updated_at"
     t.string   "first_name",             limit: 255
     t.string   "last_name",              limit: 255
+    t.string   "confirmation_token",     limit: 255
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
   end
 
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 

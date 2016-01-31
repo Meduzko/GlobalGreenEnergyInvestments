@@ -1,8 +1,10 @@
 ActiveAdmin.register Investor do
+  #menu :if => proc{false}
+
   config.batch_actions = false
   before_filter :skip_sidebar!, :only => :index
-  #menu priority: 8
-  menu parent: 'Investors', label: 'All invesments', priority: 55
+  #menu priority: 0
+  menu label: 'List of investors', priority: 40
 
   permit_params :user_id, :project_id, :participations, :amount, :total_amount, :confirm_paid,
                 :expired_datetime, :created_at, :updated_at
@@ -43,6 +45,12 @@ ActiveAdmin.register Investor do
       end
     end
 
+    def update
+      super
+      investor = Investor.find(params[:id])
+      InvestorMailer.confirm_paid(investor).deliver if investor.confirm_paid == true
+    end
+
     def destroy
       investor = Investor.find(params[:id])
       if investor
@@ -70,17 +78,7 @@ ActiveAdmin.register Investor do
       link_to i.total_amount, admin_investor_path(i.id), title: 'Details'
     end
     column :confirm_paid
-    column :expired_datetime do |i|
-      if i.is_expired?
-        status_tag('Expired')
-      elsif i.is_paid?
-        status_tag('Paid')
-      else
-        i.expired_datetime
-      end
-    end
     column :created_at
-    column :updated_at
     actions
   end
 end

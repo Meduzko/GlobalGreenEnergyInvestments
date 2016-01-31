@@ -25,8 +25,22 @@ class Project < ActiveRecord::Base
   mount_uploader :pdf,        ProjectPdfUploader
   mount_uploader :csv_name, AmortizationUploader
 
-  def is_power_saved?
-    self.power_saved && (self.power_saved.started_at < Time.now)
+  def launch
+    (self.kwh_start_date && (self.kwh_start_date < Time.now.to_date)) || false
+  end
+
+  # Minimun amount to invest
+  def amount_to_invest
+    self.number_of_participations > 0 ? self.total_amount_need / self.number_of_participations : 0
+  end
+
+  # Total interest_paid
+  def interest_paid
+    self.payments_duration_months * self.money_return_per_month
+  end
+
+  def self.project_count
+    self.all.map(&:total_amount_invested).inject(:+)
   end
 
   private

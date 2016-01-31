@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post 'contact' => 'pages#send_contact'
 
   mount Ckeditor::Engine => '/ckeditor'
-  devise_for :users, :controllers => { registrations: 'registrations', sessions: 'sessions', passwords: 'passwords' }
+  devise_for :users, :controllers => { registrations: 'registrations', sessions: 'sessions', passwords: 'passwords',  confirmations: 'confirmations' }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
