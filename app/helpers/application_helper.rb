@@ -1,5 +1,30 @@
 module ApplicationHelper
 
+
+  def kwh_projects_generated
+    projects = Project.started
+    if projects
+      project_generating_now = projects.map(&:kwh_generated).inject(0){ |sum, hash| sum + hash[:already_generated] }
+      kwh_in_second = projects.map(&:kwh_generated).inject(0){ |sum, hash| sum + hash[:kwh_interval] }
+    else
+      project_generating_now = 0
+      project_generating_now = 0
+    end
+    {already_generated: project_generating_now.round(2), kwh_interval: kwh_in_second}
+  end
+
+  def kwh_projects_saved
+    projects = Project.started
+    if projects
+      project_generating_now = projects.map(&:kwh_saved).inject(0){ |sum, hash| sum + hash[:already_saved] }
+      kwh_in_second = projects.map(&:kwh_saved).inject(0){ |sum, hash| sum + hash[:kwh_interval] }
+    else
+      project_generating_now = 0
+      kwh_in_second = 0
+    end
+    {already_saved: project_generating_now.round(2), kwh_interval: kwh_in_second}
+  end
+
   def infographics_average
     if is_my_investment_page?
       projects = Project.active
@@ -20,6 +45,8 @@ module ApplicationHelper
   def infographics_invested
     if is_my_investment_page?
       current_user.investors.confirm.map(&:total_amount).inject(:+) || 0
+    elsif is_project_page?
+       @project.total_amount_invested
     else
       Project.project_count
     end
@@ -27,6 +54,10 @@ module ApplicationHelper
 
   def is_my_investment_page?
     controller_name == 'profiles' && current_user || false
+  end
+
+  def is_project_page?
+    controller_name == 'projects' && @project || false
   end
 
   def title_slug

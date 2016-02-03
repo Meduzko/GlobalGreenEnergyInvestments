@@ -1,5 +1,5 @@
 <ul class="statistic-circles">
-  <% unless is_my_investment_page? %>
+  <% unless is_my_investment_page? || is_project_page? %>
     <li>
      <div>
        <%= Investor.investor_count %>
@@ -7,34 +7,72 @@
      </div>
     </li>
   <% end %>
+
   <li>
    <div>
      <%= cute_amount(infographics_invested) %> <sup>€</sup>
      <span>invested</span>
    </div>
   </li>
-  <li>
-   <div>
-     <%= infographics_projects %>
-     <span>projects</span>
-   </div>
-  </li>
-  <li>
-   <div>
-     <%= infographics_average %>%
-     <span>average return</span>
-   </div>
-  </li>
-  <li>
-   <div>
-     504.000
-     <span>KWH generated</span>
-   </div>
-  </li>
-  <li>
-   <div>
-     504.000
-     <span>KWH saved</span>
-   </div>
-  </li>
+
+  <% unless is_project_page? %>
+    <li>
+     <div>
+       <%= infographics_projects %>
+       <span>projects</span>
+     </div>
+    </li>
+  <% end %>
+
+  <% if is_project_page? %>
+    <li>
+     <div>
+       <%= @project.irr %>%
+       <span>average return</span>
+     </div>
+    </li>
+  <% elsif is_my_investment_page? %>
+    <li>
+     <div>
+       333%
+       <span>average return</span>
+     </div>
+    </li>
+  <% else %>
+    <li>
+     <div>
+       <%= infographics_average %>%
+       <span>average return</span>
+     </div>
+    </li>
+  <% end %>
+
+  <% if is_project_page? %>
+    <li>
+      <div data-jscomp='components/statisticCounter' data-jscomp-config='{"stepValue": "<%= @project.kwh_generated[:kwh_interval] %>" }'>
+        <p class="savedStatistic"><%= sprintf('%.2f', @project.kwh_generated[:already_generated]) %></p>
+        <span>KWH generated</span>
+     </div>
+    </li>
+    <li>
+      <div data-jscomp='components/statisticCounter' data-jscomp-config='{"stepValue": "<%= @project.kwh_saved[:kwh_interval] %>" }'>
+       <p class="savedStatistic"><%= sprintf('%.2f', @project.kwh_saved[:already_saved]) %></p>
+       <span>KWH saved</span>
+     </div>
+    </li>
+  <% elsif is_my_investment_page? %>
+  <% else %>
+    <li>
+      <div data-jscomp='components/statisticCounter' data-jscomp-config='{"stepValue": "<%= kwh_projects_generated[:kwh_interval] %>" }'>
+        <p class="savedStatistic"><%= sprintf('%.2f', kwh_projects_generated[:already_generated]) %></p>
+        <span>KWH generated</span>
+     </div>
+    </li>
+    <li>
+      <div data-jscomp='components/statisticCounter' data-jscomp-config='{"stepValue": "<%= kwh_projects_saved[:kwh_interval] %>" }'>
+       <p class="savedStatistic"><%= sprintf('%.2f', kwh_projects_saved[:already_saved]) %></p>
+       <span>KWH saved</span>
+     </div>
+    </li>
+  <% end %>
  </ul>

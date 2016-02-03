@@ -49,7 +49,7 @@ ActiveAdmin.register Project do
       link_to i.investors.confirm.count, admin_investors_path(scope: i.name.parameterize("_"))
     end
     column :launch do |p|
-      status = p.launch ? 'yes' : 'no'
+      status = p.launch? ? 'yes' : 'no'
       content_tag(:span, status, class: "status_tag #{status} ")
     end
     column 'Display on site' do |p|
