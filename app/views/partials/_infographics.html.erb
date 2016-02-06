@@ -61,6 +61,18 @@
      </div>
     </li>
   <% elsif is_my_investment_page? %>
+    <li>
+      <div data-jscomp='components/statisticCounter' data-jscomp-config='{"stepValue": "<%= kwh_generated_for_user[:kwh_interval] %>" }'>
+        <p class="savedStatistic"><%= sprintf('%.2f', kwh_generated_for_user[:already_generated]) %></p>
+        <span>KWH generated</span>
+     </div>
+    </li>
+    <li>
+      <div data-jscomp='components/statisticCounter' data-jscomp-config='{"stepValue": "<%= kwh_saved_for_user[:kwh_interval] %>" }'>
+       <p class="savedStatistic"><%= sprintf('%.2f', kwh_saved_for_user[:already_saved]) %></p>
+       <span>KWH saved</span>
+     </div>
+    </li>
   <% else %>
     <li>
       <div data-jscomp='components/statisticCounter' data-jscomp-config='{"stepValue": "<%= kwh_projects_generated[:kwh_interval] %>" }'>
@@ -72,6 +84,15 @@
       <div data-jscomp='components/statisticCounter' data-jscomp-config='{"stepValue": "<%= kwh_projects_saved[:kwh_interval] %>" }'>
        <p class="savedStatistic"><%= sprintf('%.2f', kwh_projects_saved[:already_saved]) %></p>
        <span>KWH saved</span>
+     </div>
+    </li>
+  <% end %>
+
+  <% if is_my_investment_page? %>
+    <li>
+     <div>
+       <%= cute_amount(money_return_for_user) %> <sup>€</sup>
+       <span>money return</span>
      </div>
     </li>
   <% end %>

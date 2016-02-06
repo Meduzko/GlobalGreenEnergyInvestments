@@ -8,10 +8,11 @@ class Project < ActiveRecord::Base
 
   before_validation :remove_images
 
-  scope :active,      -> { where(status: true).order('created_at desc') }
-  scope :fundable,    -> { where('projects.total_amount_need != projects.total_amount_invested AND projects.total_amount_need > projects.total_amount_invested') }
-  scope :funded,      -> { where('projects.total_amount_invested >= projects.total_amount_need') }
-  scope :started,     -> { where('kwh_start_date <= ?', Time.now.to_date) }
+  scope :active,          -> { where(status: true).order('created_at desc') }
+  scope :fundable,        -> { where('projects.total_amount_need != projects.total_amount_invested AND projects.total_amount_need > projects.total_amount_invested') }
+  scope :funded,          -> { where('projects.total_amount_invested >= projects.total_amount_need') }
+  scope :started,         -> { where('kwh_start_date <= ?', Time.now.to_date) }
+  scope :payment_started, -> { where('payments_start_date <= ?', Time.now.to_date) }
 
   mount_uploader :small_foto, ProjectUploader
   mount_uploader :big_foto,   ProjectUploader
