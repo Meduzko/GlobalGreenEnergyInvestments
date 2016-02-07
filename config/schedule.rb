@@ -1,3 +1,3 @@
-every 10.minutes do
-  rake "investor:check_payments"
-end
+# every 10.minutes do
+#   rake "investor:check_payments"
+# end
