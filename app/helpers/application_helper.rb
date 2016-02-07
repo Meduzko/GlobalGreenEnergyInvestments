@@ -47,7 +47,7 @@ module ApplicationHelper
       user_invested = current_user.investors.confirm.where(project_id: project.id).sum(:amount)
       percent = (user_invested*100/project.total_amount_need).round(2)
       kwh_saved = project.kwh_saved
-      project_generating_now += kwh_saved[:already_generated] ? ((kwh_saved[:already_generated]*percent)/100) : 0
+      project_generating_now += kwh_saved[:already_saved] ? ((kwh_saved[:already_saved]*percent)/100) : 0
       kwh_in_second += kwh_saved[:kwh_interval] ? ((kwh_saved[:kwh_interval]*percent)/100) : 0
     end
     {already_saved: project_generating_now.round(2), kwh_interval: kwh_in_second}
