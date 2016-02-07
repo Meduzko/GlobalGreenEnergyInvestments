@@ -1,5 +1,5 @@
 <% hash = project.investors.joins(:user).confirm.group('users.id').sum(:total_amount) %>
-<% total_invested = hash.values.inject(:+).round(2) %>
+<% total_invested = hash.values.inject(:+).round(2) + project.total_amount_invested %>
 <h2><%= project.name %> details:</h2>
 <table class="project_balance index_table index">
   <thead>
@@ -13,6 +13,16 @@
     </tr>
   </thead>
   <tbody>
+    <tr class="odd">
+      <td>
+        <i>Already invested</i>
+      </td>
+      <td>
+        <i>
+          <%= number_to_currency(project.total_amount_invested, :precision => 2, :unit=>'€') %>
+        </i>
+      </td>
+    </tr>
     <% hash.keys.each do |user| %>
       <tr class="odd">
         <td>
