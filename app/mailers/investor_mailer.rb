@@ -7,7 +7,7 @@ class InvestorMailer < ApplicationMailer
 
   def new_investor_copy(investor)
     @investor = investor
-    mail('investors@globalgreenenergyinvestments.com', subject: 'Investment confirmation')
+    mail(to: 'investors@globalgreenenergyinvestments.com', subject: 'Investment confirmation')
   end
 
   def confirm_paid(investor)

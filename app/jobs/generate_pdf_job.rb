@@ -22,7 +22,7 @@ class GeneratePdfJob < ActiveJob::Base
     end
     if File.exist?(pdf_path) && investor
       InvestorMailer.new_investor(investor.user, pdf_path).deliver
-      InvestorMailer.new_investor_copy(investor.user).deliver
+      InvestorMailer.new_investor_copy(investor).deliver
     end
   end
 end
