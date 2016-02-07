@@ -50,15 +50,6 @@ ActiveAdmin.register Investor do
       investor = Investor.find(params[:id])
       InvestorMailer.confirm_paid(investor).deliver if investor.confirm_paid == true
     end
-
-    def destroy
-      investor = Investor.find(params[:id])
-      if investor
-        changed_total_amount_invested = investor.project.total_amount_invested - investor.total_amount
-        investor.project.update(total_amount_invested: changed_total_amount_invested)
-      end
-      super
-    end
   end
 
   form do |f|
