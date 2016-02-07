@@ -13,6 +13,7 @@ class Project < ActiveRecord::Base
   scope :funded,          -> { where('projects.total_amount_invested >= projects.total_amount_need') }
   scope :started,         -> { where('kwh_start_date <= ?', Time.now.to_date) }
   scope :payment_started, -> { where('payments_start_date <= ?', Time.now.to_date) }
+  scope :confirm_invest,  -> { where('investors.confirm_paid = 1') }
 
   mount_uploader :small_foto, ProjectUploader
   mount_uploader :big_foto,   ProjectUploader
@@ -62,8 +63,13 @@ class Project < ActiveRecord::Base
     self.payments_duration_months * self.money_return_per_month
   end
 
-  def self.project_count
-    self.all.map(&:total_amount_invested).inject(:+)
+  def invested
+    self.investors.confirm.map(&:total_amount).sum + self.total_amount_invested
+  end
+
+  # Total amount invested for all projects (confim paid + already total invested)
+  def self.total_invested
+    self.active.joins(:investors).confirm_invest.sum(:total_amount) + self.active.pluck(:total_amount_invested).sum
   end
 
   private
