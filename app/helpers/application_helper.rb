@@ -65,7 +65,11 @@ module ApplicationHelper
 
   def infographics_average
     projects = Project.active
-    ((projects.map{ |x| ((x.irr/100).round(2)*x.total_amount_need).round }.inject(:+) / projects.map(&:total_amount_need).inject(:+).to_f)*100).round(1)
+    if projects.count > 0
+      ((projects.map{ |x| ((x.irr/100).round(2)*x.total_amount_need).round }.inject(:+) / projects.map(&:total_amount_need).inject(:+).to_f)*100).round(1)
+    else
+      0
+    end
   end
 
   def infographics_average_for_user
