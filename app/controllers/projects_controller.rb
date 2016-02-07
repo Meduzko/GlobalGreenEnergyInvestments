@@ -24,7 +24,6 @@ class ProjectsController < ApplicationController
                       pdf_name: "#{current_user.full_name.parameterize}_#{project_id}_#{Time.now.to_i}.pdf"
                       )
     if investor
-      change_invested_amount(project_id, total_amount)
       GeneratePdfJob.perform_later(investor)
     end
     # run generating job
@@ -39,9 +38,4 @@ class ProjectsController < ApplicationController
 #                save_only: true
 
   end
-
-  private
-    def change_invested_amount(project_id, amount)
-      Project.where(id: project_id).update_all("total_amount_invested = total_amount_invested + #{amount}")
-    end
 end
