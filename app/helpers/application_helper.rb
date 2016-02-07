@@ -70,7 +70,7 @@ module ApplicationHelper
 
   def infographics_average_for_user
     projects = current_user.projects.confirm_invest.select('projects.irr, investors.total_amount')
-    if projects
+    if projects.count > 0
       ((projects.map{ |x| ((x.irr/100).round(2)*x.total_amount).round }.inject(:+) / projects.map(&:total_amount).inject(:+).to_f)*100).round(1)
     else
       0
