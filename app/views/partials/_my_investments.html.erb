@@ -7,7 +7,7 @@
   <%= render partial: 'partials/infographics' %>
 
   <div class="my-investments-content">
-    <% if @user_projects %>
+    <% if @user_projects.count > 0 %>
       <%= render 'partials/fundable', projects: @user_projects %>
     <% else %>
       <%= render 'partials/projects_slider', projects: @projects %>
