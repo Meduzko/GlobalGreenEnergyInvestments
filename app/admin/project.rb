@@ -43,7 +43,7 @@ ActiveAdmin.register Project do
   index do
     selectable_column
     column :name
-    column :total_amount_invested
+    column :invested
     column :total_amount_need
     column '# of Investors' do |i|
       link_to i.investors.confirm.count, admin_investors_path(scope: i.name.parameterize("_"))
