@@ -29,8 +29,8 @@
 <main>
 
   <section class="projects-statistic">
-    <p class="default-text"><%= I18n.t(:stat_text) %> <a href="/idea#video"><br><%= I18n.t(:stat_text_link) %></a></p>
-    <%= project_stats %>
+    <p class="default-text"><%= I18n.t(:stat_text) %> </p>
+    <%= render partial: 'partials/infographics' %>
   </section>
 
   <%= render 'partials/projects_slider', projects: @projects %>

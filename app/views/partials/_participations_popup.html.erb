@@ -10,7 +10,10 @@
     <div class="popup-content"
          id="investComp"
          data-jscomp="components/invest"
-         data-jscomp-config='{"totalAmountNeeded": "<%= @project.total_amount_need %>", "totalAmountInvested": "<%= @project.total_amount_invested %>"}'>
+         data-jscomp-config='{"totalAmountNeeded": "<%= @project.total_amount_need %>",
+          "totalAmountInvested": "<%= @project.total_amount_invested %>",
+           "amountToInvest": "<%= amount_to_invest %>",
+           "interestPaid": "<%= interest_paid %>"}'>
 
       <form action="" id="investForm" data-jscomp="components/validator">
         <div class="participations-table grid">
@@ -33,8 +36,8 @@
                          value="1"/>
                   </div>
                 </td>
-                <td style="width: 30%;"><span>€ <span class="amount"><%= amount_to_invest %></span></span></td>
                 <td style="width: 30%;"><span>€ <span class="totalAmount"><%= amount_to_invest %></span></span></td>
+                <td style="width: 30%;"><span>€ <span class="amount"><%= interest_paid %></span></span></td>
                 <td><span class="grid-ok-icon"></span></td>
               </tr>
             </table>

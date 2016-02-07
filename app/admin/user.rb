@@ -1,6 +1,8 @@
 ActiveAdmin.register User do
 
-  menu priority: 50, label: 'List of inverstors', parent: 'Investors'
+  menu label: 'All users', priority: 45
+
+  before_filter :skip_sidebar!
 
   scope :all, :default => true
   scope :with_investment do |users|
@@ -8,7 +10,9 @@ ActiveAdmin.register User do
   end
 
 
-  index title: 'Investors', :row_class => -> record { 'hightlightuser' if record.investors.count > 0 } do
+
+  index title: 'List of investors', :row_class => -> record { 'hightlightuser' if record.investors.count > 0 } do |users|
+    #render partial: 'index'
     selectable_column
     id_column
     column :last_name
@@ -22,7 +26,9 @@ ActiveAdmin.register User do
         "Don't have invesments"
       end
     end
-    column :current_sign_in_at
+    column 'Latest login' do |u|
+      u.current_sign_in_at
+    end
     column :created_at
     actions
   end

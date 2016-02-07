@@ -1,13 +1,16 @@
 ActiveAdmin.register Project do
 
-  menu priority: 9, parent: 'Projects', label: 'List of projects'
+  menu priority: 1
   before_filter :skip_sidebar!, :only => :index
   permit_params :name, :title, :location, :small_foto, :big_foto,
                 :remove_small_foto, :remove_big_foto,
                 :remove_img_1, :remove_img_2, :remove_img_3, :remove_img_4, :remove_img_5,
                 :type_of_participation, :type_of_energe, :total_amount_need, :total_amount_invested, :irr,
                 :desc_1, :img_1, :desc_2, :img_2, :desc_3, :img_3, :desc_4, :img_4, :desc_5, :img_5,
-                :launch, :kwh_generated, :status, :created_at, :pdf, :remove_pdf, :amount_to_invest, :csv_name, :remove_csv_name
+                :launch, :kwh_generated, :status, :created_at, :pdf, :remove_pdf, :number_of_participations, :csv_name, :remove_csv_name,
+                :payments_start_date, :payments_duration_months, :money_return_per_month,
+                :kwh_start_date, :kwh_already_have, :kwh_generated_per_month, :kwh_saved_per_month
+
   actions :all, except: [:destroy]
 
   member_action :sent_event, method: :get do
@@ -39,29 +42,28 @@ ActiveAdmin.register Project do
 
   index do
     selectable_column
-    id_column
     column :name
-    column 'Email to subscribers' do |s|
+    column :total_amount_invested
+    column :total_amount_need
+    column '# of Investors' do |i|
+      link_to i.investors.confirm.count, admin_investors_path(scope: i.name.parameterize("_"))
+    end
+    column :launch do |p|
+      status = p.launch? ? 'yes' : 'no'
+      content_tag(:span, status, class: "status_tag #{status} ")
+    end
+    column 'Display on site' do |p|
+      status = p.status ? 'yes' : 'no'
+      content_tag(:span, status, class: "status_tag #{status} ")
+    end
+    column :created_at
+    column 'Email project info' do |s|
       if s.sent_subscription > 0
         link_to "Already sent #{s.sent_subscription} times, repeat?", sent_event_admin_project_path(s.id), data: { :confirm => "Are you sure? You already sent emails." }
       else
         link_to 'Send the emails', sent_event_admin_project_path(s.id), data: { :confirm => "Are you sure? Need active status" }
       end
     end
-    column :total_amount_need
-    column :total_amount_invested
-    column 'Min. investment' do |ati|
-      ati.amount_to_invest
-    end
-    column :investors do |i|
-      link_to i.investors.count, admin_investors_path(scope: i.name.parameterize("_"))
-    end
-    column :launch
-    column 'Display on site' do |p|
-      status = p.status ? 'yes' : 'no'
-      content_tag(:span, status, class: "status_tag #{status} ")
-    end
-    column :created_at
     actions
   end
 
@@ -74,12 +76,21 @@ ActiveAdmin.register Project do
       f.input :created_at
       f.inputs "Investment information" do
         f.input :type_of_participation, :as => :select, :collection => Project::PARTICIPATION
-        f.input :total_amount_need, :label => 'Total amount needed'
-        f.input :total_amount_invested, :label => 'Total already invested'
+        f.input :total_amount_need,     label: 'Total amount needed'
+        f.input :total_amount_invested, label: 'Total already invested'
+        f.input :number_of_participations
+        f.input :payments_start_date
+        f.input :payments_duration_months
+        f.input :amount_to_invest, input_html: { disabled: true }, label: 'Min. investment'
         f.input :irr, :label => 'IRR'
-        f.input :kwh_generated
-        f.input :launch, :label => 'Click here if you want to display kwh generated'
-        f.input :amount_to_invest, label: 'Min. investment'
+        f.input :money_return_per_month, :label => 'Total money return per month', hint: 'per participations'
+      end
+      f.inputs 'Operating data' do
+        f.input :kwh_start_date, label: 'Operation Start Date (Generation or Saving)'
+        f.input :kwh_already_have, label: 'KWH already accumulated (Generation or Saving)'
+        f.input :kwh_generated_per_month#, #hint: 'genarating per month'
+        f.span ' OR'
+        f.input :kwh_saved_per_month#,     #hint: 'saving per month'
       end
       f.inputs "Upload Amortization Table" do
         f.input :csv_name, :label => 'Only CSV:', :hint => (link_to 'Download csv', f.object.csv_name.url if f.object.csv_name?)
@@ -129,5 +140,24 @@ ActiveAdmin.register Project do
       end
     end
     f.actions
+  end
+
+  show do
+    render partial: 'show', locals: {project: project }
+    # h2 project.name
+    # panel "Project Details" do
+    #   #Project.last.investors.joins(:user).confirm.group('users.id').sum(:total_amount)
+    #   attributes_table_for project do
+    #     # row("Status") { status_tag (task.is_done ? "Done" : "Pending"), (task.is_done ? :ok : :error) }
+    #     hash = project.investors.joins(:user).confirm.group('users.id').sum(:total_amount)
+    #     hash.keys.each do |user|
+    #       row(User.find(user).try(:full_name)) { hash[user].round(2) }
+    #     end
+    #     row("Total amount invested") { hash.values.inject(:+).round(2) }
+    #
+    #     # row("Assigned To") { link_to task.admin_user.email, admin_admin_user_path(task.admin_user) }
+    #     # row("Due Date") { task.due_date? ? l(task.due_date, :format => :long) : '-' }
+    #   end
+    # end
   end
 end

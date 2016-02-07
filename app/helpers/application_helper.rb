@@ -1,5 +1,103 @@
 module ApplicationHelper
 
+
+  def kwh_projects_generated
+    projects = Project.started
+    if projects
+      project_generating_now = projects.map(&:kwh_generated).inject(0){ |sum, hash| sum + hash[:already_generated] }
+      kwh_in_second = projects.map(&:kwh_generated).inject(0){ |sum, hash| sum + hash[:kwh_interval] }
+    else
+      project_generating_now = 0
+      project_generating_now = 0
+    end
+    {already_generated: project_generating_now.round(2), kwh_interval: kwh_in_second}
+  end
+
+  def kwh_generated_for_user
+    projects = Project.started.where(id: current_user.investors.confirm.pluck(:project_id).uniq)
+    project_generating_now = 0
+    kwh_in_second = 0
+    projects.each do |project|
+      user_invested = current_user.investors.confirm.where(project_id: project.id).sum(:amount)
+      percent = (user_invested*100/project.total_amount_need).round(2)
+      kwh_generated = project.kwh_generated
+      project_generating_now += ((kwh_generated[:already_generated]*percent)/100)
+      kwh_in_second += ((kwh_generated[:kwh_interval]*percent)/100)
+    end
+    {already_generated: project_generating_now.round(2), kwh_interval: kwh_in_second}
+  end
+
+  def kwh_projects_saved
+    projects = Project.started
+    if projects
+      project_generating_now = projects.map(&:kwh_saved).inject(0){ |sum, hash| sum + hash[:already_saved] }
+      kwh_in_second = projects.map(&:kwh_saved).inject(0){ |sum, hash| sum + hash[:kwh_interval] }
+    else
+      project_generating_now = 0
+      kwh_in_second = 0
+    end
+    {already_saved: project_generating_now.round(2), kwh_interval: kwh_in_second}
+  end
+
+  def kwh_saved_for_user
+    projects = Project.started.where(id: current_user.investors.confirm.pluck(:project_id).uniq)
+    project_generating_now = 0
+    kwh_in_second = 0
+    projects.each do |project|
+      user_invested = current_user.investors.confirm.where(project_id: project.id).sum(:amount)
+      percent = (user_invested*100/project.total_amount_need).round(2)
+      kwh_saved = project.kwh_saved
+      project_generating_now += kwh_saved[:already_generated] ? ((kwh_saved[:already_generated]*percent)/100) : 0
+      kwh_in_second += kwh_saved[:kwh_interval] ? ((kwh_saved[:kwh_interval]*percent)/100) : 0
+    end
+    {already_saved: project_generating_now.round(2), kwh_interval: kwh_in_second}
+  end
+
+  def money_return_for_user
+    money = 0
+    current_user.projects.payment_started.each do |project|
+      months = TimeDifference.between(project.payments_start_date, Time.now).in_months.ceil
+      months = months > project.payments_duration_months ? project.payments_duration_months : months
+      money += project.money_return_per_month * months
+    end
+    money
+  end
+
+  def infographics_average
+    if is_my_investment_page?
+      projects = Project.active
+    else
+      projects = Project.active
+    end
+    ((projects.map{ |x| ((x.irr/100).round(2)*x.total_amount_need).round }.inject(:+) / projects.map(&:total_amount_need).inject(:+).to_f)*100).round(1)
+  end
+
+  def infographics_projects
+    if is_my_investment_page?
+      current_user.investors.confirm.pluck(:project_id).uniq.size
+    else
+      Project.active.count
+    end
+  end
+
+  def infographics_invested
+    if is_my_investment_page?
+      current_user.investors.confirm.map(&:total_amount).inject(:+) || 0
+    elsif is_project_page?
+       @project.total_amount_invested
+    else
+      Project.project_count
+    end
+  end
+
+  def is_my_investment_page?
+    controller_name == 'profiles' && current_user || false
+  end
+
+  def is_project_page?
+    controller_name == 'projects' && @project || false
+  end
+
   def title_slug
     ' - ' + request.fullpath.split('/')[1].to_s.capitalize unless request.fullpath == '/'
   end
@@ -90,7 +188,6 @@ module ApplicationHelper
 
   def my_investment
     return unless current_user
-    @count_projects = count_projects = current_user.investors.paid.map(&:project_id).uniq
     projects = Project.where(id: count_projects)
     average_return = count_projects.empty? ? 0 : (projects.map{ |x| ((x.irr/100).round(2)*x.total_amount_need).round }.inject(:+) / projects.map(&:total_amount_need).inject(:+).to_f)*100.round(2)
     kwh_generated = count_projects.empty? ? 0 : projects.map{|x| x.kwh_generated if x.launch == true }.compact.inject(:+)

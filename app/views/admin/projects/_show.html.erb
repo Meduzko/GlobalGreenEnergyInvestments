@@ -1,0 +1,40 @@
+<% hash = project.investors.joins(:user).confirm.group('users.id').sum(:total_amount) %>
+<% total_invested = hash.values.inject(:+).round(2) %>
+<h2><%= project.name %> details:</h2>
+<table class="project_balance index_table index">
+  <thead>
+    <tr>
+      <td >
+        <center><b>Investor</b></center>
+      </td>
+      <td>
+        <center><b>Amount</b></center>
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <% hash.keys.each do |user| %>
+      <tr class="odd">
+        <td>
+          <%= link_to User.find(user).try(:full_name), admin_user_path(user) %>
+        </td>
+        <td>
+          <%= number_to_currency(hash[user], :precision => 2, :unit=>'€') %>
+        </td>
+      </tr>
+    <% end %>
+    <tr>
+      <td ><b>Total invested:</b></td>
+      <td><b><%= number_to_currency(total_invested, :precision => 2, :unit=>'€')  %></b></td>
+    </tr>
+    <tr>
+      <td>Amount needed:</td>
+      <td><%= number_to_currency(project.total_amount_need, :precision => 2, :unit=>'€') %></td>
+    </tr>
+    <tr>
+      <td><font color=red><b>Balance:</b></font></td>
+      <td><font color=red><b><%= number_to_currency((project.total_amount_need - total_invested), :precision => 2, :unit=>'€')  %></b></font></td>
+    </tr>
+  </tbody>
+
+</table>

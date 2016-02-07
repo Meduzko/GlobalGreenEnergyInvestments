@@ -1,5 +1,10 @@
-<p>Welcome <%= @email %>!</p>
+<p>Dear <%= @resource.full_name %>,</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>You have registered on Global Green Energy Investments. </p>
+<p>Please click link below to activate your account, browse the platform for projects and enable yourself to become an investor.</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>Best regards,</<p>
+<p>Managing Director,</p>
+<p>Benoit van Beeck Calkoen</p>

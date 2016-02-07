@@ -1,6 +1,6 @@
 ActiveAdmin.register Subscribe do
 
-  menu priority: 98, label: 'Subscribers'
+  menu priority: 41, label: 'Subscribers'
 
   permit_params :email, :name, :confirm_token, :confirmed, :active
 
@@ -15,7 +15,7 @@ ActiveAdmin.register Subscribe do
     column :updated_at
   end
 
-  action_item only: :index do
+  action_item :create_letter_btn do
     link_to 'Create new letter', admin_subscribesender_path, class: 'action_button'
   end
 

@@ -1,5 +1,6 @@
 <% @investor ||= investor %>
-Dear <b><%= @investor.user.full_name %></b>, <br>
-Thank you for becoming an investor. By transferring the amount within 24 hours to the bank account of our notaries 3rd party fund, you ensure yourself on buying a participation(s). When the money is not received within a two days time frame, we might be obliged to sell the participations to other investors.<br><br>
-<b><%= Project::BANK_ACCOUNT %></b><br><br>
-When the amount is received by the notary, he will verify your details and after approval, we will confirm your investment in <b>3 working days</b> after receiving the amount.<br>
+<%= I18n.t(:participation_thanks_text_1, name: @investor.user.full_name).html_safe %>,<br>
+<%= I18n.t(:participation_thanks_text_2, amount: @investor.total_amount).html_safe %><br><br>
+<b>Name: 	Global Green Energy Lease</b><br>
+<b>IBAN:  	<%= Project::BANK_ACCOUNT %></b><br><br>
+<%= I18n.t(:participation_thanks_text_3).html_safe %><br>

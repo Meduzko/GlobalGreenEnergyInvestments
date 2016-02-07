@@ -4,16 +4,15 @@ class Project < ActiveRecord::Base
   ENERGY = ['solar', 'wind', 'bio', 'etc']
   BANK_ACCOUNT = 'NL67TRIO0254752357'
 
-  has_one :amoritisaztion, dependent: :destroy
-  has_one :power_saved,    dependent: :destroy
   has_many :investors
 
   before_validation :remove_images
 
-  scope :active,      -> { where(status: true).order('created_at desc') }
-  scope :fundable,    -> { where('projects.total_amount_need != projects.total_amount_invested AND projects.total_amount_need > projects.total_amount_invested') }
-  scope :funded,      -> { where('projects.total_amount_invested >= projects.total_amount_need') }
-  scope :power_saved, -> { joins(:power_saved).where(["power_saveds.started_at < ?", Time.now]) }
+  scope :active,          -> { where(status: true).order('created_at desc') }
+  scope :fundable,        -> { where('projects.total_amount_need != projects.total_amount_invested AND projects.total_amount_need > projects.total_amount_invested') }
+  scope :funded,          -> { where('projects.total_amount_invested >= projects.total_amount_need') }
+  scope :started,         -> { where('kwh_start_date <= ?', Time.now.to_date) }
+  scope :payment_started, -> { where('payments_start_date <= ?', Time.now.to_date) }
 
   mount_uploader :small_foto, ProjectUploader
   mount_uploader :big_foto,   ProjectUploader
@@ -25,8 +24,46 @@ class Project < ActiveRecord::Base
   mount_uploader :pdf,        ProjectPdfUploader
   mount_uploader :csv_name, AmortizationUploader
 
-  def is_power_saved?
-    self.power_saved && (self.power_saved.started_at < Time.now)
+  def launch?
+    (self.kwh_start_date && (self.kwh_start_date <= Time.now.to_date)) || false
+  end
+
+  def kwh_generated
+    if self.launch?
+      period_in_seconds = TimeDifference.between(self.kwh_start_date, Time.now).in_seconds
+      kwh_in_second = self.kwh_generated_per_month.to_f/30.days.to_i
+      project_generating_now = period_in_seconds*kwh_in_second
+    else
+      project_generating_now = 0
+      kwh_in_second = 0
+    end
+    {already_generated: project_generating_now.round(2), kwh_interval: kwh_in_second}
+  end
+
+  def kwh_saved
+    if self.launch?
+      period_in_seconds = TimeDifference.between(self.kwh_start_date, Time.now).in_seconds
+      kwh_in_second = self.kwh_saved_per_month.to_f/30.days.to_i
+      project_saving_now = period_in_seconds*kwh_in_second
+    else
+      project_saving_now = 0
+      kwh_in_second = 0
+    end
+    {already_saved: project_saving_now.round(2), kwh_interval: kwh_in_second}
+  end
+
+  # Minimun amount to invest
+  def amount_to_invest
+    self.number_of_participations > 0 ? self.total_amount_need / self.number_of_participations : 0
+  end
+
+  # Total interest_paid
+  def interest_paid
+    self.payments_duration_months * self.money_return_per_month
+  end
+
+  def self.project_count
+    self.all.map(&:total_amount_invested).inject(:+)
   end
 
   private

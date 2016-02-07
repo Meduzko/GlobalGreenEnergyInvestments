@@ -3,6 +3,7 @@ class ProfilesController < ApplicationController
 
   def edit
     @projects = Project.active
+    @user_projects = Project.where(id: current_user.investors.confirm.pluck(:project_id))
     @profile = current_user.profile
   end
 

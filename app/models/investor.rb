@@ -2,6 +2,7 @@ class Investor < ActiveRecord::Base
   belongs_to :user
   belongs_to :project
 
+
   scope :expired,   ->{ where('expired_datetime < ? and confirm_paid = ?', Time.now, false) }
   scope :unchecked, ->{ where(check_expired: false) }
   scope :checked,   ->{ where(check_expired: true) }
@@ -15,5 +16,9 @@ class Investor < ActiveRecord::Base
 
   def is_paid?
     self.confirm_paid
+  end
+
+  def self.investor_count
+    self.confirm.map(&:user_id).uniq.count
   end
 end

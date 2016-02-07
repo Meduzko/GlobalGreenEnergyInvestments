@@ -34,6 +34,8 @@ group :development do
 	gem 'web-console', '~> 2.0'
 	gem 'spring'
 	gem 'sinatra', '>= 1.3.0', :require => nil
+  gem 'quiet_assets'
+  gem "letter_opener"
 end
 
 group :production do

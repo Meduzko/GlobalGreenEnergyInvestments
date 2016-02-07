@@ -10,6 +10,8 @@ define(['jquery'], function ($) {
             this.totalAmount = $('#' + domId + ' .totalAmount');
             this.totalAmountNeeded = parseInt(config.totalAmountNeeded, 10);
             this.totalAmountInvested = parseInt(config.totalAmountInvested, 10);
+            this.amountToInvest = parseInt(config.amountToInvest, 10);
+            this.interestPaid = parseInt(config.interestPaid, 10);
             this.setCount();
             this.setMaxCounts();
             this.setTotalAmount();
@@ -18,7 +20,8 @@ define(['jquery'], function ($) {
         calculateTotal: function (countField) {
             var counter = parseFloat($(countField).val());
             if (typeof(counter) === 'number') {
-                this.totalAmount.text(Math.abs(parseFloat(this.amount.text()) * counter).toFixed(2));
+                this.totalAmount.text(Math.abs(parseFloat(this.amountToInvest) * counter).toFixed(2));
+                this.amount.text(Math.abs(parseFloat(this.interestPaid) * counter).toFixed(2));
                 this.setCount();
                 this.setTotalAmount();
             }
@@ -38,8 +41,6 @@ define(['jquery'], function ($) {
         },
 
         setMaxCounts: function () {
-            console.log(this.totalAmountNeeded);
-            console.log(parseInt(this.amount.text(), 10));
             this.count.prop('max', Math.floor((this.totalAmountNeeded - this.totalAmountInvested) / parseInt(this.amount.text(), 10)));
         },
 

@@ -4,11 +4,11 @@
 
   <h1 class="inner-page-main-title"><%= I18n.t(:profile_my_invest_title) %></h1>
 
-  <%= my_investment %>
+  <%= render partial: 'partials/infographics' %>
 
   <div class="my-investments-content">
-    <% if @count_projects.size > 0 %>
-      <%= render 'partials/fundable', projects: Project.where(id: @count_projects) %>
+    <% if @user_projects %>
+      <%= render 'partials/fundable', projects: @user_projects %>
     <% else %>
       <%= render 'partials/projects_slider', projects: @projects %>
     <% end %>

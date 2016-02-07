@@ -20,7 +20,9 @@ class GeneratePdfJob < ActiveJob::Base
     File.open(pdf_path, 'wb') do |file|
       file << gen_pdf
     end
-
-    InvestorMailer.new_investor(investor.user, pdf_path).deliver if File.exist?(pdf_path) && investor
+    if File.exist?(pdf_path) && investor
+      InvestorMailer.new_investor(investor.user, pdf_path).deliver
+      InvestorMailer.new_investor_copy(investor.user).deliver
+    end
   end
 end

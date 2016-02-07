@@ -1,5 +1,6 @@
 <% @investor ||= investor %>
 <html>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <body>
     <table cellpadding="0" cellspacing="0" style="width: 100%; height: 100%; background-color: #f7f7f7; font-family: arial;">
       <tr valign="middle">
@@ -16,12 +17,12 @@
               </td>
             </tr>
             <tr valign="top">
-              <td style="color: #3e3e3e; padding: 30px 58px 20px 58px; text-align: left; font-size: 40px; line-height: 46px; font-weight: bold; text-transform: uppercase;">
-                THANK YOU!
+              <td style="color: #3e3e3e; padding: 30px 58px 20px 58px; text-align: left; font-size: 20px; line-height: 22px; font-weight: bold; text-transform: uppercase;">
+                <%= I18n.t(:participation_thanks_title) %>
               </td>
             </tr>
             <tr valign="top">
-              <td style="text-align: left; font-size: 18px; line-height: 22px; color: #818181">
+              <td style="text-align: left; font-size: 15px; line-height: 20px; color: #818181">
                 <p style="margin: 0 0 0 0; padding: 10px 58px 10px 58px;">
                   <span style="color: #818181">
                     <%= yield %>
@@ -30,18 +31,16 @@
               </td>
             </tr>
             <tr valign="top">
-              <td style="color: #b0b0b0; padding: 20px 58px 50px 58px; text-align: left; font-size: 14px;">
-                Kind regards,<br>
-                Managing director,<br>
-                Benoit van Beeck Calkoen
+              <td style="color: #b0b0b0; padding: 20px 58px 40px 58px; text-align: left; font-size: 14px;">
+                <%= I18n.t(:participation_thanks_text_5).html_safe %><br><br>
+                <font size="1"><%= I18n.t(:participation_thanks_text_7) %></font>
               </td>
             </tr>
           </table>
         </td>
       </tr>
       <tr>
-        <td style="text-align: center; color: #b0b0b0;">
-          <br>
+        <td style="text-align: center; color: #b0b0b0; padding: 0;">
         </td>
       </tr>
 

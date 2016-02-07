@@ -14,7 +14,7 @@ ActiveAdmin.register_page "Dashboard" do
     #
      columns do
        column do
-         panel "Recent Users" do
+         panel "Recent registrations" do
            ul do
              User.limit(10).order('created_at desc').each do |user|
                li link_to "#{user.full_name} - #{time_ago_in_words(user.created_at)} ago", admin_user_path(user.id)
@@ -34,10 +34,10 @@ ActiveAdmin.register_page "Dashboard" do
      end
      columns do
       column do
-         panel "Investors" do
+         panel "Recent investments" do
            ul do
              Investor.limit(10).order('created_at desc').each do |s|
-               li link_to "#{s.user.full_name} - #{time_ago_in_words(s.created_at)} ago", admin_subscribe_path(s.id)
+               li link_to "#{s.user.full_name} - #{time_ago_in_words(s.created_at)} ago", admin_investor_path(s.id)
              end
            end
          end
