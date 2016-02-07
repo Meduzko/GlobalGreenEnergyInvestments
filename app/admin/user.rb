@@ -29,6 +29,10 @@ ActiveAdmin.register User do
     column 'Latest login' do |u|
       u.current_sign_in_at
     end
+    column 'Active' do |u|
+      status = u.confirmation_token.nil? ? 'yes' : 'no'
+      content_tag(:span, status, class: "status_tag #{status} ")
+    end
     column :created_at
     actions
   end
