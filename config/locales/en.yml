@@ -74,7 +74,7 @@ en:
 
   login_popup_title: Welcome
   login_popup_text: "Please register to view more investment information"
-  login_popup_forgot_pswd: Forgot you password?
+  login_popup_forgot_pswd: Forgot your password?
   login_popup_register: Register
   login_popup_register_link: Register now
   login_popup_btn_text: Log in
