@@ -13,9 +13,6 @@ ActiveAdmin.register Investor do
   scope :confirm do |investors|
     Investor.confirm
   end
-  scope :expired do |investors|
-    Investor.expired
-  end
   scope :unconfirm do |investors|
     Investor.unconfirm
   end
