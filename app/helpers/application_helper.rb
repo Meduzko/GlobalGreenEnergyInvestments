@@ -2,7 +2,7 @@ module ApplicationHelper
 
 
   def kwh_projects_generated
-    projects = Project.started
+    projects = Project.started.active
     if projects
       project_generating_now = projects.map(&:kwh_generated).inject(0){ |sum, hash| sum + hash[:already_generated] }
       kwh_in_second = projects.map(&:kwh_generated).inject(0){ |sum, hash| sum + hash[:kwh_interval] }
@@ -28,7 +28,7 @@ module ApplicationHelper
   end
 
   def kwh_projects_saved
-    projects = Project.started
+    projects = Project.started.active
     if projects
       project_generating_now = projects.map(&:kwh_saved).inject(0){ |sum, hash| sum + hash[:already_saved] }
       kwh_in_second = projects.map(&:kwh_saved).inject(0){ |sum, hash| sum + hash[:kwh_interval] }
