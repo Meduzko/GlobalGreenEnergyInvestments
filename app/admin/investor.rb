@@ -7,7 +7,7 @@ ActiveAdmin.register Investor do
   menu label: 'List of investors', priority: 40
 
   permit_params :user_id, :project_id, :participations, :amount, :total_amount, :confirm_paid,
-                :expired_datetime, :created_at, :updated_at
+                :created_at, :updated_at
 
   scope :all, :default => true
   scope :confirm do |investors|

@@ -13,6 +13,9 @@ Rails.application.routes.draw do
 
   resources 'projects', only: [:index, :show] do
     post :confirm_participation
+    member do
+      get :avaible_participation
+    end
   end
 
   get  'get_pdf/:file_name' => 'investor#show', :as => :pdf_file
