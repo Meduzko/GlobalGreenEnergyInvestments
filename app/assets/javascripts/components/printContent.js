@@ -10,9 +10,9 @@ define(['jquery'], function ($) {
         print: function () {
             var printContents = $(this.contentForPrint).html();
 
-            console.log(this.contentForPrint);
+            //console.log(this.contentForPrint);
 
-            console.log(printContents);
+            //console.log(printContents);
 
             var originalContents = document.body.innerHTML;
             //document.body.innerHTML = printContents;

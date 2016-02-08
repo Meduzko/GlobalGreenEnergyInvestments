@@ -128,7 +128,7 @@ en:
 
   participation_thanks_title: Thank you for becoming an investor
   participation_thanks_text_1: Dear <strong>%{name}</strong>
-  participation_thanks_text_2: Thank you for becoming an investor in the clean energy transition. By transferring %{amount} &euro; within 24 hours to the bank account of our notaries 3rd party fund, you ensure yourself on buying a participation(s). When the money is not received within a two days time frame, we might be obliged to sell the participations to other investors.
+  participation_thanks_text_2: Thank you for becoming an investor in the clean energy transition. By transferring <i>€<i class="confirmTotalAmount"></i></i> within 24 hours to the bank account of our notaries 3rd party fund, you ensure yourself on buying a participation(s). When the money is not received within a two days time frame, we might be obliged to sell the participations to other investors.
   participation_thanks_text_3: When the amount is received by the notary, he will verify your details and after approval, we will confirm your investment in <strong>3 working days</strong> after receiving the amount. By then your investment will be displayed on the website and you will receive a confirmation email.
   participation_thanks_text_4: If you have any remaining questions, please
   participation_thanks_text_5: Kind regards,<br> Managing director,<br> Benoit van Beeck Calkoen
