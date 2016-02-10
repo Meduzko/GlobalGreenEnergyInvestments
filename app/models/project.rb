@@ -72,6 +72,12 @@ class Project < ActiveRecord::Base
     self.active.joins(:investors).confirm_invest.sum(:total_amount) + self.active.pluck(:total_amount_invested).sum
   end
 
+  def avaible_participation
+    { project_id: self.id,
+      total_participation:   self.number_of_participations,
+      avaible_participation: self.number_of_participations - self.investors.confirm.count }
+  end
+
   private
     def remove_images
       self.remove_small_foto! if self.remove_small_foto == '1'

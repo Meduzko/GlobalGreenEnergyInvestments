@@ -8,13 +8,43 @@ define(['jquery'], function ($) {
             this.count = $('#' + domId + ' .count');
             this.amount = $('#' + domId + ' .amount');
             this.totalAmount = $('#' + domId + ' .totalAmount');
+            this.investCount = $('#' + domId + ' #investCount');
             this.totalAmountNeeded = parseInt(config.totalAmountNeeded, 10);
             this.totalAmountInvested = parseInt(config.totalAmountInvested, 10);
             this.amountToInvest = parseInt(config.amountToInvest, 10);
             this.interestPaid = parseInt(config.interestPaid, 10);
+            this.projectId = config.projectId;
+            this.mesageBox = '.message-box';
+
             this.setCount();
-            this.setMaxCounts();
             this.setTotalAmount();
+            this.calculateTotal(this.investCount);
+
+            this.getParticipation();
+        },
+
+        getParticipation: function () {
+
+            var thisComp = this;
+
+            $.ajax({
+                method: "GET",
+                url: "/projects/" + this.projectId + "/avaible_participation.json"
+            })
+                .done(function (data) {
+                    if (data.status === 'error') {
+                        thisComp.showMessage(data.messages, 'error');
+                    } else {
+                        thisComp.setMaxCounts(data.avaible_participation);
+                    }
+                })
+                .fail(function (data) {
+                    thisComp.showMessage(data.messages, 'error');
+                });
+        },
+
+        showMessage: function (message, messageType) {
+            this.domId.find(this.mesageBox).html('<div class="' + messageType + '-msg">' + message + '</div>');
         },
 
         calculateTotal: function (countField) {
@@ -40,8 +70,8 @@ define(['jquery'], function ($) {
             localStorage.setItem('confirmCount', parseFloat(this.count.val()));
         },
 
-        setMaxCounts: function () {
-            this.count.prop('max', Math.floor((this.totalAmountNeeded - this.totalAmountInvested) / parseInt(this.amount.text(), 10)));
+        setMaxCounts: function (avaible_participation) {
+            this.count.prop('max', avaible_participation);
         },
 
         setTotalAmount: function () {

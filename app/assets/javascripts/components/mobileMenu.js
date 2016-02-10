@@ -14,7 +14,6 @@ define(['jquery'], function ($) {
         },
 
         handleMenu: function (control) {
-            console.log(control);
             if ($(control).hasClass('icon-cancel')){
                 this.resetState();
             } else {

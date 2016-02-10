@@ -5,13 +5,15 @@
     <span class="popup-close icon-font icon-cancel" onclick="compSupport.callFunc(this, 'hide')"></span>
 
     <div class="popup-title"><%= I18n.t(:participation_thanks_title) %></div>
-    <div class="popup-content">
+    <div class="popup-content"
+         id="investComp"
+         data-jscomp="components/investThanks">
 
       <form action="">
 
         <div class="section-to-print">
           <p><%= I18n.t(:participation_thanks_text_1, name: current_user.full_name).html_safe %>,</p>
-          <p><%= I18n.t(:participation_thanks_text_2, amount: current_user.investors.try(:last).try(:total_amount).try(:html_safe)) %></p>
+          <p><%= I18n.t(:participation_thanks_text_2).html_safe %></p>
           <div class="generated-number">
             Name: 	Global Green Energy Lease<br><br>
             IBAN:  	<%= Project::BANK_ACCOUNT %>
