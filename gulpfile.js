@@ -18,7 +18,7 @@ var gulp = require('gulp'), // Сообственно Gulp JS
     publicRoot = 'public/';
 
 
-// Собираем JS
+// Build JS
 gulp.task('bower-to-public', function () {
     return gulp.src(mainBowerFiles())
         .pipe(gulpFilter(['*', '!*.css', '!*.scss', '!*.less']))
@@ -53,7 +53,7 @@ gulp.task('js-components', function () {
 });
 
 
-// Собираем CSS
+// Build CSS
 gulp.task('css', function () {
 
     gulp.src([
@@ -84,16 +84,17 @@ gulp.task('fonts', function () {
 });
 
 
-// Копируем и минимизируем изображения
+// Copy and minimize images
 gulp.task('images', ['svg-optimization'], function () {
     gulp.src([
         assetsRoot + 'images/**/*',
         assetsRoot + 'images/**',
         assetsRoot + 'images/*'
     ])
-        .pipe(imagemin({
+        /*.pipe(imagemin({
+            progressive: true,
             use: [pngquant()]
-        }))
+        }))*/
         .pipe(gulp.dest(publicRoot + 'images'))
         .pipe(browserSync.reload({stream: true}));
 });
