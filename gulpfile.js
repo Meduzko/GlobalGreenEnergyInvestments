@@ -2,6 +2,7 @@ var gulp = require('gulp'), // Сообственно Gulp JS
     sass = require('gulp-sass'),
     csso = require('gulp-csso'), // Минификация CSS
     imagemin = require('gulp-imagemin'), // Минификация изображений
+    pngquant = require('imagemin-pngquant'),
     uglify = require('gulp-uglify'), // Минификация JS
     concat = require('gulp-concat'), // Склейка файлов
     svgSprite = require("gulp-svg-sprites"),
@@ -90,7 +91,9 @@ gulp.task('images', ['svg-optimization'], function () {
         assetsRoot + 'images/**',
         assetsRoot + 'images/*'
     ])
-        .pipe(imagemin())
+        .pipe(imagemin({
+            use: [pngquant()]
+        }))
         .pipe(gulp.dest(publicRoot + 'images'))
         .pipe(browserSync.reload({stream: true}));
 });
