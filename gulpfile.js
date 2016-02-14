@@ -91,10 +91,10 @@ gulp.task('images', ['svg-optimization'], function () {
         assetsRoot + 'images/**',
         assetsRoot + 'images/*'
     ])
-        /*.pipe(imagemin({
+        .pipe(imagemin({
             progressive: true,
             use: [pngquant()]
-        }))*/
+        }))
         .pipe(gulp.dest(publicRoot + 'images'))
         .pipe(browserSync.reload({stream: true}));
 });
