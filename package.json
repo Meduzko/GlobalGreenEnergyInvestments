@@ -12,6 +12,7 @@
         "gulp-csso": "*",
         "gulp-sass": "*",
         "gulp-imagemin": "*",
+        "imagemin-pngquant": "",
         "gulp-uglify": "*",
         "main-bower-files": "*",
         "gulp-concat": "*",
