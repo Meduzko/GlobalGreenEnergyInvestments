@@ -82,7 +82,7 @@
           </div>
         </td>
         <td>
-        <% unless @project.amount_to_invest.zero? %>
+        <% if @project.amount_to_invest > 0 && (@project.avaible_participation[:avaible_participation] > 0) %>
           <% js_method =  current_user ? '#participationsPopup' : '#loginPopup' %>
           <a href="#" onclick="compSupport.callFunc('<%= js_method %>', 'show')" class="default-btn"><%= I18n.t(:cmn_invest) %></a>
         <% end %>
