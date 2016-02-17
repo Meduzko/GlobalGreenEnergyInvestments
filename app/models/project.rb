@@ -4,16 +4,17 @@ class Project < ActiveRecord::Base
   ENERGY = ['solar', 'wind', 'bio', 'etc']
   BANK_ACCOUNT = 'NL67TRIO0254752357'
 
-  has_many :investors
-
-  before_validation :remove_images
-
   scope :active,          -> { where(status: true).order('created_at desc') }
   scope :fundable,        -> { where('projects.total_amount_need != projects.total_amount_invested AND projects.total_amount_need > projects.total_amount_invested') }
   scope :funded,          -> { where('projects.total_amount_invested >= projects.total_amount_need') }
   scope :started,         -> { where('kwh_start_date <= ?', Time.now.to_date) }
   scope :payment_started, -> { where('payments_start_date <= ?', Time.now.to_date) }
   scope :confirm_invest,  -> { where('investors.confirm_paid = 1') }
+
+  has_many :investors
+
+  before_validation :remove_images
+  before_save       :set_default_values
 
   mount_uploader :small_foto, ProjectUploader
   mount_uploader :big_foto,   ProjectUploader
@@ -75,7 +76,7 @@ class Project < ActiveRecord::Base
   def avaible_participation
     { project_id: self.id,
       total_participation:   self.number_of_participations,
-      avaible_participation: self.number_of_participations - self.investors.confirm.count - 1 }
+      avaible_participation: self.number_of_participations - self.investors.confirm.count }
   end
 
   private
@@ -89,6 +90,12 @@ class Project < ActiveRecord::Base
       self.remove_img_5!      if self.remove_img_5 == '1'
       self.remove_pdf!        if self.remove_pdf == '1'
       self.remove_csv_name!        if self.remove_csv_name == '1'
+    end
+
+    def set_default_values
+      self.total_amount_need = 0 if self.total_amount_need.nil?
+      self.total_amount_invested = 0 if self.total_amount_invested.nil?
+      self.irr = 0 if self.irr.nil?
     end
 
 end
