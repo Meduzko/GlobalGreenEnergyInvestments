@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207161339) do
+ActiveRecord::Schema.define(version: 20160217192901) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -133,9 +133,9 @@ ActiveRecord::Schema.define(version: 20160207161339) do
     t.string   "big_foto",                 limit: 255
     t.string   "type_of_participation",    limit: 255
     t.string   "type_of_energe",           limit: 255
-    t.integer  "total_amount_need",        limit: 4
-    t.integer  "total_amount_invested",    limit: 4
-    t.float    "irr",                      limit: 24
+    t.integer  "total_amount_need",        limit: 4,     default: 0
+    t.integer  "total_amount_invested",    limit: 4,     default: 0
+    t.float    "irr",                      limit: 24,    default: 0.0
     t.text     "desc_1",                   limit: 65535
     t.string   "img_1",                    limit: 255
     t.text     "desc_2",                   limit: 65535
