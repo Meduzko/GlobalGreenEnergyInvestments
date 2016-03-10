@@ -2,6 +2,8 @@ ActiveAdmin.register Investor do
   #menu :if => proc{false}
 
   config.batch_actions = false
+  config.clear_action_items!
+
   before_filter :skip_sidebar!, :only => :index
   #menu priority: 0
   menu label: 'List of investors', priority: 40
@@ -62,6 +64,9 @@ ActiveAdmin.register Investor do
   index title: 'All investments' do
     column :project
     column :user
+    column '# of participations' do |i|
+      i.participations
+    end
     column :total_amount do |i|
       link_to i.total_amount, admin_investor_path(i.id), title: 'Details'
     end

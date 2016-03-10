@@ -97,10 +97,6 @@ GEM
     business_time (0.7.4)
       activesupport (>= 3.1.0)
       tzinfo
-    byebug (3.5.1)
-      columnize (~> 0.8)
-      debugger-linecache (~> 1.2)
-      slop (~> 3.6)
     callsite (0.0.11)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -129,6 +125,7 @@ GEM
       activesupport (>= 3.0)
     cocaine (0.5.7)
       climate_control (>= 0.0.3, < 1.0)
+    coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -136,14 +133,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.0)
-    columnize (0.9.0)
     connection_pool (2.2.0)
     countries (0.11.3)
       currencies (~> 0.4.2)
       i18n_data (~> 0.6.0)
     currencies (0.4.2)
     debug_inspector (0.0.2)
-    debugger-linecache (1.2.0)
     devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -207,6 +202,7 @@ GEM
       callsite (~> 0.0, >= 0.0.11)
       rack-contrib (~> 1.1)
       railties (>= 3.0.0, < 5.0.0)
+    method_source (0.8.2)
     mime-types (2.4.3)
     mini_magick (4.2.0)
     mini_portile (0.6.2)
@@ -219,6 +215,10 @@ GEM
     orm_adapter (0.5.0)
     polyamorous (1.1.0)
       activerecord (>= 3.0)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.0)
@@ -347,7 +347,6 @@ DEPENDENCIES
   activeadmin!
   awesome_print
   business_time
-  byebug
   carrierwave
   ckeditor!
   coffee-rails
@@ -361,6 +360,7 @@ DEPENDENCIES
   meta_request
   mini_magick
   mysql2
+  pry
   quiet_assets
   rails (= 4.2.0)
   sass-rails!

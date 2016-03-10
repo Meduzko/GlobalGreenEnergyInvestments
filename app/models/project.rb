@@ -39,7 +39,7 @@ class Project < ActiveRecord::Base
       project_generating_now = 0
       kwh_in_second = 0
     end
-    {already_generated: project_generating_now.round(2), kwh_interval: kwh_in_second}
+    {already_generated: project_generating_now.round(2) + self.kwh_already_have, kwh_interval: kwh_in_second}
   end
 
   def kwh_saved
@@ -51,7 +51,7 @@ class Project < ActiveRecord::Base
       project_saving_now = 0
       kwh_in_second = 0
     end
-    {already_saved: project_saving_now.round(2), kwh_interval: kwh_in_second}
+    {already_saved: project_saving_now.round(2) + self.kwh_already_have, kwh_interval: kwh_in_second}
   end
 
   # Minimun amount to invest
@@ -93,6 +93,9 @@ class Project < ActiveRecord::Base
     end
 
     def set_default_values
+      self.kwh_generated_per_month = 0 if self.kwh_generated_per_month.nil?
+      self.kwh_already_have = 0 if self.kwh_already_have.nil?
+      self.kwh_saved_per_month = 0 if self.kwh_saved_per_month.nil?
       self.total_amount_need = 0 if self.total_amount_need.nil?
       self.total_amount_invested = 0 if self.total_amount_invested.nil?
       self.irr = 0 if self.irr.nil?

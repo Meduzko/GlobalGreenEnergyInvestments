@@ -112,7 +112,8 @@ module ApplicationHelper
   end
 
   def calculate_funded(amount_needed, amount_invested)
-    funded = (amount_invested*100)/amount_needed
+
+    funded = amount_needed > 0 ? (amount_invested*100)/amount_needed : 0
     number_with_precision(funded, strip_insignificant_zeros: true, precision: 2)
   end
 

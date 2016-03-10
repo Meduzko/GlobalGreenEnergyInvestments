@@ -28,7 +28,7 @@ gem 'mailgun_rails'
 gem 'whenever', :require => false
 
 group :development do
-  gem 'byebug'
+  gem 'pry'
   gem 'meta_request'
 	gem 'awesome_print'
 	gem 'web-console', '~> 2.0'
