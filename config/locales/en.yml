@@ -138,7 +138,7 @@ en:
   invest_popup_button: Next
   invest_participation_popup_button: Continue
 
-  invest_fundable_text: View the projects that you are interested in to further understand the risks and the return of a participation.
+  invest_fundable_text: Review the details of the project in which you are interested.
   invest_funded_text: Project that were successfully funded through the platform.
   invest_trade_text: The trade page allows you to sell your stake via our platform. Note that there is an additional administration fee.
   invest_trade_send_email: "If you want to sell your participation, please <a href='mailto:bd_vbc@me.com'>send an mail</a> and our team will put it on the trade page"

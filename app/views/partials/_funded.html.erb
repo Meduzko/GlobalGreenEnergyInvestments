@@ -16,7 +16,7 @@
       <div class="project-statistic">
         <span><%= calculate_funded(project.total_amount_need, project.invested) %>%<i>Funded</i></span>
         <canvas data-jscomp="components/projectStatistic"
-                data-percentage="<%= calculate_funded(project.total_amount_need, project.total_amount_invested) %>"
+                data-percentage="<%= calculate_funded(project.total_amount_need, project.invested) %>"
                 class="canvas-statistic"
                 width="100"
                 height="100"></canvas>

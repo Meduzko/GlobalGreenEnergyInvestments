@@ -58,7 +58,8 @@ module ApplicationHelper
     current_user.projects.confirm_invest.payment_started.each do |project|
       months = TimeDifference.between(project.payments_start_date, Time.now).in_months.ceil
       months = months > project.payments_duration_months ? project.payments_duration_months : months
-      money += project.money_return_per_month * months
+      participations = current_user.investors.confirm.where(project_id: 5).sum(:participations)
+      money += project.money_return_per_month * months * participations
     end
     money
   end
@@ -112,7 +113,8 @@ module ApplicationHelper
   end
 
   def calculate_funded(amount_needed, amount_invested)
-    funded = (amount_invested*100)/amount_needed
+
+    funded = amount_needed > 0 ? (amount_invested*100)/amount_needed : 0
     number_with_precision(funded, strip_insignificant_zeros: true, precision: 2)
   end
 
