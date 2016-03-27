@@ -31,7 +31,7 @@ class Project < ActiveRecord::Base
   end
 
   def kwh_generated
-    if self.launch?
+    if self.launch? && self.kwh_generated_per_month > 0
       period_in_seconds = TimeDifference.between(self.kwh_start_date, Time.now).in_seconds
       kwh_in_second = self.kwh_generated_per_month.to_f/30.days.to_i
       project_generating_now = period_in_seconds*kwh_in_second
@@ -43,7 +43,7 @@ class Project < ActiveRecord::Base
   end
 
   def kwh_saved
-    if self.launch?
+    if self.launch? && self.kwh_saved_per_month > 0
       period_in_seconds = TimeDifference.between(self.kwh_start_date, Time.now).in_seconds
       kwh_in_second = self.kwh_saved_per_month.to_f/30.days.to_i
       project_saving_now = period_in_seconds*kwh_in_second
