@@ -76,7 +76,7 @@ class Project < ActiveRecord::Base
   def avaible_participation
     { project_id: self.id,
       total_participation:   self.number_of_participations,
-      avaible_participation: self.number_of_participations - self.investors.confirm.count }
+      avaible_participation: self.number_of_participations - self.investors.confirm.sum(:participations) }
   end
 
   private
