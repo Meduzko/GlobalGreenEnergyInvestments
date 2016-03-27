@@ -1,4 +1,4 @@
-<p class="default-text top-default-text"><%= I18n.t(:invest_fundable_text) %></p>
+<%= "<p class=\"default-text top-default-text\">#{I18n.t(:invest_fundable_text)}</p>".html_safe unless is_my_investment_page?%>
 
 <ul class="projects-list projects-to-invest">
   <% projects.each do |project| %>
