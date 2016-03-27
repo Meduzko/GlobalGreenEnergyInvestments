@@ -34,24 +34,24 @@ class Project < ActiveRecord::Base
     if self.launch? && self.kwh_generated_per_month > 0
       period_in_seconds = TimeDifference.between(self.kwh_start_date, Time.now).in_seconds
       kwh_in_second = self.kwh_generated_per_month.to_f/30.days.to_i
-      project_generating_now = period_in_seconds*kwh_in_second
+      project_generating_now = period_in_seconds*kwh_in_second + self.kwh_already_have
     else
       project_generating_now = 0
       kwh_in_second = 0
     end
-    {already_generated: project_generating_now.round(2) + self.kwh_already_have, kwh_interval: kwh_in_second}
+    {already_generated: project_generating_now.round(2), kwh_interval: kwh_in_second}
   end
 
   def kwh_saved
     if self.launch? && self.kwh_saved_per_month > 0
       period_in_seconds = TimeDifference.between(self.kwh_start_date, Time.now).in_seconds
       kwh_in_second = self.kwh_saved_per_month.to_f/30.days.to_i
-      project_saving_now = period_in_seconds*kwh_in_second
+      project_saving_now = period_in_seconds*kwh_in_second + self.kwh_already_have
     else
       project_saving_now = 0
       kwh_in_second = 0
     end
-    {already_saved: project_saving_now.round(2) + self.kwh_already_have, kwh_interval: kwh_in_second}
+    {already_saved: project_saving_now.round(2), kwh_interval: kwh_in_second}
   end
 
   # Minimun amount to invest
