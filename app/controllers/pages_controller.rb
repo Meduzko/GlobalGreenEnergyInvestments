@@ -3,8 +3,12 @@ class PagesController < ApplicationController
   end
 
   def invest
-    @fundable_projects = Project.active.fundable
-    @funded_projects = Project.active.funded
+    @fundable_projects = []
+    @funded_projects = []
+    Project.active.each do |project|
+      @fundable_projects << project if project.invested < project.total_amount_need
+      @funded_projects << project if project.invested >= project.total_amount_need
+    end
   end
 
   def about

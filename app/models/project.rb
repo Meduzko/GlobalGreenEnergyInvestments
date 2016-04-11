@@ -5,8 +5,6 @@ class Project < ActiveRecord::Base
   BANK_ACCOUNT = 'NL67TRIO0254752357'
 
   scope :active,          -> { where(status: true).order('created_at desc') }
-  scope :fundable,        -> { where('projects.total_amount_need != projects.total_amount_invested AND projects.total_amount_need > projects.total_amount_invested') }
-  scope :funded,          -> { where('projects.total_amount_invested >= projects.total_amount_need') }
   scope :started,         -> { where('kwh_start_date <= ?', Time.now.to_date) }
   scope :payment_started, -> { where('payments_start_date <= ?', Time.now.to_date) }
   scope :confirm_invest,  -> { where('investors.confirm_paid = 1') }

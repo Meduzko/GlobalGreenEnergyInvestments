@@ -1,6 +1,7 @@
 <%= "<p class=\"default-text top-default-text\">#{I18n.t(:invest_fundable_text)}</p>".html_safe unless is_my_investment_page?%>
 
 <ul class="projects-list projects-to-invest">
+  <%= 'No fundable projects.' if projects.count == 0 %>
   <% projects.each do |project| %>
     <li class="project-block" style="background-image:url('<%= project.small_foto.url(:thumb) %>')">
       <span class="project-type"><i class="<%= icon_energy(project.type_of_energe) %>"></i></span>

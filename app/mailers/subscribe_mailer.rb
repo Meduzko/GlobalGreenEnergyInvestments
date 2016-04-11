@@ -3,6 +3,7 @@ class SubscribeMailer < ApplicationMailer
   def new_subscription(user)
     @user = user
     @url  = "http://globalgreenenergyinvestments.com/subscribes/#{@user.confirm_token}/confirmation"
+    @unsubscribe_url =  "http://globalgreenenergyinvestments.com/subscribes/#{@user.confirm_token}/unsubscribe"
     mail(to: @user.email, subject: 'GGEI Subscription. Confirm your email.')
   end
 
