@@ -70,7 +70,7 @@ Rails.application.configure do
     :port                 => 587,
     :domain               => "gmail.com",
     :user_name            => 'ggigsite',
-    :password             => 'ggig2015site',
+    :password             => 'tfp-Fv9-2Ch-CG3',
     :authentication       => :plain,
     :enable_starttls_auto => true
   }
