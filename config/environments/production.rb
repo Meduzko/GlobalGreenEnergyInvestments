@@ -71,9 +71,10 @@ Rails.application.configure do
     :domain               => "gmail.com",
     :user_name            => 'ggigsite',
     :password             => 'ggig2015site',
-    :authentication       => 'plain',
+    :authentication       => :login,
     :enable_starttls_auto => true
   }
+
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
