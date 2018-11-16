@@ -15,6 +15,9 @@ class SubscribesController < ApplicationController
     end
   end
 
+
+
+
   def confirmation
     subscribe = Subscribe.find_by_confirm_token(params[:id])
     if subscribe && subscribe.confirmed == false && subscribe.active == false

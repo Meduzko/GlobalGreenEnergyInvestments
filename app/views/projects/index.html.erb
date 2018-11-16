@@ -1,2 +1,24 @@
 <h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
+<p>Find me in app/views/projects/index.html.erb 11</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">kwh</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |project| %>
+
+        <tr>
+        <th scope="row"></th>
+        <td><%= project.name %> </td>
+        <td><%#= project.power_saved.kwh_every_second %></td>
+      </tr>
+
+ 
+  <% end %>
+ <%#= link_to 'Destroy', document, method: :delete %>
+  </tbody>
+</table>

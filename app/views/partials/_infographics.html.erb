@@ -93,7 +93,7 @@
     <% if kwh_projects_saved[:already_saved] > 0 %>
       <li>
         <div data-jscomp='components/statisticCounter' data-jscomp-config='{"stepValue": "<%= kwh_projects_saved[:kwh_interval] %>" }'>
-         <p class="savedStatistic"><%= sprintf('%.2f', kwh_projects_saved[:already_saved]) %></p>
+         <p class="savedStatistic"><%= sprintf('%.2f', kwh_projects_saved[:already_saved]) %> </p>
          <span>KWH saved</span>
        </div>
       </li>

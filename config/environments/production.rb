@@ -46,7 +46,7 @@ Rails.application.configure do
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
-  config.log_level = :debug
+  config.log_level = :error
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -61,14 +61,26 @@ Rails.application.configure do
   # config.action_controller.asset_host = 'http://assets.example.com'
 
   # Ignore bad email addresses and do not raise email delivery errors.
-  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {
-    api_key: 'key-6226e89fb3a5f97791f9a7e24ca31b1b',
-    domain: 'globalgreenenergyinvestments.com'
+  # Set this to true and configure the email server for immediate delivery to raise delivery errors.zz
+  #*********************************************************************************************************************
+#  config.action_mailer.raise_delivery_errors = true
+ # config.action_mailer.delivery_method = :mailgun
+  #config.action_mailer.mailgun_settings = {
+    #api_key: 'key-6226e89fb3a5f97791f9a7e24ca31b1b',
+    #domain: 'globalgreenenergyinvestments.com'
+  #}
+  #config.action_mailer.perform_deliveries = true
+  #********************************************************************************************************************
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "globalgreenenergyinvestments.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "meduzko95@gmail.com",
+    password: "cfifgfyxermeduzko95"
   }
-
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).

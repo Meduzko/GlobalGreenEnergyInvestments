@@ -1,0 +1,1 @@
+define(["jquery"],function(n){return{init:function(a){var e=n("#"+a+" video").get(0);n(".play-pause").on("click",function(){e.paused?(e.play(),n("#"+a).addClass("playing")):(e.pause(),n("#"+a).removeClass("playing"))})}}});

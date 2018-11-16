@@ -1,0 +1,1 @@
+define(["jquery"],function(n){"use strict";return{init:function(n,t){this.contentForPrint="#"+n+" .content-for-print"},print:function(){n(this.contentForPrint).html(),document.body.innerHTML}}});

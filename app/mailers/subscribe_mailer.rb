@@ -32,6 +32,4 @@ class SubscribeMailer < ApplicationMailer
       @unsubscribe = true
       @unsubscribe_url =  "http://globalgreenenergyinvestments.com/subscribes/#{user.confirm_token}/unsubscribe"
     end
-
-
 end

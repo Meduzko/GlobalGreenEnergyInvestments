@@ -1,0 +1,1 @@
+define(["jquery","select2"],function(e){"use strict";return{init:function(t,n){e("#"+t+" select").each(function(){e(this).select2()})}}});

@@ -2,10 +2,10 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  database: ggig
-  username: root
-  password: 
-  socket: /tmp/mysql.sock
+  database: ggie
+  username: ggie
+  password: dz7xCmbEJV
+  socket: /var/run/mysqld/mysqld.sock
   host: localhost
 
 development:
@@ -17,5 +17,3 @@ test:
 
 production:
   <<: *default
-  username: GGIG
-  password: <%= ENV['GGIG_DATABASE_PASSWORD'] %>

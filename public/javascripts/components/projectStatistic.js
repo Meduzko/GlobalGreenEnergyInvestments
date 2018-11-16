@@ -1,0 +1,1 @@
+define(["jquery"],function(t){"use strict";return{init:function(e,r){var a=t("#"+e),n=a[0].getContext("2d"),i=2*parseFloat(a[0].getAttribute("data-percentage"))/100;n.lineWidth=3,n.strokeStyle="#26d5ba",n.arc(46,46,44,.5*Math.PI,(i+.5)*Math.PI,!1),n.stroke()}}});

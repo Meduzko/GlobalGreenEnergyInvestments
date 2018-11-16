@@ -14,6 +14,40 @@ define(['jquery'], function ($) {
         },
 
         updateStat: function () {
+            /*
+            var xhr = new XMLHttpRequest();
+            var url = "url";
+            var data = JSON.stringify({
+                name: "Виктор",
+                surname: "Цой"
+              });
+            xhr.open("POST", '/url', true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var json = JSON.parse(xhr.responseText);
+                    console.log(json.name + ", " + json.surname);
+                }
+            };
+           
+            var userObj = {
+                "userName": "vlad"
+            }
+            
+            var url = "/projects";
+            
+            $.ajax({
+                url: url,
+                method: "post",
+                data: userObj,
+                error: function(message) {
+                    console.log(message);
+                },
+                success: function(data) {
+                    console.log(data);
+                }
+            });
+             */
 
             var thisComp = this;
             var step = parseFloat(thisComp.config.stepValue).toFixed(2);

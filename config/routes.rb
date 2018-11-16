@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'contact'  => 'pages#contact', :as => :page_contact
   post 'contact' => 'pages#send_contact'
 
+  match '/curl' => 'projects#total_kwh', via: :get
+
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, :controllers => { registrations: 'registrations', sessions: 'sessions', passwords: 'passwords',  confirmations: 'confirmations' }
   devise_for :admin_users, ActiveAdmin::Devise.config

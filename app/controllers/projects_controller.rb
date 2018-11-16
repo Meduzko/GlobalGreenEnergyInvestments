@@ -1,5 +1,15 @@
 class ProjectsController < ApplicationController
+  include ApplicationHelper
+
   def index
+    #@projects = Project.all
+    #render json: @projects
+
+  end
+
+  def total_kwh
+    @projects_kwh = kwh_projects_saved[:already_saved]
+    render text: @projects_kwh
   end
 
   def show

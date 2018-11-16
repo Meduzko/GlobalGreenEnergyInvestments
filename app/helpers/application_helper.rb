@@ -37,6 +37,7 @@ module ApplicationHelper
       kwh_in_second = 0
     end
     {already_saved: project_generating_now.round(2), kwh_interval: kwh_in_second}
+
   end
 
   def kwh_saved_for_user
