@@ -78,8 +78,8 @@ Rails.application.configure do
     domain: "globalgreenenergyinvestments.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "meduzko95@gmail.com",
-    password: "cfifgfyxermeduzko95"
+    user_name: "",
+    password: ""
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
